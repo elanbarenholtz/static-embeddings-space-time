@@ -1,0 +1,114 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abdou et~al.(2021)Abdou, Kulmizev, Hershcovich, Frank, Pavlick, and
+  S{\o}gaard]{abdou2021language}
+Mostafa Abdou, Artur Kulmizev, Daniel Hershcovich, Stella Frank, Ellie Pavlick,
+  and Anders S{\o}gaard.
+\newblock Can language models encode perceptual structure without grounding?
+  {A} case study in color.
+\newblock \emph{arXiv preprint arXiv:2109.06129}, 2021.
+
+\bibitem[Belinkov(2022)]{belinkov2022probing}
+Yonatan Belinkov.
+\newblock Probing classifiers: Promises, shortcomings, and advances.
+\newblock \emph{Computational Linguistics}, 48\penalty0 (1):\penalty0 207--219,
+  2022.
+
+\bibitem[Bolukbasi et~al.(2016)Bolukbasi, Chang, Zou, Saligrama, and
+  Kalai]{bolukbasi2016man}
+Tolga Bolukbasi, Kai-Wei Chang, James~Y. Zou, Venkatesh Saligrama, and Adam~T.
+  Kalai.
+\newblock Man is to computer programmer as woman is to homemaker? {D}ebiasing
+  word embeddings.
+\newblock \emph{Advances in Neural Information Processing Systems}, 29, 2016.
+
+\bibitem[Caliskan et~al.(2017)Caliskan, Bryson, and
+  Narayanan]{caliskan2017semantics}
+Aylin Caliskan, Joanna~J. Bryson, and Arvind Narayanan.
+\newblock Semantics derived automatically from language corpora contain
+  human-like biases.
+\newblock \emph{Science}, 356\penalty0 (6334):\penalty0 183--186, 2017.
+
+\bibitem[Conneau et~al.(2018)Conneau, Kruszewski, Lample, Barrault, and
+  Baroni]{conneau2018you}
+Alexis Conneau, German Kruszewski, Guillaume Lample, Lo{\"\i}c Barrault, and
+  Marco Baroni.
+\newblock What you can cram into a single \$\&!\#* vector: Probing sentence
+  embeddings for linguistic properties.
+\newblock In \emph{Proceedings of the 56th Annual Meeting of the Association
+  for Computational Linguistics}, pages 2126--2136, 2018.
+
+\bibitem[Firth(1957)]{firth1957synopsis}
+John~Rupert Firth.
+\newblock A synopsis of linguistic theory, 1930--1955.
+\newblock \emph{Studies in Linguistic Analysis}, pages 1--32, 1957.
+
+\bibitem[Gurnee and Tegmark(2023)]{gurnee2023language}
+Wes Gurnee and Max Tegmark.
+\newblock Language models represent space and time.
+\newblock \emph{arXiv preprint arXiv:2310.02207}, 2023.
+
+\bibitem[Hewitt and Liang(2019)]{hewitt2019designing}
+John Hewitt and Percy Liang.
+\newblock Designing and interpreting probes with control tasks.
+\newblock In \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing}, pages 2733--2743, 2019.
+
+\bibitem[Hewitt and Manning(2019)]{hewitt2019structural}
+John Hewitt and Christopher~D. Manning.
+\newblock A structural probe for finding syntax in word representations.
+\newblock In \emph{Proceedings of the 2019 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 4129--4138, 2019.
+
+\bibitem[Hoerl and Kennard(1970)]{hoerl1970ridge}
+Arthur~E. Hoerl and Robert~W. Kennard.
+\newblock Ridge regression: Biased estimation for nonorthogonal problems.
+\newblock \emph{Technometrics}, 12\penalty0 (1):\penalty0 55--67, 1970.
+
+\bibitem[Li et~al.(2021)Li, Nye, and Andreas]{li2021implicit}
+Belinda~Z. Li, Maxwell Nye, and Jacob Andreas.
+\newblock Implicit representations of meaning in neural language models.
+\newblock In \emph{Proceedings of the 59th Annual Meeting of the Association
+  for Computational Linguistics}, pages 1813--1827, 2021.
+
+\bibitem[Mikolov et~al.(2013{\natexlab{a}})Mikolov, Chen, Corrado, and
+  Dean]{mikolov2013efficient}
+Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
+\newblock Efficient estimation of word representations in vector space.
+\newblock \emph{arXiv preprint arXiv:1301.3781}, 2013{\natexlab{a}}.
+
+\bibitem[Mikolov et~al.(2013{\natexlab{b}})Mikolov, Sutskever, Chen, Corrado,
+  and Dean]{mikolov2013distributed}
+Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg~S. Corrado, and Jeffrey Dean.
+\newblock Distributed representations of words and phrases and their
+  compositionality.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~26, 2013{\natexlab{b}}.
+
+\bibitem[Patel and Pavlick(2022)]{patel2022mapping}
+Roma Patel and Ellie Pavlick.
+\newblock Mapping language models to grounded conceptual spaces.
+\newblock In \emph{International Conference on Learning Representations}, 2022.
+
+\bibitem[Pennington et~al.(2014)Pennington, Socher, and
+  Manning]{pennington2014glove}
+Jeffrey Pennington, Richard Socher, and Christopher~D. Manning.
+\newblock {GloVe}: Global vectors for word representation.
+\newblock In \emph{Proceedings of the 2014 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, pages 1532--1543, 2014.
+
+\bibitem[Touvron et~al.(2023)Touvron, Martin, Stone, Albert, Almahairi, Babaei,
+  Bashlykov, Batra, Bhargava, Bhosale, et~al.]{touvron2023llama}
+Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine
+  Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale,
+  et~al.
+\newblock Llama 2: Open foundation and open source chat models.
+\newblock \emph{arXiv preprint arXiv:2307.09288}, 2023.
+
+\end{thebibliography}

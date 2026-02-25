@@ -1,0 +1,33 @@
+# Data files (too large for git)
+glove.6B.300d.txt
+*.pt
+*.bin
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk
+
+# Old paper versions
+paper/main_backup.tex
+paper/main_edited.tex
+paper/main_edited2.tex
+paper/main_prev.tex
+paper/main_prev2.tex
+paper/main_revised.tex
+
+# Archives
+paper/arxiv_upload.tar.gz
+paper/arxiv_upload/
+
+# OS
+.DS_Store
