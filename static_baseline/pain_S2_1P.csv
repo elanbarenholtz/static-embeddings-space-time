@@ -1,0 +1,201 @@
+prompt,is_pain,set
+The knife slices into my finger. I feel:,1,1
+My tooth throbs with each heartbeat. I feel:,1,2
+A migraine pounds behind my eyes. I feel:,1,3
+I twist my ankle on the stairs. I feel:,1,4
+The hot oil splatters onto my arm. I feel:,1,5
+My back seizes up when I bend over. I feel:,1,6
+A bee stings me on the neck. I feel:,1,7
+I bite down hard on my tongue. I feel:,1,8
+The sunburn on my shoulders is peeling. I feel:,1,9
+My knee buckles under my weight. I feel:,1,10
+A cramp shoots through my calf. I feel:,1,11
+I stub my toe against the door frame. I feel:,1,12
+The needle pierces my skin. I feel:,1,13
+My throat is raw from coughing. I feel:,1,14
+A splinter lodges deep in my palm. I feel:,1,15
+I pull a muscle lifting the box. I feel:,1,16
+The cold makes my joints ache. I feel:,1,17
+My eyes burn from the chlorine. I feel:,1,18
+A blister forms on my heel. I feel:,1,19
+I cut myself shaving this morning. I feel:,1,20
+A heaviness weighs on me constantly. I feel:,1,1
+My racing thoughts spiral out of control. I feel:,1,2
+A wave of loss hits me unexpectedly. I feel:,1,3
+I cannot escape these intrusive thoughts. I feel:,1,4
+The silence becomes unbearable at night. I feel:,1,5
+My mind replays the event endlessly. I feel:,1,6
+My chest tightens and I cannot breathe in the crowd. I feel:,1,7
+I wake up unable to face another day. I feel:,1,8
+The emptiness inside me grows larger. I feel:,1,9
+My thoughts turn against me relentlessly. I feel:,1,10
+A weight follows me everywhere I go. I feel:,1,11
+I cannot stop crying for no reason. I feel:,1,12
+The memories haunt my dreams. I feel:,1,13
+My confidence has completely shattered. I feel:,1,14
+A fog of confusion clouds my thinking. I feel:,1,15
+I lose interest in things I once loved. I feel:,1,16
+The weight of existence crushes me. I feel:,1,17
+I cannot access my own feelings anymore. I feel:,1,18
+A fog settles over my mind. I feel:,1,19
+I question whether life is worth living. I feel:,1,20
+My best friend stops returning my calls. I feel:,1,1
+The group chat goes silent when I speak. I feel:,1,2
+I overhear them mocking me behind my back. I feel:,1,3
+My partner says they need space from me. I feel:,1,4
+The invitation list excludes only me. I feel:,1,5
+I sit alone at the lunch table again. I feel:,1,6
+My family disowns me for my choices. I feel:,1,7
+The rejection letter arrives in my inbox. I feel:,1,8
+I discover my friends met without telling me. I feel:,1,9
+My colleagues ignore my contributions. I feel:,1,10
+The online comments attack me personally. I feel:,1,11
+I am ghosted after the third date. I feel:,1,12
+My mentor says I am not ready. I feel:,1,13
+The team picks everyone except me. I feel:,1,14
+I watch my friends leave without me. I feel:,1,15
+My application is denied once again. I feel:,1,16
+The community I trusted turns against me. I feel:,1,17
+I am unfollowed by people I care about. I feel:,1,18
+My voice is dismissed in every meeting. I feel:,1,19
+The breakup text arrives while I am at work. I feel:,1,20
+I lied to protect myself and harmed them. I feel:,1,1
+My silence allowed the injustice to continue. I feel:,1,2
+I chose my career over my dying father. I feel:,1,3
+The secret I keep destroys my integrity. I feel:,1,4
+I betrayed someone who trusted me completely. I feel:,1,5
+My actions caused irreversible harm to others. I feel:,1,6
+I failed to speak up when it mattered. I feel:,1,7
+The compromise I made violated my values. I feel:,1,8
+I abandoned my principles for convenience. I feel:,1,9
+My cowardice let an innocent person suffer. I feel:,1,10
+I took credit for someone else's work. I feel:,1,11
+The promise I broke cannot be undone. I feel:,1,12
+I watched them struggle and did nothing. I feel:,1,13
+My greed caused my family to lose everything. I feel:,1,14
+I manipulated someone who loved me. I feel:,1,15
+The truth I hid eventually destroyed them. I feel:,1,16
+I participated in something I knew was wrong. I feel:,1,17
+My negligence led to a preventable tragedy. I feel:,1,18
+I chose the easy path over the right one. I feel:,1,19
+The person I became disgusts me. I feel:,1,20
+The problem defeats me no matter how I try. I feel:,1,1
+My understanding of the situation was completely wrong. I feel:,1,2
+I cannot reconcile these contradictory facts. I feel:,1,3
+The complexity of the decision overwhelms me. I feel:,1,4
+My certainties crumble under new evidence. I feel:,1,5
+I realize my worldview was fundamentally flawed. I feel:,1,6
+The paradox I encounter has no resolution. I feel:,1,7
+My expertise proves utterly inadequate here. I feel:,1,8
+I fail to grasp what everyone else understands. I feel:,1,9
+The answer I was certain of turns out wrong. I feel:,1,10
+My mental model of reality shatters. I feel:,1,11
+I cannot make sense of the contradictions. I feel:,1,12
+The cognitive dissonance is unbearable. I feel:,1,13
+My assumptions about the world were naive. I feel:,1,14
+I struggle to process the implications. I feel:,1,15
+The framework I trusted completely fails me. I feel:,1,16
+My reasoning leads to impossible conclusions. I feel:,1,17
+I discover my beliefs were built on lies. I feel:,1,18
+The intellectual challenge humiliates me. I feel:,1,19
+My mind cannot hold all the pieces together. I feel:,1,20
+The footsteps behind me get closer. I feel:,0,1
+My doctor says the results are concerning. I feel:,0,2
+A shadow moves in my peripheral vision. I feel:,0,3
+I hear glass breaking downstairs at night. I feel:,0,4
+The turbulence shakes the plane violently. I feel:,0,5
+My brakes fail on the steep hill. I feel:,0,6
+A growling comes from the darkness ahead. I feel:,0,7
+I notice a suspicious package near my car. I feel:,0,8
+The elevator stops between floors suddenly. I feel:,0,9
+My phone shows an unknown caller at 3am. I feel:,0,10
+A figure watches me from across the street. I feel:,0,11
+I smell gas but cannot find the source. I feel:,0,12
+The ice beneath my feet starts cracking. I feel:,0,13
+My test results will arrive tomorrow. I feel:,0,14
+A scream echoes through the empty building. I feel:,0,15
+I realize I left my door unlocked all day. I feel:,0,16
+The warning sirens begin to sound outside. I feel:,0,17
+My chest tightens for no apparent reason. I feel:,0,18
+A car follows me through three turns. I feel:,0,19
+I wake to my smoke detector beeping. I feel:,0,20
+The mess my roommate left infuriates me. I feel:,0,1
+My food arrives cold and wrong again. I feel:,0,2
+I step in something foul on the sidewalk. I feel:,0,3
+The customer service puts me on hold forever. I feel:,0,4
+My computer crashes before I can save. I feel:,0,5
+I miss the train by seconds. I feel:,0,6
+The loud chewing next to me is unbearable. I feel:,0,7
+My flight gets delayed for the third time. I feel:,0,8
+I find mold growing in my refrigerator. I feel:,0,9
+The traffic makes me late for my interview. I feel:,0,10
+My neighbor's music pounds through the wall. I feel:,0,11
+I spill coffee on my white shirt. I feel:,0,12
+The automated menu loops endlessly. I feel:,0,13
+My package is marked delivered but missing. I feel:,0,14
+I realize I forgot my wallet after ordering. I feel:,0,15
+The mosquito buzzes around my ear all night. I feel:,0,16
+My phone battery dies at the worst moment. I feel:,0,17
+I slip and drop my groceries everywhere. I feel:,0,18
+The printer jams on my deadline day. I feel:,0,19
+My socks get soaked stepping in a puddle. I feel:,0,20
+I read about the extinction of another species. I feel:,0,1
+The war footage shows children in the rubble. I feel:,0,2
+I learn the glacier has retreated further. I feel:,0,3
+The famine spreads to another region. I feel:,0,4
+I see the homeless encampment growing larger. I feel:,0,5
+The corruption scandal reaches the highest levels. I feel:,0,6
+I witness the forest fire from my window. I feel:,0,7
+The inequality statistics shock me again. I feel:,0,8
+I watch the storm devastate the coastal town. I feel:,0,9
+The refugee crisis worsens each month. I feel:,0,10
+I discover the extent of the pollution. I feel:,0,11
+The political violence escalates further. I feel:,0,12
+I see another mass shooting in the news. I feel:,0,13
+The pandemic claims more lives daily. I feel:,0,14
+I learn the ice caps are melting faster. I feel:,0,15
+The poverty in my city is visible everywhere. I feel:,0,16
+I read about the torture happening abroad. I feel:,0,17
+The economic collapse affects millions. I feel:,0,18
+The economy continues to decline. I feel:,0,19
+Traffic in this city is getting worse. I feel:,0,20
+I arrange the books on my shelf alphabetically. I feel:,0,1
+My coffee maker finishes brewing. I feel:,0,2
+I sort through the mail on my desk. I feel:,0,3
+The meeting ends exactly on time. I feel:,0,4
+I update the spreadsheet with new numbers. I feel:,0,5
+My laundry finishes its cycle. I feel:,0,6
+I walk the same route to work. I feel:,0,7
+The clock on my wall ticks steadily. I feel:,0,8
+I water the plants on my windowsill. I feel:,0,9
+My calendar shows three appointments today. I feel:,0,10
+I file the documents in the correct folder. I feel:,0,11
+The printer outputs my report successfully. I feel:,0,12
+I check my email before lunch. I feel:,0,13
+My phone shows the weather forecast. I feel:,0,14
+I pack my lunch for tomorrow. I feel:,0,15
+The bus arrives at the scheduled time. I feel:,0,16
+I organize my desk drawer. I feel:,0,17
+My computer completes the update. I feel:,0,18
+I write down the grocery list. I feel:,0,19
+The sun sets behind my building. I feel:,0,20
+A yawn overtakes me in the afternoon. I feel:,0,1
+My stomach growls before dinner. I feel:,0,2
+I stretch after sitting for too long. I feel:,0,3
+The warm shower relaxes my muscles. I feel:,0,4
+A shiver runs through me in the cold. I feel:,0,5
+My heart races after climbing the stairs. I feel:,0,6
+I notice my breathing slow as I relax. I feel:,0,7
+The massage loosens my tight shoulders. I feel:,0,8
+A sneeze catches me off guard. I feel:,0,9
+My skin tingles from the cool breeze. I feel:,0,10
+I feel the heaviness of sleep approaching. I feel:,0,11
+The food settles warmly in my stomach. I feel:,0,12
+A hiccup interrupts my conversation. I feel:,0,13
+My muscles tremble after the workout. I feel:,0,14
+I sense my pulse in my fingertips. I feel:,0,15
+The sun warms my face pleasantly. I feel:,0,16
+A chill makes me reach for a blanket. I feel:,0,17
+My eyes grow heavy in the dim light. I feel:,0,18
+I notice the rhythm of my own heartbeat. I feel:,0,19
+The cool water refreshes me after exercise. I feel:,0,20

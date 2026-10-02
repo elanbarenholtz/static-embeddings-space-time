@@ -1,0 +1,24 @@
+{
+ "world_place": {
+  "n_items_with_phrase_entry": 2317,
+  "n_items": 33495,
+  "with": [
+   0.535,
+   0.571
+  ],
+  "without": [
+   0.529,
+   0.568
+  ]
+ },
+ "historical_figure": {
+  "n_items_with_phrase_entry": 1550,
+  "n_items": 36584,
+  "with": [
+   0.416
+  ],
+  "without": [
+   0.426
+  ]
+ }
+}

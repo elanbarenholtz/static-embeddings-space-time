@@ -1,0 +1,620 @@
+{
+ "world_place|groups": {
+  "Africa": {
+   "n": 2406
+  },
+  "America": {
+   "n": 9953
+  },
+  "Asia": {
+   "n": 7104
+  },
+  "Europe": {
+   "n": 9614
+  },
+  "Oceania": {
+   "n": 3526
+  }
+ },
+ "world_place|GloVe": {
+  "grouped": {
+   "pooled_r2": [
+    -0.517,
+    -0.886
+   ],
+   "pooled_medae": [
+    26.62,
+    95.27
+   ],
+   "per_fold": {
+    "Africa": {
+     "latitude": {
+      "r2": -1.499,
+      "mae": 26.91,
+      "medae": 24.69
+     },
+     "longitude": {
+      "r2": -6.277,
+      "mae": 37.11,
+      "medae": 32.88
+     }
+    },
+    "America": {
+     "latitude": {
+      "r2": -0.564,
+      "mae": 22.47,
+      "medae": 19.1
+     },
+     "longitude": {
+      "r2": -48.59,
+      "mae": 143.25,
+      "medae": 141.85
+     }
+    },
+    "Asia": {
+     "latitude": {
+      "r2": -1.156,
+      "mae": 14.1,
+      "medae": 12.0
+     },
+     "longitude": {
+      "r2": -9.813,
+      "mae": 81.96,
+      "medae": 76.94
+     }
+    },
+    "Europe": {
+     "latitude": {
+      "r2": -19.205,
+      "mae": 38.14,
+      "medae": 37.8
+     },
+     "longitude": {
+      "r2": -7.902,
+      "mae": 46.94,
+      "medae": 38.72
+     }
+    },
+    "Oceania": {
+     "latitude": {
+      "r2": -39.949,
+      "mae": 57.24,
+      "medae": 61.15
+     },
+     "longitude": {
+      "r2": -18.648,
+      "mae": 165.76,
+      "medae": 168.16
+     }
+    }
+   }
+  },
+  "random": {
+   "pooled_r2": [
+    0.477,
+    0.546
+   ],
+   "pooled_medae": [
+    12.26,
+    33.71
+   ],
+   "per_fold": null
+  }
+ },
+ "world_place|Word2Vec": {
+  "grouped": {
+   "pooled_r2": [
+    -0.401,
+    -0.942
+   ],
+   "pooled_medae": [
+    24.47,
+    97.99
+   ],
+   "per_fold": {
+    "Africa": {
+     "latitude": {
+      "r2": -1.139,
+      "mae": 24.99,
+      "medae": 23.62
+     },
+     "longitude": {
+      "r2": -4.438,
+      "mae": 31.9,
+      "medae": 28.36
+     }
+    },
+    "America": {
+     "latitude": {
+      "r2": -0.237,
+      "mae": 19.4,
+      "medae": 15.99
+     },
+     "longitude": {
+      "r2": -48.886,
+      "mae": 144.32,
+      "medae": 144.88
+     }
+    },
+    "Asia": {
+     "latitude": {
+      "r2": -0.555,
+      "mae": 11.72,
+      "medae": 9.68
+     },
+     "longitude": {
+      "r2": -11.97,
+      "mae": 93.26,
+      "medae": 90.23
+     }
+    },
+    "Europe": {
+     "latitude": {
+      "r2": -19.019,
+      "mae": 38.22,
+      "medae": 38.09
+     },
+     "longitude": {
+      "r2": -6.047,
+      "mae": 40.78,
+      "medae": 32.43
+     }
+    },
+    "Oceania": {
+     "latitude": {
+      "r2": -38.666,
+      "mae": 56.52,
+      "medae": 59.6
+     },
+     "longitude": {
+      "r2": -20.032,
+      "mae": 171.67,
+      "medae": 176.06
+     }
+    }
+   }
+  },
+  "random": {
+   "pooled_r2": [
+    0.558,
+    0.598
+   ],
+   "pooled_medae": [
+    10.75,
+    29.93
+   ],
+   "per_fold": null
+  }
+ },
+ "world_place|pythia-2.8b": {
+  "grouped": {
+   "pooled_r2": [
+    -0.467,
+    -0.706
+   ],
+   "pooled_medae": [
+    26.83,
+    73.24
+   ],
+   "per_fold": {
+    "Africa": {
+     "latitude": {
+      "r2": -0.861,
+      "mae": 22.43,
+      "medae": 19.39
+     },
+     "longitude": {
+      "r2": -3.78,
+      "mae": 28.51,
+      "medae": 23.03
+     }
+    },
+    "America": {
+     "latitude": {
+      "r2": -0.671,
+      "mae": 24.78,
+      "medae": 22.42
+     },
+     "longitude": {
+      "r2": -50.479,
+      "mae": 146.01,
+      "medae": 145.6
+     }
+    },
+    "Asia": {
+     "latitude": {
+      "r2": -0.258,
+      "mae": 10.79,
+      "medae": 9.17
+     },
+     "longitude": {
+      "r2": -5.534,
+      "mae": 62.62,
+      "medae": 56.74
+     }
+    },
+    "Europe": {
+     "latitude": {
+      "r2": -21.998,
+      "mae": 41.31,
+      "medae": 41.57
+     },
+     "longitude": {
+      "r2": -3.61,
+      "mae": 33.8,
+      "medae": 28.93
+     }
+    },
+    "Oceania": {
+     "latitude": {
+      "r2": -31.515,
+      "mae": 51.09,
+      "medae": 52.86
+     },
+     "longitude": {
+      "r2": -17.608,
+      "mae": 161.81,
+      "medae": 162.49
+     }
+    }
+   }
+  },
+  "random": {
+   "pooled_r2": [
+    0.768,
+    0.807
+   ],
+   "pooled_medae": [
+    4.75,
+    10.77
+   ],
+   "per_fold": null
+  }
+ },
+ "world_place|llama-2-7b": {
+  "grouped": {
+   "pooled_r2": [
+    -0.323,
+    -0.641
+   ],
+   "pooled_medae": [
+    25.41,
+    75.47
+   ],
+   "per_fold": {
+    "Africa": {
+     "latitude": {
+      "r2": -0.75,
+      "mae": 22.7,
+      "medae": 21.5
+     },
+     "longitude": {
+      "r2": -2.154,
+      "mae": 22.63,
+      "medae": 17.11
+     }
+    },
+    "America": {
+     "latitude": {
+      "r2": -0.544,
+      "mae": 24.74,
+      "medae": 23.69
+     },
+     "longitude": {
+      "r2": -50.455,
+      "mae": 145.83,
+      "medae": 153.45
+     }
+    },
+    "Asia": {
+     "latitude": {
+      "r2": 0.102,
+      "mae": 9.15,
+      "medae": 7.85
+     },
+     "longitude": {
+      "r2": -6.681,
+      "mae": 71.29,
+      "medae": 70.77
+     }
+    },
+    "Europe": {
+     "latitude": {
+      "r2": -16.86,
+      "mae": 36.51,
+      "medae": 37.23
+     },
+     "longitude": {
+      "r2": -1.78,
+      "mae": 26.23,
+      "medae": 23.15
+     }
+    },
+    "Oceania": {
+     "latitude": {
+      "r2": -35.887,
+      "mae": 54.18,
+      "medae": 55.68
+     },
+     "longitude": {
+      "r2": -15.041,
+      "mae": 150.1,
+      "medae": 147.95
+     }
+    }
+   }
+  },
+  "random": {
+   "pooled_r2": [
+    0.893,
+    0.896
+   ],
+   "pooled_medae": [
+    2.85,
+    7.22
+   ],
+   "per_fold": null
+  }
+ },
+ "historical_figure|groups": {
+  "0": {
+   "n": 6861,
+   "range": [
+    -935.0,
+    1150.0
+   ]
+  },
+  "1": {
+   "n": 7334,
+   "range": [
+    1151.0,
+    1385.0
+   ]
+  },
+  "2": {
+   "n": 7426,
+   "range": [
+    1386.0,
+    1599.0
+   ]
+  },
+  "3": {
+   "n": 7456,
+   "range": [
+    1600.0,
+    1814.0
+   ]
+  },
+  "4": {
+   "n": 7507,
+   "range": [
+    1815.0,
+    2021.0
+   ]
+  }
+ },
+ "historical_figure|GloVe": {
+  "grouped": {
+   "pooled_r2": [
+    -0.108
+   ],
+   "pooled_medae": [
+    265.1
+   ],
+   "per_fold": {
+    "0": {
+     "death_year": {
+      "r2": -3.467,
+      "mae": 740.83,
+      "medae": 644.18
+     }
+    },
+    "1": {
+     "death_year": {
+      "r2": -17.369,
+      "mae": 217.83,
+      "medae": 174.44
+     }
+    },
+    "2": {
+     "death_year": {
+      "r2": -14.119,
+      "mae": 186.81,
+      "medae": 155.78
+     }
+    },
+    "3": {
+     "death_year": {
+      "r2": -17.739,
+      "mae": 213.56,
+      "medae": 183.35
+     }
+    },
+    "4": {
+     "death_year": {
+      "r2": -55.147,
+      "mae": 407.49,
+      "medae": 397.61
+     }
+    }
+   }
+  },
+  "random": {
+   "pooled_r2": [
+    0.495
+   ],
+   "pooled_medae": [
+    173.85
+   ],
+   "per_fold": null
+  }
+ },
+ "historical_figure|Word2Vec": {
+  "grouped": {
+   "pooled_r2": [
+    -0.158
+   ],
+   "pooled_medae": [
+    290.3
+   ],
+   "per_fold": {
+    "0": {
+     "death_year": {
+      "r2": -3.683,
+      "mae": 766.76,
+      "medae": 647.14
+     }
+    },
+    "1": {
+     "death_year": {
+      "r2": -18.051,
+      "mae": 231.38,
+      "medae": 204.0
+     }
+    },
+    "2": {
+     "death_year": {
+      "r2": -12.161,
+      "mae": 171.21,
+      "medae": 138.07
+     }
+    },
+    "3": {
+     "death_year": {
+      "r2": -20.611,
+      "mae": 234.99,
+      "medae": 209.78
+     }
+    },
+    "4": {
+     "death_year": {
+      "r2": -57.779,
+      "mae": 432.51,
+      "medae": 413.18
+     }
+    }
+   }
+  },
+  "random": {
+   "pooled_r2": [
+    0.427
+   ],
+   "pooled_medae": [
+    190.5
+   ],
+   "per_fold": null
+  }
+ },
+ "historical_figure|pythia-2.8b": {
+  "grouped": {
+   "pooled_r2": [
+    0.107
+   ],
+   "pooled_medae": [
+    223.64
+   ],
+   "per_fold": {
+    "0": {
+     "death_year": {
+      "r2": -2.811,
+      "mae": 657.99,
+      "medae": 543.67
+     }
+    },
+    "1": {
+     "death_year": {
+      "r2": -15.577,
+      "mae": 213.54,
+      "medae": 183.11
+     }
+    },
+    "2": {
+     "death_year": {
+      "r2": -11.855,
+      "mae": 167.15,
+      "medae": 133.77
+     }
+    },
+    "3": {
+     "death_year": {
+      "r2": -10.69,
+      "mae": 160.04,
+      "medae": 129.53
+     }
+    },
+    "4": {
+     "death_year": {
+      "r2": -36.716,
+      "mae": 336.9,
+      "medae": 335.69
+     }
+    }
+   }
+  },
+  "random": {
+   "pooled_r2": [
+    0.694
+   ],
+   "pooled_medae": [
+    133.74
+   ],
+   "per_fold": null
+  }
+ },
+ "historical_figure|llama-2-7b": {
+  "grouped": {
+   "pooled_r2": [
+    0.194
+   ],
+   "pooled_medae": [
+    180.01
+   ],
+   "per_fold": {
+    "0": {
+     "death_year": {
+      "r2": -2.608,
+      "mae": 627.18,
+      "medae": 512.65
+     }
+    },
+    "1": {
+     "death_year": {
+      "r2": -11.015,
+      "mae": 170.37,
+      "medae": 129.82
+     }
+    },
+    "2": {
+     "death_year": {
+      "r2": -8.691,
+      "mae": 137.98,
+      "medae": 102.75
+     }
+    },
+    "3": {
+     "death_year": {
+      "r2": -6.309,
+      "mae": 123.12,
+      "medae": 96.82
+     }
+    },
+    "4": {
+     "death_year": {
+      "r2": -34.898,
+      "mae": 329.36,
+      "medae": 329.57
+     }
+    }
+   }
+  },
+  "random": {
+   "pooled_r2": [
+    0.782
+   ],
+   "pooled_medae": [
+    95.92
+   ],
+   "per_fold": null
+  }
+ }
+}

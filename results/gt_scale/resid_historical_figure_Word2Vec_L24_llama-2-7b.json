@@ -1,0 +1,34 @@
+{
+ "dataset": "historical_figure",
+ "static": "Word2Vec",
+ "layer": 24,
+ "n_train": 29030,
+ "n_test": 7255,
+ "targets": [
+  "death_year"
+ ],
+ "static_direct": [
+  0.422
+ ],
+ "full": [
+  0.778
+ ],
+ "map_alpha": 10.0,
+ "projection": [
+  0.422
+ ],
+ "residual": [
+  0.331
+ ],
+ "var_removed": 0.055,
+ "varmatched_k": 229,
+ "varmatched_removed": 0.056,
+ "varmatched_null": [
+  0.778
+ ],
+ "shuffled_removed": 0.004,
+ "shuffled_null": [
+  0.777
+ ],
+ "model": "llama-2-7b"
+}

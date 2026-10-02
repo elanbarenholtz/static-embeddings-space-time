@@ -1,0 +1,52 @@
+[
+ {
+  "rep": "GloVe",
+  "n_test": 6690,
+  "r2_latitude": 0.469,
+  "within_continent_latitude": 0.334,
+  "within_country_latitude": 0.062,
+  "r2_longitude": 0.526,
+  "within_continent_longitude": 0.137,
+  "within_country_longitude": 0.053
+ },
+ {
+  "rep": "Word2Vec",
+  "n_test": 6690,
+  "r2_latitude": 0.535,
+  "within_continent_latitude": 0.389,
+  "within_country_latitude": 0.078,
+  "r2_longitude": 0.571,
+  "within_continent_longitude": 0.178,
+  "within_country_longitude": 0.062
+ },
+ {
+  "rep": "pythia L0",
+  "n_test": 6690,
+  "r2_latitude": 0.503,
+  "within_continent_latitude": 0.362,
+  "within_country_latitude": 0.108,
+  "r2_longitude": 0.567,
+  "within_continent_longitude": 0.15,
+  "within_country_longitude": 0.065
+ },
+ {
+  "rep": "pythia L24",
+  "n_test": 6690,
+  "r2_latitude": 0.755,
+  "within_continent_latitude": 0.638,
+  "within_country_latitude": 0.203,
+  "r2_longitude": 0.788,
+  "within_continent_longitude": 0.332,
+  "within_country_longitude": 0.12
+ },
+ {
+  "rep": "pythia L24 (300 PCs)",
+  "n_test": 6690,
+  "r2_latitude": 0.738,
+  "within_continent_latitude": 0.614,
+  "within_country_latitude": 0.184,
+  "r2_longitude": 0.776,
+  "within_continent_longitude": 0.308,
+  "within_country_longitude": 0.101
+ }
+]

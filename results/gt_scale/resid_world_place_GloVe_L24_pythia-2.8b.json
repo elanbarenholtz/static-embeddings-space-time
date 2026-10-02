@@ -1,0 +1,41 @@
+{
+ "dataset": "world_place",
+ "static": "GloVe",
+ "layer": 24,
+ "n_train": 26805,
+ "n_test": 6690,
+ "targets": [
+  "latitude",
+  "longitude"
+ ],
+ "static_direct": [
+  0.469,
+  0.526
+ ],
+ "full": [
+  0.755,
+  0.788
+ ],
+ "map_alpha": 10.0,
+ "projection": [
+  0.468,
+  0.525
+ ],
+ "residual": [
+  0.287,
+  0.243
+ ],
+ "var_removed": 0.333,
+ "varmatched_k": 855,
+ "varmatched_removed": 0.333,
+ "varmatched_null": [
+  0.748,
+  0.782
+ ],
+ "shuffled_removed": 0.008,
+ "shuffled_null": [
+  0.752,
+  0.785
+ ],
+ "model": "pythia-2.8b"
+}

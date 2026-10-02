@@ -1,0 +1,134 @@
+{
+ "world_place|t0|pythia-GloVe": {
+  "diff": 0.287,
+  "items": [
+   0.271,
+   0.303
+  ],
+  "clusters": [
+   0.246,
+   0.456
+  ]
+ },
+ "world_place|t0|pythia-Word2Vec": {
+  "diff": 0.22,
+  "items": [
+   0.203,
+   0.238
+  ],
+  "clusters": [
+   0.184,
+   0.364
+  ]
+ },
+ "world_place|t0|llama-GloVe": {
+  "diff": 0.406,
+  "items": [
+   0.388,
+   0.424
+  ],
+  "clusters": [
+   0.343,
+   0.634
+  ]
+ },
+ "world_place|t0|llama-Word2Vec": {
+  "diff": 0.34,
+  "items": [
+   0.322,
+   0.356
+  ],
+  "clusters": [
+   0.289,
+   0.549
+  ]
+ },
+ "world_place|t1|pythia-GloVe": {
+  "diff": 0.261,
+  "items": [
+   0.246,
+   0.277
+  ],
+  "clusters": [
+   0.224,
+   0.44
+  ]
+ },
+ "world_place|t1|pythia-Word2Vec": {
+  "diff": 0.216,
+  "items": [
+   0.202,
+   0.232
+  ],
+  "clusters": [
+   0.185,
+   0.35
+  ]
+ },
+ "world_place|t1|llama-GloVe": {
+  "diff": 0.357,
+  "items": [
+   0.341,
+   0.373
+  ],
+  "clusters": [
+   0.301,
+   0.583
+  ]
+ },
+ "world_place|t1|llama-Word2Vec": {
+  "diff": 0.312,
+  "items": [
+   0.298,
+   0.328
+  ],
+  "clusters": [
+   0.268,
+   0.506
+  ]
+ },
+ "historical_figure|t0|pythia-GloVe": {
+  "diff": 0.205,
+  "items": [
+   0.189,
+   0.222
+  ],
+  "clusters": [
+   0.183,
+   0.262
+  ]
+ },
+ "historical_figure|t0|pythia-Word2Vec": {
+  "diff": 0.285,
+  "items": [
+   0.266,
+   0.303
+  ],
+  "clusters": [
+   0.261,
+   0.359
+  ]
+ },
+ "historical_figure|t0|llama-GloVe": {
+  "diff": 0.284,
+  "items": [
+   0.267,
+   0.301
+  ],
+  "clusters": [
+   0.255,
+   0.358
+  ]
+ },
+ "historical_figure|t0|llama-Word2Vec": {
+  "diff": 0.364,
+  "items": [
+   0.346,
+   0.384
+  ],
+  "clusters": [
+   0.33,
+   0.465
+  ]
+ }
+}

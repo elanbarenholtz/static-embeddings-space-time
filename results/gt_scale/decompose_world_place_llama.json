@@ -1,0 +1,52 @@
+[
+ {
+  "rep": "GloVe",
+  "n_test": 6690,
+  "r2_latitude": 0.469,
+  "within_continent_latitude": 0.334,
+  "within_country_latitude": 0.062,
+  "r2_longitude": 0.526,
+  "within_continent_longitude": 0.137,
+  "within_country_longitude": 0.053
+ },
+ {
+  "rep": "Word2Vec",
+  "n_test": 6690,
+  "r2_latitude": 0.535,
+  "within_continent_latitude": 0.389,
+  "within_country_latitude": 0.078,
+  "r2_longitude": 0.571,
+  "within_continent_longitude": 0.178,
+  "within_country_longitude": 0.062
+ },
+ {
+  "rep": "llama L0",
+  "n_test": 6690,
+  "r2_latitude": 0.494,
+  "within_continent_latitude": 0.362,
+  "within_country_latitude": 0.102,
+  "r2_longitude": 0.559,
+  "within_continent_longitude": 0.144,
+  "within_country_longitude": 0.053
+ },
+ {
+  "rep": "llama L24",
+  "n_test": 6690,
+  "r2_latitude": 0.875,
+  "within_continent_latitude": 0.803,
+  "within_country_latitude": 0.348,
+  "r2_longitude": 0.884,
+  "within_continent_longitude": 0.504,
+  "within_country_longitude": 0.225
+ },
+ {
+  "rep": "llama L24 (300 PCs)",
+  "n_test": 6690,
+  "r2_latitude": 0.857,
+  "within_continent_latitude": 0.774,
+  "within_country_latitude": 0.289,
+  "r2_longitude": 0.865,
+  "within_continent_longitude": 0.447,
+  "within_country_longitude": 0.177
+ }
+]

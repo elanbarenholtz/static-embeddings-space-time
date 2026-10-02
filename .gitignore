@@ -31,3 +31,17 @@ paper/arxiv_upload/
 
 # OS
 .DS_Store
+
+# External data and large intermediates (see README)
+gt_scale/data/
+review_v2/data/
+review_v2/painrepo/
+review_v2/cache/
+city_resource/raw/wc_tavg/
+city_resource/raw/*.zip
+city_resource/cache/
+*.npy
+*.npz
+*.vec
+*.gz
+glove.6B.*d.txt

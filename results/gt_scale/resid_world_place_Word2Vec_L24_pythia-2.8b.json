@@ -1,0 +1,41 @@
+{
+ "dataset": "world_place",
+ "static": "Word2Vec",
+ "layer": 24,
+ "n_train": 26288,
+ "n_test": 6575,
+ "targets": [
+  "latitude",
+  "longitude"
+ ],
+ "static_direct": [
+  0.541,
+  0.575
+ ],
+ "full": [
+  0.756,
+  0.791
+ ],
+ "map_alpha": 10.0,
+ "projection": [
+  0.54,
+  0.575
+ ],
+ "residual": [
+  0.212,
+  0.201
+ ],
+ "var_removed": 0.34,
+ "varmatched_k": 873,
+ "varmatched_removed": 0.34,
+ "varmatched_null": [
+  0.751,
+  0.785
+ ],
+ "shuffled_removed": 0.004,
+ "shuffled_null": [
+  0.755,
+  0.79
+ ],
+ "model": "pythia-2.8b"
+}

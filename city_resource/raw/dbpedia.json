@@ -1,0 +1,4164 @@
+{
+ "Anchorage": {
+  "resource": "http://dbpedia.org/resource/Anchorage,_Alaska",
+  "lat": [
+   "61.21666717529297"
+  ],
+  "long": [
+   "-149.8936157226562"
+  ],
+  "elevation": [
+   "31.0896"
+  ],
+  "foundingDate": [
+   "1920-11-23",
+   "1964-01-01",
+   "1975-09-15"
+  ],
+  "populationTotal": [
+   "291247"
+  ]
+ },
+ "Fairbanks": {
+  "resource": "http://dbpedia.org/resource/Fairbanks,_Alaska",
+  "lat": [
+   "64.84361267089844"
+  ],
+  "long": [
+   "-147.7230529785156"
+  ],
+  "elevation": [
+   "135.9408"
+  ],
+  "foundingDate": [
+   "1903-11-10"
+  ],
+  "populationTotal": [
+   "32515"
+  ]
+ },
+ "Juneau": {
+  "resource": "http://dbpedia.org/resource/Juneau,_Alaska",
+  "lat": [
+   "58.29999923706055",
+   "64.06849670410156"
+  ],
+  "long": [
+   "-154.2781982421875",
+   "-134.4161071777344"
+  ],
+  "elevation": [
+   "10.0",
+   "10.0584"
+  ],
+  "foundingDate": [
+   "1963-09-30",
+   "1970-07-01"
+  ],
+  "populationTotal": [
+   "32255"
+  ]
+ },
+ "Vancouver": {
+  "resource": "http://dbpedia.org/resource/Vancouver",
+  "lat": [
+   "49.26083374023438"
+  ],
+  "long": [
+   "-123.1138916015625"
+  ],
+  "foundingDate": [
+   "1870-03-10",
+   "1886-04-06",
+   "1929-01-01"
+  ],
+  "populationTotal": [
+   "662248"
+  ]
+ },
+ "Seattle": {
+  "resource": "http://dbpedia.org/resource/Seattle",
+  "lat": [
+   "39.82805633544922",
+   "47.60388946533203"
+  ],
+  "long": [
+   "-122.3300018310547",
+   "-101.0"
+  ],
+  "elevation": [
+   "45.1104"
+  ],
+  "foundingDate": [
+   "1851-11-13",
+   "1865-01-14",
+   "1869-12-02"
+  ],
+  "populationTotal": [
+   "737015"
+  ]
+ },
+ "Portland": {
+  "resource": "http://dbpedia.org/resource/Portland,_Oregon",
+  "lat": [
+   "45.52000045776367"
+  ],
+  "long": [
+   "-122.6819458007812"
+  ],
+  "elevation": [
+   "49.0728"
+  ],
+  "foundingDate": [
+   "1851-02-08"
+  ],
+  "populationTotal": [
+   "652503"
+  ]
+ },
+ "San Francisco": {
+  "resource": "http://dbpedia.org/resource/San_Francisco",
+  "lat": [
+   "37.78333282470703"
+  ],
+  "long": [
+   "-122.4166641235352"
+  ],
+  "elevation": [
+   "15.8496"
+  ],
+  "foundingDate": [
+   "1776-06-29",
+   "1850-04-15"
+  ],
+  "populationTotal": [
+   "873965"
+  ]
+ },
+ "Los Angeles": {
+  "resource": "http://dbpedia.org/resource/Los_Angeles",
+  "lat": [
+   "34.04999923706055"
+  ],
+  "long": [
+   "-118.25"
+  ],
+  "elevation": [
+   "71.0",
+   "71.0184"
+  ],
+  "foundingDate": [
+   "1781-09-04",
+   "1835-05-23",
+   "1850-04-04"
+  ],
+  "populationTotal": [
+   "3898747"
+  ]
+ },
+ "San Diego": {
+  "resource": "http://dbpedia.org/resource/San_Diego",
+  "lat": [
+   "32.71500015258789"
+  ],
+  "long": [
+   "-117.1624984741211"
+  ],
+  "foundingDate": [
+   "1769-07-16",
+   "1850-03-27"
+  ],
+  "populationTotal": [
+   "1386932"
+  ]
+ },
+ "Las Vegas": {
+  "resource": "http://dbpedia.org/resource/Las_Vegas",
+  "lat": [
+   "36.25"
+  ],
+  "long": [
+   "-115.25"
+  ],
+  "elevation": [
+   "609.9048",
+   "610.0"
+  ],
+  "foundingDate": [
+   "1905-05-15",
+   "1911-03-16"
+  ],
+  "populationTotal": [
+   "641903"
+  ]
+ },
+ "Phoenix": {
+  "resource": "http://dbpedia.org/resource/Phoenix,_Arizona",
+  "lat": [
+   "33.44833374023438",
+   "33.58530044555664"
+  ],
+  "long": [
+   "-112.0738983154297",
+   "-112.0738906860352"
+  ],
+  "elevation": [
+   "331.0",
+   "331.0128"
+  ],
+  "foundingDate": [
+   "1881-02-25"
+  ],
+  "populationTotal": [
+   "1608139"
+  ]
+ },
+ "Salt Lake City": {
+  "resource": "http://dbpedia.org/resource/Salt_Lake_City",
+  "lat": [
+   "40.76083374023438",
+   "40.77083206176758"
+  ],
+  "long": [
+   "-111.9211120605469",
+   "-111.89111328125"
+  ],
+  "elevation": [
+   "1299.972",
+   "1300.0"
+  ],
+  "populationTotal": [
+   "199723"
+  ]
+ },
+ "Denver": {
+  "resource": "http://dbpedia.org/resource/Denver",
+  "lat": [
+   "39.73920059204102"
+  ],
+  "long": [
+   "-104.9849014282227"
+  ],
+  "elevation": [
+   "1609.344"
+  ],
+  "foundingDate": [
+   "1858-11-17",
+   "1861-11-07",
+   "1902-12-01"
+  ],
+  "populationTotal": [
+   "715522"
+  ]
+ },
+ "Albuquerque": {
+  "resource": "http://dbpedia.org/resource/Albuquerque,_New_Mexico",
+  "lat": [
+   "35.08499908447266"
+  ],
+  "long": [
+   "-106.6500015258789"
+  ],
+  "elevation": [
+   "1619.0976"
+  ],
+  "populationTotal": [
+   "564559"
+  ]
+ },
+ "El Paso": {
+  "resource": "http://dbpedia.org/resource/El_Paso,_Texas",
+  "lat": [
+   "31.7591667175293"
+  ],
+  "long": [
+   "-106.4886093139648"
+  ],
+  "elevation": [
+   "1185.0624"
+  ],
+  "populationTotal": [
+   "681723"
+  ]
+ },
+ "Dallas": {
+  "resource": "http://dbpedia.org/resource/Dallas",
+  "lat": [
+   "32.77916717529297"
+  ],
+  "long": [
+   "-96.80889129638672"
+  ],
+  "elevation": [
+   "146.9136"
+  ],
+  "foundingDate": [
+   "1856-02-02"
+  ],
+  "populationTotal": [
+   "1304379"
+  ]
+ },
+ "Houston": {
+  "resource": "http://dbpedia.org/resource/Houston",
+  "lat": [
+   "29.76277732849121"
+  ],
+  "long": [
+   "-95.383056640625"
+  ],
+  "elevation": [
+   "24.384",
+   "32.0"
+  ],
+  "foundingDate": [
+   "1837-06-05"
+  ],
+  "populationTotal": [
+   "2304580"
+  ]
+ },
+ "San Antonio": {
+  "resource": "http://dbpedia.org/resource/San_Antonio",
+  "elevation": [
+   "220.0656"
+  ],
+  "foundingDate": [
+   "1718-05-01",
+   "1837-06-05"
+  ],
+  "populationTotal": [
+   "1434625"
+  ]
+ },
+ "Austin": {
+  "resource": "http://dbpedia.org/resource/Austin,_Texas",
+  "lat": [
+   "39.5"
+  ],
+  "long": [
+   "-98.34999847412109"
+  ]
+ },
+ "New Orleans": {
+  "resource": "http://dbpedia.org/resource/New_Orleans",
+  "lat": [
+   "29.99984931945801"
+  ],
+  "long": [
+   "-89.92427825927734"
+  ],
+  "elevation": [
+   "-2.0",
+   "-1.9812"
+  ],
+  "populationTotal": [
+   "383997"
+  ]
+ },
+ "Minneapolis": {
+  "resource": "http://dbpedia.org/resource/Minneapolis",
+  "lat": [
+   "44.9819450378418",
+   "44.99861145019531"
+  ],
+  "long": [
+   "-93.48583221435547",
+   "-93.2691650390625"
+  ],
+  "elevation": [
+   "252.984"
+  ],
+  "populationTotal": [
+   "429954"
+  ]
+ },
+ "Chicago": {
+  "resource": "http://dbpedia.org/resource/Chicago",
+  "lat": [
+   "41.88194274902344"
+  ],
+  "long": [
+   "-87.62777709960938"
+  ],
+  "elevation": [
+   "182.020464"
+  ],
+  "foundingDate": [
+   "1833-08-12",
+   "1837-03-04"
+  ],
+  "populationTotal": [
+   "2746388"
+  ]
+ },
+ "Detroit": {
+  "resource": "http://dbpedia.org/resource/Detroit",
+  "lat": [
+   "42.33333206176758"
+  ],
+  "long": [
+   "-83.05000305175781"
+  ],
+  "elevation": [
+   "199.9488"
+  ],
+  "foundingDate": [
+   "1701-07-24",
+   "1806-09-13"
+  ],
+  "populationTotal": [
+   "639111"
+  ]
+ },
+ "Indianapolis": {
+  "resource": "http://dbpedia.org/resource/Indianapolis",
+  "lat": [
+   "39.76861190795898"
+  ],
+  "long": [
+   "-86.15805816650391"
+  ],
+  "elevation": [
+   "218.8464",
+   "219.0"
+  ],
+  "foundingDate": [
+   "1821-01-06",
+   "1831-09-03",
+   "1847-03-30"
+  ],
+  "populationTotal": [
+   "887642"
+  ]
+ },
+ "Columbus": {
+  "resource": "http://dbpedia.org/resource/Columbus,_Ohio",
+  "lat": [
+   "39.96222305297852"
+  ],
+  "long": [
+   "-83.00055694580078"
+  ],
+  "elevation": [
+   "241.0968"
+  ],
+  "foundingDate": [
+   "1812-02-14",
+   "1816-02-10"
+  ],
+  "populationTotal": [
+   "905748"
+  ]
+ },
+ "Cleveland": {
+  "resource": "http://dbpedia.org/resource/Cleveland",
+  "lat": [
+   "41.5"
+  ],
+  "long": [
+   "-81.6875"
+  ],
+  "elevation": [
+   "199.0344"
+  ],
+  "foundingDate": [
+   "1796-07-22",
+   "1814-12-23",
+   "1836-03-05"
+  ],
+  "populationTotal": [
+   "372624"
+  ]
+ },
+ "Pittsburgh": {
+  "resource": "http://dbpedia.org/resource/Pittsburgh",
+  "lat": [
+   "40.43972396850586",
+   "40.43999862670898"
+  ],
+  "long": [
+   "-79.98999786376953",
+   "-79.97638702392578"
+  ],
+  "foundingDate": [
+   "1758-11-27",
+   "1794-04-22",
+   "1816-03-18"
+  ],
+  "populationTotal": [
+   "302971"
+  ]
+ },
+ "Nashville": {
+  "resource": "http://dbpedia.org/resource/Nashville,_Tennessee",
+  "lat": [
+   "36.16222381591797"
+  ],
+  "long": [
+   "-86.77444458007812"
+  ],
+  "elevation": [
+   "168.8592",
+   "169.0"
+  ],
+  "foundingDate": [
+   "1806-09-11"
+  ],
+  "populationTotal": [
+   "715884"
+  ]
+ },
+ "Memphis": {
+  "resource": "http://dbpedia.org/resource/Memphis,_Tennessee",
+  "lat": [
+   "35.14611053466797"
+  ],
+  "long": [
+   "-90.05194091796875"
+  ],
+  "elevation": [
+   "102.7176",
+   "103.0"
+  ],
+  "foundingDate": [
+   "1819-05-22",
+   "1826-12-19",
+   "1879-01-31"
+  ],
+  "populationTotal": [
+   "633104"
+  ]
+ },
+ "Atlanta": {
+  "resource": "http://dbpedia.org/resource/Atlanta",
+  "lat": [
+   "33.7488899230957"
+  ],
+  "long": [
+   "-84.38999938964844"
+  ],
+  "elevation": [
+   "320.0",
+   "320.04"
+  ],
+  "foundingDate": [
+   "1847-12-29"
+  ],
+  "populationTotal": [
+   "498715"
+  ]
+ },
+ "Miami": {
+  "resource": "http://dbpedia.org/resource/Miami",
+  "lat": [
+   "25.78000068664551"
+  ],
+  "long": [
+   "-80.20999908447266"
+  ],
+  "elevation": [
+   "1.8",
+   "1.8288"
+  ],
+  "foundingDate": [
+   "1896-07-28"
+  ],
+  "populationTotal": [
+   "442241"
+  ]
+ },
+ "Tampa": {
+  "resource": "http://dbpedia.org/resource/Tampa,_Florida",
+  "lat": [
+   "27.94750022888184"
+  ],
+  "long": [
+   "-82.45861053466797"
+  ],
+  "elevation": [
+   "14.6",
+   "14.6304"
+  ],
+  "foundingDate": [
+   "1849-01-18",
+   "1853-09-10",
+   "1855-12-15",
+   "1873-08-11",
+   "1887-07-15"
+  ],
+  "populationTotal": [
+   "384959"
+  ]
+ },
+ "Orlando": {
+  "resource": "http://dbpedia.org/resource/Orlando,_Florida",
+  "lat": [
+   "28.54000091552734"
+  ],
+  "long": [
+   "-81.37999725341797"
+  ],
+  "elevation": [
+   "27.1272"
+  ],
+  "foundingDate": [
+   "1875-07-31",
+   "1885-02-04"
+  ],
+  "populationTotal": [
+   "307573"
+  ]
+ },
+ "Jacksonville": {
+  "resource": "http://dbpedia.org/resource/Jacksonville,_Florida",
+  "lat": [
+   "30.33694458007812"
+  ],
+  "long": [
+   "-81.66139221191406"
+  ]
+ },
+ "Charlotte": {
+  "resource": "http://dbpedia.org/resource/Charlotte,_North_Carolina",
+  "lat": [
+   "35.22722244262695"
+  ],
+  "long": [
+   "-80.84305572509766"
+  ],
+  "elevation": [
+   "205.1304"
+  ],
+  "foundingDate": [
+   "1768-12-03"
+  ],
+  "populationTotal": [
+   "874579"
+  ]
+ },
+ "Washington": {
+  "resource": "http://dbpedia.org/resource/Washington,_D.C.",
+  "lat": [
+   "38.90472412109375"
+  ],
+  "long": [
+   "-77.01638793945312"
+  ],
+  "foundingDate": [
+   "1790-07-16",
+   "1801-02-27",
+   "1871-02-21",
+   "1973-12-24"
+  ],
+  "populationTotal": [
+   "689545"
+  ]
+ },
+ "Baltimore": {
+  "resource": "http://dbpedia.org/resource/Baltimore",
+  "lat": [
+   "39.28944396972656"
+  ],
+  "long": [
+   "-76.61528015136719"
+  ],
+  "elevation": [
+   "0.0"
+  ],
+  "foundingDate": [
+   "1729-08-08"
+  ],
+  "populationTotal": [
+   "585708"
+  ]
+ },
+ "Philadelphia": {
+  "resource": "http://dbpedia.org/resource/Philadelphia",
+  "elevation": [
+   "11.8872",
+   "12.0"
+  ],
+  "foundingDate": [
+   "1701-10-25"
+  ],
+  "populationTotal": [
+   "1603797"
+  ]
+ },
+ "New York": {
+  "resource": "http://dbpedia.org/resource/New_York_City",
+  "populationTotal": [
+   "8804190"
+  ]
+ },
+ "Newark": {
+  "resource": "http://dbpedia.org/resource/Newark,_New_Jersey",
+  "lat": [
+   "40.72999954223633"
+  ],
+  "long": [
+   "-74.18000030517578"
+  ],
+  "elevation": [
+   "3.9624"
+  ],
+  "foundingDate": [
+   "1693-10-31",
+   "1836-04-11"
+  ],
+  "populationTotal": [
+   "311549"
+  ]
+ },
+ "Boston": {
+  "resource": "http://dbpedia.org/resource/Boston",
+  "lat": [
+   "42.31861114501953",
+   "42.36027908325195"
+  ],
+  "long": [
+   "-71.05777740478516",
+   "-70.99111175537109"
+  ],
+  "elevation": [
+   "14.0",
+   "14.0208"
+  ],
+  "foundingDate": [
+   "1630-09-07",
+   "1630-09-17",
+   "1822-03-19"
+  ],
+  "populationTotal": [
+   "675647"
+  ]
+ },
+ "Montreal": {
+  "resource": "http://dbpedia.org/resource/Montreal",
+  "lat": [
+   "45.50888824462891"
+  ],
+  "long": [
+   "-73.55416870117188"
+  ],
+  "foundingDate": [
+   "1642-05-17",
+   "2002-01-01"
+  ],
+  "populationTotal": [
+   "1762949"
+  ]
+ },
+ "Toronto": {
+  "resource": "http://dbpedia.org/resource/Toronto",
+  "lat": [
+   "43.65250015258789"
+  ],
+  "long": [
+   "-79.38166809082031"
+  ],
+  "foundingDate": [
+   "1793-08-27",
+   "1834-03-06",
+   "1953-01-20",
+   "1998-01-01"
+  ],
+  "populationTotal": [
+   "2794356"
+  ]
+ },
+ "Ottawa": {
+  "resource": "http://dbpedia.org/resource/Ottawa",
+  "lat": [
+   "45.42472076416016"
+  ],
+  "long": [
+   "-75.69499969482422"
+  ],
+  "elevation": [
+   "70.0",
+   "70.104"
+  ],
+  "foundingDate": [
+   "2001-01-01"
+  ],
+  "populationTotal": [
+   "1017449"
+  ]
+ },
+ "Calgary": {
+  "resource": "http://dbpedia.org/resource/Calgary",
+  "elevation": [
+   "1045.0"
+  ],
+  "foundingDate": [
+   "1884-11-07",
+   "1894-01-01"
+  ],
+  "populationTotal": [
+   "1306784"
+  ]
+ },
+ "Edmonton": {
+  "resource": "http://dbpedia.org/resource/Edmonton",
+  "lat": [
+   "53.53444290161133"
+  ],
+  "long": [
+   "-113.4902801513672"
+  ],
+  "elevation": [
+   "645.0"
+  ],
+  "foundingDate": [
+   "1892-01-09",
+   "1904-10-08"
+  ],
+  "populationTotal": [
+   "1010899"
+  ]
+ },
+ "Winnipeg": {
+  "resource": "http://dbpedia.org/resource/Winnipeg",
+  "lat": [
+   "49.89555740356445"
+  ],
+  "long": [
+   "-97.13861083984375"
+  ],
+  "elevation": [
+   "239.0"
+  ],
+  "populationTotal": [
+   "749607"
+  ]
+ },
+ "Quebec City": {
+  "resource": "http://dbpedia.org/resource/Quebec_City",
+  "lat": [
+   "46.81388854980469"
+  ],
+  "long": [
+   "-71.20805358886719"
+  ],
+  "elevation": [
+   "98.0"
+  ],
+  "foundingDate": [
+   "1535-10-11",
+   "1608-07-03",
+   "2002-01-01"
+  ],
+  "populationTotal": [
+   "549459"
+  ]
+ },
+ "Halifax": {
+  "resource": "http://dbpedia.org/resource/Halifax,_Nova_Scotia",
+  "lat": [
+   "44.64749908447266"
+  ],
+  "long": [
+   "-63.59055709838867"
+  ],
+  "foundingDate": [
+   "1996-04-01"
+  ],
+  "populationTotal": [
+   "439819"
+  ]
+ },
+ "Mexico City": {
+  "resource": "http://dbpedia.org/resource/Mexico_City",
+  "lat": [
+   "19.4333324432373"
+  ],
+  "long": [
+   "-99.13333129882812"
+  ],
+  "elevation": [
+   "2240.0"
+  ],
+  "foundingDate": [
+   "1325-03-13",
+   "1521-08-13",
+   "1824-11-18",
+   "2016-01-29"
+  ],
+  "populationTotal": [
+   "9209944"
+  ]
+ },
+ "Guadalajara": {
+  "resource": "http://dbpedia.org/resource/Guadalajara",
+  "lat": [
+   "20.67666625976562"
+  ],
+  "long": [
+   "-103.3475036621094"
+  ],
+  "elevation": [
+   "1566.0",
+   "1566.0624"
+  ],
+  "foundingDate": [
+   "1542-02-14"
+  ],
+  "populationTotal": [
+   "1385629"
+  ]
+ },
+ "Monterrey": {
+  "resource": "http://dbpedia.org/resource/Monterrey",
+  "elevation": [
+   "540.0"
+  ],
+  "foundingDate": [
+   "1596-09-20"
+  ],
+  "populationTotal": [
+   "1142952"
+  ]
+ },
+ "Havana": {
+  "resource": "http://dbpedia.org/resource/Havana",
+  "lat": [
+   "23.13666725158691"
+  ],
+  "long": [
+   "-82.35888671875"
+  ],
+  "elevation": [
+   "59.0",
+   "59.436"
+  ],
+  "foundingDate": [
+   "1519-11-16"
+  ],
+  "populationTotal": [
+   "2137847"
+  ]
+ },
+ "Kingston": {
+  "resource": "http://dbpedia.org/resource/Kingston,_Jamaica",
+  "lat": [
+   "17.97138977050781"
+  ],
+  "long": [
+   "-76.79305267333984"
+  ],
+  "elevation": [
+   "9.0",
+   "9.144"
+  ],
+  "foundingDate": [
+   "1692-07-22"
+  ],
+  "populationTotal": [
+   "662435"
+  ]
+ },
+ "San Jose CR": {
+  "resource": "http://dbpedia.org/resource/San_José,_Costa_Rica",
+  "lat": [
+   "9.932499885559082"
+  ],
+  "long": [
+   "-84.08000183105469"
+  ],
+  "elevation": [
+   "1172.0"
+  ],
+  "foundingDate": [
+   "1823-05-16"
+  ],
+  "populationTotal": [
+   "352381"
+  ]
+ },
+ "Panama City": {
+  "resource": "http://dbpedia.org/resource/Panama_City",
+  "elevation": [
+   "2.0"
+  ],
+  "foundingDate": [
+   "1519-08-15"
+  ],
+  "populationTotal": [
+   "410354"
+  ]
+ },
+ "Guatemala City": {
+  "resource": "http://dbpedia.org/resource/Guatemala_City",
+  "lat": [
+   "14.65055561065674"
+  ],
+  "long": [
+   "-90.49028015136719"
+  ],
+  "elevation": [
+   "1500.0"
+  ],
+  "populationTotal": [
+   "1221739"
+  ]
+ },
+ "Tegucigalpa": {
+  "resource": "http://dbpedia.org/resource/Tegucigalpa",
+  "lat": [
+   "14.10583305358887"
+  ],
+  "long": [
+   "-87.20471954345703"
+  ],
+  "elevation": [
+   "990.0"
+  ],
+  "foundingDate": [
+   "1578-09-29",
+   "1880-10-30",
+   "1937-01-30"
+  ],
+  "populationTotal": [
+   "1326460"
+  ]
+ },
+ "Managua": {
+  "resource": "http://dbpedia.org/resource/Managua",
+  "lat": [
+   "12.13638877868652"
+  ],
+  "long": [
+   "-86.25138854980469"
+  ],
+  "elevation": [
+   "82.97"
+  ],
+  "populationTotal": [
+   "1061054"
+  ]
+ },
+ "Bogota": {
+  "resource": "http://dbpedia.org/resource/Bogotá",
+  "lat": [
+   "4.711111068725586"
+  ],
+  "long": [
+   "-74.07221984863281"
+  ],
+  "elevation": [
+   "2640.0"
+  ],
+  "foundingDate": [
+   "1538-08-06"
+  ],
+  "populationTotal": [
+   "8034649"
+  ]
+ },
+ "Medellin": {
+  "resource": "http://dbpedia.org/resource/Medellín",
+  "lat": [
+   "6.230833530426025"
+  ],
+  "long": [
+   "-75.59055328369141"
+  ],
+  "elevation": [
+   "1495.0"
+  ],
+  "foundingDate": [
+   "1616-03-02"
+  ],
+  "populationTotal": [
+   "2427129"
+  ]
+ },
+ "Quito": {
+  "resource": "http://dbpedia.org/resource/Quito",
+  "lat": [
+   "-0.2199999988079071"
+  ],
+  "long": [
+   "-78.51249694824219"
+  ],
+  "elevation": [
+   "2849.88",
+   "2850.0"
+  ],
+  "foundingDate": [
+   "1534-12-06"
+  ],
+  "populationTotal": [
+   "1763275"
+  ]
+ },
+ "Lima": {
+  "resource": "http://dbpedia.org/resource/Lima",
+  "lat": [
+   "-12.0600004196167"
+  ],
+  "long": [
+   "-77.03749847412109"
+  ],
+  "elevation": [
+   "0.0"
+  ],
+  "foundingDate": [
+   "1535-01-18"
+  ],
+  "populationTotal": [
+   "10092000"
+  ]
+ },
+ "La Paz": {
+  "resource": "http://dbpedia.org/resource/La_Paz",
+  "lat": [
+   "-16.4958324432373"
+  ],
+  "long": [
+   "-68.13333129882812"
+  ],
+  "elevation": [
+   "3649.98",
+   "3650.0"
+  ],
+  "foundingDate": [
+   "1548-10-20",
+   "1809-07-16"
+  ],
+  "populationTotal": [
+   "755732"
+  ]
+ },
+ "Santiago": {
+  "resource": "http://dbpedia.org/resource/Santiago",
+  "lat": [
+   "-33.4375"
+  ],
+  "long": [
+   "-70.65000152587891"
+  ],
+  "elevation": [
+   "569.976",
+   "570.0"
+  ],
+  "foundingDate": [
+   "1541-02-12"
+  ],
+  "populationTotal": [
+   "6269384"
+  ]
+ },
+ "Buenos Aires": {
+  "resource": "http://dbpedia.org/resource/Buenos_Aires",
+  "lat": [
+   "-34.60388946533203"
+  ],
+  "long": [
+   "-58.38138961791992"
+  ],
+  "elevation": [
+   "24.9936",
+   "25.0"
+  ],
+  "foundingDate": [
+   "1580-06-11"
+  ],
+  "populationTotal": [
+   "3121707"
+  ]
+ },
+ "Montevideo": {
+  "resource": "http://dbpedia.org/resource/Montevideo",
+  "lat": [
+   "-34.90555572509766"
+  ],
+  "long": [
+   "-56.18416595458984"
+  ],
+  "elevation": [
+   "43.0"
+  ]
+ },
+ "Asuncion": {
+  "resource": "http://dbpedia.org/resource/Asunción",
+  "lat": [
+   "-25.28000068664551"
+  ],
+  "long": [
+   "-57.63444519042969"
+  ],
+  "elevation": [
+   "120.0",
+   "120.0912"
+  ],
+  "foundingDate": [
+   "1537-08-15"
+  ],
+  "populationTotal": [
+   "462241"
+  ]
+ },
+ "Brasilia": {
+  "resource": "http://dbpedia.org/resource/Brasília",
+  "lat": [
+   "-15.79388904571533"
+  ],
+  "long": [
+   "-47.88277816772461"
+  ],
+  "elevation": [
+   "1172.0"
+  ],
+  "foundingDate": [
+   "1960-04-21"
+  ],
+  "populationTotal": [
+   "2982818"
+  ]
+ },
+ "Sao Paulo": {
+  "resource": "http://dbpedia.org/resource/São_Paulo",
+  "lat": [
+   "-23.54999923706055"
+  ],
+  "long": [
+   "-46.63333511352539"
+  ],
+  "elevation": [
+   "760.0",
+   "762.0"
+  ],
+  "foundingDate": [
+   "1554-01-25"
+  ],
+  "populationTotal": [
+   "11895578"
+  ]
+ },
+ "Rio de Janeiro": {
+  "resource": "http://dbpedia.org/resource/Rio_de_Janeiro",
+  "lat": [
+   "-22.91111183166504"
+  ],
+  "long": [
+   "-43.2055549621582"
+  ],
+  "elevation": [
+   "2.0",
+   "2.1336"
+  ],
+  "foundingDate": [
+   "1565-03-01"
+  ],
+  "populationTotal": [
+   "6729894"
+  ]
+ },
+ "Caracas": {
+  "resource": "http://dbpedia.org/resource/Caracas",
+  "lat": [
+   "10.48055553436279"
+  ],
+  "long": [
+   "-66.90361022949219"
+  ],
+  "elevation": [
+   "900.0"
+  ],
+  "foundingDate": [
+   "1567-07-25"
+  ],
+  "populationTotal": [
+   "3242000"
+  ]
+ },
+ "Georgetown": {
+  "resource": "http://dbpedia.org/resource/Georgetown,_Guyana",
+  "lat": [
+   "6.801111221313477"
+  ],
+  "long": [
+   "-58.15499877929688"
+  ],
+  "elevation": [
+   "0.0"
+  ],
+  "foundingDate": [
+   "1812-04-29"
+  ],
+  "populationTotal": [
+   "118363"
+  ]
+ },
+ "Paramaribo": {
+  "resource": "http://dbpedia.org/resource/Paramaribo",
+  "lat": [
+   "5.852222442626953"
+  ],
+  "long": [
+   "-55.20388793945312"
+  ],
+  "elevation": [
+   "3.0"
+  ],
+  "populationTotal": [
+   "240924"
+  ]
+ },
+ "Recife": {
+  "resource": "http://dbpedia.org/resource/Recife",
+  "lat": [
+   "-8.050000190734863"
+  ],
+  "long": [
+   "-34.90000152587891"
+  ],
+  "elevation": [
+   "10.0",
+   "10.0584"
+  ],
+  "foundingDate": [
+   "1537-03-12"
+  ],
+  "populationAsOf": [
+   "2025-08-07"
+  ],
+  "populationTotal": [
+   "1710000"
+  ]
+ },
+ "Salvador": {
+  "resource": "http://dbpedia.org/resource/Salvador,_Bahia",
+  "lat": [
+   "-12.97472190856934"
+  ],
+  "long": [
+   "-38.47666549682617"
+  ],
+  "elevation": [
+   "8.0"
+  ],
+  "foundingDate": [
+   "1549-03-29"
+  ],
+  "populationTotal": [
+   "2568928"
+  ]
+ },
+ "Manaus": {
+  "resource": "http://dbpedia.org/resource/Manaus",
+  "elevation": [
+   "92.0",
+   "92.0496"
+  ],
+  "populationTotal": [
+   "2279686"
+  ]
+ },
+ "Curitiba": {
+  "resource": "http://dbpedia.org/resource/Curitiba",
+  "lat": [
+   "-25.42972183227539"
+  ],
+  "long": [
+   "-49.27111053466797"
+  ],
+  "elevation": [
+   "934.6",
+   "934.60824"
+  ],
+  "foundingDate": [
+   "1693-03-29"
+  ],
+  "populationTotal": [
+   "1830795"
+  ]
+ },
+ "Cordoba": {
+  "resource": "http://dbpedia.org/resource/Córdoba,_Argentina",
+  "lat": [
+   "-31.41666603088379"
+  ],
+  "long": [
+   "-64.18333435058594"
+  ],
+  "elevation": [
+   "352.0",
+   "352.044",
+   "544.0",
+   "544.068"
+  ],
+  "foundingDate": [
+   "1573-07-06"
+  ]
+ },
+ "Reykjavik": {
+  "resource": "http://dbpedia.org/resource/Reykjavík",
+  "lat": [
+   "64.14583587646484"
+  ],
+  "long": [
+   "-21.9424991607666"
+  ],
+  "foundingDate": [
+   "1786-08-18"
+  ],
+  "populationTotal": [
+   "135714"
+  ]
+ },
+ "Oslo": {
+  "resource": "http://dbpedia.org/resource/Oslo",
+  "lat": [
+   "59.91333389282227"
+  ],
+  "long": [
+   "10.73888874053955"
+  ],
+  "populationAsOf": [
+   "2025-01-01"
+  ],
+  "populationTotal": [
+   "724290"
+  ]
+ },
+ "Stockholm": {
+  "resource": "http://dbpedia.org/resource/Stockholm",
+  "lat": [
+   "59.32944488525391"
+  ],
+  "long": [
+   "18.06861114501953"
+  ],
+  "elevation": [
+   "28.0"
+  ],
+  "populationTotal": [
+   "984748"
+  ]
+ },
+ "Helsinki": {
+  "resource": "http://dbpedia.org/resource/Helsinki",
+  "lat": [
+   "60.17083358764648"
+  ],
+  "long": [
+   "24.9375"
+  ],
+  "elevation": [
+   "25.908",
+   "26.0"
+  ],
+  "foundingDate": [
+   "1550-06-12",
+   "1812-04-08"
+  ]
+ },
+ "Tallinn": {
+  "resource": "http://dbpedia.org/resource/Tallinn",
+  "lat": [
+   "59.43722152709961"
+  ],
+  "long": [
+   "24.74527740478516"
+  ],
+  "elevation": [
+   "9.0"
+  ],
+  "populationTotal": [
+   "456518"
+  ]
+ },
+ "Riga": {
+  "resource": "http://dbpedia.org/resource/Riga",
+  "populationTotal": [
+   "591882"
+  ]
+ },
+ "Vilnius": {
+  "resource": "http://dbpedia.org/resource/Vilnius",
+  "lat": [
+   "54.68722152709961"
+  ],
+  "long": [
+   "25.28000068664551"
+  ],
+  "elevation": [
+   "112.0"
+  ],
+  "populationAsOf": [
+   "2025-01-01"
+  ],
+  "populationTotal": [
+   "607667"
+  ]
+ },
+ "Copenhagen": {
+  "resource": "http://dbpedia.org/resource/Copenhagen",
+  "lat": [
+   "55.67610931396484"
+  ],
+  "long": [
+   "12.56833362579346"
+  ],
+  "populationAsOf": [
+   "2025-01-01"
+  ],
+  "populationTotal": [
+   "667099"
+  ]
+ },
+ "Dublin": {
+  "resource": "http://dbpedia.org/resource/Dublin",
+  "lat": [
+   "53.34999847412109"
+  ],
+  "long": [
+   "-6.26027774810791"
+  ],
+  "populationTotal": [
+   "592713"
+  ]
+ },
+ "Edinburgh": {
+  "resource": "http://dbpedia.org/resource/Edinburgh",
+  "lat": [
+   "55.95000076293945"
+  ],
+  "long": [
+   "-3.183333396911621"
+  ],
+  "foundingDate": [
+   "1996-04-01"
+  ]
+ },
+ "London": {
+  "resource": "http://dbpedia.org/resource/London",
+  "lat": [
+   "51.50722122192383"
+  ],
+  "long": [
+   "-0.1274999976158142"
+  ],
+  "populationTotal": [
+   "9841000"
+  ]
+ },
+ "Amsterdam": {
+  "resource": "http://dbpedia.org/resource/Amsterdam",
+  "lat": [
+   "52.37277603149414"
+  ],
+  "long": [
+   "4.893610954284668"
+  ],
+  "elevation": [
+   "-2.0"
+  ],
+  "populationTotal": [
+   "933680"
+  ]
+ },
+ "Brussels": {
+  "resource": "http://dbpedia.org/resource/Brussels",
+  "lat": [
+   "50.8466682434082"
+  ],
+  "long": [
+   "4.352499961853027"
+  ],
+  "elevation": [
+   "13.0"
+  ],
+  "foundingDate": [
+   "1229-06-10"
+  ],
+  "populationAsOf": [
+   "2024-01-01"
+  ],
+  "populationTotal": [
+   "1249597"
+  ]
+ },
+ "Paris": {
+  "resource": "http://dbpedia.org/resource/Paris",
+  "elevation": [
+   "78.0"
+  ],
+  "populationTotal": [
+   "2048472"
+  ]
+ },
+ "Berlin": {
+  "resource": "http://dbpedia.org/resource/Berlin",
+  "lat": [
+   "52.52000045776367"
+  ],
+  "long": [
+   "13.40499973297119"
+  ],
+  "elevation": [
+   "34.0"
+  ],
+  "populationTotal": [
+   "3596999"
+  ]
+ },
+ "Hamburg": {
+  "resource": "http://dbpedia.org/resource/Hamburg",
+  "lat": [
+   "53.54999923706055"
+  ],
+  "long": [
+   "10.0"
+  ]
+ },
+ "Munich": {
+  "resource": "http://dbpedia.org/resource/Munich",
+  "lat": [
+   "48.13750076293945"
+  ],
+  "long": [
+   "11.57499980926514"
+  ]
+ },
+ "Frankfurt": {
+  "resource": "http://dbpedia.org/resource/Frankfurt",
+  "lat": [
+   "50.11055374145508"
+  ],
+  "long": [
+   "8.682222366333008"
+  ]
+ },
+ "Zurich": {
+  "resource": "http://dbpedia.org/resource/Zurich",
+  "lat": [
+   "47.37444305419922"
+  ],
+  "long": [
+   "8.541110992431641"
+  ]
+ },
+ "Geneva": {
+  "resource": "http://dbpedia.org/resource/Geneva",
+  "lat": [
+   "46.20166778564453"
+  ],
+  "long": [
+   "6.146944522857666"
+  ]
+ },
+ "Vienna": {
+  "resource": "http://dbpedia.org/resource/Vienna",
+  "elevation": [
+   "150.876",
+   "151.0"
+  ]
+ },
+ "Prague": {
+  "resource": "http://dbpedia.org/resource/Prague",
+  "lat": [
+   "50.08750152587891"
+  ],
+  "long": [
+   "14.42138862609863"
+  ],
+  "populationAsOf": [
+   "2025-01-01"
+  ],
+  "populationTotal": [
+   "1397880"
+  ]
+ },
+ "Warsaw": {
+  "resource": "http://dbpedia.org/resource/Warsaw",
+  "lat": [
+   "52.22999954223633"
+  ],
+  "long": [
+   "21.01111030578613"
+  ],
+  "elevation": [
+   "78.0",
+   "99.9744"
+  ],
+  "populationTotal": [
+   "1862402"
+  ]
+ },
+ "Krakow": {
+  "resource": "http://dbpedia.org/resource/Kraków",
+  "lat": [
+   "50.0613899230957"
+  ],
+  "long": [
+   "19.93722152709961"
+  ],
+  "foundingDate": [
+   "1257-06-05"
+  ],
+  "populationAsOf": [
+   "2023-06-30"
+  ],
+  "populationTotal": [
+   "804237"
+  ]
+ },
+ "Budapest": {
+  "resource": "http://dbpedia.org/resource/Budapest",
+  "lat": [
+   "47.49250030517578"
+  ],
+  "long": [
+   "19.05138969421387"
+  ],
+  "elevation": [
+   "96.0",
+   "96.012",
+   "529.0"
+  ],
+  "foundingDate": [
+   "1873-11-17"
+  ],
+  "populationTotal": [
+   "1685209"
+  ]
+ },
+ "Bucharest": {
+  "resource": "http://dbpedia.org/resource/Bucharest",
+  "lat": [
+   "44.43249893188477"
+  ],
+  "long": [
+   "26.10388946533203"
+  ],
+  "elevation": [
+   "55.8",
+   "55.80888"
+  ],
+  "populationTotal": [
+   "1877155"
+  ]
+ },
+ "Sofia": {
+  "resource": "http://dbpedia.org/resource/Sofia",
+  "lat": [
+   "42.70000076293945"
+  ],
+  "long": [
+   "23.32999992370605"
+  ],
+  "elevation": [
+   "499.872",
+   "500.0"
+  ],
+  "populationTotal": [
+   "1291591"
+  ]
+ },
+ "Belgrade": {
+  "resource": "http://dbpedia.org/resource/Belgrade",
+  "lat": [
+   "44.81777954101562"
+  ],
+  "long": [
+   "20.45694351196289"
+  ],
+  "elevation": [
+   "117.0",
+   "117.0432"
+  ],
+  "populationTotal": [
+   "1197714"
+  ]
+ },
+ "Zagreb": {
+  "resource": "http://dbpedia.org/resource/Zagreb",
+  "lat": [
+   "45.81305694580078"
+  ],
+  "long": [
+   "15.97749996185303"
+  ],
+  "elevation": [
+   "157.8864",
+   "158.0"
+  ],
+  "populationTotal": [
+   "767131"
+  ]
+ },
+ "Ljubljana": {
+  "resource": "http://dbpedia.org/resource/Ljubljana",
+  "lat": [
+   "46.05138778686523"
+  ],
+  "long": [
+   "14.50611114501953"
+  ],
+  "elevation": [
+   "295.0",
+   "295.0464"
+  ],
+  "foundingDate": [
+   "1461-12-06"
+  ],
+  "populationTotal": [
+   "300354"
+  ]
+ },
+ "Rome": {
+  "resource": "http://dbpedia.org/resource/Rome",
+  "lat": [
+   "41.89333343505859"
+  ],
+  "long": [
+   "12.48277759552002"
+  ],
+  "elevation": [
+   "21.0"
+  ],
+  "foundingDate": [
+   "-753-04-21"
+  ],
+  "populationTotal": [
+   "2746984"
+  ]
+ },
+ "Milan": {
+  "resource": "http://dbpedia.org/resource/Milan",
+  "lat": [
+   "45.46694564819336"
+  ],
+  "long": [
+   "9.189999580383301"
+  ],
+  "elevation": [
+   "120.0"
+  ],
+  "populationTotal": [
+   "1366155"
+  ]
+ },
+ "Naples": {
+  "resource": "http://dbpedia.org/resource/Naples",
+  "elevation": [
+   "99.8"
+  ],
+  "populationTotal": [
+   "908082"
+  ]
+ },
+ "Florence": {
+  "resource": "http://dbpedia.org/resource/Florence",
+  "lat": [
+   "43.77138900756836"
+  ],
+  "long": [
+   "11.25416660308838"
+  ],
+  "elevation": [
+   "50.0"
+  ],
+  "populationTotal": [
+   "362353"
+  ]
+ },
+ "Venice": {
+  "resource": "http://dbpedia.org/resource/Venice",
+  "lat": [
+   "45.4375"
+  ],
+  "long": [
+   "12.33583354949951"
+  ],
+  "elevation": [
+   "1.0"
+  ],
+  "populationTotal": [
+   "249466"
+  ]
+ },
+ "Madrid": {
+  "resource": "http://dbpedia.org/resource/Madrid",
+  "lat": [
+   "40.41694259643555"
+  ],
+  "long": [
+   "-3.703333377838135"
+  ],
+  "elevation": [
+   "650.0"
+  ],
+  "populationTotal": [
+   "3322416"
+  ]
+ },
+ "Barcelona": {
+  "resource": "http://dbpedia.org/resource/Barcelona",
+  "lat": [
+   "39.5",
+   "41.38333511352539"
+  ],
+  "long": [
+   "-3.700000047683716",
+   "2.183333396911621"
+  ],
+  "elevation": [
+   "12.0"
+  ],
+  "populationTotal": [
+   "1686208"
+  ]
+ },
+ "Seville": {
+  "resource": "http://dbpedia.org/resource/Seville",
+  "lat": [
+   "37.38999938964844",
+   "39.5"
+  ],
+  "long": [
+   "-5.989999771118164",
+   "-3.700000047683716"
+  ],
+  "elevation": [
+   "7.0"
+  ],
+  "populationTotal": [
+   "686741"
+  ]
+ },
+ "Lisbon": {
+  "resource": "http://dbpedia.org/resource/Lisbon",
+  "lat": [
+   "38.72527694702148"
+  ],
+  "long": [
+   "-9.149999618530273"
+  ],
+  "elevation": [
+   "2.0"
+  ],
+  "populationTotal": [
+   "575739"
+  ]
+ },
+ "Porto": {
+  "resource": "http://dbpedia.org/resource/Porto",
+  "lat": [
+   "39.29999923706055"
+  ],
+  "long": [
+   "-8.0"
+  ],
+  "elevation": [
+   "104.0"
+  ],
+  "populationTotal": [
+   "252687"
+  ]
+ },
+ "Athens": {
+  "resource": "http://dbpedia.org/resource/Athens",
+  "lat": [
+   "37.98416519165039"
+  ],
+  "long": [
+   "23.72805595397949"
+  ],
+  "populationTotal": [
+   "643452"
+  ]
+ },
+ "Thessaloniki": {
+  "resource": "http://dbpedia.org/resource/Thessaloniki",
+  "populationTotal": [
+   "319045"
+  ]
+ },
+ "Marseille": {
+  "resource": "http://dbpedia.org/resource/Marseille",
+  "lat": [
+   "43.2963981628418"
+  ],
+  "long": [
+   "5.369999885559082"
+  ]
+ },
+ "Lyon": {
+  "resource": "http://dbpedia.org/resource/Lyon",
+  "lat": [
+   "45.7599983215332"
+  ],
+  "long": [
+   "4.840000152587891"
+  ]
+ },
+ "Minsk": {
+  "resource": "http://dbpedia.org/resource/Minsk",
+  "lat": [
+   "53.90055465698242"
+  ],
+  "long": [
+   "27.5586109161377"
+  ],
+  "elevation": [
+   "280.6"
+  ],
+  "populationTotal": [
+   "1996730"
+  ]
+ },
+ "Kyiv": {
+  "resource": "http://dbpedia.org/resource/Kyiv",
+  "lat": [
+   "50.40000152587891",
+   "50.45000076293945"
+  ],
+  "long": [
+   "30.5233325958252",
+   "30.54000091552734"
+  ],
+  "elevation": [
+   "178.9176",
+   "179.0"
+  ],
+  "populationAsOf": [
+   "2021-01-01"
+  ],
+  "populationTotal": [
+   "2952301"
+  ]
+ },
+ "Moscow": {
+  "resource": "http://dbpedia.org/resource/Moscow",
+  "lat": [
+   "55.59999847412109",
+   "55.75583267211914"
+  ],
+  "long": [
+   "37.59999847412109",
+   "37.61777877807617"
+  ],
+  "elevation": [
+   "156.0"
+  ],
+  "populationTotal": [
+   "13010112"
+  ]
+ },
+ "Saint Petersburg": {
+  "resource": "http://dbpedia.org/resource/Saint_Petersburg",
+  "lat": [
+   "59.9375"
+  ],
+  "long": [
+   "30.3086109161377"
+  ],
+  "elevation": [
+   "3.0"
+  ],
+  "foundingDate": [
+   "1703-05-27"
+  ],
+  "populationTotal": [
+   "5601911"
+  ]
+ },
+ "Cairo": {
+  "resource": "http://dbpedia.org/resource/Cairo",
+  "lat": [
+   "30.0444450378418"
+  ],
+  "long": [
+   "31.2358341217041"
+  ],
+  "elevation": [
+   "23.0"
+  ],
+  "populationTotal": [
+   "9801536"
+  ]
+ },
+ "Alexandria": {
+  "resource": "http://dbpedia.org/resource/Alexandria",
+  "lat": [
+   "31.19750022888184"
+  ],
+  "long": [
+   "29.89249992370605"
+  ],
+  "elevation": [
+   "1.0"
+  ]
+ },
+ "Casablanca": {
+  "resource": "http://dbpedia.org/resource/Casablanca",
+  "lat": [
+   "33.53333282470703"
+  ],
+  "long": [
+   "-7.583333492279053"
+  ],
+  "elevation": [
+   "0.0"
+  ],
+  "populationTotal": [
+   "3218036"
+  ]
+ },
+ "Marrakech": {
+  "resource": "http://dbpedia.org/resource/Marrakesh",
+  "lat": [
+   "31.6299991607666"
+  ],
+  "long": [
+   "-8.008889198303223"
+  ],
+  "elevation": [
+   "466.0"
+  ],
+  "populationTotal": [
+   "1002697"
+  ]
+ },
+ "Tunis": {
+  "resource": "http://dbpedia.org/resource/Tunis",
+  "lat": [
+   "36.80638885498047"
+  ],
+  "long": [
+   "10.18166637420654"
+  ],
+  "populationAsOf": [
+   "2024-01-01"
+  ],
+  "populationTotal": [
+   "693210"
+  ]
+ },
+ "Algiers": {
+  "resource": "http://dbpedia.org/resource/Algiers",
+  "lat": [
+   "36.73249816894531"
+  ],
+  "long": [
+   "3.087222337722778"
+  ],
+  "populationTotal": [
+   "4325000"
+  ]
+ },
+ "Tripoli": {
+  "resource": "http://dbpedia.org/resource/Tripoli,_Libya",
+  "lat": [
+   "32.88722229003906"
+  ],
+  "long": [
+   "13.1913890838623"
+  ],
+  "elevation": [
+   "81.0",
+   "81.07680000000001"
+  ],
+  "populationTotal": [
+   "1183000"
+  ]
+ },
+ "Lagos": {
+  "resource": "http://dbpedia.org/resource/Lagos",
+  "lat": [
+   "6.455027103424072"
+  ],
+  "long": [
+   "3.384082078933716"
+  ],
+  "elevation": [
+   "41.148"
+  ],
+  "populationTotal": [
+   "8048430"
+  ]
+ },
+ "Abuja": {
+  "resource": "http://dbpedia.org/resource/Abuja",
+  "lat": [
+   "9.066666603088379"
+  ],
+  "long": [
+   "7.483333110809326"
+  ],
+  "elevation": [
+   "360.0"
+  ],
+  "foundingDate": [
+   "1984-10-01",
+   "1991-12-12"
+  ],
+  "populationTotal": [
+   "1693400"
+  ]
+ },
+ "Accra": {
+  "resource": "http://dbpedia.org/resource/Accra",
+  "lat": [
+   "5.550000190734863"
+  ],
+  "long": [
+   "-0.2000000029802322"
+  ],
+  "elevation": [
+   "60.96",
+   "61.0"
+  ],
+  "populationTotal": [
+   "284124"
+  ]
+ },
+ "Dakar": {
+  "resource": "http://dbpedia.org/resource/Dakar",
+  "lat": [
+   "14.69277763366699"
+  ],
+  "long": [
+   "-17.4466667175293"
+  ],
+  "elevation": [
+   "22.0"
+  ],
+  "populationTotal": [
+   "1278469"
+  ]
+ },
+ "Bamako": {
+  "resource": "http://dbpedia.org/resource/Bamako",
+  "lat": [
+   "12.63916683197021"
+  ],
+  "long": [
+   "-8.002778053283691"
+  ],
+  "elevation": [
+   "350.0"
+  ],
+  "populationTotal": [
+   "4227569"
+  ]
+ },
+ "Abidjan": {
+  "resource": "http://dbpedia.org/resource/Abidjan",
+  "lat": [
+   "5.316666603088379"
+  ],
+  "long": [
+   "-4.033333301544189"
+  ],
+  "elevation": [
+   "18.0"
+  ],
+  "populationTotal": [
+   "6321017"
+  ]
+ },
+ "Kinshasa": {
+  "resource": "http://dbpedia.org/resource/Kinshasa",
+  "lat": [
+   "-4.321944236755371"
+  ],
+  "long": [
+   "15.31194400787354"
+  ],
+  "elevation": [
+   "240.0"
+  ],
+  "populationTotal": [
+   "17071000"
+  ]
+ },
+ "Brazzaville": {
+  "resource": "http://dbpedia.org/resource/Brazzaville",
+  "lat": [
+   "-4.266666889190674"
+  ],
+  "long": [
+   "15.26666641235352"
+  ],
+  "elevation": [
+   "320.0"
+  ],
+  "populationTotal": [
+   "2138236"
+  ]
+ },
+ "Luanda": {
+  "resource": "http://dbpedia.org/resource/Luanda",
+  "lat": [
+   "-8.838333129882812"
+  ],
+  "long": [
+   "13.2344446182251"
+  ],
+  "elevation": [
+   "6.0"
+  ],
+  "foundingDate": [
+   "1576-01-25"
+  ],
+  "populationTotal": [
+   "2831280"
+  ]
+ },
+ "Nairobi": {
+  "resource": "http://dbpedia.org/resource/Nairobi",
+  "lat": [
+   "-1.286388874053955"
+  ],
+  "long": [
+   "36.81722259521484"
+  ],
+  "elevation": [
+   "1794.9672",
+   "1795.0"
+  ],
+  "populationTotal": [
+   "4397073"
+  ]
+ },
+ "Kampala": {
+  "resource": "http://dbpedia.org/resource/Kampala",
+  "lat": [
+   "0.3136111199855804"
+  ],
+  "long": [
+   "32.58111190795898"
+  ],
+  "elevation": [
+   "1200.0"
+  ],
+  "populationTotal": [
+   "4265160"
+  ]
+ },
+ "Dar es Salaam": {
+  "resource": "http://dbpedia.org/resource/Dar_es_Salaam",
+  "lat": [
+   "-6.816111087799072"
+  ],
+  "long": [
+   "39.28027725219727"
+  ],
+  "populationTotal": [
+   "7776000"
+  ]
+ },
+ "Addis Ababa": {
+  "resource": "http://dbpedia.org/resource/Addis_Ababa",
+  "lat": [
+   "9.029999732971191"
+  ],
+  "long": [
+   "38.7400016784668"
+  ],
+  "elevation": [
+   "2354.8848",
+   "2355.0"
+  ]
+ },
+ "Khartoum": {
+  "resource": "http://dbpedia.org/resource/Khartoum",
+  "lat": [
+   "15.60000038146973"
+  ],
+  "long": [
+   "32.5"
+  ],
+  "elevation": [
+   "381.0"
+  ],
+  "populationTotal": [
+   "1410858"
+  ]
+ },
+ "Mogadishu": {
+  "resource": "http://dbpedia.org/resource/Mogadishu",
+  "lat": [
+   "2.039166688919067"
+  ],
+  "long": [
+   "45.34194564819336"
+  ]
+ },
+ "Johannesburg": {
+  "resource": "http://dbpedia.org/resource/Johannesburg",
+  "lat": [
+   "-26.20444488525391"
+  ],
+  "long": [
+   "28.04555511474609"
+  ],
+  "elevation": [
+   "1753.0"
+  ],
+  "populationTotal": [
+   "4803262"
+  ]
+ },
+ "Cape Town": {
+  "resource": "http://dbpedia.org/resource/Cape_Town",
+  "lat": [
+   "-33.92527770996094"
+  ],
+  "long": [
+   "18.42388916015625"
+  ],
+  "foundingDate": [
+   "1652-04-06"
+  ]
+ },
+ "Durban": {
+  "resource": "http://dbpedia.org/resource/Durban",
+  "lat": [
+   "-29.88333320617676"
+  ],
+  "long": [
+   "31.04999923706055"
+  ],
+  "foundingDate": [
+   "1824-08-24"
+  ],
+  "populationTotal": [
+   "595061"
+  ]
+ },
+ "Pretoria": {
+  "resource": "http://dbpedia.org/resource/Pretoria",
+  "lat": [
+   "-25.7461109161377"
+  ],
+  "long": [
+   "28.18805503845215"
+  ],
+  "elevation": [
+   "1339.0"
+  ],
+  "foundingDate": [
+   "1855-11-18"
+  ],
+  "populationTotal": [
+   "2818100"
+  ]
+ },
+ "Harare": {
+  "resource": "http://dbpedia.org/resource/Harare",
+  "lat": [
+   "-17.82916641235352"
+  ],
+  "long": [
+   "31.05222129821777"
+  ],
+  "elevation": [
+   "1490.0"
+  ],
+  "foundingDate": [
+   "1890-09-12",
+   "1982-04-18"
+  ],
+  "populationTotal": [
+   "1491740"
+  ]
+ },
+ "Lusaka": {
+  "resource": "http://dbpedia.org/resource/Lusaka",
+  "lat": [
+   "-15.41666698455811"
+  ],
+  "long": [
+   "28.28333282470703"
+  ],
+  "elevation": [
+   "1277.112",
+   "1279.0"
+  ],
+  "foundingDate": [
+   "1960-08-25"
+  ],
+  "populationTotal": [
+   "2204059"
+  ]
+ },
+ "Maputo": {
+  "resource": "http://dbpedia.org/resource/Maputo",
+  "lat": [
+   "-25.96666717529297"
+  ],
+  "long": [
+   "32.58333206176758"
+  ],
+  "elevation": [
+   "47.0"
+  ],
+  "foundingDate": [
+   "1876-12-09",
+   "1887-11-10"
+  ],
+  "populationTotal": [
+   "1088449"
+  ]
+ },
+ "Antananarivo": {
+  "resource": "http://dbpedia.org/resource/Antananarivo",
+  "lat": [
+   "-18.90999984741211"
+  ],
+  "long": [
+   "47.52500152587891"
+  ],
+  "elevation": [
+   "1276.0"
+  ],
+  "populationTotal": [
+   "1274225"
+  ]
+ },
+ "Windhoek": {
+  "resource": "http://dbpedia.org/resource/Windhoek",
+  "lat": [
+   "-22.56999969482422"
+  ],
+  "long": [
+   "17.08361053466797"
+  ],
+  "elevation": [
+   "1655.0",
+   "1655.064"
+  ],
+  "foundingDate": [
+   "1890-10-18"
+  ],
+  "populationTotal": [
+   "486169"
+  ]
+ },
+ "Gaborone": {
+  "resource": "http://dbpedia.org/resource/Gaborone",
+  "lat": [
+   "-24.65805625915527"
+  ],
+  "long": [
+   "25.91222190856934"
+  ],
+  "elevation": [
+   "1013.7648",
+   "1014.0"
+  ],
+  "populationTotal": [
+   "246325"
+  ]
+ },
+ "Douala": {
+  "resource": "http://dbpedia.org/resource/Douala",
+  "lat": [
+   "4.050000190734863"
+  ],
+  "long": [
+   "9.683333396911621"
+  ],
+  "elevation": [
+   "13.0"
+  ],
+  "populationTotal": [
+   "4346000"
+  ]
+ },
+ "Yaounde": {
+  "resource": "http://dbpedia.org/resource/Yaoundé",
+  "lat": [
+   "3.866666555404663"
+  ],
+  "long": [
+   "11.51666641235352"
+  ],
+  "elevation": [
+   "726.0"
+  ],
+  "populationTotal": [
+   "4854000"
+  ]
+ },
+ "Conakry": {
+  "resource": "http://dbpedia.org/resource/Conakry",
+  "lat": [
+   "9.509166717529297"
+  ],
+  "long": [
+   "-13.7122220993042"
+  ],
+  "populationTotal": [
+   "1660973"
+  ]
+ },
+ "Freetown": {
+  "resource": "http://dbpedia.org/resource/Freetown",
+  "lat": [
+   "8.487222671508789"
+  ],
+  "long": [
+   "-13.23555564880371"
+  ],
+  "elevation": [
+   "26.0"
+  ],
+  "foundingDate": [
+   "1792-03-11"
+  ],
+  "populationTotal": [
+   "1347559"
+  ]
+ },
+ "Istanbul": {
+  "resource": "http://dbpedia.org/resource/Istanbul",
+  "lat": [
+   "41.01361083984375"
+  ],
+  "long": [
+   "28.95499992370605"
+  ],
+  "foundingDate": [
+   "0330-05-11"
+  ],
+  "populationAsOf": [
+   "2024-12-31"
+  ],
+  "populationTotal": [
+   "15701602"
+  ]
+ },
+ "Ankara": {
+  "resource": "http://dbpedia.org/resource/Ankara",
+  "lat": [
+   "39.93000030517578"
+  ],
+  "long": [
+   "32.84999847412109"
+  ],
+  "elevation": [
+   "938.0"
+  ],
+  "populationAsOf": [
+   "2024-12-31"
+  ],
+  "populationTotal": [
+   "5864049"
+  ]
+ },
+ "Tehran": {
+  "resource": "http://dbpedia.org/resource/Tehran",
+  "lat": [
+   "35.68888854980469"
+  ],
+  "long": [
+   "51.38972091674805"
+  ],
+  "elevation": [
+   "1039.9776",
+   "1040.0"
+  ],
+  "populationTotal": [
+   "8693706"
+  ]
+ },
+ "Baghdad": {
+  "resource": "http://dbpedia.org/resource/Baghdad",
+  "lat": [
+   "33.31527709960938"
+  ],
+  "long": [
+   "44.36611175537109"
+  ],
+  "elevation": [
+   "34.0"
+  ],
+  "foundingDate": [
+   "0762-07-30"
+  ]
+ },
+ "Riyadh": {
+  "resource": "http://dbpedia.org/resource/Riyadh",
+  "lat": [
+   "24.63333320617676"
+  ],
+  "long": [
+   "46.71666717529297"
+  ],
+  "elevation": [
+   "612.0"
+  ],
+  "populationTotal": [
+   "7009100"
+  ]
+ },
+ "Jeddah": {
+  "resource": "http://dbpedia.org/resource/Jeddah",
+  "lat": [
+   "21.54333305358887"
+  ],
+  "long": [
+   "39.17277908325195"
+  ],
+  "elevation": [
+   "12.0"
+  ],
+  "populationTotal": [
+   "3751722"
+  ]
+ },
+ "Dubai": {
+  "resource": "http://dbpedia.org/resource/Dubai",
+  "lat": [
+   "25.20472145080566"
+  ],
+  "long": [
+   "55.27083206176758"
+  ],
+  "populationTotal": [
+   "3944751"
+  ]
+ },
+ "Doha": {
+  "resource": "http://dbpedia.org/resource/Doha",
+  "lat": [
+   "25.28666687011719"
+  ],
+  "long": [
+   "51.53333282470703"
+  ],
+  "populationTotal": [
+   "1186023"
+  ]
+ },
+ "Muscat": {
+  "resource": "http://dbpedia.org/resource/Muscat",
+  "lat": [
+   "23.58888816833496"
+  ],
+  "long": [
+   "58.40833282470703"
+  ]
+ },
+ "Kuwait City": {
+  "resource": "http://dbpedia.org/resource/Kuwait_City",
+  "lat": [
+   "29.36972236633301"
+  ],
+  "long": [
+   "47.97833251953125"
+  ]
+ },
+ "Beirut": {
+  "resource": "http://dbpedia.org/resource/Beirut",
+  "lat": [
+   "33.89805603027344"
+  ],
+  "long": [
+   "35.50583267211914"
+  ]
+ },
+ "Damascus": {
+  "resource": "http://dbpedia.org/resource/Damascus",
+  "lat": [
+   "33.51305389404297"
+  ],
+  "long": [
+   "36.30944442749023"
+  ],
+  "elevation": [
+   "680.0"
+  ]
+ },
+ "Amman": {
+  "resource": "http://dbpedia.org/resource/Amman",
+  "lat": [
+   "31.94972229003906"
+  ],
+  "long": [
+   "35.93277740478516"
+  ],
+  "populationTotal": [
+   "4061150"
+  ]
+ },
+ "Jerusalem": {
+  "resource": "http://dbpedia.org/resource/Jerusalem",
+  "lat": [
+   "31.78333282470703"
+  ],
+  "long": [
+   "35.21666717529297"
+  ],
+  "elevation": [
+   "754.0"
+  ]
+ },
+ "Tel Aviv": {
+  "resource": "http://dbpedia.org/resource/Tel_Aviv",
+  "lat": [
+   "32.08000183105469"
+  ],
+  "long": [
+   "34.77999877929688"
+  ],
+  "elevation": [
+   "5.0"
+  ],
+  "foundingDate": [
+   "1909-04-11"
+  ]
+ },
+ "Karachi": {
+  "resource": "http://dbpedia.org/resource/Karachi",
+  "lat": [
+   "24.86000061035156"
+  ],
+  "long": [
+   "67.01000213623047"
+  ],
+  "elevation": [
+   "10.0"
+  ],
+  "populationTotal": [
+   "18868021"
+  ]
+ },
+ "Lahore": {
+  "resource": "http://dbpedia.org/resource/Lahore",
+  "lat": [
+   "31.54972267150879"
+  ],
+  "long": [
+   "74.34361267089844"
+  ],
+  "foundingDate": [
+   "1206-06-25",
+   "1586-05-27",
+   "1801-04-12",
+   "1890-02-03"
+  ],
+  "populationTotal": [
+   "13004135"
+  ]
+ },
+ "Islamabad": {
+  "resource": "http://dbpedia.org/resource/Islamabad",
+  "lat": [
+   "33.69305419921875"
+  ],
+  "long": [
+   "73.06388854980469"
+  ],
+  "elevation": [
+   "666.0"
+  ],
+  "foundingDate": [
+   "1967-08-14"
+  ],
+  "populationTotal": [
+   "1108872"
+  ]
+ },
+ "Kabul": {
+  "resource": "http://dbpedia.org/resource/Kabul",
+  "lat": [
+   "34.52527618408203"
+  ],
+  "long": [
+   "69.17833709716797"
+  ],
+  "elevation": [
+   "1791.0"
+  ],
+  "populationTotal": [
+   "4950000"
+  ]
+ },
+ "New Delhi": {
+  "resource": "http://dbpedia.org/resource/New_Delhi",
+  "elevation": [
+   "229.999032",
+   "230.0"
+  ],
+  "foundingDate": [
+   "1911-12-12",
+   "1931-02-13"
+  ],
+  "populationTotal": [
+   "249998"
+  ]
+ },
+ "Mumbai": {
+  "resource": "http://dbpedia.org/resource/Mumbai",
+  "lat": [
+   "19.07611083984375"
+  ],
+  "long": [
+   "72.87750244140625"
+  ],
+  "elevation": [
+   "14.0"
+  ],
+  "populationTotal": [
+   "12442373"
+  ]
+ },
+ "Kolkata": {
+  "resource": "http://dbpedia.org/resource/Kolkata",
+  "elevation": [
+   "9.0",
+   "9.144"
+  ],
+  "populationTotal": [
+   "2011"
+  ]
+ },
+ "Chennai": {
+  "resource": "http://dbpedia.org/resource/Chennai",
+  "lat": [
+   "12.98222255706787"
+  ],
+  "long": [
+   "80.16361236572266"
+  ],
+  "elevation": [
+   "7.0",
+   "7.0104"
+  ],
+  "populationTotal": [
+   "6748026"
+  ]
+ },
+ "Bangalore": {
+  "resource": "http://dbpedia.org/resource/Bengaluru",
+  "lat": [
+   "12.97888851165771"
+  ],
+  "long": [
+   "77.59166717529297"
+  ],
+  "elevation": [
+   "920.0"
+  ],
+  "populationTotal": [
+   "8443675"
+  ]
+ },
+ "Hyderabad": {
+  "resource": "http://dbpedia.org/resource/Hyderabad",
+  "elevation": [
+   "536.0"
+  ],
+  "populationTotal": [
+   "6809970"
+  ]
+ },
+ "Dhaka": {
+  "resource": "http://dbpedia.org/resource/Dhaka",
+  "lat": [
+   "23.76444435119629"
+  ],
+  "long": [
+   "90.38888549804688"
+  ],
+  "elevation": [
+   "31.991808",
+   "32.0"
+  ],
+  "populationTotal": [
+   "10278882"
+  ]
+ },
+ "Colombo": {
+  "resource": "http://dbpedia.org/resource/Colombo",
+  "lat": [
+   "6.934444427490234"
+  ],
+  "long": [
+   "79.84278106689453"
+  ],
+  "elevation": [
+   "1.0"
+  ],
+  "populationTotal": [
+   "752993"
+  ]
+ },
+ "Kathmandu": {
+  "resource": "http://dbpedia.org/resource/Kathmandu",
+  "lat": [
+   "27.70999908447266"
+  ],
+  "long": [
+   "85.31999969482422"
+  ],
+  "elevation": [
+   "1400.0"
+  ],
+  "populationTotal": [
+   "856767"
+  ]
+ },
+ "Yangon": {
+  "resource": "http://dbpedia.org/resource/Yangon",
+  "lat": [
+   "16.79500007629395"
+  ],
+  "long": [
+   "96.16000366210938"
+  ]
+ },
+ "Bangkok": {
+  "resource": "http://dbpedia.org/resource/Bangkok",
+  "lat": [
+   "13.7524995803833"
+  ],
+  "long": [
+   "100.4941635131836"
+  ],
+  "elevation": [
+   "1.5"
+  ],
+  "foundingDate": [
+   "1782-04-21",
+   "1972-12-13"
+  ],
+  "populationTotal": [
+   "8305218"
+  ]
+ },
+ "Hanoi": {
+  "resource": "http://dbpedia.org/resource/Hanoi",
+  "lat": [
+   "21.0"
+  ],
+  "long": [
+   "105.8499984741211"
+  ],
+  "foundingDate": [
+   "1873-11-20",
+   "1954-10-10"
+  ],
+  "populationTotal": [
+   "8807523"
+  ]
+ },
+ "Ho Chi Minh City": {
+  "resource": "http://dbpedia.org/resource/Ho_Chi_Minh_City",
+  "lat": [
+   "10.77555561065674"
+  ],
+  "long": [
+   "106.7019424438477"
+  ],
+  "elevation": [
+   "10.3632",
+   "19.0"
+  ],
+  "populationTotal": [
+   "14002598"
+  ]
+ },
+ "Phnom Penh": {
+  "resource": "http://dbpedia.org/resource/Phnom_Penh",
+  "lat": [
+   "11.56944465637207"
+  ],
+  "long": [
+   "104.9211120605469"
+  ],
+  "elevation": [
+   "11.89"
+  ],
+  "populationTotal": [
+   "2352851"
+  ]
+ },
+ "Kuala Lumpur": {
+  "resource": "http://dbpedia.org/resource/Kuala_Lumpur",
+  "lat": [
+   "3.147777795791626"
+  ],
+  "long": [
+   "101.6952743530273"
+  ],
+  "elevation": [
+   "63.0"
+  ],
+  "foundingDate": [
+   "1972-02-01",
+   "1974-02-01"
+  ],
+  "populationTotal": [
+   "2075600"
+  ]
+ },
+ "Singapore": {
+  "resource": "http://dbpedia.org/resource/Singapore",
+  "lat": [
+   "1.283333301544189"
+  ],
+  "long": [
+   "103.8333358764648"
+  ],
+  "populationTotal": [
+   "6040000"
+  ]
+ },
+ "Jakarta": {
+  "resource": "http://dbpedia.org/resource/Jakarta",
+  "elevation": [
+   "8.0"
+  ],
+  "foundingDate": [
+   "1527-06-22",
+   "1619-05-30"
+  ],
+  "populationTotal": [
+   "11350328"
+  ]
+ },
+ "Manila": {
+  "resource": "http://dbpedia.org/resource/Manila",
+  "lat": [
+   "14.59583377838135"
+  ],
+  "long": [
+   "120.9772186279297"
+  ],
+  "foundingDate": [
+   "1571-06-24",
+   "1901-07-31"
+  ]
+ },
+ "Beijing": {
+  "resource": "http://dbpedia.org/resource/Beijing",
+  "lat": [
+   "39.90666580200195"
+  ],
+  "long": [
+   "116.3974990844727"
+  ],
+  "elevation": [
+   "43.5"
+  ],
+  "populationTotal": [
+   "21893095"
+  ]
+ },
+ "Shanghai": {
+  "resource": "http://dbpedia.org/resource/Shanghai",
+  "lat": [
+   "31.22861099243164"
+  ],
+  "long": [
+   "121.474723815918"
+  ],
+  "elevation": [
+   "4.0"
+  ],
+  "populationTotal": [
+   "24874500"
+  ]
+ },
+ "Guangzhou": {
+  "resource": "http://dbpedia.org/resource/Guangzhou",
+  "lat": [
+   "23.1299991607666"
+  ],
+  "long": [
+   "113.2600021362305"
+  ],
+  "elevation": [
+   "21.0"
+  ],
+  "populationTotal": [
+   "18676605"
+  ]
+ },
+ "Shenzhen": {
+  "resource": "http://dbpedia.org/resource/Shenzhen",
+  "lat": [
+   "22.54150009155273"
+  ],
+  "long": [
+   "114.0596008300781"
+  ],
+  "elevation": [
+   "0.0"
+  ],
+  "foundingDate": [
+   "1979-01-23",
+   "1980-05-01"
+  ],
+  "populationTotal": [
+   "17560000"
+  ]
+ },
+ "Hong Kong": {
+  "resource": "http://dbpedia.org/resource/Hong_Kong",
+  "lat": [
+   "22.29999923706055"
+  ],
+  "long": [
+   "114.1999969482422"
+  ]
+ },
+ "Chengdu": {
+  "resource": "http://dbpedia.org/resource/Chengdu",
+  "lat": [
+   "30.65999984741211"
+  ],
+  "long": [
+   "104.0633316040039"
+  ],
+  "elevation": [
+   "500.0"
+  ],
+  "populationTotal": [
+   "20937757"
+  ]
+ },
+ "Wuhan": {
+  "resource": "http://dbpedia.org/resource/Wuhan",
+  "lat": [
+   "30.59339904785156"
+  ],
+  "long": [
+   "114.3046035766602"
+  ],
+  "foundingDate": [
+   "1927-01-01"
+  ],
+  "populationTotal": [
+   "13739000"
+  ]
+ },
+ "Chongqing": {
+  "resource": "http://dbpedia.org/resource/Chongqing",
+  "lat": [
+   "29.56369972229004"
+  ],
+  "long": [
+   "106.5503997802734"
+  ],
+  "elevation": [
+   "244.0"
+  ],
+  "foundingDate": [
+   "1997-03-14"
+  ],
+  "populationTotal": [
+   "32054159"
+  ]
+ },
+ "Taipei": {
+  "resource": "http://dbpedia.org/resource/Taipei",
+  "lat": [
+   "25.03750038146973"
+  ],
+  "long": [
+   "121.5625"
+  ]
+ },
+ "Seoul": {
+  "resource": "http://dbpedia.org/resource/Seoul",
+  "lat": [
+   "37.56000137329102"
+  ],
+  "long": [
+   "126.9899978637695"
+  ],
+  "elevation": [
+   "38.0"
+  ],
+  "populationTotal": [
+   "9602826"
+  ]
+ },
+ "Busan": {
+  "resource": "http://dbpedia.org/resource/Busan",
+  "lat": [
+   "35.18000030517578"
+  ],
+  "long": [
+   "129.0749969482422"
+  ],
+  "populationTotal": [
+   "3343903"
+  ]
+ },
+ "Pyongyang": {
+  "resource": "http://dbpedia.org/resource/Pyongyang",
+  "lat": [
+   "39.01666641235352"
+  ],
+  "long": [
+   "125.7474975585938"
+  ],
+  "populationTotal": [
+   "3157538"
+  ]
+ },
+ "Tokyo": {
+  "resource": "http://dbpedia.org/resource/Tokyo",
+  "lat": [
+   "35.68972396850586"
+  ],
+  "long": [
+   "139.6922149658203"
+  ],
+  "populationTotal": [
+   "14254039"
+  ]
+ },
+ "Osaka": {
+  "resource": "http://dbpedia.org/resource/Osaka",
+  "lat": [
+   "34.69388961791992"
+  ],
+  "long": [
+   "135.5022277832031"
+  ],
+  "populationAsOf": [
+   "2021-03-01"
+  ],
+  "populationTotal": [
+   "2753862"
+  ]
+ },
+ "Sapporo": {
+  "resource": "http://dbpedia.org/resource/Sapporo",
+  "lat": [
+   "43.06194305419922"
+  ],
+  "long": [
+   "141.3544464111328"
+  ],
+  "populationAsOf": [
+   "2023-07-31"
+  ],
+  "populationTotal": [
+   "1959750"
+  ]
+ },
+ "Ulaanbaatar": {
+  "resource": "http://dbpedia.org/resource/Ulaanbaatar",
+  "lat": [
+   "47.92194366455078"
+  ],
+  "long": [
+   "106.9152755737305"
+  ],
+  "elevation": [
+   "1349.9592",
+   "1350.0"
+  ],
+  "populationTotal": [
+   "1672627"
+  ]
+ },
+ "Novosibirsk": {
+  "resource": "http://dbpedia.org/resource/Novosibirsk",
+  "lat": [
+   "55.04999923706055"
+  ],
+  "long": [
+   "82.94999694824219"
+  ]
+ },
+ "Vladivostok": {
+  "resource": "http://dbpedia.org/resource/Vladivostok",
+  "foundingDate": [
+   "1860-07-02"
+  ]
+ },
+ "Almaty": {
+  "resource": "http://dbpedia.org/resource/Almaty",
+  "lat": [
+   "43.23333358764648"
+  ],
+  "long": [
+   "76.94999694824219"
+  ],
+  "populationAsOf": [
+   "2024-04-01"
+  ],
+  "populationTotal": [
+   "2249500"
+  ]
+ },
+ "Tashkent": {
+  "resource": "http://dbpedia.org/resource/Tashkent",
+  "lat": [
+   "41.31111145019531"
+  ],
+  "long": [
+   "69.27972412109375"
+  ],
+  "elevation": [
+   "455.0"
+  ],
+  "populationAsOf": [
+   "2024-01-01"
+  ],
+  "populationTotal": [
+   "3095498"
+  ]
+ },
+ "Tbilisi": {
+  "resource": "http://dbpedia.org/resource/Tbilisi",
+  "lat": [
+   "41.72249984741211"
+  ],
+  "long": [
+   "44.79249954223633"
+  ],
+  "populationTotal": [
+   "1330217"
+  ]
+ },
+ "Yerevan": {
+  "resource": "http://dbpedia.org/resource/Yerevan",
+  "lat": [
+   "40.18138885498047"
+  ],
+  "long": [
+   "44.51444625854492"
+  ],
+  "foundingDate": [
+   "1879-10-01",
+   "1918-07-19"
+  ],
+  "populationTotal": [
+   "1086677"
+  ]
+ },
+ "Baku": {
+  "resource": "http://dbpedia.org/resource/Baku",
+  "lat": [
+   "40.39527893066406"
+  ],
+  "long": [
+   "49.88222122192383"
+  ],
+  "elevation": [
+   "-28.0"
+  ],
+  "populationTotal": [
+   "2344900"
+  ]
+ },
+ "Sydney": {
+  "resource": "http://dbpedia.org/resource/Sydney",
+  "lat": [
+   "-33.86666488647461"
+  ],
+  "long": [
+   "151.1999969482422"
+  ],
+  "populationTotal": [
+   "5557233"
+  ]
+ },
+ "Melbourne": {
+  "resource": "http://dbpedia.org/resource/Melbourne",
+  "lat": [
+   "-37.81416702270508"
+  ],
+  "long": [
+   "144.9630584716797"
+  ],
+  "populationTotal": [
+   "5350705"
+  ]
+ },
+ "Brisbane": {
+  "resource": "http://dbpedia.org/resource/Brisbane",
+  "lat": [
+   "-27.46777725219727"
+  ],
+  "long": [
+   "153.0280609130859"
+  ],
+  "populationTotal": [
+   "2780063"
+  ]
+ },
+ "Perth": {
+  "resource": "http://dbpedia.org/resource/Perth",
+  "populationTotal": [
+   "2309338"
+  ]
+ },
+ "Adelaide": {
+  "resource": "http://dbpedia.org/resource/Adelaide",
+  "lat": [
+   "-34.9275016784668"
+  ],
+  "long": [
+   "138.6000061035156"
+  ],
+  "populationTotal": [
+   "1469163"
+  ]
+ },
+ "Auckland": {
+  "resource": "http://dbpedia.org/resource/Auckland"
+ },
+ "Wellington": {
+  "resource": "http://dbpedia.org/resource/Wellington",
+  "lat": [
+   "-41.28888702392578"
+  ],
+  "long": [
+   "174.7772216796875"
+  ]
+ },
+ "Christchurch": {
+  "resource": "http://dbpedia.org/resource/Christchurch",
+  "elevation": [
+   "6.0"
+  ]
+ },
+ "Darwin": {
+  "resource": "http://dbpedia.org/resource/Darwin,_Northern_Territory",
+  "lat": [
+   "-12.43805599212646"
+  ],
+  "long": [
+   "130.8411102294922"
+  ],
+  "populationTotal": [
+   "139902"
+  ]
+ },
+ "Hobart": {
+  "resource": "http://dbpedia.org/resource/Hobart",
+  "lat": [
+   "-42.88055419921875"
+  ],
+  "long": [
+   "147.3249969482422"
+  ],
+  "populationTotal": [
+   "254930"
+  ]
+ },
+ "Canberra": {
+  "resource": "http://dbpedia.org/resource/Canberra",
+  "lat": [
+   "-35.29305648803711"
+  ],
+  "long": [
+   "149.1269378662109"
+  ],
+  "populationTotal": [
+   "473855"
+  ]
+ },
+ "Suva": {
+  "resource": "http://dbpedia.org/resource/Suva",
+  "lat": [
+   "-18.14159965515137"
+  ],
+  "long": [
+   "178.44189453125"
+  ],
+  "populationTotal": [
+   "101166"
+  ]
+ },
+ "Port Moresby": {
+  "resource": "http://dbpedia.org/resource/Port_Moresby",
+  "lat": [
+   "-9.478888511657715"
+  ],
+  "long": [
+   "147.1494445800781"
+  ],
+  "elevation": [
+   "35.0"
+  ],
+  "populationTotal": [
+   "420000"
+  ]
+ },
+ "Omaha": {
+  "resource": "http://dbpedia.org/resource/Omaha,_Nebraska",
+  "lat": [
+   "41.25860977172852",
+   "41.2599983215332"
+  ],
+  "long": [
+   "-96.05000305175781",
+   "-95.9375"
+  ],
+  "elevation": [
+   "323.088"
+  ],
+  "populationTotal": [
+   "486051"
+  ]
+ },
+ "Kansas City": {
+  "resource": "http://dbpedia.org/resource/Kansas_City,_Missouri",
+  "lat": [
+   "39.09450149536133",
+   "39.09972381591797"
+  ],
+  "long": [
+   "-94.57833099365234",
+   "-94.55000305175781"
+  ],
+  "elevation": [
+   "277.0",
+   "277.368"
+  ],
+  "foundingDate": [
+   "1850-06-01",
+   "1853-03-28"
+  ],
+  "populationTotal": [
+   "508090"
+  ]
+ },
+ "St Louis": {
+  "resource": "http://dbpedia.org/resource/St._Louis",
+  "lat": [
+   "38.62722396850586",
+   "38.63859939575195"
+  ],
+  "long": [
+   "-90.24629974365234",
+   "-90.19777679443359"
+  ],
+  "elevation": [
+   "142.0368"
+  ],
+  "foundingDate": [
+   "1764-02-14"
+  ],
+  "populationTotal": [
+   "301578"
+  ]
+ },
+ "Milwaukee": {
+  "resource": "http://dbpedia.org/resource/Milwaukee",
+  "lat": [
+   "43.04999923706055"
+  ],
+  "long": [
+   "-87.94999694824219"
+  ],
+  "elevation": [
+   "188.0",
+   "188.0616"
+  ],
+  "foundingDate": [
+   "1846-01-31"
+  ],
+  "populationTotal": [
+   "577222"
+  ]
+ },
+ "Cincinnati": {
+  "resource": "http://dbpedia.org/resource/Cincinnati",
+  "lat": [
+   "39.09999847412109",
+   "39.125"
+  ],
+  "long": [
+   "-84.53250122070312",
+   "-84.51249694824219"
+  ],
+  "elevation": [
+   "226.1616"
+  ],
+  "foundingDate": [
+   "1802-01-01",
+   "1820-03-01"
+  ],
+  "populationTotal": [
+   "309317"
+  ]
+ },
+ "Richmond": {
+  "resource": "http://dbpedia.org/resource/Richmond,_Virginia",
+  "lat": [
+   "37.54083251953125"
+  ],
+  "long": [
+   "-77.43666839599609"
+  ]
+ },
+ "Raleigh": {
+  "resource": "http://dbpedia.org/resource/Raleigh,_North_Carolina",
+  "lat": [
+   "35.85416793823242"
+  ],
+  "long": [
+   "-78.76194763183594"
+  ],
+  "elevation": [
+   "100.8888"
+  ],
+  "foundingDate": [
+   "1792-12-31"
+  ],
+  "populationTotal": [
+   "467665"
+  ]
+ },
+ "Birmingham": {
+  "resource": "http://dbpedia.org/resource/Birmingham,_Alabama",
+  "lat": [
+   "33.51750183105469"
+  ],
+  "long": [
+   "-86.8094482421875"
+  ],
+  "elevation": [
+   "181.9656"
+  ],
+  "foundingDate": [
+   "1871-12-19"
+  ],
+  "populationTotal": [
+   "200733"
+  ]
+ },
+ "Oklahoma City": {
+  "resource": "http://dbpedia.org/resource/Oklahoma_City",
+  "lat": [
+   "35.46861267089844"
+  ],
+  "long": [
+   "-97.52138519287109"
+  ],
+  "elevation": [
+   "365.1504"
+  ],
+  "foundingDate": [
+   "1889-04-22",
+   "1890-07-15"
+  ],
+  "populationTotal": [
+   "681054"
+  ]
+ },
+ "Tucson": {
+  "resource": "http://dbpedia.org/resource/Tucson,_Arizona",
+  "lat": [
+   "32.2216682434082"
+  ],
+  "long": [
+   "-110.9263916015625"
+  ],
+  "elevation": [
+   "728.0",
+   "728.1672"
+  ],
+  "foundingDate": [
+   "1775-08-20",
+   "1877-02-07"
+  ],
+  "populationTotal": [
+   "542629"
+  ]
+ },
+ "Honolulu": {
+  "resource": "http://dbpedia.org/resource/Honolulu",
+  "lat": [
+   "21.29999923706055"
+  ],
+  "long": [
+   "-157.8500061035156"
+  ],
+  "elevation": [
+   "4.8768",
+   "5.0"
+  ],
+  "foundingDate": [
+   "1907-04-30"
+  ],
+  "populationTotal": [
+   "350964"
+  ]
+ },
+ "Nice": {
+  "resource": "http://dbpedia.org/resource/Nice",
+  "lat": [
+   "43.70339965820312"
+  ],
+  "long": [
+   "7.266300201416016"
+  ]
+ },
+ "Palermo": {
+  "resource": "http://dbpedia.org/resource/Palermo",
+  "lat": [
+   "38.11111068725586"
+  ],
+  "long": [
+   "13.35166645050049"
+  ],
+  "elevation": [
+   "14.0"
+  ],
+  "populationTotal": [
+   "625956"
+  ]
+ },
+ "Bologna": {
+  "resource": "http://dbpedia.org/resource/Bologna",
+  "lat": [
+   "44.49388885498047"
+  ],
+  "long": [
+   "11.34277820587158"
+  ],
+  "elevation": [
+   "54.0"
+  ],
+  "populationTotal": [
+   "390734"
+  ]
+ },
+ "Gdansk": {
+  "resource": "http://dbpedia.org/resource/Gdańsk",
+  "lat": [
+   "54.34749984741211"
+  ],
+  "long": [
+   "18.64527702331543"
+  ],
+  "populationTotal": [
+   "487371"
+  ]
+ },
+ "Bratislava": {
+  "resource": "http://dbpedia.org/resource/Bratislava",
+  "lat": [
+   "48.14389038085938"
+  ],
+  "long": [
+   "17.10972213745117"
+  ],
+  "elevation": [
+   "124.0"
+  ],
+  "populationTotal": [
+   "475503"
+  ]
+ },
+ "Nicosia": {
+  "resource": "http://dbpedia.org/resource/Nicosia",
+  "lat": [
+   "35.17250061035156"
+  ],
+  "long": [
+   "33.3650016784668"
+  ],
+  "elevation": [
+   "220.0"
+  ],
+  "populationTotal": [
+   "56848"
+  ]
+ },
+ "Valletta": {
+  "resource": "http://dbpedia.org/resource/Valletta",
+  "lat": [
+   "35.89833450317383"
+  ],
+  "long": [
+   "14.51249980926514"
+  ],
+  "elevation": [
+   "56.0"
+  ],
+  "foundingDate": [
+   "1566-03-28",
+   "1571-03-18"
+  ],
+  "populationTotal": [
+   "5157"
+  ]
+ },
+ "Tirana": {
+  "resource": "http://dbpedia.org/resource/Tirana",
+  "lat": [
+   "41.32722091674805"
+  ],
+  "long": [
+   "19.81861114501953"
+  ],
+  "elevation": [
+   "110.0"
+  ]
+ },
+ "Skopje": {
+  "resource": "http://dbpedia.org/resource/Skopje",
+  "lat": [
+   "41.99611282348633"
+  ],
+  "long": [
+   "21.43166732788086"
+  ],
+  "elevation": [
+   "240.0"
+  ],
+  "populationTotal": [
+   "526502"
+  ]
+ },
+ "Sarajevo": {
+  "resource": "http://dbpedia.org/resource/Sarajevo",
+  "lat": [
+   "43.85638809204102"
+  ],
+  "long": [
+   "18.41305541992188"
+  ],
+  "elevation": [
+   "550.0"
+  ],
+  "populationTotal": [
+   "275524"
+  ]
+ },
+ "Podgorica": {
+  "resource": "http://dbpedia.org/resource/Podgorica",
+  "elevation": [
+   "40.0"
+  ]
+ },
+ "Nanjing": {
+  "resource": "http://dbpedia.org/resource/Nanjing",
+  "lat": [
+   "32.06083297729492"
+  ],
+  "long": [
+   "118.7788925170898"
+  ],
+  "elevation": [
+   "15.24"
+  ],
+  "populationTotal": [
+   "9341685"
+  ]
+ },
+ "Xian": {
+  "resource": "http://dbpedia.org/resource/Xi'an",
+  "lat": [
+   "34.26111221313477"
+  ],
+  "long": [
+   "108.9422225952148"
+  ],
+  "elevation": [
+   "405.0"
+  ],
+  "populationTotal": [
+   "12952907"
+  ]
+ },
+ "Hangzhou": {
+  "resource": "http://dbpedia.org/resource/Hangzhou",
+  "lat": [
+   "30.26700019836426"
+  ],
+  "long": [
+   "120.1529998779297"
+  ],
+  "populationTotal": [
+   "11936010"
+  ]
+ },
+ "Surabaya": {
+  "resource": "http://dbpedia.org/resource/Surabaya",
+  "lat": [
+   "-7.245833396911621"
+  ],
+  "long": [
+   "112.7377777099609"
+  ],
+  "elevation": [
+   "5.0"
+  ],
+  "foundingDate": [
+   "1293-05-31",
+   "1906-04-01"
+  ],
+  "populationTotal": [
+   "3018022"
+  ]
+ },
+ "Bandung": {
+  "resource": "http://dbpedia.org/resource/Bandung",
+  "lat": [
+   "-6.912000179290771"
+  ],
+  "long": [
+   "107.6097030639648"
+  ],
+  "elevation": [
+   "708.0"
+  ],
+  "foundingDate": [
+   "1810-09-25",
+   "1906-04-01"
+  ],
+  "populationTotal": [
+   "2528163"
+  ]
+ },
+ "Nagoya": {
+  "resource": "http://dbpedia.org/resource/Nagoya",
+  "lat": [
+   "35.18333435058594"
+  ],
+  "long": [
+   "136.8999938964844"
+  ],
+  "foundingDate": [
+   "1889-11-01"
+  ],
+  "populationAsOf": [
+   "2021-06-01"
+  ],
+  "populationTotal": [
+   "2331078"
+  ]
+ },
+ "Fukuoka": {
+  "resource": "http://dbpedia.org/resource/Fukuoka",
+  "lat": [
+   "33.59000015258789"
+  ],
+  "long": [
+   "130.4016723632812"
+  ],
+  "foundingDate": [
+   "1889-04-01"
+  ],
+  "populationAsOf": [
+   "2021-06-01"
+  ],
+  "populationTotal": [
+   "1603543"
+  ]
+ },
+ "Pune": {
+  "resource": "http://dbpedia.org/resource/Pune",
+  "lat": [
+   "18.52027702331543"
+  ],
+  "long": [
+   "73.85666656494141"
+  ],
+  "elevation": [
+   "570.62"
+  ]
+ },
+ "Ahmedabad": {
+  "resource": "http://dbpedia.org/resource/Ahmedabad",
+  "lat": [
+   "23.02249908447266"
+  ],
+  "long": [
+   "72.57138824462891"
+  ],
+  "elevation": [
+   "69.65000000000001"
+  ],
+  "populationTotal": [
+   "5577940"
+  ]
+ },
+ "Jaipur": {
+  "resource": "http://dbpedia.org/resource/Jaipur",
+  "lat": [
+   "26.91500091552734"
+  ],
+  "long": [
+   "75.81999969482422"
+  ],
+  "elevation": [
+   "431.0"
+  ],
+  "foundingDate": [
+   "1727-11-18"
+  ],
+  "populationTotal": [
+   "3046163"
+  ]
+ },
+ "Lucknow": {
+  "resource": "http://dbpedia.org/resource/Lucknow",
+  "lat": [
+   "26.85000038146973"
+  ],
+  "long": [
+   "80.94999694824219"
+  ],
+  "elevation": [
+   "123.0"
+  ],
+  "populationTotal": [
+   "4000000"
+  ]
+ },
+ "Chittagong": {
+  "resource": "http://dbpedia.org/resource/Chittagong",
+  "lat": [
+   "22.33499908447266"
+  ],
+  "long": [
+   "91.83249664306641"
+  ],
+  "elevation": [
+   "28.956",
+   "29.0"
+  ],
+  "populationTotal": [
+   "3230507"
+  ]
+ },
+ "Chiang Mai": {
+  "resource": "http://dbpedia.org/resource/Chiang_Mai",
+  "lat": [
+   "18.79527854919434"
+  ],
+  "long": [
+   "98.99861145019531"
+  ]
+ },
+ "Vientiane": {
+  "resource": "http://dbpedia.org/resource/Vientiane",
+  "lat": [
+   "17.97999954223633"
+  ],
+  "long": [
+   "102.629997253418"
+  ],
+  "elevation": [
+   "173.736",
+   "174.0"
+  ],
+  "populationTotal": [
+   "840940"
+  ]
+ }
+}

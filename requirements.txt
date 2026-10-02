@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+cartopy
+tifffile
+imagecodecs
+country_converter
+nltk
+torch
+transformers

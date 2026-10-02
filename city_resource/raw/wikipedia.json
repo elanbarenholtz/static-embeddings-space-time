@@ -1,0 +1,1634 @@
+{
+ "Abidjan": {
+  "final": "Abidjan",
+  "qid": "Q1515",
+  "disambig": false,
+  "missing": false
+ },
+ "Abuja": {
+  "final": "Abuja",
+  "qid": "Q3787",
+  "disambig": false,
+  "missing": false
+ },
+ "Accra": {
+  "final": "Accra",
+  "qid": "Q3761",
+  "disambig": false,
+  "missing": false
+ },
+ "Addis Ababa": {
+  "final": "Addis Ababa",
+  "qid": "Q3624",
+  "disambig": false,
+  "missing": false
+ },
+ "Adelaide": {
+  "final": "Adelaide",
+  "qid": "Q5112",
+  "disambig": false,
+  "missing": false
+ },
+ "Ahmedabad": {
+  "final": "Ahmedabad",
+  "qid": "Q1070",
+  "disambig": false,
+  "missing": false
+ },
+ "Albuquerque, New Mexico": {
+  "final": "Albuquerque, New Mexico",
+  "qid": "Q34804",
+  "disambig": false,
+  "missing": false
+ },
+ "Alexandria": {
+  "final": "Alexandria",
+  "qid": "Q87",
+  "disambig": false,
+  "missing": false
+ },
+ "Algiers": {
+  "final": "Algiers",
+  "qid": "Q3561",
+  "disambig": false,
+  "missing": false
+ },
+ "Almaty": {
+  "final": "Almaty",
+  "qid": "Q35493",
+  "disambig": false,
+  "missing": false
+ },
+ "Amman": {
+  "final": "Amman",
+  "qid": "Q3805",
+  "disambig": false,
+  "missing": false
+ },
+ "Amsterdam": {
+  "final": "Amsterdam",
+  "qid": "Q727",
+  "disambig": false,
+  "missing": false
+ },
+ "Anchorage, Alaska": {
+  "final": "Anchorage, Alaska",
+  "qid": "Q39450",
+  "disambig": false,
+  "missing": false
+ },
+ "Ankara": {
+  "final": "Ankara",
+  "qid": "Q3640",
+  "disambig": false,
+  "missing": false
+ },
+ "Antananarivo": {
+  "final": "Antananarivo",
+  "qid": "Q3915",
+  "disambig": false,
+  "missing": false
+ },
+ "Asunción": {
+  "final": "Asunción",
+  "qid": "Q2933",
+  "disambig": false,
+  "missing": false
+ },
+ "Athens": {
+  "final": "Athens",
+  "qid": "Q1524",
+  "disambig": false,
+  "missing": false
+ },
+ "Atlanta": {
+  "final": "Atlanta",
+  "qid": "Q23556",
+  "disambig": false,
+  "missing": false
+ },
+ "Auckland": {
+  "final": "Auckland",
+  "qid": "Q37100",
+  "disambig": false,
+  "missing": false
+ },
+ "Austin, Texas": {
+  "final": "Austin, Texas",
+  "qid": "Q16559",
+  "disambig": false,
+  "missing": false
+ },
+ "Baghdad": {
+  "final": "Baghdad",
+  "qid": "Q1530",
+  "disambig": false,
+  "missing": false
+ },
+ "Baku": {
+  "final": "Baku",
+  "qid": "Q9248",
+  "disambig": false,
+  "missing": false
+ },
+ "Baltimore": {
+  "final": "Baltimore",
+  "qid": "Q5092",
+  "disambig": false,
+  "missing": false
+ },
+ "Bamako": {
+  "final": "Bamako",
+  "qid": "Q3703",
+  "disambig": false,
+  "missing": false
+ },
+ "Bandung": {
+  "final": "Bandung",
+  "qid": "Q10389",
+  "disambig": false,
+  "missing": false
+ },
+ "Bangalore": {
+  "final": "Bengaluru",
+  "qid": "Q1355",
+  "disambig": false,
+  "missing": false
+ },
+ "Bangkok": {
+  "final": "Bangkok",
+  "qid": "Q1861",
+  "disambig": false,
+  "missing": false
+ },
+ "Barcelona": {
+  "final": "Barcelona",
+  "qid": "Q1492",
+  "disambig": false,
+  "missing": false
+ },
+ "Beijing": {
+  "final": "Beijing",
+  "qid": "Q956",
+  "disambig": false,
+  "missing": false
+ },
+ "Beirut": {
+  "final": "Beirut",
+  "qid": "Q3820",
+  "disambig": false,
+  "missing": false
+ },
+ "Belgrade": {
+  "final": "Belgrade",
+  "qid": "Q3711",
+  "disambig": false,
+  "missing": false
+ },
+ "Berlin": {
+  "final": "Berlin",
+  "qid": "Q64",
+  "disambig": false,
+  "missing": false
+ },
+ "Birmingham, Alabama": {
+  "final": "Birmingham, Alabama",
+  "qid": "Q79867",
+  "disambig": false,
+  "missing": false
+ },
+ "Bogotá": {
+  "final": "Bogotá",
+  "qid": "Q2841",
+  "disambig": false,
+  "missing": false
+ },
+ "Bologna": {
+  "final": "Bologna",
+  "qid": "Q1891",
+  "disambig": false,
+  "missing": false
+ },
+ "Boston": {
+  "final": "Boston",
+  "qid": "Q100",
+  "disambig": false,
+  "missing": false
+ },
+ "Brasília": {
+  "final": "Brasília",
+  "qid": "Q2844",
+  "disambig": false,
+  "missing": false
+ },
+ "Bratislava": {
+  "final": "Bratislava",
+  "qid": "Q1780",
+  "disambig": false,
+  "missing": false
+ },
+ "Brazzaville": {
+  "final": "Brazzaville",
+  "qid": "Q3844",
+  "disambig": false,
+  "missing": false
+ },
+ "Brisbane": {
+  "final": "Brisbane",
+  "qid": "Q34932",
+  "disambig": false,
+  "missing": false
+ },
+ "Brussels": {
+  "final": "Brussels",
+  "qid": "Q240",
+  "disambig": false,
+  "missing": false
+ },
+ "Bucharest": {
+  "final": "Bucharest",
+  "qid": "Q19660",
+  "disambig": false,
+  "missing": false
+ },
+ "Budapest": {
+  "final": "Budapest",
+  "qid": "Q1781",
+  "disambig": false,
+  "missing": false
+ },
+ "Buenos Aires": {
+  "final": "Buenos Aires",
+  "qid": "Q1486",
+  "disambig": false,
+  "missing": false
+ },
+ "Busan": {
+  "final": "Busan",
+  "qid": "Q16520",
+  "disambig": false,
+  "missing": false
+ },
+ "Cairo": {
+  "final": "Cairo",
+  "qid": "Q85",
+  "disambig": false,
+  "missing": false
+ },
+ "Calgary": {
+  "final": "Calgary",
+  "qid": "Q36312",
+  "disambig": false,
+  "missing": false
+ },
+ "Canberra": {
+  "final": "Canberra",
+  "qid": "Q3114",
+  "disambig": false,
+  "missing": false
+ },
+ "Cape Town": {
+  "final": "Cape Town",
+  "qid": "Q5465",
+  "disambig": false,
+  "missing": false
+ },
+ "Caracas": {
+  "final": "Caracas",
+  "qid": "Q1533",
+  "disambig": false,
+  "missing": false
+ },
+ "Casablanca": {
+  "final": "Casablanca",
+  "qid": "Q7903",
+  "disambig": false,
+  "missing": false
+ },
+ "Charlotte, North Carolina": {
+  "final": "Charlotte, North Carolina",
+  "qid": "Q16565",
+  "disambig": false,
+  "missing": false
+ },
+ "Chengdu": {
+  "final": "Chengdu",
+  "qid": "Q30002",
+  "disambig": false,
+  "missing": false
+ },
+ "Chennai": {
+  "final": "Chennai",
+  "qid": "Q1352",
+  "disambig": false,
+  "missing": false
+ },
+ "Chiang Mai": {
+  "final": "Chiang Mai",
+  "qid": "Q52028",
+  "disambig": false,
+  "missing": false
+ },
+ "Chicago": {
+  "final": "Chicago",
+  "qid": "Q1297",
+  "disambig": false,
+  "missing": false
+ },
+ "Chittagong": {
+  "final": "Chittagong",
+  "qid": "Q376749",
+  "disambig": false,
+  "missing": false
+ },
+ "Chongqing": {
+  "final": "Chongqing",
+  "qid": "Q11725",
+  "disambig": false,
+  "missing": false
+ },
+ "Christchurch": {
+  "final": "Christchurch",
+  "qid": "Q79990",
+  "disambig": false,
+  "missing": false
+ },
+ "Cincinnati": {
+  "final": "Cincinnati",
+  "qid": "Q43196",
+  "disambig": false,
+  "missing": false
+ },
+ "Cleveland": {
+  "final": "Cleveland",
+  "qid": "Q37320",
+  "disambig": false,
+  "missing": false
+ },
+ "Colombo": {
+  "final": "Colombo",
+  "qid": "Q35381",
+  "disambig": false,
+  "missing": false
+ },
+ "Columbus, Ohio": {
+  "final": "Columbus, Ohio",
+  "qid": "Q16567",
+  "disambig": false,
+  "missing": false
+ },
+ "Conakry": {
+  "final": "Conakry",
+  "qid": "Q3733",
+  "disambig": false,
+  "missing": false
+ },
+ "Copenhagen": {
+  "final": "Copenhagen",
+  "qid": "Q1748",
+  "disambig": false,
+  "missing": false
+ },
+ "Curitiba": {
+  "final": "Curitiba",
+  "qid": "Q4361",
+  "disambig": false,
+  "missing": false
+ },
+ "Córdoba, Argentina": {
+  "final": "Córdoba, Argentina",
+  "qid": "Q44210",
+  "disambig": false,
+  "missing": false
+ },
+ "Dakar": {
+  "final": "Dakar",
+  "qid": "Q3718",
+  "disambig": false,
+  "missing": false
+ },
+ "Dallas": {
+  "final": "Dallas",
+  "qid": "Q16557",
+  "disambig": false,
+  "missing": false
+ },
+ "Damascus": {
+  "final": "Damascus",
+  "qid": "Q3766",
+  "disambig": false,
+  "missing": false
+ },
+ "Dar es Salaam": {
+  "final": "Dar es Salaam",
+  "qid": "Q1960",
+  "disambig": false,
+  "missing": false
+ },
+ "Darwin, Northern Territory": {
+  "final": "Darwin, Northern Territory",
+  "qid": "Q11568",
+  "disambig": false,
+  "missing": false
+ },
+ "Denver": {
+  "final": "Denver",
+  "qid": "Q16554",
+  "disambig": false,
+  "missing": false
+ },
+ "Detroit": {
+  "final": "Detroit",
+  "qid": "Q12439",
+  "disambig": false,
+  "missing": false
+ },
+ "Dhaka": {
+  "final": "Dhaka",
+  "qid": "Q1354",
+  "disambig": false,
+  "missing": false
+ },
+ "Doha": {
+  "final": "Doha",
+  "qid": "Q3861",
+  "disambig": false,
+  "missing": false
+ },
+ "Douala": {
+  "final": "Douala",
+  "qid": "Q132830",
+  "disambig": false,
+  "missing": false
+ },
+ "Dubai": {
+  "final": "Dubai",
+  "qid": "Q612",
+  "disambig": false,
+  "missing": false
+ },
+ "Dublin": {
+  "final": "Dublin",
+  "qid": "Q1761",
+  "disambig": false,
+  "missing": false
+ },
+ "Durban": {
+  "final": "Durban",
+  "qid": "Q5468",
+  "disambig": false,
+  "missing": false
+ },
+ "Edinburgh": {
+  "final": "Edinburgh",
+  "qid": "Q23436",
+  "disambig": false,
+  "missing": false
+ },
+ "Edmonton": {
+  "final": "Edmonton",
+  "qid": "Q2096",
+  "disambig": false,
+  "missing": false
+ },
+ "El Paso, Texas": {
+  "final": "El Paso, Texas",
+  "qid": "Q16562",
+  "disambig": false,
+  "missing": false
+ },
+ "Fairbanks, Alaska": {
+  "final": "Fairbanks, Alaska",
+  "qid": "Q79638",
+  "disambig": false,
+  "missing": false
+ },
+ "Florence": {
+  "final": "Florence",
+  "qid": "Q2044",
+  "disambig": false,
+  "missing": false
+ },
+ "Frankfurt": {
+  "final": "Frankfurt",
+  "qid": "Q1794",
+  "disambig": false,
+  "missing": false
+ },
+ "Freetown": {
+  "final": "Freetown",
+  "qid": "Q3780",
+  "disambig": false,
+  "missing": false
+ },
+ "Fukuoka": {
+  "final": "Fukuoka",
+  "qid": "Q26600",
+  "disambig": false,
+  "missing": false
+ },
+ "Gaborone": {
+  "final": "Gaborone",
+  "qid": "Q3919",
+  "disambig": false,
+  "missing": false
+ },
+ "Gdańsk": {
+  "final": "Gdańsk",
+  "qid": "Q1792",
+  "disambig": false,
+  "missing": false
+ },
+ "Geneva": {
+  "final": "Geneva",
+  "qid": "Q71",
+  "disambig": false,
+  "missing": false
+ },
+ "Georgetown, Guyana": {
+  "final": "Georgetown, Guyana",
+  "qid": "Q10717",
+  "disambig": false,
+  "missing": false
+ },
+ "Guadalajara": {
+  "final": "Guadalajara",
+  "qid": "Q9022",
+  "disambig": false,
+  "missing": false
+ },
+ "Guangzhou": {
+  "final": "Guangzhou",
+  "qid": "Q16572",
+  "disambig": false,
+  "missing": false
+ },
+ "Guatemala City": {
+  "final": "Guatemala City",
+  "qid": "Q1555",
+  "disambig": false,
+  "missing": false
+ },
+ "Halifax, Nova Scotia": {
+  "final": "Halifax, Nova Scotia",
+  "qid": "Q2141",
+  "disambig": false,
+  "missing": false
+ },
+ "Hamburg": {
+  "final": "Hamburg",
+  "qid": "Q1055",
+  "disambig": false,
+  "missing": false
+ },
+ "Hangzhou": {
+  "final": "Hangzhou",
+  "qid": "Q4970",
+  "disambig": false,
+  "missing": false
+ },
+ "Hanoi": {
+  "final": "Hanoi",
+  "qid": "Q1858",
+  "disambig": false,
+  "missing": false
+ },
+ "Harare": {
+  "final": "Harare",
+  "qid": "Q3921",
+  "disambig": false,
+  "missing": false
+ },
+ "Havana": {
+  "final": "Havana",
+  "qid": "Q1563",
+  "disambig": false,
+  "missing": false
+ },
+ "Helsinki": {
+  "final": "Helsinki",
+  "qid": "Q1757",
+  "disambig": false,
+  "missing": false
+ },
+ "Ho Chi Minh City": {
+  "final": "Ho Chi Minh City",
+  "qid": "Q1854",
+  "disambig": false,
+  "missing": false
+ },
+ "Hobart": {
+  "final": "Hobart",
+  "qid": "Q40191",
+  "disambig": false,
+  "missing": false
+ },
+ "Hong Kong": {
+  "final": "Hong Kong",
+  "qid": "Q8646",
+  "disambig": false,
+  "missing": false
+ },
+ "Honolulu": {
+  "final": "Honolulu",
+  "qid": "Q18094",
+  "disambig": false,
+  "missing": false
+ },
+ "Houston": {
+  "final": "Houston",
+  "qid": "Q16555",
+  "disambig": false,
+  "missing": false
+ },
+ "Hyderabad": {
+  "final": "Hyderabad",
+  "qid": "Q1361",
+  "disambig": false,
+  "missing": false
+ },
+ "Indianapolis": {
+  "final": "Indianapolis",
+  "qid": "Q6346",
+  "disambig": false,
+  "missing": false
+ },
+ "Islamabad": {
+  "final": "Islamabad",
+  "qid": "Q1362",
+  "disambig": false,
+  "missing": false
+ },
+ "Istanbul": {
+  "final": "Istanbul",
+  "qid": "Q406",
+  "disambig": false,
+  "missing": false
+ },
+ "Jacksonville, Florida": {
+  "final": "Jacksonville, Florida",
+  "qid": "Q16568",
+  "disambig": false,
+  "missing": false
+ },
+ "Jaipur": {
+  "final": "Jaipur",
+  "qid": "Q66485",
+  "disambig": false,
+  "missing": false
+ },
+ "Jakarta": {
+  "final": "Jakarta",
+  "qid": "Q3630",
+  "disambig": false,
+  "missing": false
+ },
+ "Jeddah": {
+  "final": "Jeddah",
+  "qid": "Q374365",
+  "disambig": false,
+  "missing": false
+ },
+ "Jerusalem": {
+  "final": "Jerusalem",
+  "qid": "Q1218",
+  "disambig": false,
+  "missing": false
+ },
+ "Johannesburg": {
+  "final": "Johannesburg",
+  "qid": "Q34647",
+  "disambig": false,
+  "missing": false
+ },
+ "Juneau, Alaska": {
+  "final": "Juneau, Alaska",
+  "qid": "Q29445",
+  "disambig": false,
+  "missing": false
+ },
+ "Kabul": {
+  "final": "Kabul",
+  "qid": "Q5838",
+  "disambig": false,
+  "missing": false
+ },
+ "Kampala": {
+  "final": "Kampala",
+  "qid": "Q3894",
+  "disambig": false,
+  "missing": false
+ },
+ "Kansas City, Missouri": {
+  "final": "Kansas City, Missouri",
+  "qid": "Q41819",
+  "disambig": false,
+  "missing": false
+ },
+ "Karachi": {
+  "final": "Karachi",
+  "qid": "Q8660",
+  "disambig": false,
+  "missing": false
+ },
+ "Kathmandu": {
+  "final": "Kathmandu",
+  "qid": "Q3037",
+  "disambig": false,
+  "missing": false
+ },
+ "Khartoum": {
+  "final": "Khartoum",
+  "qid": "Q1963",
+  "disambig": false,
+  "missing": false
+ },
+ "Kingston, Jamaica": {
+  "final": "Kingston, Jamaica",
+  "qid": "Q34692",
+  "disambig": false,
+  "missing": false
+ },
+ "Kinshasa": {
+  "final": "Kinshasa",
+  "qid": "Q3838",
+  "disambig": false,
+  "missing": false
+ },
+ "Kolkata": {
+  "final": "Kolkata",
+  "qid": "Q1348",
+  "disambig": false,
+  "missing": false
+ },
+ "Kraków": {
+  "final": "Kraków",
+  "qid": "Q31487",
+  "disambig": false,
+  "missing": false
+ },
+ "Kuala Lumpur": {
+  "final": "Kuala Lumpur",
+  "qid": "Q1865",
+  "disambig": false,
+  "missing": false
+ },
+ "Kuwait City": {
+  "final": "Kuwait City",
+  "qid": "Q35178",
+  "disambig": false,
+  "missing": false
+ },
+ "Kyiv": {
+  "final": "Kyiv",
+  "qid": "Q1899",
+  "disambig": false,
+  "missing": false
+ },
+ "La Paz": {
+  "final": "La Paz",
+  "qid": "Q1491",
+  "disambig": false,
+  "missing": false
+ },
+ "Lagos": {
+  "final": "Lagos",
+  "qid": "Q8673",
+  "disambig": false,
+  "missing": false
+ },
+ "Lahore": {
+  "final": "Lahore",
+  "qid": "Q11739",
+  "disambig": false,
+  "missing": false
+ },
+ "Las Vegas": {
+  "final": "Las Vegas",
+  "qid": "Q23768",
+  "disambig": false,
+  "missing": false
+ },
+ "Lima": {
+  "final": "Lima",
+  "qid": "Q2868",
+  "disambig": false,
+  "missing": false
+ },
+ "Lisbon": {
+  "final": "Lisbon",
+  "qid": "Q597",
+  "disambig": false,
+  "missing": false
+ },
+ "Ljubljana": {
+  "final": "Ljubljana",
+  "qid": "Q437",
+  "disambig": false,
+  "missing": false
+ },
+ "London": {
+  "final": "London",
+  "qid": "Q84",
+  "disambig": false,
+  "missing": false
+ },
+ "Los Angeles": {
+  "final": "Los Angeles",
+  "qid": "Q65",
+  "disambig": false,
+  "missing": false
+ },
+ "Luanda": {
+  "final": "Luanda",
+  "qid": "Q3897",
+  "disambig": false,
+  "missing": false
+ },
+ "Lucknow": {
+  "final": "Lucknow",
+  "qid": "Q47916",
+  "disambig": false,
+  "missing": false
+ },
+ "Lusaka": {
+  "final": "Lusaka",
+  "qid": "Q3881",
+  "disambig": false,
+  "missing": false
+ },
+ "Lyon": {
+  "final": "Lyon",
+  "qid": "Q456",
+  "disambig": false,
+  "missing": false
+ },
+ "Madrid": {
+  "final": "Madrid",
+  "qid": "Q2807",
+  "disambig": false,
+  "missing": false
+ },
+ "Managua": {
+  "final": "Managua",
+  "qid": "Q3274",
+  "disambig": false,
+  "missing": false
+ },
+ "Manaus": {
+  "final": "Manaus",
+  "qid": "Q40236",
+  "disambig": false,
+  "missing": false
+ },
+ "Manila": {
+  "final": "Manila",
+  "qid": "Q1461",
+  "disambig": false,
+  "missing": false
+ },
+ "Maputo": {
+  "final": "Maputo",
+  "qid": "Q3889",
+  "disambig": false,
+  "missing": false
+ },
+ "Marrakesh": {
+  "final": "Marrakesh",
+  "qid": "Q101625",
+  "disambig": false,
+  "missing": false
+ },
+ "Marseille": {
+  "final": "Marseille",
+  "qid": "Q23482",
+  "disambig": false,
+  "missing": false
+ },
+ "Medellín": {
+  "final": "Medellín",
+  "qid": "Q48278",
+  "disambig": false,
+  "missing": false
+ },
+ "Melbourne": {
+  "final": "Melbourne",
+  "qid": "Q3141",
+  "disambig": false,
+  "missing": false
+ },
+ "Memphis, Tennessee": {
+  "final": "Memphis, Tennessee",
+  "qid": "Q16563",
+  "disambig": false,
+  "missing": false
+ },
+ "Mexico City": {
+  "final": "Mexico City",
+  "qid": "Q1489",
+  "disambig": false,
+  "missing": false
+ },
+ "Miami": {
+  "final": "Miami",
+  "qid": "Q8652",
+  "disambig": false,
+  "missing": false
+ },
+ "Milan": {
+  "final": "Milan",
+  "qid": "Q490",
+  "disambig": false,
+  "missing": false
+ },
+ "Milwaukee": {
+  "final": "Milwaukee",
+  "qid": "Q37836",
+  "disambig": false,
+  "missing": false
+ },
+ "Minneapolis": {
+  "final": "Minneapolis",
+  "qid": "Q36091",
+  "disambig": false,
+  "missing": false
+ },
+ "Minsk": {
+  "final": "Minsk",
+  "qid": "Q2280",
+  "disambig": false,
+  "missing": false
+ },
+ "Mogadishu": {
+  "final": "Mogadishu",
+  "qid": "Q2449",
+  "disambig": false,
+  "missing": false
+ },
+ "Monterrey": {
+  "final": "Monterrey",
+  "qid": "Q81033",
+  "disambig": false,
+  "missing": false
+ },
+ "Montevideo": {
+  "final": "Montevideo",
+  "qid": "Q1335",
+  "disambig": false,
+  "missing": false
+ },
+ "Montreal": {
+  "final": "Montreal",
+  "qid": "Q340",
+  "disambig": false,
+  "missing": false
+ },
+ "Moscow": {
+  "final": "Moscow",
+  "qid": "Q649",
+  "disambig": false,
+  "missing": false
+ },
+ "Mumbai": {
+  "final": "Mumbai",
+  "qid": "Q1156",
+  "disambig": false,
+  "missing": false
+ },
+ "Munich": {
+  "final": "Munich",
+  "qid": "Q1726",
+  "disambig": false,
+  "missing": false
+ },
+ "Muscat": {
+  "final": "Muscat",
+  "qid": "Q3826",
+  "disambig": false,
+  "missing": false
+ },
+ "Nagoya": {
+  "final": "Nagoya",
+  "qid": "Q11751",
+  "disambig": false,
+  "missing": false
+ },
+ "Nairobi": {
+  "final": "Nairobi",
+  "qid": "Q3870",
+  "disambig": false,
+  "missing": false
+ },
+ "Nanjing": {
+  "final": "Nanjing",
+  "qid": "Q16666",
+  "disambig": false,
+  "missing": false
+ },
+ "Naples": {
+  "final": "Naples",
+  "qid": "Q2634",
+  "disambig": false,
+  "missing": false
+ },
+ "Nashville, Tennessee": {
+  "final": "Nashville, Tennessee",
+  "qid": "Q23197",
+  "disambig": false,
+  "missing": false
+ },
+ "New Delhi": {
+  "final": "New Delhi",
+  "qid": "Q987",
+  "disambig": false,
+  "missing": false
+ },
+ "New Orleans": {
+  "final": "New Orleans",
+  "qid": "Q34404",
+  "disambig": false,
+  "missing": false
+ },
+ "New York City": {
+  "final": "New York City",
+  "qid": "Q60",
+  "disambig": false,
+  "missing": false
+ },
+ "Newark, New Jersey": {
+  "final": "Newark, New Jersey",
+  "qid": "Q25395",
+  "disambig": false,
+  "missing": false
+ },
+ "Nice": {
+  "final": "Nice",
+  "qid": "Q33959",
+  "disambig": false,
+  "missing": false
+ },
+ "Nicosia": {
+  "final": "Nicosia",
+  "qid": "Q3856",
+  "disambig": false,
+  "missing": false
+ },
+ "Novosibirsk": {
+  "final": "Novosibirsk",
+  "qid": "Q883",
+  "disambig": false,
+  "missing": false
+ },
+ "Oklahoma City": {
+  "final": "Oklahoma City",
+  "qid": "Q34863",
+  "disambig": false,
+  "missing": false
+ },
+ "Omaha, Nebraska": {
+  "final": "Omaha, Nebraska",
+  "qid": "Q43199",
+  "disambig": false,
+  "missing": false
+ },
+ "Orlando, Florida": {
+  "final": "Orlando, Florida",
+  "qid": "Q49233",
+  "disambig": false,
+  "missing": false
+ },
+ "Osaka": {
+  "final": "Osaka",
+  "qid": "Q35765",
+  "disambig": false,
+  "missing": false
+ },
+ "Oslo": {
+  "final": "Oslo",
+  "qid": "Q585",
+  "disambig": false,
+  "missing": false
+ },
+ "Ottawa": {
+  "final": "Ottawa",
+  "qid": "Q1930",
+  "disambig": false,
+  "missing": false
+ },
+ "Palermo": {
+  "final": "Palermo",
+  "qid": "Q2656",
+  "disambig": false,
+  "missing": false
+ },
+ "Panama City": {
+  "final": "Panama City",
+  "qid": "Q3306",
+  "disambig": false,
+  "missing": false
+ },
+ "Paramaribo": {
+  "final": "Paramaribo",
+  "qid": "Q3001",
+  "disambig": false,
+  "missing": false
+ },
+ "Paris": {
+  "final": "Paris",
+  "qid": "Q90",
+  "disambig": false,
+  "missing": false
+ },
+ "Perth": {
+  "final": "Perth",
+  "qid": "Q3183",
+  "disambig": false,
+  "missing": false
+ },
+ "Philadelphia": {
+  "final": "Philadelphia",
+  "qid": "Q1345",
+  "disambig": false,
+  "missing": false
+ },
+ "Phnom Penh": {
+  "final": "Phnom Penh",
+  "qid": "Q1850",
+  "disambig": false,
+  "missing": false
+ },
+ "Phoenix, Arizona": {
+  "final": "Phoenix, Arizona",
+  "qid": "Q16556",
+  "disambig": false,
+  "missing": false
+ },
+ "Pittsburgh": {
+  "final": "Pittsburgh",
+  "qid": "Q1342",
+  "disambig": false,
+  "missing": false
+ },
+ "Podgorica": {
+  "final": "Podgorica",
+  "qid": "Q23564",
+  "disambig": false,
+  "missing": false
+ },
+ "Port Moresby": {
+  "final": "Port Moresby",
+  "qid": "Q36526",
+  "disambig": false,
+  "missing": false
+ },
+ "Portland, Oregon": {
+  "final": "Portland, Oregon",
+  "qid": "Q6106",
+  "disambig": false,
+  "missing": false
+ },
+ "Porto": {
+  "final": "Porto",
+  "qid": "Q36433",
+  "disambig": false,
+  "missing": false
+ },
+ "Prague": {
+  "final": "Prague",
+  "qid": "Q1085",
+  "disambig": false,
+  "missing": false
+ },
+ "Pretoria": {
+  "final": "Pretoria",
+  "qid": "Q3926",
+  "disambig": false,
+  "missing": false
+ },
+ "Pune": {
+  "final": "Pune",
+  "qid": "Q1538",
+  "disambig": false,
+  "missing": false
+ },
+ "Pyongyang": {
+  "final": "Pyongyang",
+  "qid": "Q18808",
+  "disambig": false,
+  "missing": false
+ },
+ "Quebec City": {
+  "final": "Quebec City",
+  "qid": "Q2145",
+  "disambig": false,
+  "missing": false
+ },
+ "Quito": {
+  "final": "Quito",
+  "qid": "Q2900",
+  "disambig": false,
+  "missing": false
+ },
+ "Raleigh, North Carolina": {
+  "final": "Raleigh, North Carolina",
+  "qid": "Q41087",
+  "disambig": false,
+  "missing": false
+ },
+ "Recife": {
+  "final": "Recife",
+  "qid": "Q48344",
+  "disambig": false,
+  "missing": false
+ },
+ "Reykjavík": {
+  "final": "Reykjavík",
+  "qid": "Q1764",
+  "disambig": false,
+  "missing": false
+ },
+ "Richmond, Virginia": {
+  "final": "Richmond, Virginia",
+  "qid": "Q43421",
+  "disambig": false,
+  "missing": false
+ },
+ "Riga": {
+  "final": "Riga",
+  "qid": "Q1773",
+  "disambig": false,
+  "missing": false
+ },
+ "Rio de Janeiro": {
+  "final": "Rio de Janeiro",
+  "qid": "Q8678",
+  "disambig": false,
+  "missing": false
+ },
+ "Riyadh": {
+  "final": "Riyadh",
+  "qid": "Q3692",
+  "disambig": false,
+  "missing": false
+ },
+ "Rome": {
+  "final": "Rome",
+  "qid": "Q220",
+  "disambig": false,
+  "missing": false
+ },
+ "Saint Petersburg": {
+  "final": "Saint Petersburg",
+  "qid": "Q656",
+  "disambig": false,
+  "missing": false
+ },
+ "Salt Lake City": {
+  "final": "Salt Lake City",
+  "qid": "Q23337",
+  "disambig": false,
+  "missing": false
+ },
+ "Salvador, Bahia": {
+  "final": "Salvador, Bahia",
+  "qid": "Q36947",
+  "disambig": false,
+  "missing": false
+ },
+ "San Antonio": {
+  "final": "San Antonio",
+  "qid": "Q975",
+  "disambig": false,
+  "missing": false
+ },
+ "San Diego": {
+  "final": "San Diego",
+  "qid": "Q16552",
+  "disambig": false,
+  "missing": false
+ },
+ "San Francisco": {
+  "final": "San Francisco",
+  "qid": "Q62",
+  "disambig": false,
+  "missing": false
+ },
+ "San José, Costa Rica": {
+  "final": "San José, Costa Rica",
+  "qid": "Q3070",
+  "disambig": false,
+  "missing": false
+ },
+ "Santiago": {
+  "final": "Santiago",
+  "qid": "Q2887",
+  "disambig": false,
+  "missing": false
+ },
+ "Sapporo": {
+  "final": "Sapporo",
+  "qid": "Q37951",
+  "disambig": false,
+  "missing": false
+ },
+ "Sarajevo": {
+  "final": "Sarajevo",
+  "qid": "Q11194",
+  "disambig": false,
+  "missing": false
+ },
+ "Seattle": {
+  "final": "Seattle",
+  "qid": "Q5083",
+  "disambig": false,
+  "missing": false
+ },
+ "Seoul": {
+  "final": "Seoul",
+  "qid": "Q8684",
+  "disambig": false,
+  "missing": false
+ },
+ "Seville": {
+  "final": "Seville",
+  "qid": "Q8717",
+  "disambig": false,
+  "missing": false
+ },
+ "Shanghai": {
+  "final": "Shanghai",
+  "qid": "Q8686",
+  "disambig": false,
+  "missing": false
+ },
+ "Shenzhen": {
+  "final": "Shenzhen",
+  "qid": "Q15174",
+  "disambig": false,
+  "missing": false
+ },
+ "Singapore": {
+  "final": "Singapore",
+  "qid": "Q334",
+  "disambig": false,
+  "missing": false
+ },
+ "Skopje": {
+  "final": "Skopje",
+  "qid": "Q384",
+  "disambig": false,
+  "missing": false
+ },
+ "Sofia": {
+  "final": "Sofia",
+  "qid": "Q472",
+  "disambig": false,
+  "missing": false
+ },
+ "St. Louis": {
+  "final": "St. Louis",
+  "qid": "Q38022",
+  "disambig": false,
+  "missing": false
+ },
+ "Stockholm": {
+  "final": "Stockholm",
+  "qid": "Q1754",
+  "disambig": false,
+  "missing": false
+ },
+ "Surabaya": {
+  "final": "Surabaya",
+  "qid": "Q11462",
+  "disambig": false,
+  "missing": false
+ },
+ "Suva": {
+  "final": "Suva",
+  "qid": "Q38807",
+  "disambig": false,
+  "missing": false
+ },
+ "Sydney": {
+  "final": "Sydney",
+  "qid": "Q3130",
+  "disambig": false,
+  "missing": false
+ },
+ "São Paulo": {
+  "final": "São Paulo",
+  "qid": "Q174",
+  "disambig": false,
+  "missing": false
+ },
+ "Taipei": {
+  "final": "Taipei",
+  "qid": "Q1867",
+  "disambig": false,
+  "missing": false
+ },
+ "Tallinn": {
+  "final": "Tallinn",
+  "qid": "Q1770",
+  "disambig": false,
+  "missing": false
+ },
+ "Tampa, Florida": {
+  "final": "Tampa, Florida",
+  "qid": "Q49255",
+  "disambig": false,
+  "missing": false
+ },
+ "Tashkent": {
+  "final": "Tashkent",
+  "qid": "Q269",
+  "disambig": false,
+  "missing": false
+ },
+ "Tbilisi": {
+  "final": "Tbilisi",
+  "qid": "Q994",
+  "disambig": false,
+  "missing": false
+ },
+ "Tegucigalpa": {
+  "final": "Tegucigalpa",
+  "qid": "Q3238",
+  "disambig": false,
+  "missing": false
+ },
+ "Tehran": {
+  "final": "Tehran",
+  "qid": "Q3616",
+  "disambig": false,
+  "missing": false
+ },
+ "Tel Aviv": {
+  "final": "Tel Aviv",
+  "qid": "Q33935",
+  "disambig": false,
+  "missing": false
+ },
+ "Thessaloniki": {
+  "final": "Thessaloniki",
+  "qid": "Q17151",
+  "disambig": false,
+  "missing": false
+ },
+ "Tirana": {
+  "final": "Tirana",
+  "qid": "Q19689",
+  "disambig": false,
+  "missing": false
+ },
+ "Tokyo": {
+  "final": "Tokyo",
+  "qid": "Q1490",
+  "disambig": false,
+  "missing": false
+ },
+ "Toronto": {
+  "final": "Toronto",
+  "qid": "Q172",
+  "disambig": false,
+  "missing": false
+ },
+ "Tripoli, Libya": {
+  "final": "Tripoli, Libya",
+  "qid": "Q3579",
+  "disambig": false,
+  "missing": false
+ },
+ "Tucson, Arizona": {
+  "final": "Tucson, Arizona",
+  "qid": "Q18575",
+  "disambig": false,
+  "missing": false
+ },
+ "Tunis": {
+  "final": "Tunis",
+  "qid": "Q3572",
+  "disambig": false,
+  "missing": false
+ },
+ "Ulaanbaatar": {
+  "final": "Ulaanbaatar",
+  "qid": "Q23430",
+  "disambig": false,
+  "missing": false
+ },
+ "Valletta": {
+  "final": "Valletta",
+  "qid": "Q23800",
+  "disambig": false,
+  "missing": false
+ },
+ "Vancouver": {
+  "final": "Vancouver",
+  "qid": "Q24639",
+  "disambig": false,
+  "missing": false
+ },
+ "Venice": {
+  "final": "Venice",
+  "qid": "Q641",
+  "disambig": false,
+  "missing": false
+ },
+ "Vienna": {
+  "final": "Vienna",
+  "qid": "Q1741",
+  "disambig": false,
+  "missing": false
+ },
+ "Vientiane": {
+  "final": "Vientiane",
+  "qid": "Q9326",
+  "disambig": false,
+  "missing": false
+ },
+ "Vilnius": {
+  "final": "Vilnius",
+  "qid": "Q216",
+  "disambig": false,
+  "missing": false
+ },
+ "Vladivostok": {
+  "final": "Vladivostok",
+  "qid": "Q959",
+  "disambig": false,
+  "missing": false
+ },
+ "Warsaw": {
+  "final": "Warsaw",
+  "qid": "Q270",
+  "disambig": false,
+  "missing": false
+ },
+ "Washington, D.C.": {
+  "final": "Washington, D.C.",
+  "qid": "Q61",
+  "disambig": false,
+  "missing": false
+ },
+ "Wellington": {
+  "final": "Wellington",
+  "qid": "Q23661",
+  "disambig": false,
+  "missing": false
+ },
+ "Windhoek": {
+  "final": "Windhoek",
+  "qid": "Q3935",
+  "disambig": false,
+  "missing": false
+ },
+ "Winnipeg": {
+  "final": "Winnipeg",
+  "qid": "Q2135",
+  "disambig": false,
+  "missing": false
+ },
+ "Wuhan": {
+  "final": "Wuhan",
+  "qid": "Q11746",
+  "disambig": false,
+  "missing": false
+ },
+ "Xi'an": {
+  "final": "Xi'an",
+  "qid": "Q5826",
+  "disambig": false,
+  "missing": false
+ },
+ "Yangon": {
+  "final": "Yangon",
+  "qid": "Q37995",
+  "disambig": false,
+  "missing": false
+ },
+ "Yaoundé": {
+  "final": "Yaoundé",
+  "qid": "Q3808",
+  "disambig": false,
+  "missing": false
+ },
+ "Yerevan": {
+  "final": "Yerevan",
+  "qid": "Q1953",
+  "disambig": false,
+  "missing": false
+ },
+ "Zagreb": {
+  "final": "Zagreb",
+  "qid": "Q1435",
+  "disambig": false,
+  "missing": false
+ },
+ "Zürich": {
+  "final": "Zurich",
+  "qid": "Q72",
+  "disambig": false,
+  "missing": false
+ }
+}

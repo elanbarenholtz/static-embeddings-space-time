@@ -1,0 +1,53 @@
+{
+ "world_place|GloVe": {
+  "r2": [
+   0.469,
+   0.526
+  ],
+  "r2_mean": 0.497,
+  "coverage": 0.846,
+  "n_test": 6690
+ },
+ "world_place|Word2Vec": {
+  "r2": [
+   0.547,
+   0.573
+  ],
+  "r2_mean": 0.56,
+  "coverage": 0.877,
+  "n_test": 6917
+ },
+ "world_place|fastText": {
+  "r2": [
+   0.586,
+   0.594
+  ],
+  "r2_mean": 0.59,
+  "coverage": 0.918,
+  "n_test": 7224
+ },
+ "historical_figure|GloVe": {
+  "r2": [
+   0.496
+  ],
+  "r2_mean": 0.496,
+  "coverage": 0.975,
+  "n_test": 7316
+ },
+ "historical_figure|Word2Vec": {
+  "r2": [
+   0.421
+  ],
+  "r2_mean": 0.421,
+  "coverage": 0.968,
+  "n_test": 7266
+ },
+ "historical_figure|fastText": {
+  "r2": [
+   0.574
+  ],
+  "r2_mean": 0.574,
+  "coverage": 0.979,
+  "n_test": 7355
+ }
+}

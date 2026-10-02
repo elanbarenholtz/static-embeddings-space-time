@@ -1,0 +1,273 @@
+name,latitude,longitude,temperature,continent
+anchorage,61.2167,-149.8936,2.62,North America
+fairbanks,64.8436,-147.7231,-2.55,North America
+juneau,58.3019,-134.4197,4.32,North America
+vancouver,49.2608,-123.1139,10.57,North America
+seattle,47.605,-122.33,10.99,North America
+portland,45.52,-122.6819,11.51,North America
+san francisco,37.7833,-122.4167,14.3,North America
+los angeles,34.05,-118.25,18.82,North America
+san diego,32.715,-117.1625,17.96,North America
+las vegas,36.25,-115.25,19.12,North America
+phoenix,33.4483,-112.0739,22.77,North America
+salt lake city,40.7608,-111.9211,11.65,North America
+denver,39.7392,-104.9849,10.66,North America
+albuquerque,35.085,-106.65,13.73,North America
+el paso,31.7592,-106.4886,17.82,North America
+dallas,32.7792,-96.8089,19.16,North America
+houston,29.7628,-95.3831,20.87,North America
+san antonio,29.425,-98.4939,20.71,North America
+austin,30.3,-97.7333,19.98,North America
+new orleans,29.9998,-89.9243,20.25,North America
+minneapolis,44.9819,-93.2692,7.71,North America
+chicago,41.8819,-87.6278,9.91,North America
+detroit,42.3333,-83.05,9.78,North America
+indianapolis,39.7686,-86.1581,11.66,North America
+columbus,39.9622,-83.0006,11.71,North America
+cleveland,41.5,-81.6875,10.59,North America
+pittsburgh,40.4397,-79.99,11.4,North America
+nashville,36.1622,-86.7744,15.32,North America
+memphis,35.1461,-90.0519,16.38,North America
+atlanta,33.7489,-84.39,16.55,North America
+miami,25.78,-80.21,24.6,North America
+tampa,27.9475,-82.4586,22.73,North America
+orlando,28.54,-81.38,22.33,North America
+jacksonville,30.3369,-81.6614,20.87,North America
+charlotte,35.2272,-80.8431,16.13,North America
+washington,38.9047,-77.0164,13.84,North America
+baltimore,39.2894,-76.6153,13.76,North America
+philadelphia,39.9528,-75.1636,12.94,North America
+new york,40.7128,-74.0061,12.17,North America
+newark,40.73,-74.18,12.1,North America
+boston,42.3186,-71.0578,10.29,North America
+montreal,45.5089,-73.5542,6.77,North America
+toronto,43.6525,-79.3817,8.61,North America
+ottawa,45.4247,-75.695,6.29,North America
+calgary,51.0475,-114.0625,4.37,North America
+edmonton,53.5344,-113.4903,3.43,North America
+winnipeg,49.8956,-97.1386,3.18,North America
+quebec city,46.8139,-71.2081,5.13,North America
+halifax,44.6475,-63.5906,6.81,North America
+mexico city,19.4333,-99.1333,16.93,North America
+guadalajara,20.6767,-103.3475,21.2,North America
+monterrey,25.6844,-100.3181,22.66,North America
+havana,23.1367,-82.3589,25.58,North America
+kingston,17.9714,-76.7931,26.82,North America
+san jose cr,9.9325,-84.08,20.78,North America
+panama city,8.9711,-79.5347,27.07,North America
+guatemala city,14.6506,-90.4903,19.35,North America
+tegucigalpa,14.1058,-87.2047,21.49,North America
+managua,12.1364,-86.2514,26.87,North America
+bogota,4.7111,-74.0722,13.97,South America
+medellin,6.2308,-75.5906,21.27,South America
+quito,-0.22,-78.5125,12.86,South America
+lima,-12.06,-77.0375,19.27,South America
+la paz,-16.4958,-68.1333,8.87,South America
+santiago,-33.4375,-70.65,15.28,South America
+buenos aires,-34.6039,-58.3814,17.33,South America
+montevideo,-34.9056,-56.1842,16.33,South America
+asuncion,-25.28,-57.6344,22.87,South America
+brasilia,-15.7939,-47.8828,21.02,South America
+sao paulo,-23.55,-46.6333,18.82,South America
+rio de janeiro,-22.9111,-43.2056,23.64,South America
+caracas,10.4806,-66.9036,21.5,South America
+georgetown,6.8011,-58.155,27.05,South America
+paramaribo,5.8522,-55.2039,27.08,South America
+recife,-8.05,-34.9,25.5,South America
+salvador,-12.9747,-38.4767,25.17,South America
+manaus,-3.1189,-60.0217,27.07,South America
+curitiba,-25.4297,-49.2711,17.74,South America
+cordoba,-31.4167,-64.1833,17.25,South America
+reykjavik,64.1458,-21.9425,4.54,Europe
+oslo,59.9133,10.7389,6.67,Europe
+stockholm,59.3294,18.0686,6.55,Europe
+helsinki,60.1708,24.9375,5.26,Europe
+tallinn,59.4372,24.7453,5.98,Europe
+riga,56.9475,24.1069,6.72,Europe
+vilnius,54.6872,25.28,6.75,Europe
+copenhagen,55.6761,12.5683,8.76,Europe
+dublin,53.35,-6.2603,10.03,Europe
+edinburgh,55.95,-3.1833,8.71,Europe
+london,51.5072,-0.1275,10.78,Europe
+amsterdam,52.3728,4.8936,9.98,Europe
+brussels,50.8467,4.3525,10.84,Europe
+paris,48.8567,2.3522,11.94,Europe
+berlin,52.52,13.405,9.81,Europe
+hamburg,53.55,10.0,9.55,Europe
+munich,48.1375,11.575,9.42,Europe
+frankfurt,50.1106,8.6822,10.47,Europe
+zurich,47.3744,8.5411,9.52,Europe
+geneva,46.2017,6.1469,10.15,Europe
+vienna,48.2083,16.3725,10.37,Europe
+prague,50.0875,14.4214,10.05,Europe
+warsaw,52.23,21.0111,8.34,Europe
+krakow,50.0614,19.9372,9.14,Europe
+budapest,47.4925,19.0514,11.46,Europe
+bucharest,44.4325,26.1039,10.78,Europe
+sofia,42.7,23.33,10.16,Europe
+belgrade,44.8178,20.4569,12.12,Europe
+zagreb,45.8131,15.9775,11.34,Europe
+ljubljana,46.0514,14.5061,9.63,Europe
+rome,41.8933,12.4828,15.68,Europe
+milan,45.4669,9.19,13.06,Europe
+naples,40.8358,14.2486,15.4,Europe
+florence,43.7714,11.2542,15.06,Europe
+venice,45.4375,12.3358,13.09,Europe
+madrid,40.4169,-3.7033,14.29,Europe
+barcelona,41.3825,2.1769,15.93,Europe
+seville,37.39,-5.99,18.63,Europe
+lisbon,38.7253,-9.15,16.83,Europe
+porto,41.15,-8.6108,14.7,Europe
+athens,37.9842,23.7281,17.93,Europe
+thessaloniki,40.6403,22.9356,14.94,Europe
+marseille,43.2964,5.37,15.44,Europe
+lyon,45.76,4.84,12.17,Europe
+minsk,53.9006,27.5586,6.3,Europe
+kyiv,50.4,30.5233,8.09,Europe
+moscow,55.6,37.6,5.05,Europe
+saint petersburg,59.9375,30.3086,5.41,Europe
+cairo,30.0444,31.2358,21.69,Africa
+alexandria,31.1975,29.8925,20.43,Africa
+casablanca,33.5333,-7.5833,17.41,Africa
+marrakech,31.63,-8.0089,19.39,Africa
+tunis,36.8064,10.1817,18.69,Africa
+algiers,36.7325,3.0872,17.88,Africa
+tripoli,32.8872,13.1914,20.06,Africa
+lagos,6.455,3.3841,27.07,Africa
+abuja,9.0667,7.4833,26.57,Africa
+accra,5.55,-0.2,27.3,Africa
+dakar,14.6928,-17.4467,24.29,Africa
+bamako,12.6392,-8.0028,27.97,Africa
+abidjan,5.3167,-4.0333,26.45,Africa
+kinshasa,-4.3219,15.3119,25.63,Africa
+brazzaville,-4.2667,15.2667,25.43,Africa
+luanda,-8.8383,13.2344,25.29,Africa
+nairobi,-1.2864,36.8172,19.42,Africa
+kampala,0.3136,32.5811,21.67,Africa
+dar es salaam,-6.8161,39.2803,26.28,Africa
+addis ababa,9.03,38.74,16.13,Africa
+khartoum,15.6,32.5,29.63,Africa
+mogadishu,2.0392,45.3419,26.98,Africa
+johannesburg,-26.2044,28.0456,15.35,Africa
+cape town,-33.9253,18.4239,16.77,Africa
+durban,-29.8833,31.05,20.61,Africa
+pretoria,-25.7461,28.1881,18.41,Africa
+harare,-17.8292,31.0522,18.65,Africa
+lusaka,-15.4167,28.2833,20.39,Africa
+maputo,-25.9667,32.5833,22.98,Africa
+antananarivo,-18.91,47.525,18.99,Africa
+windhoek,-22.57,17.0836,19.28,Africa
+gaborone,-24.6581,25.9122,21.28,Africa
+douala,4.05,9.6833,26.53,Africa
+yaounde,3.8667,11.5167,23.97,Africa
+conakry,9.5092,-13.7122,27.94,Africa
+freetown,8.4872,-13.2356,26.44,Africa
+istanbul,41.0136,28.955,14.55,Asia
+ankara,39.93,32.85,11.16,Asia
+tehran,35.6889,51.3897,16.81,Asia
+baghdad,33.3153,44.3661,22.81,Asia
+riyadh,24.6333,46.7167,26.3,Asia
+jeddah,21.5433,39.1728,28.32,Asia
+dubai,25.2047,55.2708,27.46,Asia
+doha,25.2867,51.5333,27.03,Asia
+muscat,23.5889,58.4083,27.42,Asia
+kuwait city,29.3697,47.9783,25.96,Asia
+beirut,33.8981,35.5058,20.08,Asia
+damascus,33.5131,36.3094,16.62,Asia
+amman,31.9497,35.9328,16.76,Asia
+jerusalem,31.7833,35.2167,16.49,Asia
+tel aviv,32.08,34.78,19.87,Asia
+karachi,24.86,67.01,26.38,Asia
+lahore,31.5497,74.3436,24.18,Asia
+islamabad,33.6931,73.0639,21.3,Asia
+kabul,34.5253,69.1783,12.55,Asia
+new delhi,28.6139,77.2089,25.12,Asia
+mumbai,19.0761,72.8775,27.55,Asia
+kolkata,22.5675,88.37,26.96,Asia
+chennai,12.9822,80.1636,28.64,Asia
+bangalore,12.9789,77.5917,24.02,Asia
+hyderabad,17.3617,78.4747,26.96,Asia
+dhaka,23.7644,90.3889,26.08,Asia
+colombo,6.9344,79.8428,27.75,Asia
+kathmandu,27.71,85.32,18.53,Asia
+yangon,16.795,96.16,27.44,Asia
+bangkok,13.7525,100.4942,28.36,Asia
+hanoi,21.0,105.85,23.85,Asia
+ho chi minh city,10.7756,106.7019,27.76,Asia
+phnom penh,11.5694,104.9211,28.18,Asia
+kuala lumpur,3.1478,101.6953,27.54,Asia
+singapore,1.2833,103.8333,26.76,Asia
+jakarta,-6.1753,106.8269,27.66,Asia
+manila,14.5958,120.9772,27.36,Asia
+beijing,39.9067,116.3975,12.49,Asia
+shanghai,31.2286,121.4747,16.49,Asia
+guangzhou,23.13,113.26,22.24,Asia
+shenzhen,22.5415,114.0596,22.89,Asia
+hong kong,22.3,114.2,22.85,Asia
+chengdu,30.66,104.0633,16.92,Asia
+wuhan,30.5934,114.3046,17.31,Asia
+chongqing,29.5637,106.5504,18.67,Asia
+taipei,25.0375,121.5625,21.81,Asia
+seoul,37.56,126.99,12.0,Asia
+busan,35.18,129.075,14.04,Asia
+pyongyang,39.0167,125.7475,10.49,Asia
+tokyo,35.6897,139.6922,15.6,Asia
+osaka,34.6939,135.5022,16.44,Asia
+sapporo,43.0619,141.3544,8.66,Asia
+ulaanbaatar,47.9219,106.9153,-0.79,Asia
+novosibirsk,55.05,82.95,1.71,Asia
+vladivostok,43.115,131.8853,5.41,Asia
+almaty,43.2333,76.95,9.19,Asia
+tashkent,41.3111,69.2797,14.53,Asia
+tbilisi,41.7225,44.7925,12.74,Asia
+yerevan,40.1814,44.5144,10.45,Asia
+baku,40.3953,49.8822,14.12,Asia
+sydney,-33.8667,151.2,17.81,Oceania
+melbourne,-37.8142,144.9631,15.1,Oceania
+brisbane,-27.4678,153.0281,20.65,Oceania
+perth,-31.9558,115.8597,18.81,Oceania
+adelaide,-34.9275,138.6,16.52,Oceania
+auckland,-36.8492,174.7653,15.24,Oceania
+wellington,-41.2889,174.7772,12.68,Oceania
+christchurch,-43.5311,172.6361,12.39,Oceania
+darwin,-12.4381,130.8411,27.34,Oceania
+hobart,-42.8806,147.325,11.63,Oceania
+canberra,-35.2931,149.1269,13.25,Oceania
+suva,-18.1416,178.4419,25.05,Oceania
+port moresby,-9.4789,147.1494,26.71,Oceania
+omaha,41.2586,-96.05,10.56,North America
+kansas city,39.0945,-94.5783,13.13,North America
+st louis,38.6272,-90.2463,13.48,North America
+milwaukee,43.05,-87.95,8.62,North America
+cincinnati,39.1,-84.5325,12.67,North America
+richmond,37.5408,-77.4367,14.95,North America
+raleigh,35.8542,-78.7619,15.4,North America
+birmingham,33.5175,-86.8094,17.09,North America
+oklahoma city,35.4686,-97.5214,16.17,North America
+tucson,32.2217,-110.9264,20.97,North America
+honolulu,21.3,-157.85,24.71,North America
+nice,43.7034,7.2663,15.34,Europe
+palermo,38.1111,13.3517,18.36,Europe
+bologna,44.4939,11.3428,13.67,Europe
+gdansk,54.3475,18.6453,8.23,Europe
+bratislava,48.1439,17.1097,10.1,Europe
+nicosia,35.1725,33.365,19.73,Europe
+valletta,35.8983,14.5125,19.17,Europe
+tirana,41.3272,19.8186,15.12,Europe
+skopje,41.9961,21.4317,12.06,Europe
+sarajevo,43.8564,18.4131,10.25,Europe
+podgorica,42.4414,19.2628,15.21,Europe
+nanjing,32.0608,118.7789,16.01,Asia
+xian,34.2611,108.9422,13.96,Asia
+hangzhou,30.267,120.153,16.85,Asia
+surabaya,-7.2458,112.7378,28.16,Asia
+bandung,-6.912,107.6097,22.77,Asia
+nagoya,35.1833,136.9,15.73,Asia
+fukuoka,33.59,130.4017,16.52,Asia
+pune,18.5203,73.8567,24.82,Asia
+ahmedabad,23.0225,72.5714,27.46,Asia
+jaipur,26.915,75.82,25.18,Asia
+lucknow,26.85,80.95,25.82,Asia
+chittagong,22.335,91.8325,26.11,Asia
+chiang mai,18.7953,98.9986,25.81,Asia
+vientiane,17.98,102.63,26.44,Asia

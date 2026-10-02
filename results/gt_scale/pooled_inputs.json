@@ -1,0 +1,80 @@
+{
+ "world_place|pythia-2.8b|last": {
+  "r2_latitude": 0.503,
+  "within_continent_latitude": 0.362,
+  "within_country_latitude": 0.108,
+  "r2_longitude": 0.567,
+  "within_continent_longitude": 0.15,
+  "within_country_longitude": 0.065
+ },
+ "world_place|pythia-2.8b|mean": {
+  "r2_latitude": 0.521,
+  "within_continent_latitude": 0.385,
+  "within_country_latitude": 0.1,
+  "r2_longitude": 0.602,
+  "within_continent_longitude": 0.162,
+  "within_country_longitude": 0.062
+ },
+ "world_place|pythia-2.8b|sum": {
+  "r2_latitude": 0.537,
+  "within_continent_latitude": 0.405,
+  "within_country_latitude": 0.105,
+  "r2_longitude": 0.629,
+  "within_continent_longitude": 0.191,
+  "within_country_longitude": 0.067
+ },
+ "world_place|llama-2-7b|last": {
+  "r2_latitude": 0.494,
+  "within_continent_latitude": 0.362,
+  "within_country_latitude": 0.102,
+  "r2_longitude": 0.559,
+  "within_continent_longitude": 0.144,
+  "within_country_longitude": 0.053
+ },
+ "world_place|llama-2-7b|mean": {
+  "r2_latitude": 0.526,
+  "within_continent_latitude": 0.402,
+  "within_country_latitude": 0.097,
+  "r2_longitude": 0.599,
+  "within_continent_longitude": 0.166,
+  "within_country_longitude": 0.08
+ },
+ "world_place|llama-2-7b|sum": {
+  "r2_latitude": 0.548,
+  "within_continent_latitude": 0.421,
+  "within_country_latitude": 0.105,
+  "r2_longitude": 0.635,
+  "within_continent_longitude": 0.2,
+  "within_country_longitude": 0.08
+ },
+ "historical_figure|pythia-2.8b|last": {
+  "r2_death_year": 0.338,
+  "within_century_death_year": 0.061,
+  "within_decade_death_year": 0.003
+ },
+ "historical_figure|pythia-2.8b|mean": {
+  "r2_death_year": 0.524,
+  "within_century_death_year": 0.075,
+  "within_decade_death_year": -0.002
+ },
+ "historical_figure|pythia-2.8b|sum": {
+  "r2_death_year": 0.505,
+  "within_century_death_year": 0.06,
+  "within_decade_death_year": -0.004
+ },
+ "historical_figure|llama-2-7b|last": {
+  "r2_death_year": 0.313,
+  "within_century_death_year": 0.046,
+  "within_decade_death_year": 0.009
+ },
+ "historical_figure|llama-2-7b|mean": {
+  "r2_death_year": 0.518,
+  "within_century_death_year": 0.048,
+  "within_decade_death_year": 0.001
+ },
+ "historical_figure|llama-2-7b|sum": {
+  "r2_death_year": 0.521,
+  "within_century_death_year": 0.041,
+  "within_decade_death_year": -0.005
+ }
+}

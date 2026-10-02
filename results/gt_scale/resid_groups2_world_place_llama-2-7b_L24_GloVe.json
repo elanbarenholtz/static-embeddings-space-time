@@ -1,0 +1,123 @@
+{
+ "dataset": "world_place",
+ "model": "llama-2-7b",
+ "layer": 24,
+ "static": "GloVe",
+ "n_test": 6690,
+ "full": {
+  "r2": [
+   0.875,
+   0.884
+  ],
+  "within_r": [
+   0.348,
+   0.225
+  ]
+ },
+ "static_only": {
+  "r2": [
+   0.469,
+   0.526
+  ],
+  "within_r": [
+   0.062,
+   0.053
+  ]
+ },
+ "minus_group": {
+  "r2": [
+   0.011,
+   0.004
+  ],
+  "within_r": [
+   0.552,
+   0.53
+  ]
+ },
+ "minus_group_var": 0.261,
+ "minus_static": {
+  "r2": [
+   0.392,
+   0.321
+  ],
+  "within_r": [
+   0.136,
+   0.058
+  ]
+ },
+ "minus_static_var": 0.327,
+ "minus_group_then_static_perp": {
+  "r2": [
+   0.007,
+   0.002
+  ],
+  "within_r": [
+   0.463,
+   0.393
+  ]
+ },
+ "static_perp_var_of_RG": 0.242,
+ "minus_group_then_random_null": {
+  "r2": [
+   0.01,
+   0.004
+  ],
+  "within_r": [
+   0.537,
+   0.517
+  ]
+ },
+ "A_plus_S": {
+  "r2": [
+   0.875,
+   0.884
+  ],
+  "within_r": [
+   0.347,
+   0.226
+  ]
+ },
+ "bootstrap_within_r_95ci": {
+  "minus_group": [
+   [
+    0.386,
+    0.651
+   ],
+   [
+    0.162,
+    0.666
+   ]
+  ],
+  "static_perp": [
+   [
+    0.329,
+    0.55
+   ],
+   [
+    0.086,
+    0.53
+   ]
+  ],
+  "random_null": [
+   [
+    0.372,
+    0.637
+   ],
+   [
+    0.148,
+    0.655
+   ]
+  ],
+  "diff": [
+   [
+    -0.131,
+    -0.026
+   ],
+   [
+    -0.167,
+    -0.035
+   ]
+  ]
+ },
+ "n_test_groups": 273
+}

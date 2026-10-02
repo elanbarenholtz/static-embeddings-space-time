@@ -1,0 +1,20 @@
+{
+ "GloVe": {
+  "insample_S2_1P": 0.932,
+  "insample_nosuffix_S2_1P": 0.929,
+  "insample_S1_1P": 0.902,
+  "insample_nosuffix_S1_1P": 0.902
+ },
+ "Word2Vec": {
+  "insample_S2_1P": 0.938,
+  "insample_nosuffix_S2_1P": 0.931,
+  "insample_S1_1P": 0.938,
+  "insample_nosuffix_S1_1P": 0.944
+ },
+ "fastText": {
+  "insample_S2_1P": 0.959,
+  "insample_nosuffix_S2_1P": 0.959,
+  "insample_S1_1P": 0.938,
+  "insample_nosuffix_S1_1P": 0.943
+ }
+}

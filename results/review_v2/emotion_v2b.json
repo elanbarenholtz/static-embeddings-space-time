@@ -1,0 +1,641 @@
+{
+ "counts": {
+  "afraid": {
+   "train": 42,
+   "test": 17
+  },
+  "angry": {
+   "test": 12,
+   "train": 42
+  },
+  "ashamed": {
+   "train": 49,
+   "test": 19
+  },
+  "calm": {
+   "train": 41,
+   "test": 17
+  },
+  "desperate": {
+   "train": 44,
+   "test": 20
+  },
+  "disgusted": {
+   "train": 49,
+   "test": 16
+  },
+  "excited": {
+   "train": 38,
+   "test": 12
+  },
+  "joyful": {
+   "train": 37,
+   "test": 11
+  },
+  "lonely": {
+   "test": 10,
+   "train": 31
+  },
+  "proud": {
+   "train": 38,
+   "test": 14
+  },
+  "sad": {
+   "train": 40,
+   "test": 19
+  },
+  "surprised": {
+   "train": 70,
+   "test": 21
+  },
+  "neutral": {
+   "train": 74,
+   "test": 24
+  }
+ },
+ "GloVe": {
+  "stories": {
+   "story": {
+    "auc_macro": 0.838,
+    "acc": 0.415,
+    "balanced_acc": 0.436,
+    "auc_by_emotion": {
+     "afraid": 0.807,
+     "angry": 0.93,
+     "ashamed": 0.678,
+     "calm": 0.912,
+     "desperate": 0.738,
+     "disgusted": 0.914,
+     "excited": 0.871,
+     "joyful": 0.903,
+     "lonely": 0.848,
+     "proud": 0.84,
+     "sad": 0.795,
+     "surprised": 0.822
+    },
+    "auc_by_emotion_ci": {
+     "afraid": [
+      0.696,
+      0.894
+     ],
+     "angry": [
+      0.88,
+      0.977
+     ],
+     "ashamed": [
+      0.543,
+      0.801
+     ],
+     "calm": [
+      0.843,
+      0.965
+     ],
+     "desperate": [
+      0.647,
+      0.826
+     ],
+     "disgusted": [
+      0.863,
+      0.959
+     ],
+     "excited": [
+      0.762,
+      0.956
+     ],
+     "joyful": [
+      0.767,
+      0.987
+     ],
+     "lonely": [
+      0.758,
+      0.939
+     ],
+     "proud": [
+      0.735,
+      0.94
+     ],
+     "sad": [
+      0.717,
+      0.877
+     ],
+     "surprised": [
+      0.743,
+      0.903
+     ]
+    }
+   },
+   "word": {
+    "auc_macro": 0.752,
+    "acc": 0.277,
+    "balanced_acc": 0.29,
+    "auc_by_emotion": {
+     "afraid": 0.576,
+     "angry": 0.883,
+     "ashamed": 0.737,
+     "calm": 0.903,
+     "desperate": 0.715,
+     "disgusted": 0.663,
+     "excited": 0.784,
+     "joyful": 0.853,
+     "lonely": 0.851,
+     "proud": 0.786,
+     "sad": 0.659,
+     "surprised": 0.618
+    }
+   },
+   "ci": {
+    "story_auc": [
+     0.816,
+     0.864
+    ],
+    "word_auc": [
+     0.724,
+     0.783
+    ],
+    "story_acc": [
+     0.362,
+     0.478
+    ],
+    "word_acc": [
+     0.235,
+     0.324
+    ],
+    "diff_auc": [
+     0.046,
+     0.126
+    ],
+    "diff_acc": [
+     0.074,
+     0.212
+    ]
+   },
+   "n_boot": 2000,
+   "n_test": 188,
+   "n_test_topics": 25,
+   "n_pcs": 8
+  },
+  "goemotions": {
+   "all": {
+    "auc_macro": 0.791,
+    "n_emotions": 27,
+    "n_train": 43382,
+    "n_test": 5423,
+    "auc_by_emotion": {
+     "admiration": 0.8,
+     "amusement": 0.883,
+     "anger": 0.792,
+     "annoyance": 0.714,
+     "approval": 0.697,
+     "caring": 0.702,
+     "confusion": 0.723,
+     "curiosity": 0.675,
+     "desire": 0.781,
+     "disappointment": 0.718,
+     "disapproval": 0.679,
+     "disgust": 0.86,
+     "embarrassment": 0.748,
+     "excitement": 0.713,
+     "fear": 0.919,
+     "gratitude": 0.934,
+     "grief": 0.963,
+     "joy": 0.801,
+     "love": 0.906,
+     "nervousness": 0.898,
+     "optimism": 0.807,
+     "pride": 0.687,
+     "realization": 0.635,
+     "relief": 0.75,
+     "remorse": 0.94,
+     "sadness": 0.866,
+     "surprise": 0.769
+    }
+   },
+   "no_emotion_words": {
+    "auc_macro": 0.783,
+    "n_emotions": 27,
+    "n_train": 32504,
+    "n_test": 4073,
+    "auc_by_emotion": {
+     "admiration": 0.81,
+     "amusement": 0.875,
+     "anger": 0.772,
+     "annoyance": 0.704,
+     "approval": 0.701,
+     "caring": 0.697,
+     "confusion": 0.708,
+     "curiosity": 0.673,
+     "desire": 0.744,
+     "disappointment": 0.731,
+     "disapproval": 0.664,
+     "disgust": 0.844,
+     "embarrassment": 0.73,
+     "excitement": 0.737,
+     "fear": 0.92,
+     "gratitude": 0.933,
+     "grief": 0.968,
+     "joy": 0.794,
+     "love": 0.831,
+     "nervousness": 0.917,
+     "optimism": 0.755,
+     "pride": 0.705,
+     "realization": 0.617,
+     "relief": 0.779,
+     "remorse": 0.934,
+     "sadness": 0.85,
+     "surprise": 0.754
+    }
+   },
+   "lexicon_size": 244
+  }
+ },
+ "Word2Vec": {
+  "stories": {
+   "story": {
+    "auc_macro": 0.873,
+    "acc": 0.484,
+    "balanced_acc": 0.511,
+    "auc_by_emotion": {
+     "afraid": 0.828,
+     "angry": 0.935,
+     "ashamed": 0.735,
+     "calm": 0.965,
+     "desperate": 0.785,
+     "disgusted": 0.927,
+     "excited": 0.91,
+     "joyful": 0.944,
+     "lonely": 0.897,
+     "proud": 0.918,
+     "sad": 0.776,
+     "surprised": 0.86
+    },
+    "auc_by_emotion_ci": {
+     "afraid": [
+      0.726,
+      0.915
+     ],
+     "angry": [
+      0.872,
+      0.985
+     ],
+     "ashamed": [
+      0.621,
+      0.844
+     ],
+     "calm": [
+      0.938,
+      0.986
+     ],
+     "desperate": [
+      0.707,
+      0.864
+     ],
+     "disgusted": [
+      0.889,
+      0.964
+     ],
+     "excited": [
+      0.808,
+      0.988
+     ],
+     "joyful": [
+      0.847,
+      0.993
+     ],
+     "lonely": [
+      0.82,
+      0.966
+     ],
+     "proud": [
+      0.85,
+      0.971
+     ],
+     "sad": [
+      0.697,
+      0.851
+     ],
+     "surprised": [
+      0.785,
+      0.928
+     ]
+    }
+   },
+   "word": {
+    "auc_macro": 0.779,
+    "acc": 0.33,
+    "balanced_acc": 0.344,
+    "auc_by_emotion": {
+     "afraid": 0.628,
+     "angry": 0.848,
+     "ashamed": 0.648,
+     "calm": 0.883,
+     "desperate": 0.734,
+     "disgusted": 0.827,
+     "excited": 0.739,
+     "joyful": 0.947,
+     "lonely": 0.881,
+     "proud": 0.868,
+     "sad": 0.624,
+     "surprised": 0.717
+    }
+   },
+   "ci": {
+    "story_auc": [
+     0.853,
+     0.893
+    ],
+    "word_auc": [
+     0.75,
+     0.81
+    ],
+    "story_acc": [
+     0.413,
+     0.553
+    ],
+    "word_acc": [
+     0.271,
+     0.392
+    ],
+    "diff_auc": [
+     0.058,
+     0.13
+    ],
+    "diff_acc": [
+     0.062,
+     0.246
+    ]
+   },
+   "n_boot": 2000,
+   "n_test": 188,
+   "n_test_topics": 25,
+   "n_pcs": 11
+  },
+  "goemotions": {
+   "all": {
+    "auc_macro": 0.804,
+    "n_emotions": 27,
+    "n_train": 43387,
+    "n_test": 5424,
+    "auc_by_emotion": {
+     "admiration": 0.817,
+     "amusement": 0.881,
+     "anger": 0.761,
+     "annoyance": 0.724,
+     "approval": 0.699,
+     "caring": 0.704,
+     "confusion": 0.744,
+     "curiosity": 0.72,
+     "desire": 0.806,
+     "disappointment": 0.714,
+     "disapproval": 0.685,
+     "disgust": 0.855,
+     "embarrassment": 0.766,
+     "excitement": 0.706,
+     "fear": 0.917,
+     "gratitude": 0.943,
+     "grief": 0.958,
+     "joy": 0.827,
+     "love": 0.91,
+     "nervousness": 0.893,
+     "optimism": 0.834,
+     "pride": 0.743,
+     "realization": 0.678,
+     "relief": 0.803,
+     "remorse": 0.943,
+     "sadness": 0.873,
+     "surprise": 0.797
+    }
+   },
+   "no_emotion_words": {
+    "auc_macro": 0.794,
+    "n_emotions": 27,
+    "n_train": 32509,
+    "n_test": 4074,
+    "auc_by_emotion": {
+     "admiration": 0.831,
+     "amusement": 0.886,
+     "anger": 0.734,
+     "annoyance": 0.715,
+     "approval": 0.698,
+     "caring": 0.692,
+     "confusion": 0.713,
+     "curiosity": 0.721,
+     "desire": 0.821,
+     "disappointment": 0.726,
+     "disapproval": 0.675,
+     "disgust": 0.842,
+     "embarrassment": 0.77,
+     "excitement": 0.725,
+     "fear": 0.911,
+     "gratitude": 0.936,
+     "grief": 0.913,
+     "joy": 0.821,
+     "love": 0.838,
+     "nervousness": 0.932,
+     "optimism": 0.791,
+     "pride": 0.731,
+     "realization": 0.636,
+     "relief": 0.803,
+     "remorse": 0.933,
+     "sadness": 0.85,
+     "surprise": 0.782
+    }
+   },
+   "lexicon_size": 244
+  }
+ },
+ "fastText": {
+  "stories": {
+   "story": {
+    "auc_macro": 0.876,
+    "acc": 0.511,
+    "balanced_acc": 0.537,
+    "auc_by_emotion": {
+     "afraid": 0.814,
+     "angry": 0.929,
+     "ashamed": 0.71,
+     "calm": 0.954,
+     "desperate": 0.783,
+     "disgusted": 0.939,
+     "excited": 0.918,
+     "joyful": 0.954,
+     "lonely": 0.915,
+     "proud": 0.928,
+     "sad": 0.79,
+     "surprised": 0.874
+    },
+    "auc_by_emotion_ci": {
+     "afraid": [
+      0.713,
+      0.896
+     ],
+     "angry": [
+      0.867,
+      0.98
+     ],
+     "ashamed": [
+      0.565,
+      0.842
+     ],
+     "calm": [
+      0.917,
+      0.981
+     ],
+     "desperate": [
+      0.694,
+      0.866
+     ],
+     "disgusted": [
+      0.902,
+      0.974
+     ],
+     "excited": [
+      0.816,
+      0.983
+     ],
+     "joyful": [
+      0.874,
+      0.995
+     ],
+     "lonely": [
+      0.841,
+      0.975
+     ],
+     "proud": [
+      0.87,
+      0.968
+     ],
+     "sad": [
+      0.704,
+      0.871
+     ],
+     "surprised": [
+      0.8,
+      0.936
+     ]
+    }
+   },
+   "word": {
+    "auc_macro": 0.802,
+    "acc": 0.314,
+    "balanced_acc": 0.345,
+    "auc_by_emotion": {
+     "afraid": 0.638,
+     "angry": 0.852,
+     "ashamed": 0.67,
+     "calm": 0.873,
+     "desperate": 0.826,
+     "disgusted": 0.852,
+     "excited": 0.764,
+     "joyful": 0.953,
+     "lonely": 0.936,
+     "proud": 0.825,
+     "sad": 0.644,
+     "surprised": 0.794
+    }
+   },
+   "ci": {
+    "story_auc": [
+     0.852,
+     0.897
+    ],
+    "word_auc": [
+     0.774,
+     0.831
+    ],
+    "story_acc": [
+     0.447,
+     0.574
+    ],
+    "word_acc": [
+     0.243,
+     0.384
+    ],
+    "diff_auc": [
+     0.035,
+     0.11
+    ],
+    "diff_acc": [
+     0.112,
+     0.281
+    ]
+   },
+   "n_boot": 2000,
+   "n_test": 188,
+   "n_test_topics": 25,
+   "n_pcs": 12
+  },
+  "goemotions": {
+   "all": {
+    "auc_macro": 0.818,
+    "n_emotions": 27,
+    "n_train": 43386,
+    "n_test": 5424,
+    "auc_by_emotion": {
+     "admiration": 0.817,
+     "amusement": 0.916,
+     "anger": 0.773,
+     "annoyance": 0.736,
+     "approval": 0.719,
+     "caring": 0.762,
+     "confusion": 0.763,
+     "curiosity": 0.753,
+     "desire": 0.823,
+     "disappointment": 0.727,
+     "disapproval": 0.701,
+     "disgust": 0.877,
+     "embarrassment": 0.786,
+     "excitement": 0.749,
+     "fear": 0.918,
+     "gratitude": 0.932,
+     "grief": 0.96,
+     "joy": 0.845,
+     "love": 0.915,
+     "nervousness": 0.868,
+     "optimism": 0.829,
+     "pride": 0.729,
+     "realization": 0.744,
+     "relief": 0.801,
+     "remorse": 0.955,
+     "sadness": 0.88,
+     "surprise": 0.82
+    }
+   },
+   "no_emotion_words": {
+    "auc_macro": 0.811,
+    "n_emotions": 27,
+    "n_train": 32508,
+    "n_test": 4074,
+    "auc_by_emotion": {
+     "admiration": 0.825,
+     "amusement": 0.91,
+     "anger": 0.775,
+     "annoyance": 0.732,
+     "approval": 0.726,
+     "caring": 0.758,
+     "confusion": 0.736,
+     "curiosity": 0.743,
+     "desire": 0.831,
+     "disappointment": 0.735,
+     "disapproval": 0.694,
+     "disgust": 0.856,
+     "embarrassment": 0.777,
+     "excitement": 0.769,
+     "fear": 0.919,
+     "gratitude": 0.924,
+     "grief": 0.939,
+     "joy": 0.81,
+     "love": 0.864,
+     "nervousness": 0.915,
+     "optimism": 0.786,
+     "pride": 0.735,
+     "realization": 0.704,
+     "relief": 0.822,
+     "remorse": 0.95,
+     "sadness": 0.857,
+     "surprise": 0.799
+    }
+   },
+   "lexicon_size": 244
+  }
+ }
+}

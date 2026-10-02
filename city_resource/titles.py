@@ -1,0 +1,26 @@
+# Name in the 272-city set -> English Wikipedia title (= DBpedia resource name).
+# Names not listed map to themselves; Wikipedia redirects are followed.
+TITLES = {
+    'Anchorage': 'Anchorage, Alaska', 'Fairbanks': 'Fairbanks, Alaska', 'Juneau': 'Juneau, Alaska',
+    'Portland': 'Portland, Oregon', 'Phoenix': 'Phoenix, Arizona', 'Albuquerque': 'Albuquerque, New Mexico',
+    'El Paso': 'El Paso, Texas', 'Austin': 'Austin, Texas', 'Nashville': 'Nashville, Tennessee',
+    'Memphis': 'Memphis, Tennessee', 'Tampa': 'Tampa, Florida', 'Orlando': 'Orlando, Florida',
+    'Jacksonville': 'Jacksonville, Florida', 'Charlotte': 'Charlotte, North Carolina',
+    'Columbus': 'Columbus, Ohio', 'Cleveland': 'Cleveland', 'Washington': 'Washington, D.C.',
+    'New York': 'New York City', 'Newark': 'Newark, New Jersey', 'Halifax': 'Halifax, Nova Scotia',
+    'Kingston': 'Kingston, Jamaica', 'San Jose CR': 'San José, Costa Rica', 'Panama City': 'Panama City',
+    'Bogota': 'Bogotá', 'Medellin': 'Medellín', 'Asuncion': 'Asunción', 'Brasilia': 'Brasília',
+    'Sao Paulo': 'São Paulo', 'Georgetown': 'Georgetown, Guyana', 'Salvador': 'Salvador, Bahia',
+    'Cordoba': 'Córdoba, Argentina', 'Reykjavik': 'Reykjavík', 'Zurich': 'Zürich', 'Krakow': 'Kraków',
+    'Tripoli': 'Tripoli, Libya', 'Yaounde': 'Yaoundé', 'Bangalore': 'Bangalore', 'Hyderabad': 'Hyderabad',
+    'Darwin': 'Darwin, Northern Territory', 'Perth': 'Perth', 'Omaha': 'Omaha, Nebraska',
+    'Kansas City': 'Kansas City, Missouri', 'St Louis': 'St. Louis', 'Richmond': 'Richmond, Virginia',
+    'Raleigh': 'Raleigh, North Carolina', 'Birmingham': 'Birmingham, Alabama', 'Tucson': 'Tucson, Arizona',
+    'Gdansk': 'Gdańsk', 'Xian': "Xi'an", 'Alexandria': 'Alexandria', 'Santiago': 'Santiago',
+    'La Paz': 'La Paz', 'Valletta': 'Valletta', 'Nice': 'Nice', 'Wellington': 'Wellington',
+    'Hobart': 'Hobart', 'Victoria': 'Victoria', 'Lima': 'Lima', 'Vancouver': 'Vancouver',
+    'Quebec City': 'Quebec City', 'Kuwait City': 'Kuwait City', 'Ho Chi Minh City': 'Ho Chi Minh City',
+    'Mexico City': 'Mexico City', 'Guatemala City': 'Guatemala City', 'Oklahoma City': 'Oklahoma City',
+    'Salt Lake City': 'Salt Lake City', 'Saint Petersburg': 'Saint Petersburg', 'Marrakech': 'Marrakesh',
+    'Kyiv': 'Kyiv', 'Chittagong': 'Chittagong',
+}

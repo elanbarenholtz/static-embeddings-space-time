@@ -1,0 +1,34 @@
+{
+ "dataset": "historical_figure",
+ "static": "GloVe",
+ "layer": 24,
+ "n_train": 29268,
+ "n_test": 7316,
+ "targets": [
+  "death_year"
+ ],
+ "static_direct": [
+  0.496
+ ],
+ "full": [
+  0.78
+ ],
+ "map_alpha": 100.0,
+ "projection": [
+  0.494
+ ],
+ "residual": [
+  0.287
+ ],
+ "var_removed": 0.061,
+ "varmatched_k": 245,
+ "varmatched_removed": 0.061,
+ "varmatched_null": [
+  0.779
+ ],
+ "shuffled_removed": 0.006,
+ "shuffled_null": [
+  0.777
+ ],
+ "model": "llama-2-7b"
+}

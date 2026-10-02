@@ -1,0 +1,241 @@
+{
+ "baseline": {
+  "Latitude": 0.7596391582379176,
+  "Longitude": 0.7875075589640641,
+  "Temperature": 0.6749053365530973
+ },
+ "Cardinal directions": {
+  "n_words": 16,
+  "k": 9,
+  "drop": {
+   "Latitude": 0.01811396990073577,
+   "Longitude": 0.007064240366527974,
+   "Temperature": 0.02075883956405633
+  },
+  "city_var_removed": 0.06512969884634234,
+  "proper_share": 0.5625,
+  "null_city_var_removed": [
+   0.07621340524180907,
+   0.010539304256721128
+  ],
+  "Latitude": {
+   "null_mean": 0.010951900730572972,
+   "null_sd": 0.012949457797014329,
+   "z_matched": 0.5530786912031259,
+   "p_matched_empirical": 0.208955223880597,
+   "drop_predicted_from_var": 0.00800319282574277,
+   "z_beyond_var": 0.7997602468722661
+  },
+  "Longitude": {
+   "null_mean": 0.019042021434635847,
+   "null_sd": 0.014038167383958187,
+   "z_matched": -0.8532296802355572,
+   "p_matched_empirical": 0.8208955223880597,
+   "drop_predicted_from_var": 0.010096996790415244,
+   "z_beyond_var": -0.27155822874819796
+  },
+  "Temperature": {
+   "null_mean": 0.007557427321941246,
+   "null_sd": 0.010123580666484512,
+   "z_matched": 1.3040259841876058,
+   "p_matched_empirical": 0.0845771144278607,
+   "drop_predicted_from_var": 0.0046668776868639805,
+   "z_beyond_var": 1.651589662336369
+  }
+ },
+ "Climate & weather": {
+  "n_words": 27,
+  "k": 19,
+  "drop": {
+   "Latitude": 0.04846644478400275,
+   "Longitude": 0.007050827555650785,
+   "Temperature": 0.09014927852890264
+  },
+  "city_var_removed": 0.11470048512007965,
+  "proper_share": 0.1111111111111111,
+  "null_city_var_removed": [
+   0.10687634502603992,
+   0.009551688370775156
+  ],
+  "Latitude": {
+   "null_mean": 0.0085086382313676,
+   "null_sd": 0.010078424068094253,
+   "z_matched": 3.9646879594133653,
+   "p_matched_empirical": 0.009950248756218905,
+   "drop_predicted_from_var": 0.010818395313975732,
+   "z_beyond_var": 3.890896246555753
+  },
+  "Longitude": {
+   "null_mean": 0.0068786167943494765,
+   "null_sd": 0.007709995172277473,
+   "z_matched": 0.022336040095137778,
+   "p_matched_empirical": 0.42786069651741293,
+   "drop_predicted_from_var": 0.008456666159265464,
+   "z_beyond_var": -0.1883130404633983
+  },
+  "Temperature": {
+   "null_mean": 0.009191015034126499,
+   "null_sd": 0.010508534473810003,
+   "z_matched": 7.704048903921394,
+   "p_matched_empirical": 0.004975124378109453,
+   "drop_predicted_from_var": 0.011288176921177707,
+   "z_beyond_var": 7.73763261542915
+  }
+ },
+ "Region & continent": {
+  "n_words": 28,
+  "k": 18,
+  "drop": {
+   "Latitude": 0.11854429929063404,
+   "Longitude": 0.01079397870189136,
+   "Temperature": 0.0631887465509946
+  },
+  "city_var_removed": 0.16171038226442866,
+  "proper_share": 0.7857142857142857,
+  "null_city_var_removed": [
+   0.1717815217993657,
+   0.0143450982619163
+  ],
+  "Latitude": {
+   "null_mean": 0.047203353339041756,
+   "null_sd": 0.030413013739651627,
+   "z_matched": 2.345737471541006,
+   "p_matched_empirical": 0.029850746268656716,
+   "drop_predicted_from_var": 0.03962130470159296,
+   "z_beyond_var": 2.775955059293736
+  },
+  "Longitude": {
+   "null_mean": 0.051861199504336625,
+   "null_sd": 0.025724692981794084,
+   "z_matched": -1.5964124754184401,
+   "p_matched_empirical": 0.9751243781094527,
+   "drop_predicted_from_var": 0.041767071932766825,
+   "z_beyond_var": -1.451981187358716
+  },
+  "Temperature": {
+   "null_mean": 0.04560934088352619,
+   "null_sd": 0.026031788320343568,
+   "z_matched": 0.6753053401917184,
+   "p_matched_empirical": 0.208955223880597,
+   "drop_predicted_from_var": 0.03895069196258173,
+   "z_beyond_var": 0.9998158881528314
+  }
+ },
+ "Country names": {
+  "n_words": 68,
+  "k": 20,
+  "drop": {
+   "Latitude": 0.2259647861072035,
+   "Longitude": 0.15485837218256548,
+   "Temperature": 0.22385311258274188
+  },
+  "city_var_removed": 0.28726401266557977,
+  "proper_share": 0.9852941176470589,
+  "null_city_var_removed": [
+   0.23591470658599054,
+   0.01212651767548799
+  ],
+  "Latitude": {
+   "null_mean": 0.09684097871398492,
+   "null_sd": 0.03888224310559174,
+   "z_matched": 3.3208939886147926,
+   "p_matched_empirical": 0.009950248756218905,
+   "drop_predicted_from_var": 0.15297194847951645,
+   "z_beyond_var": 1.9969099093936789
+  },
+  "Longitude": {
+   "null_mean": 0.09107553364394814,
+   "null_sd": 0.03244749519881531,
+   "z_matched": 1.965724569733386,
+   "p_matched_empirical": 0.03482587064676617,
+   "drop_predicted_from_var": 0.15678785055797193,
+   "z_beyond_var": -0.06771067903560392
+  },
+  "Temperature": {
+   "null_mean": 0.10601599369563175,
+   "null_sd": 0.03731149160375894,
+   "z_matched": 3.158199091543117,
+   "p_matched_empirical": 0.009950248756218905,
+   "drop_predicted_from_var": 0.14674235176539097,
+   "z_beyond_var": 2.138959983681998
+  }
+ },
+ "Economic terms": {
+  "n_words": 27,
+  "k": 19,
+  "drop": {
+   "Latitude": 0.004230165677299835,
+   "Longitude": -2.011398398471531e-05,
+   "Temperature": 0.01477832617475583
+  },
+  "city_var_removed": 0.10608733381980559,
+  "proper_share": 0.037037037037037035,
+  "null_city_var_removed": [
+   0.09690359490707606,
+   0.00880499723841015
+  ],
+  "Latitude": {
+   "null_mean": 0.00717585913718768,
+   "null_sd": 0.009450057944243922,
+   "z_matched": -0.31171168232699376,
+   "p_matched_empirical": 0.582089552238806,
+   "drop_predicted_from_var": 0.009405181775143975,
+   "z_beyond_var": -0.5621857307879802
+  },
+  "Longitude": {
+   "null_mean": 0.008559140578324449,
+   "null_sd": 0.008237676131625345,
+   "z_matched": -1.0414653872312922,
+   "p_matched_empirical": 0.9054726368159204,
+   "drop_predicted_from_var": 0.011156862806623327,
+   "z_beyond_var": -1.423428783866737
+  },
+  "Temperature": {
+   "null_mean": 0.006603781187012308,
+   "null_sd": 0.009992939786504871,
+   "z_matched": 0.8180320468640239,
+   "p_matched_empirical": 0.17412935323383086,
+   "drop_predicted_from_var": 0.00910177831943159,
+   "z_beyond_var": 0.5851087596942833
+  }
+ },
+ "Cultural & language": {
+  "n_words": 31,
+  "k": 20,
+  "drop": {
+   "Latitude": 0.03130744139179842,
+   "Longitude": 0.025800810514090555,
+   "Temperature": 0.06745404697119184
+  },
+  "city_var_removed": 0.1945567547636442,
+  "proper_share": 0.7419354838709677,
+  "null_city_var_removed": [
+   0.18366502272919505,
+   0.013604258147633806
+  ],
+  "Latitude": {
+   "null_mean": 0.04176808593079648,
+   "null_sd": 0.02400936664642957,
+   "z_matched": -0.43569014930902644,
+   "p_matched_empirical": 0.6119402985074627,
+   "drop_predicted_from_var": 0.046506963110431856,
+   "z_beyond_var": -0.6532283960151894
+  },
+  "Longitude": {
+   "null_mean": 0.04205182026174362,
+   "null_sd": 0.022717936519561038,
+   "z_matched": -0.7153382849564837,
+   "p_matched_empirical": 0.7512437810945274,
+   "drop_predicted_from_var": 0.05201388668194454,
+   "z_beyond_var": -1.3791108084772326
+  },
+  "Temperature": {
+   "null_mean": 0.050136210828533444,
+   "null_sd": 0.023093413718586874,
+   "z_matched": 0.7499036891509907,
+   "p_matched_empirical": 0.19402985074626866,
+   "drop_predicted_from_var": 0.05425204372088224,
+   "z_beyond_var": 0.5863924917566111
+  }
+ }
+}

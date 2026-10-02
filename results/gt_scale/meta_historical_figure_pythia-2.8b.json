@@ -1,0 +1,1 @@
+{"layers": [0, 4, 8, 12, 16, 19, 20, 24, 28, 32], "n_layers": 32, "hidden": 2560, "model": "./pythia-2.8b", "dataset": "historical_figure", "n": 37539, "template": "{}", "median_tokens": 6.0}

@@ -1,0 +1,33 @@
+{
+ "dataset": "historical_figure",
+ "static": "GloVe",
+ "layer": 28,
+ "n_train": 29268,
+ "n_test": 7316,
+ "targets": [
+  "death_year"
+ ],
+ "static_direct": [
+  0.496
+ ],
+ "full": [
+  0.701
+ ],
+ "map_alpha": 10.0,
+ "projection": [
+  0.495
+ ],
+ "residual": [
+  0.206
+ ],
+ "var_removed": 0.19,
+ "varmatched_k": 503,
+ "varmatched_removed": 0.19,
+ "varmatched_null": [
+  0.694
+ ],
+ "shuffled_removed": 0.006,
+ "shuffled_null": [
+  0.7
+ ]
+}

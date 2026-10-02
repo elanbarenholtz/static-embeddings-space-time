@@ -1,0 +1,41 @@
+{
+ "dataset": "world_place",
+ "static": "GloVe",
+ "layer": 24,
+ "n_train": 26805,
+ "n_test": 6690,
+ "targets": [
+  "latitude",
+  "longitude"
+ ],
+ "static_direct": [
+  0.469,
+  0.526
+ ],
+ "full": [
+  0.875,
+  0.884
+ ],
+ "map_alpha": 10.0,
+ "projection": [
+  0.468,
+  0.526
+ ],
+ "residual": [
+  0.392,
+  0.321
+ ],
+ "var_removed": 0.327,
+ "varmatched_k": 1336,
+ "varmatched_removed": 0.327,
+ "varmatched_null": [
+  0.869,
+  0.877
+ ],
+ "shuffled_removed": 0.008,
+ "shuffled_null": [
+  0.871,
+  0.881
+ ],
+ "model": "llama-2-7b"
+}

@@ -1,0 +1,37 @@
+[
+ {
+  "rep": "GloVe",
+  "n_test": 7316,
+  "r2_death_year": 0.496,
+  "within_century_death_year": 0.051,
+  "within_decade_death_year": 0.001
+ },
+ {
+  "rep": "Word2Vec",
+  "n_test": 7316,
+  "r2_death_year": 0.416,
+  "within_century_death_year": 0.05,
+  "within_decade_death_year": 0.008
+ },
+ {
+  "rep": "llama L0",
+  "n_test": 7316,
+  "r2_death_year": 0.313,
+  "within_century_death_year": 0.046,
+  "within_decade_death_year": 0.009
+ },
+ {
+  "rep": "llama L24",
+  "n_test": 7316,
+  "r2_death_year": 0.78,
+  "within_century_death_year": 0.117,
+  "within_decade_death_year": 0.02
+ },
+ {
+  "rep": "llama L24 (300 PCs)",
+  "n_test": 7316,
+  "r2_death_year": 0.757,
+  "within_century_death_year": 0.11,
+  "within_decade_death_year": 0.024
+ }
+]

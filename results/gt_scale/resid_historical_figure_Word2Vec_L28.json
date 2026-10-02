@@ -1,0 +1,33 @@
+{
+ "dataset": "historical_figure",
+ "static": "Word2Vec",
+ "layer": 28,
+ "n_train": 29030,
+ "n_test": 7255,
+ "targets": [
+  "death_year"
+ ],
+ "static_direct": [
+  0.422
+ ],
+ "full": [
+  0.7
+ ],
+ "map_alpha": 10.0,
+ "projection": [
+  0.422
+ ],
+ "residual": [
+  0.248
+ ],
+ "var_removed": 0.175,
+ "varmatched_k": 465,
+ "varmatched_removed": 0.175,
+ "varmatched_null": [
+  0.693
+ ],
+ "shuffled_removed": 0.003,
+ "shuffled_null": [
+  0.699
+ ]
+}

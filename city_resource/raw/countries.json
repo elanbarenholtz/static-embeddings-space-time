@@ -1,0 +1,630 @@
+{
+ "Q1006": {
+  "label": "Guinea",
+  "iso3": "GIN"
+ },
+ "Q1008": {
+  "label": "Ivory Coast",
+  "iso3": "CIV"
+ },
+ "Q1009": {
+  "label": "Cameroon",
+  "iso3": "CMR"
+ },
+ "Q1016": {
+  "label": "Libya",
+  "iso3": "LBY"
+ },
+ "Q1019": {
+  "label": "Madagascar",
+  "iso3": "MDG"
+ },
+ "Q1028": {
+  "label": "Morocco",
+  "iso3": "MAR"
+ },
+ "Q1029": {
+  "label": "Mozambique",
+  "iso3": "MOZ"
+ },
+ "Q1030": {
+  "label": "Namibia",
+  "iso3": "NAM"
+ },
+ "Q1033": {
+  "label": "Nigeria",
+  "iso3": "NGA"
+ },
+ "Q1036": {
+  "label": "Uganda",
+  "iso3": "UGA"
+ },
+ "Q1041": {
+  "label": "Senegal",
+  "iso3": "SEN"
+ },
+ "Q1044": {
+  "label": "Sierra Leone",
+  "iso3": "SLE"
+ },
+ "Q1045": {
+  "label": "Somalia",
+  "iso3": "SOM"
+ },
+ "Q1049": {
+  "label": "Sudan",
+  "iso3": "SDN"
+ },
+ "Q1062422": {
+  "label": "Konbaung dynasty",
+  "iso3": null
+ },
+ "Q114": {
+  "label": "Kenya",
+  "iso3": "KEN"
+ },
+ "Q115": {
+  "label": "Ethiopia",
+  "iso3": "ETH"
+ },
+ "Q11696332": {
+  "label": "Medieval Egypt",
+  "iso3": null
+ },
+ "Q117": {
+  "label": "Ghana",
+  "iso3": "GHA"
+ },
+ "Q124943": {
+  "label": "Kingdom of Egypt",
+  "iso3": null
+ },
+ "Q12560": {
+  "label": "Ottoman Empire",
+  "iso3": null
+ },
+ "Q12844800": {
+  "label": "Ghaznavids",
+  "iso3": null
+ },
+ "Q142": {
+  "label": "France",
+  "iso3": "FRA"
+ },
+ "Q145": {
+  "label": "United Kingdom",
+  "iso3": "GBR"
+ },
+ "Q148": {
+  "label": "People's Republic of China",
+  "iso3": "CHN"
+ },
+ "Q155": {
+  "label": "Brazil",
+  "iso3": "BRA"
+ },
+ "Q159": {
+  "label": "Russia",
+  "iso3": "RUS"
+ },
+ "Q16": {
+  "label": "Canada",
+  "iso3": "CAN"
+ },
+ "Q17": {
+  "label": "Japan",
+  "iso3": "JPN"
+ },
+ "Q17765809": {
+  "label": "Third Hellenic Republic",
+  "iso3": null
+ },
+ "Q180114": {
+  "label": "Ayyubid dynasty",
+  "iso3": null
+ },
+ "Q18234383": {
+  "label": "Safavid Iran",
+  "iso3": null
+ },
+ "Q183": {
+  "label": "Germany",
+  "iso3": "DEU"
+ },
+ "Q184": {
+  "label": "Belarus",
+  "iso3": "BLR"
+ },
+ "Q189": {
+  "label": "Iceland",
+  "iso3": "ISL"
+ },
+ "Q189545": {
+  "label": "Zengid dynasty",
+  "iso3": null
+ },
+ "Q191": {
+  "label": "Estonia",
+  "iso3": "EST"
+ },
+ "Q199443": {
+  "label": "Ghurid dynasty",
+  "iso3": null
+ },
+ "Q20": {
+  "label": "Norway",
+  "iso3": "NOR"
+ },
+ "Q211": {
+  "label": "Latvia",
+  "iso3": "LVA"
+ },
+ "Q212": {
+  "label": "Ukraine",
+  "iso3": "UKR"
+ },
+ "Q213": {
+  "label": "Czech Republic",
+  "iso3": "CZE"
+ },
+ "Q214": {
+  "label": "Slovakia",
+  "iso3": "SVK"
+ },
+ "Q215": {
+  "label": "Slovenia",
+  "iso3": "SVN"
+ },
+ "Q218": {
+  "label": "Romania",
+  "iso3": "ROU"
+ },
+ "Q219": {
+  "label": "Bulgaria",
+  "iso3": "BGR"
+ },
+ "Q219060": {
+  "label": "Palestine",
+  "iso3": "PSE"
+ },
+ "Q221": {
+  "label": "North Macedonia",
+  "iso3": "MKD"
+ },
+ "Q222": {
+  "label": "Albania",
+  "iso3": "ALB"
+ },
+ "Q224": {
+  "label": "Croatia",
+  "iso3": "HRV"
+ },
+ "Q225": {
+  "label": "Bosnia and Herzegovina",
+  "iso3": "BIH"
+ },
+ "Q227": {
+  "label": "Azerbaijan",
+  "iso3": "AZE"
+ },
+ "Q229": {
+  "label": "Cyprus",
+  "iso3": "CYP"
+ },
+ "Q230": {
+  "label": "Georgia",
+  "iso3": "GEO"
+ },
+ "Q232": {
+  "label": "Kazakhstan",
+  "iso3": "KAZ"
+ },
+ "Q233": {
+  "label": "Malta",
+  "iso3": "MLT"
+ },
+ "Q236": {
+  "label": "Montenegro",
+  "iso3": "MNE"
+ },
+ "Q23681": {
+  "label": "Northern Cyprus",
+  "iso3": null
+ },
+ "Q237": {
+  "label": "Vatican City",
+  "iso3": "VAT"
+ },
+ "Q241": {
+  "label": "Cuba",
+  "iso3": "CUB"
+ },
+ "Q252": {
+  "label": "Indonesia",
+  "iso3": "IDN"
+ },
+ "Q258": {
+  "label": "South Africa",
+  "iso3": "ZAF"
+ },
+ "Q262": {
+  "label": "Algeria",
+  "iso3": "DZA"
+ },
+ "Q2622868": {
+  "label": "Bagratid Armenia",
+  "iso3": null
+ },
+ "Q265": {
+  "label": "Uzbekistan",
+  "iso3": "UZB"
+ },
+ "Q27": {
+  "label": "Ireland",
+  "iso3": "IRL"
+ },
+ "Q28": {
+  "label": "Hungary",
+  "iso3": "HUN"
+ },
+ "Q282428": {
+  "label": "Mamluk Sultanate of Egypt",
+  "iso3": null
+ },
+ "Q29": {
+  "label": "Spain",
+  "iso3": "ESP"
+ },
+ "Q298": {
+  "label": "Chile",
+  "iso3": "CHL"
+ },
+ "Q30": {
+  "label": "United States",
+  "iso3": "USA"
+ },
+ "Q31": {
+  "label": "Belgium",
+  "iso3": "BEL"
+ },
+ "Q33": {
+  "label": "Finland",
+  "iso3": "FIN"
+ },
+ "Q33296": {
+  "label": "Mughal Empire",
+  "iso3": null
+ },
+ "Q334": {
+  "label": "Singapore",
+  "iso3": "SGP"
+ },
+ "Q34": {
+  "label": "Sweden",
+  "iso3": "SWE"
+ },
+ "Q34266": {
+  "label": "Russian Empire",
+  "iso3": null
+ },
+ "Q35": {
+  "label": "Denmark",
+  "iso3": "DNK"
+ },
+ "Q36": {
+  "label": "Poland",
+  "iso3": "POL"
+ },
+ "Q37": {
+  "label": "Lithuania",
+  "iso3": "LTU"
+ },
+ "Q38": {
+  "label": "Italy",
+  "iso3": "ITA"
+ },
+ "Q3853673": {
+  "label": "Media",
+  "iso3": null
+ },
+ "Q389688": {
+  "label": "Achaemenid Empire",
+  "iso3": null
+ },
+ "Q39": {
+  "label": "Switzerland",
+  "iso3": "CHE"
+ },
+ "Q399": {
+  "label": "Armenia",
+  "iso3": "ARM"
+ },
+ "Q40": {
+  "label": "Austria",
+  "iso3": "AUT"
+ },
+ "Q403": {
+  "label": "Serbia",
+  "iso3": "SRB"
+ },
+ "Q408": {
+  "label": "Australia",
+  "iso3": "AUS"
+ },
+ "Q41": {
+  "label": "Greece",
+  "iso3": "GRC"
+ },
+ "Q414": {
+  "label": "Argentina",
+  "iso3": "ARG"
+ },
+ "Q419": {
+  "label": "Peru",
+  "iso3": "PER"
+ },
+ "Q423": {
+  "label": "North Korea",
+  "iso3": "PRK"
+ },
+ "Q424": {
+  "label": "Cambodia",
+  "iso3": "KHM"
+ },
+ "Q427941": {
+  "label": "Islamic Emirate of Afghanistan",
+  "iso3": null
+ },
+ "Q43": {
+  "label": "Turkey",
+  "iso3": "TUR"
+ },
+ "Q45": {
+  "label": "Portugal",
+  "iso3": "PRT"
+ },
+ "Q486181": {
+  "label": "Samanid dynasty",
+  "iso3": null
+ },
+ "Q55": {
+  "label": "Netherlands",
+  "iso3": "NLD"
+ },
+ "Q62623": {
+  "label": "Kalmar Union",
+  "iso3": null
+ },
+ "Q62943": {
+  "label": "Maurya empire",
+  "iso3": null
+ },
+ "Q63134381": {
+  "label": "Khwarazmian Empire",
+  "iso3": null
+ },
+ "Q664": {
+  "label": "New Zealand",
+  "iso3": "NZL"
+ },
+ "Q668": {
+  "label": "India",
+  "iso3": "IND"
+ },
+ "Q691": {
+  "label": "Papua New Guinea",
+  "iso3": "PNG"
+ },
+ "Q711": {
+  "label": "Mongolia",
+  "iso3": "MNG"
+ },
+ "Q712": {
+  "label": "Fiji",
+  "iso3": "FJI"
+ },
+ "Q717": {
+  "label": "Venezuela",
+  "iso3": "VEN"
+ },
+ "Q730": {
+  "label": "Suriname",
+  "iso3": "SUR"
+ },
+ "Q733": {
+  "label": "Paraguay",
+  "iso3": "PRY"
+ },
+ "Q734": {
+  "label": "Guyana",
+  "iso3": "GUY"
+ },
+ "Q736": {
+  "label": "Ecuador",
+  "iso3": "ECU"
+ },
+ "Q739": {
+  "label": "Colombia",
+  "iso3": "COL"
+ },
+ "Q750": {
+  "label": "Bolivia",
+  "iso3": "BOL"
+ },
+ "Q756617": {
+  "label": "Kingdom of Denmark",
+  "iso3": null
+ },
+ "Q766": {
+  "label": "Jamaica",
+  "iso3": "JAM"
+ },
+ "Q77": {
+  "label": "Uruguay",
+  "iso3": "URY"
+ },
+ "Q774": {
+  "label": "Guatemala",
+  "iso3": "GTM"
+ },
+ "Q783": {
+  "label": "Honduras",
+  "iso3": "HND"
+ },
+ "Q79": {
+  "label": "Egypt",
+  "iso3": "EGY"
+ },
+ "Q794": {
+  "label": "Iran",
+  "iso3": "IRN"
+ },
+ "Q796": {
+  "label": "Iraq",
+  "iso3": "IRQ"
+ },
+ "Q800": {
+  "label": "Costa Rica",
+  "iso3": "CRI"
+ },
+ "Q801": {
+  "label": "Israel",
+  "iso3": "ISR"
+ },
+ "Q804": {
+  "label": "Panama",
+  "iso3": "PAN"
+ },
+ "Q810": {
+  "label": "Jordan",
+  "iso3": "JOR"
+ },
+ "Q811": {
+  "label": "Nicaragua",
+  "iso3": "NIC"
+ },
+ "Q817": {
+  "label": "Kuwait",
+  "iso3": "KWT"
+ },
+ "Q819": {
+  "label": "Laos",
+  "iso3": "LAO"
+ },
+ "Q822": {
+  "label": "Lebanon",
+  "iso3": "LBN"
+ },
+ "Q833": {
+  "label": "Malaysia",
+  "iso3": "MYS"
+ },
+ "Q836": {
+  "label": "Myanmar",
+  "iso3": "MMR"
+ },
+ "Q837": {
+  "label": "Nepal",
+  "iso3": "NPL"
+ },
+ "Q842": {
+  "label": "Oman",
+  "iso3": "OMN"
+ },
+ "Q843": {
+  "label": "Pakistan",
+  "iso3": "PAK"
+ },
+ "Q846": {
+  "label": "Qatar",
+  "iso3": "QAT"
+ },
+ "Q851": {
+  "label": "Saudi Arabia",
+  "iso3": "SAU"
+ },
+ "Q854": {
+  "label": "Sri Lanka",
+  "iso3": "LKA"
+ },
+ "Q858": {
+  "label": "Syria",
+  "iso3": "SYR"
+ },
+ "Q865": {
+  "label": "Taiwan",
+  "iso3": "TWN"
+ },
+ "Q869": {
+  "label": "Thailand",
+  "iso3": "THA"
+ },
+ "Q878": {
+  "label": "United Arab Emirates",
+  "iso3": "ARE"
+ },
+ "Q881": {
+  "label": "Vietnam",
+  "iso3": "VNM"
+ },
+ "Q884": {
+  "label": "South Korea",
+  "iso3": "KOR"
+ },
+ "Q889": {
+  "label": "Afghanistan",
+  "iso3": "AFG"
+ },
+ "Q902": {
+  "label": "Bangladesh",
+  "iso3": "BGD"
+ },
+ "Q912": {
+  "label": "Mali",
+  "iso3": "MLI"
+ },
+ "Q916": {
+  "label": "Angola",
+  "iso3": "AGO"
+ },
+ "Q924": {
+  "label": "Tanzania",
+  "iso3": "TZA"
+ },
+ "Q928": {
+  "label": "Philippines",
+  "iso3": "PHL"
+ },
+ "Q93180": {
+  "label": "Seleucid Empire",
+  "iso3": null
+ },
+ "Q948": {
+  "label": "Tunisia",
+  "iso3": "TUN"
+ },
+ "Q953": {
+  "label": "Zambia",
+  "iso3": "ZMB"
+ },
+ "Q954": {
+  "label": "Zimbabwe",
+  "iso3": "ZWE"
+ },
+ "Q96": {
+  "label": "Mexico",
+  "iso3": "MEX"
+ },
+ "Q963": {
+  "label": "Botswana",
+  "iso3": "BWA"
+ },
+ "Q971": {
+  "label": "Republic of the Congo",
+  "iso3": "COG"
+ },
+ "Q974": {
+  "label": "Democratic Republic of the Congo",
+  "iso3": "COD"
+ }
+}

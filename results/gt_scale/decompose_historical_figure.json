@@ -1,0 +1,37 @@
+[
+ {
+  "rep": "GloVe",
+  "n_test": 7316,
+  "r2_death_year": 0.496,
+  "within_century_death_year": 0.051,
+  "within_decade_death_year": 0.001
+ },
+ {
+  "rep": "Word2Vec",
+  "n_test": 7316,
+  "r2_death_year": 0.416,
+  "within_century_death_year": 0.05,
+  "within_decade_death_year": 0.008
+ },
+ {
+  "rep": "pythia L0",
+  "n_test": 7316,
+  "r2_death_year": 0.338,
+  "within_century_death_year": 0.061,
+  "within_decade_death_year": 0.003
+ },
+ {
+  "rep": "pythia L28",
+  "n_test": 7316,
+  "r2_death_year": 0.701,
+  "within_century_death_year": 0.104,
+  "within_decade_death_year": 0.025
+ },
+ {
+  "rep": "pythia L28 (300 PCs)",
+  "n_test": 7316,
+  "r2_death_year": 0.667,
+  "within_century_death_year": 0.097,
+  "within_decade_death_year": 0.024
+ }
+]
