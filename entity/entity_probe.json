@@ -1,0 +1,134 @@
+{
+ "world_place": {
+  "n_items": 39585,
+  "entity_coverage": 0.888291019325502,
+  "n_train": 24003,
+  "n_test": 5984,
+  "Wikipedia2Vec entity": {
+   "r2": [
+    0.79,
+    0.786
+   ],
+   "within_group_r": [
+    0.253,
+    0.106
+   ],
+   "median_km": 2448
+  },
+  "Wikipedia2Vec words (avg)": {
+   "r2": [
+    0.612,
+    0.658
+   ],
+   "within_group_r": [
+    0.128,
+    0.094
+   ],
+   "median_km": 2879
+  },
+  "GloVe (avg)": {
+   "r2": [
+    0.481,
+    0.548
+   ],
+   "within_group_r": [
+    0.065,
+    0.051
+   ],
+   "median_km": 3480
+  },
+  "fastText (avg)": {
+   "r2": [
+    0.588,
+    0.618
+   ],
+   "within_group_r": [
+    0.119,
+    0.081
+   ],
+   "median_km": 3038
+  },
+  "pythia-2.8b L24": {
+   "r2": [
+    0.771,
+    0.808
+   ],
+   "within_group_r": [
+    0.213,
+    0.132
+   ],
+   "median_km": 1192
+  },
+  "llama-2-7b L24": {
+   "r2": [
+    0.891,
+    0.901
+   ],
+   "within_group_r": [
+    0.364,
+    0.239
+   ],
+   "median_km": 758
+  }
+ },
+ "historical_figure": {
+  "n_items": 37539,
+  "entity_coverage": 0.6289725352300274,
+  "n_train": 18603,
+  "n_test": 4707,
+  "Wikipedia2Vec entity": {
+   "r2": [
+    0.805
+   ],
+   "within_group_r": [
+    0.136
+   ],
+   "median_abs_years": 109
+  },
+  "Wikipedia2Vec words (avg)": {
+   "r2": [
+    0.652
+   ],
+   "within_group_r": [
+    0.065
+   ],
+   "median_abs_years": 150
+  },
+  "GloVe (avg)": {
+   "r2": [
+    0.537
+   ],
+   "within_group_r": [
+    0.041
+   ],
+   "median_abs_years": 175
+  },
+  "fastText (avg)": {
+   "r2": [
+    0.617
+   ],
+   "within_group_r": [
+    0.071
+   ],
+   "median_abs_years": 160
+  },
+  "pythia-2.8b L28": {
+   "r2": [
+    0.737
+   ],
+   "within_group_r": [
+    0.102
+   ],
+   "median_abs_years": 124
+  },
+  "llama-2-7b L24": {
+   "r2": [
+    0.816
+   ],
+   "within_group_r": [
+    0.115
+   ],
+   "median_abs_years": 84
+  }
+ }
+}

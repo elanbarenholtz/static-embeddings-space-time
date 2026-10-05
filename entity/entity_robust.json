@@ -1,0 +1,233 @@
+{
+ "world_place": {
+  "err_pct_entity": [
+   882,
+   1478,
+   2448,
+   3833,
+   5551
+  ],
+  "err_pct_w2v_words": [
+   941,
+   1617,
+   2879,
+   4905,
+   7663
+  ],
+  "err_pct_GloVe": [
+   1160,
+   1999,
+   3480,
+   5911,
+   8914
+  ],
+  "err_pct_pythia-2.8b": [
+   319,
+   598,
+   1192,
+   2468,
+   5527
+  ],
+  "err_pct_llama-2-7b": [
+   219,
+   398,
+   758,
+   1485,
+   2992
+  ],
+  "r2_entity_minus_w2v_words": [
+   0.153,
+   0.131,
+   0.231
+  ],
+  "wr_entity_minus_w2v_words": [
+   0.069,
+   0.031,
+   0.1
+  ],
+  "r2_entity_minus_GloVe": [
+   0.273,
+   0.241,
+   0.411
+  ],
+  "wr_entity_minus_GloVe": [
+   0.122,
+   0.075,
+   0.156
+  ],
+  "r2_llama-2-7b_minus_entity": [
+   0.108,
+   0.074,
+   0.235
+  ],
+  "wr_llama-2-7b_minus_entity": [
+   0.122,
+   0.03,
+   0.208
+  ],
+  "r2_entity_minus_pythia-2.8b": [
+   -0.002,
+   -0.092,
+   0.053
+  ],
+  "wr_entity_minus_pythia-2.8b": [
+   0.007,
+   -0.058,
+   0.056
+  ],
+  "base": {
+   "r2_entity": 0.788,
+   "wr_entity": 0.179,
+   "r2_w2v_words": 0.635,
+   "wr_w2v_words": 0.111,
+   "r2_GloVe": 0.515,
+   "wr_GloVe": 0.058,
+   "r2_pythia-2.8b": 0.79,
+   "wr_pythia-2.8b": 0.173,
+   "r2_llama-2-7b": 0.896,
+   "wr_llama-2-7b": 0.301
+  },
+  "grouped_holdout_pooled_r2": {
+   "entity": [
+    -0.026,
+    -0.682
+   ],
+   "w2v_words": [
+    -0.39,
+    -0.756
+   ],
+   "GloVe": [
+    -0.552,
+    -0.881
+   ],
+   "pythia-2.8b_L19": [
+    -0.353,
+    -0.766
+   ],
+   "llama-2-7b_L19": [
+    -0.207,
+    -0.64
+   ]
+  },
+  "holdout_groups": {
+   "Africa": 2040,
+   "America": 9255,
+   "Asia": 5766,
+   "Europe": 8815,
+   "Oceania": 3289
+  }
+ },
+ "historical_figure": {
+  "err_pct_entity": [
+   19,
+   51,
+   109,
+   194,
+   317
+  ],
+  "err_pct_w2v_words": [
+   28,
+   70,
+   150,
+   270,
+   434
+  ],
+  "err_pct_GloVe": [
+   32,
+   79,
+   175,
+   320,
+   503
+  ],
+  "err_pct_pythia-2.8b": [
+   23,
+   58,
+   124,
+   237,
+   385
+  ],
+  "err_pct_llama-2-7b": [
+   14,
+   37,
+   84,
+   168,
+   309
+  ],
+  "r2_entity_minus_w2v_words": [
+   0.152,
+   0.113,
+   0.234
+  ],
+  "wr_entity_minus_w2v_words": [
+   0.071,
+   0.026,
+   0.108
+  ],
+  "r2_entity_minus_GloVe": [
+   0.267,
+   0.225,
+   0.381
+  ],
+  "wr_entity_minus_GloVe": [
+   0.095,
+   0.027,
+   0.149
+  ],
+  "r2_llama-2-7b_minus_entity": [
+   0.011,
+   -0.04,
+   0.054
+  ],
+  "wr_llama-2-7b_minus_entity": [
+   -0.021,
+   -0.065,
+   0.028
+  ],
+  "r2_entity_minus_pythia-2.8b": [
+   0.067,
+   0.017,
+   0.152
+  ],
+  "wr_entity_minus_pythia-2.8b": [
+   0.034,
+   -0.018,
+   0.076
+  ],
+  "base": {
+   "r2_entity": 0.805,
+   "wr_entity": 0.136,
+   "r2_w2v_words": 0.652,
+   "wr_w2v_words": 0.065,
+   "r2_GloVe": 0.537,
+   "wr_GloVe": 0.041,
+   "r2_pythia-2.8b": 0.737,
+   "wr_pythia-2.8b": 0.102,
+   "r2_llama-2-7b": 0.816,
+   "wr_llama-2-7b": 0.115
+  },
+  "grouped_holdout_pooled_r2": {
+   "entity": [
+    -0.274
+   ],
+   "w2v_words": [
+    -0.071
+   ],
+   "GloVe": [
+    -0.112
+   ],
+   "pythia-2.8b_L19": [
+    0.11
+   ],
+   "llama-2-7b_L19": [
+    0.193
+   ]
+  },
+  "holdout_groups": {
+   "0": 4451,
+   "1": 3470,
+   "2": 4420,
+   "3": 5103,
+   "4": 5866
+  }
+ }
+}

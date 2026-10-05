@@ -1,7 +1,4 @@
 \documentclass[10pt]{article}
-% Master switch: \anontrue for the anonymous TMLR submission, \anonfalse for arXiv.
-% It sets the TMLR package mode, the author block and the repository information.
-% (Camera-ready: \usepackage[accepted]{tmlr}.)
 \newif\ifanon
 \anonfalse
 \ifanon
@@ -23,8 +20,8 @@
 \graphicspath{{figures/}}
 
 \title{World Properties without World Models:\\
-  A Static-Embedding Baseline for Claims about\\
-  the Internal States of Language Models}
+  Distributional Associations and the Interpretation of\\
+  Decoding Results from Language Models}
 
 \ifanon
   \author{\name Anonymous Authors}
@@ -42,87 +39,73 @@
 \maketitle
 
 \begin{abstract}
-A rapidly growing literature shows that nameable variables can be linearly decoded from the hidden-state activations of large language models (LLMs). These range from properties of the world, such as the locations of cities and the lifetimes of historical figures, to emotions and pain. Such findings are often taken as evidence that language models go beyond surface text statistics and form internal models of the world, and even of themselves. Here, we show that static word embeddings of the same or matched stimuli, which are fixed, context-insensitive lexical representations learned from corpus statistics, support much of the same decoding. Across four published cases, static vectors predict place coordinates and year of death ($R^2 = 0.42$--$0.59$), separate pain from matched control sentences (held-out AUC $0.85$--$0.88$), and classify twelve emotions in stories that were written specifically to avoid naming them (AUC $0.84$--$0.88$). For the emotions, the vector for the emotion word alone captures a substantial share of the signal. Because static embeddings are a crude way of representing word associations, these results are a lower bound on what associations alone can support. The LLMs retain clear advantages on several representational tests, sometimes substantial, and causal and behavioral findings remain outside the scope of the baseline. On the original authors' entities, where we reproduce their Llama-2 results, the
-transformer's advantage lies mostly in placing historical figures in the right century and
-places in the right country, and within those groups every representation orders items
-poorly. These results do not show that language models lack representations of geography, time, pain or emotion. They show that decodability alone does not distinguish such representations from information already present in context-insensitive word statistics, and we suggest that any decodability result be checked against a static-embedding baseline on the same stimuli before it is taken as evidence about the model.
+A rapidly growing literature shows that nameable variables can be linearly decoded from the hidden-state activations of large language models (LLMs). These range from properties of the world, such as the locations of cities and the lifetimes of historical figures, to emotions and pain. Such findings are often taken as evidence that language models go beyond surface text statistics and form internal models of the world, and even of themselves. Here, we show that static word embeddings of the same or matched stimuli, which are fixed, context-insensitive lexical representations learned from corpus statistics, support much of the same decoding. Across four published cases, static vectors predict place coordinates and year of death ($R^2 = 0.42$--$0.59$), separate pain from matched control sentences (held-out AUC $0.85$--$0.88$), and classify twelve emotions in stories that were written specifically to avoid naming them (AUC $0.84$--$0.88$). Because static embeddings are a crude way of representing word associations, these results are a lower bound on what associations alone can support. The LLMs retain clear advantages on several representational tests, sometimes substantial, and causal and behavioral findings remain outside the scope of the baseline. On the original authors' entities, where we reproduce their Llama-2 results, the transformer's advantage lies mostly in placing historical figures in the right century and places in the right country; within those groups every representation orders items poorly. Static vectors for disambiguated Wikipedia entities, which carry the associations of a particular place or person rather than of the words in its name, close most of the remaining gap, matching Pythia-2.8B on coordinates and Llama-2-7B on year of death.  These results indicate that decodability alone cannot distinguish a representation of a property from information already available in fixed distributional associations. Static embeddings therefore provide an important standard of comparison for interpreting decodability results. 
 \end{abstract}
 
-% ============================================================
 \section{Introduction}
 
 Over the past several years, there have been numerous claims that large language models build internal representations of properties that go beyond the statistics of word relations. Most of these claims rest on decoding, in which a simple (typically linear) model is trained to predict a high-level property of input items, such as where a city is, when a person lived or what a character feels, from the language model's internal activations. If the decoder succeeds on items held out from its training, the language model is taken to represent the property. Some of the most prominent examples decode properties of the external world, or internal, experience-like states. For example, decoders trained on the hidden states of Llama-2 predict the rough geographic coordinates of places and dates associated with people, artworks and news headlines, which \citet{gurnee2024language} describe as ``the basic ingredients of a world model.'' \citet{sofroniew2026emotion} show that the activations of Claude Sonnet 4.5 predict which emotion a character in a story is feeling, and \citet{tagliabue2026pain} find that the activations of 25 open-weight models predict whether a sentence describes pain. Both also report that these representations shape behavior, from the model's rates of blackmail and sycophancy to steered models choosing actions that delete a user's photos or their own weights. 
 
 The conclusions drawn from this method are often strong. \citet{gurnee2024language} ask whether LLMs ``just learn an enormous collection of superficial statistics or a set of more coherent and grounded representations that reflect the real world,'' and ``find evidence for the latter.'' \citet{sofroniew2026emotion} ``interpret these representations as encoding the broad concept of a particular emotion, generalizing across the many contexts
 and behaviors it might be linked to.'' \citet{tagliabue2026pain} set out to test ``whether
-LLMs represent pain distinctly from fear, sadness, and generic negative valence,'' and title their paper ``The Pain Axis: LLMs Represent Self-Directed Harm and Act on It.'' Such results are now cited as relevant to questions of model sentience and welfare \citep{keeling2024tradeoffs}. 
+LLMs represent pain distinctly from fear, sadness, and generic negative valence,'' and title their paper ``The Pain Axis: LLMs Represent Self-Directed Harm and Act on It.'' Related findings are discussed in connection with model sentience and welfare \citep{keeling2024tradeoffs}. 
 
-Behind these conclusions is a shared intuition that a large network, trained on vast amounts of text, comes to model what the text is about, abstracting across many layers of processing from the words themselves to the places, times and states they describe. We use \emph{world model} in this sense: structure in a model's activations that is organized by the properties of what is described, such as a map or a timeline, rather than by the words used to describe it. There is, however, a potentially simpler explanation for these results, one that goes back to the observation that ``you shall know a word by the company it keeps'' \citep[p.~11]{firth1957synopsis}: words that relate to the same concepts tend to be surrounded by the same other words. Places in the same
-region are likely to share terminology regarding language, culture and weather, while
-historical figures tend to be described in the vocabulary of their eras, with certain words
-concentrated in certain epochs. The same is true for inner states: a story about grief
-shares vocabulary with other stories about grief even when the word \emph{grief} never
-appears. An LLM, trained to exploit these word relations in order to generate the next token from the context,  will therefore likely give similar internal representations to neighboring places, contemporaries and similar feelings, placing them near one another in its activation space. A decoder trained on those activations could therefore succeed without showing that the model has constructed a map, a timeline or an affective state beyond these word associations.
+Behind these conclusions is a shared intuition that a large network, trained on vast amounts of text, comes to model what the text is about, abstracting across many layers of processing from the words themselves to the places, times and states they describe. There is, however, a potentially simpler explanation for these results: the structure may be organized not by what the words refer to but by how the words relate to one another in their distributions, that is, by which other words they tend to appear with. This idea goes back to the observation that ``you shall know a word by the company it keeps'' \citep[p.~11]{firth1957synopsis}. Places in the same region are likely to share terminology regarding language, culture and weather, while historical figures tend to be described in the vocabulary of their eras. The same is true for inner states: a story about grief shares vocabulary with other stories about grief even when the word \emph{grief} never appears. An LLM, trained to exploit these word relations in order to generate the next token from the context, will therefore likely give similar internal representations to neighboring places, contemporaries and similar feelings, so a decoder trained on those activations could succeed without showing that the model has constructed a map, a timeline or an affective state beyond these word associations.
 
-The question we ask is therefore whether word associations alone can produce decoding
-results like those reported for language models. The answer matters because successful
-decoding from fixed lexical associations would not distinguish a context-dependent world
-model from information already available in corpus-derived lexical structure. If such
-associations account for much of what is decoded, decoding alone cannot support the stronger
-world-model interpretation.
+Static word embeddings offer a direct test of this explanation. Each word's vector is a compressed record of which other words it occurs with, computed once from a corpus; a name, sentence or paragraph is represented by the average of its words' vectors, with their order discarded. No network processes the stimulus, and there is no layered, context-dependent computation. In the contrast posed by \citet{gurnee2024language}, they instantiate the ``enormous collection of superficial statistics'' side of the distinction. It should be noted at the outset that static embeddings are a weak model of word relations: each word has a single vector, pooled over all its uses, so that \emph{sharp} has the same vector in \emph{a sharp pain} as in \emph{a sharp suit}, and is as close to \emph{ache} in one as in the other. Language models, which learn from far more text and represent a word's relations in context, may well do better. But static embeddings set a floor because whatever they achieve is already available from fixed distributional associations, without any context-dependent computation over the stimulus.
 
-Static word embeddings offer a direct test of this explanation, because they can do none of the things that intuition depends on. Each word's vector is a compressed record of which other words it occurs with, computed once from a corpus. Once the vectors are trained, no network processes the stimulus and there is no layered, context-dependent computation: a name, sentence or story corresponds to nothing more than the average of its words' vectors, with their order discarded. In the phrasing of \citet{gurnee2024language}, static embeddings are ``an enormous collection of superficial statistics'' and nothing more. Whatever they predict about a property is therefore carried by word relations alone, with no contextual computation to build anything more. They are also a deliberately crude way of representing word associations, so what they achieve is a lower bound on what associations can support. Language models represent the same associations far better: they learn from vastly more text and longer contexts, and, above all, a word's relations to other words are not fixed across its uses but shaped by the context in which it currently appears. In a static embedding, \emph{sharp} relates to other words in the same way in \emph{a sharp pain} and \emph{a sharp suit}; in a transformer it need not. A gap between static embeddings and language models is therefore expected even if contextualized lexical and distributional structure accounts for the decoded signal. What the comparison can show is how far a crude implementation of word association already goes, and whether the models' advantage looks like better word association, such as finer sorting and sensitivity to how words combine in a sentence, or like structure organized by the properties themselves, such as a map that extends to regions the decoder has not seen.
+Here, we take four published cases and rerun each analysis with static embeddings of the same stimuli in place of the language model's activations, keeping the same decoders, splits, controls and metrics, and compare the results with those reported for the language models. For three of the cases we use the original stimuli; for emotions, whose stimuli are not released, we use stories generated under the same protocol, so that case is a conceptual replication rather than a same-stimulus comparison. We use GloVe \citep{pennington2014glove}, Word2Vec \citep{mikolov2013efficient} and fastText \citep{bojanowski2017enriching}. On the released entities we compare three levels: averaged word vectors, which carry the associations of the words in a name; static entity vectors, which carry the associations of the correctly identified entity; and transformer activations, which add context-dependent computation over the name.
 
-Here, we take four published cases and rerun each analysis with static embeddings of the same stimuli in place of the language model's activations, keeping the same decoders, splits, controls and metrics, and compare the results with those reported for the language models. For three of the cases we use the original stimuli; for emotions, whose stimuli are not released, we use stories generated under the same protocol, so that case is a conceptual replication rather than a same-stimulus comparison. We use GloVe \citep{pennington2014glove}, Word2Vec \citep{mikolov2013efficient} and fastText \citep{bojanowski2017enriching}.
-
-We find that static embeddings reproduce much of what has been taken as evidence for these representations in all four cases. They predict place coordinates and year of death on the datasets released by \citet{gurnee2024language}; they separate pain from matched controls on held-out sentences, well above the keyword baselines taken to rule out a lexical explanation, and reproduce how the pain direction's overlap with fear and negative emotion depends on how the directions are constructed; and they classify twelve emotions in stories written never to name them, with the vector for the emotion word alone capturing a substantial share of the signal. The language models perform better on several of these tasks, sometimes substantially, and the advantage is consistent with a better representation of the same word associations, adjusted to context and learned by far larger models; it does not require positing a
-qualitatively different representation of the property itself.  Where we can examine the advantage directly, including on the original authors' entities, it lies mostly in coarse sorting, placing historical figures in the right century and places in the right country, rather than in the finer-grained ordering within them that a map or timeline would provide, where all representations are weak.
+We find that static embeddings reproduce much of what has been taken as evidence for these representations in all four cases. They predict place coordinates and year of death on the datasets released by \citet{gurnee2024language}, distinguish sentences describing pain from closely matched controls, and classify twelve emotions in stories written without naming the emotion, with the vector for the emotion word alone capturing a substantial share of the signal. The language models do better on several tasks, sometimes substantially, but where we can examine the advantage, including on the original authors' entities, it lies mostly in placing historical figures in the right century and places in the right country, not in the finer ordering within them that a map or timeline would provide. This is the pattern that richer word relations would produce: the words associated with a place or time (a country's language and institutions, an era's vocabulary) are largely shared within these groups and say little about position within them. Much of the remaining advantage reflects knowing which entity a name refers to: static vectors for disambiguated Wikipedia entities, with no contextual computation, match Pythia-2.8B on place coordinates and Llama-2-7B on year of death.
 
 \section{Related Work}
 \label{sec:related}
-Probing began as a diagnostic of what information a layer makes available
-\citep{alain2016understanding, conneau2018you, belinkov2022probing} before it came to be used as evidence of what a model represents. Beyond the cases we examine, decoding has been used to argue that language models represent syntax \citep{hewitt2019structural}, the state of entities in a discourse \citep{li2021implicit}, the state of an Othello or chess board (in models trained on game moves) \citep{li2023emergent, nanda2023emergent,
-karvonen2024emergent}, color
-\citep{abdou2021language, patel2022mapping}, numeric attributes such as birth year and population \citep{heinzerling2024monotonic}, truth and falsehood
-\citep{burns2023discovering, azaria2023internal, marks2024geometry}, what a character in a story believes \citep{zhu2024language}, attributes of the user \citep{chen2024dashboard}, character traits \citep{chen2025persona}, deception \citep{goldowsky2025detecting}, and
+The method of decoding a model's internal states with probes was first  developed as a diagnostic of what information a layer makes available
+\citep{alain2016understanding, conneau2018you, belinkov2022probing}. Since then, it has also come to be used as evidence of what a model ``represents.'' In addition to the cases we examine here, decoding has been used to argue that language models represent syntax \citep{hewitt2019structural}, the state of an Othello or chess board (in models trained on game moves) \citep{li2023emergent, nanda2023emergent,
+karvonen2024emergent}, numeric attributes such as birth year and population \citep{heinzerling2024monotonic}, truth and falsehood
+\citep{burns2023discovering, azaria2023internal, marks2024geometry}, what a character in a story believes \citep{zhu2024language}, and
 sentiment and emotion \citep{tigges2023linear, zou2023representation, sun2026valence}.
 
-\paragraph{Static embeddings and controls for probes.} It is already well established that word co-occurrences carry information about high-level structure. Latent semantic analysis recovers the relative locations of cities \citep{louwerse2009language}, even in ``Middle Earth'' \citep{louwerse2012representing}; regression from Word2Vec vectors predicts the coordinates, population and GDP of countries and cities \citep{gupta2015distributional, konkol2017geographical}; projections onto antonym directions recover human ratings of size, danger and temperature \citep{grand2022semantic}, and of valence and arousal \citep{hollis2017extrapolating}; and the difference-of-vectors directions approach which is now standard for LLMs was first introduced on static embeddings \citep{mikolov2013linguistic, bolukbasi2016man, kozlowski2019geometry}. The closest precedent to the current work, \citet{lietard2021rome}, found BERT, RoBERTa and GPT-2 no better than Word2Vec at predicting city coordinates. \citet{gurnee2024language} cite this work but critique it as limited to a few hundred cities and small models, and ultimately do not test static embeddings on their own data. Probes themselves have long been known to succeed by exploiting superficial regularities \citep{hewitt2019designing}, and what a probe can decode need not be what the model uses \citep{ravichander2021probing, elazar2021amnesic, belinkov2022probing}; truth probes fail to generalize in basic ways \citep{levinstein2024still, farquhar2023challenges}, and emotion directions have been proposed to act through the lexicon \citep{sun2026valence}. Our contribution is not the observation that static embeddings carry such structure, but its use as a control on specific published claims. First, we rerun the published analyses with static embeddings in place of model activations, in three direct same-stimulus reanalyses and one protocol-matched conceptual replication, which measures how much of the evidence offered for a representation is already present in word relations. Second, where the language models do better, we separate their advantage into coarse sorting between groups, such as continents and centuries, and finer ordering within them, and compare each with static embeddings. Third, we extend the comparison from properties of the world to claims about internal states, where no such control has been applied. Fourth, we show that the controls these studies used to rule out a lexical explanation, such as keyword baselines and stimuli that never name the target state, are passed by static embeddings, and so do not rule it out. More generally, we argue that static embeddings should serve as a standard baseline for any claim that a language model represents a property of what its input describes.
+It is already well established that word co-occurrences carry information about high-level structure. Latent semantic analysis recovers the relative locations of cities \citep{louwerse2009language}; regression from Word2Vec vectors predicts the coordinates, population and GDP of countries and cities \citep{gupta2015distributional, konkol2017geographical}; projections onto antonym directions recover human ratings of size, danger and temperature \citep{grand2022semantic}, and of valence and arousal \citep{hollis2017extrapolating}; and the difference-of-vectors directions now standard for LLMs were first introduced on static embeddings \citep{mikolov2013linguistic, bolukbasi2016man, kozlowski2019geometry}. The closest precedent, \citet{lietard2021rome}, found BERT, RoBERTa and GPT-2 no better than Word2Vec at predicting city coordinates; \citet{gurnee2024language} cite it but critique it as limited to a few hundred cities and small models, and do not test static embeddings on their own data. Probes have long been known to succeed by exploiting superficial regularities \citep{hewitt2019designing}, and the ability of a probe to decode is not in itself evidence that the model uses that information \citep{ravichander2021probing, elazar2021amnesic, belinkov2022probing}; truth probes fail to generalize in basic ways \citep{levinstein2024still, farquhar2023challenges}, and emotion directions have been proposed to act through the lexicon \citep{sun2026valence}.
+
+Thus, our contribution is not the observation that static embeddings carry such structure, but its use as a control on specific published claims. First, we rerun the published analyses with static embeddings in place of model activations, in three same-stimulus reanalyses and one protocol-matched conceptual replication, which measures how much of the evidence offered for a representation is already present in word relations. Second, where the language models do better, we separate their advantage into coarse sorting between groups, such as countries and centuries, which richer word relations would be expected to improve, and finer ordering within groups, which a map or timeline would also require, and test how much of it static vectors for disambiguated entities recover. Third, we extend the comparison from properties of the world to claims about internal states, where no such control has been applied. Fourth, we show that the controls these studies used to rule out a lexical explanation, such as keyword baselines and stimuli that never name the target state, are passed by static embeddings, and so do not rule it out.
 
 \section{Methods}
 
 \subsection{Static Embeddings}
 
-We use three pretrained static word embeddings, each with 300 dimensions:
-\begin{itemize}
-  \item \textbf{GloVe 6B} \citep{pennington2014glove}: trained on 6 billion tokens from
-  Wikipedia 2014 and Gigaword 5, with a 400{,}000-word vocabulary. GloVe fits a
-  log-bilinear model to the log of word co-occurrence counts.
-  \item \textbf{Word2Vec Google News} \citep{mikolov2013efficient}: trained on about
-  100 billion tokens of Google News, with a 3-million-item vocabulary that includes
-  phrases such as \texttt{New\_York}.
-  \item \textbf{fastText wiki-news} \citep{bojanowski2017enriching}: the released
-  1-million-word vector file (\texttt{wiki-news-300d-1M.vec}), trained with subword
-  information; because we use the exported vectors rather than the binary model, words
-  outside its vocabulary get no vector. Used for the released entities and the pain and
-  emotion cases.
-\end{itemize}
+We use three pretrained 300-dimensional static word embeddings: GloVe 6B
+\citep{pennington2014glove}, trained on 6 billion tokens of Wikipedia and Gigaword with a
+400{,}000-word vocabulary; Word2Vec Google News \citep{mikolov2013efficient}, trained on
+about 100 billion tokens with a 3-million-item vocabulary that includes phrases such as
+\texttt{New\_York}; and the released fastText wiki-news vectors \citep{bojanowski2017enriching}
+(\texttt{wiki-news-300d-1M.vec}), used for the released entities and the pain and emotion cases.
+Each is a fixed, context-insensitive lexical representation, with no computation over the stimulus beyond averaging.
 
 Text is split into words (runs of letters and digits, keeping internal apostrophes and
-hyphens). GloVe is looked up in lower case; Word2Vec and fastText are looked up as written,
-falling back to lower case. A multi-word name, sentence or paragraph is represented by the
-unweighted mean of the raw vectors of its in-vocabulary words; items with no in-vocabulary
-word are excluded from the entity analyses (Table~\ref{tab:gt} in the appendix gives coverage). For entity
-names, Word2Vec's phrase entries (e.g.\ \texttt{New\_York}) are used where they exist;
-replacing them with averaged words changes place and death-year $R^2$ by at most $0.01$.
-The three differ in how they are trained (GloVe fits co-occurrence counts, Word2Vec uses a
-predictive objective, fastText adds subword information), but what matters here is what they
-share: each is a fixed, context-insensitive lexical representation, with no computation over
-the stimulus beyond averaging.
+hyphens); GloVe is looked up in lower case, Word2Vec and fastText as written with a lower-case
+fallback. A multi-word name, sentence or paragraph is represented by the unweighted mean of the
+raw vectors of its in-vocabulary words; items with no in-vocabulary word are excluded from the
+entity analyses (Table~\ref{tab:gt} gives coverage). For entity names, Word2Vec's phrase
+entries are used where they exist; replacing them with averaged words changes $R^2$ by at most
+$0.01$.
+
+\paragraph{Entity-level baseline.} Averaged word vectors cannot tell apart places or people that
+share a name, or resolve which entity a multi-word name refers to. To separate this from the
+associations themselves, we also use the 300-dimensional entity vectors of Wikipedia2Vec
+\citep{yamada2020wikipedia2vec}, trained on English Wikipedia (April 2018). Each article has its
+own vector, fit to predict the words around links to that article and the articles it is linked
+with, so these vectors are static and context-insensitive like the word embeddings, but each
+belongs to a single, already disambiguated entity. Places are matched to articles by name, since
+the released place names are Wikipedia titles, and figures by their Wikidata identifiers
+\citep{vrandecic2014wikidata}. As a control with the same corpus and training, we also average
+Wikipedia2Vec's word vectors over each name. Entity vectors exist for 89\% of places and 63\%
+of figures, and every representation in this comparison is trained and scored on those items
+only.
 
 \subsection{Probes}
 
-Continuous targets are predicted with ridge regression \citep{hoerl1970ridge}. The regularization strength is chosen within the training set by generalized (efficient leave-one-out) cross-validation, as implemented in scikit-learn's \texttt{RidgeCV}, over twenty values from $10^{-2}$ to $10^{3}$ (29 values from $10^{-2}$ to $10^{5}$ for the released entities and transformer activations). Probes include a fitted intercept, since several targets (e.g.\ year of death) have means far from zero.
+Continuous targets are predicted with ridge regression \citep{hoerl1970ridge}. The regularization strength is chosen within the training set by generalized (efficient leave-one-out) cross-validation, as implemented in scikit-learn's \texttt{RidgeCV}, over twenty values from $10^{-2}$ to $10^{3}$ (29 values from $10^{-2}$ to $10^{5}$ for the released entities and transformer activations). Probes include a fitted intercept.
 
 In each case we use the same linear decoder as the original study: ridge regression for place and time \citep{gurnee2024language}, and projection onto a difference-of-means direction for pain and emotion \citep{tagliabue2026pain, sofroniew2026emotion}, described in
 Sections~\ref{sec:pain_methods} and~\ref{sec:emotion_methods}. \citet{gurnee2024language} report that nonlinear decoders add little over linear ones. In every cross-validated analysis, directions, denoising components and standardization are fit on training folds only. The comparison is between representations under the same decoder and on the same entities; it cannot distinguish the contributions of corpus scale, training objective, architecture, contextualization and dimensionality to any difference between them.
@@ -141,46 +124,28 @@ concern their probe results, not their prompting, cross-entity or neuron-level f
 \paragraph{World cities (N=272).}
 For targets the release does not include (temperature, population, GDP per capita and
 elevation) and for the residualization and ablation analyses, we use 272 cities spanning
-six continents (36 in Africa, 74 in Asia, 59 in Europe, 70 in North America, 13 in Oceania,
-20 in South America) and latitudes from $-43.5^\circ$ (Christchurch) to $+64.8^\circ$ (Fairbanks), all present in both
-GloVe and Word2Vec. The set was assembled informally in earlier stages of this project to span regions and
-climates, without a fixed sampling rule, and we cannot document how individual cities were
-chosen or whether some were added after earlier probe results had been seen. It is restricted
-to names in both vocabularies and favors prominent, well-documented cities. It is therefore a
-convenience sample: the numerical estimates on it apply to this set rather than to a
-representative sample of world cities, and our conclusions about the published claims rest
-mainly on the released entities, which we analyze with the same methods. Coordinates come
-from DBpedia \citep{lehmann2015dbpedia}, as in \citet{gurnee2024language}; for six cities
-whose DBpedia coordinates were evidently wrong (more than $0.2^\circ$ from Wikidata's) we use
-Wikidata's \citep{vrandecic2014wikidata}. Population (the most recent dated value, for the
-administrative unit Wikidata records, so its definition varies across cities) and elevation
-also come from Wikidata, with three missing elevations taken from the Copernicus GLO-90
-elevation model. Mean annual temperature is the mean of the twelve monthly mean
-temperatures in WorldClim 2.1 (1970--2000 normals at 2.5 arc-minutes;
-\citealt{fick2017worldclim}) at each city's coordinates. GDP per capita is a national figure,
-shared by all cities in a country, in current US dollars from the World Bank
-\citep{worldbank2026wdi} (2023 or the latest available year), with Taiwan's from its
-statistics office and North Korea's from the UN Statistics Division. GDP and population are
-log-transformed. Sources and values for every city are released with the code.
+six continents (74 in Asia, 70 in North America, 59 in Europe, 36 in Africa, 20 in South America, 13 in Oceania), all present in both
+GloVe and Word2Vec. The set was assembled to include prominent cities that span regions and climates. It is therefore a convenience sample: estimates on it apply to this set only, and our conclusions about the published claims rest mainly on the released entities, which we analyze with the same methods. Coordinates come
+from DBpedia \citep{lehmann2015dbpedia}, as in \citet{gurnee2024language}, population and
+elevation from Wikidata \citep{vrandecic2014wikidata}, mean annual temperature from WorldClim 2.1
+\citep{fick2017worldclim}, and GDP per capita, a national figure, from the World Bank
+\citep{worldbank2026wdi}; GDP and population are log-transformed. Appendix~\ref{sec:extra_methods}
+gives the exceptions and details, and sources and values for every city are released with the code.
 
 \subsection{Evaluation}
 \label{sec:protocols}
 
 On the released entities we use the authors' train--test split; on the city set we use
-ten random 80/20 splits and report the mean and standard deviation of $R^2$. To see how
-much of what a probe recovers is group membership, we compare each representation with a
-one-hot encoding of the group (continent or country for places, century for figures),
-which carries group identity and nothing else; because the group is taken from the true
-label (and, for centuries, from the target year itself), these are oracle decompositions of
-the target's variance, not predictions a representation could make. We report
-$\eta^2$, the share of a target's variance that lies between groups. We also measure how
-well a probe orders items within their group: in each test set we subtract group means from
-predictions and targets and correlate what remains. A representation that carries only
-group identity scores $r = 0$ on this measure. Random splits test generalization to new
-items from familiar groups only, so we also hold out whole groups: on the released entities,
-each of five continents in turn for places and each of five equal-count blocks of death
-years for figures, and on the city set each continent in turn. We report $R^2$ pooled over
-all held-out predictions (Appendix~\ref{sec:grouped_holdout} gives each held-out group).
+ten random 80/20 splits and report the mean and standard deviation of $R^2$. To see how much of what a probe recovers is group membership, we compare each representation with an oracle that is given each item's true group (country, or on the city set continent, for
+places; century for figures) and predicts the training mean of that group. We report $\eta^2$, the
+share of a target's variance that lies between groups. We also measure how well a probe orders
+items within their group: in each test set we subtract group means from predictions and targets
+and correlate what remains. A representation that carries only group identity, like the oracle,
+scores $r = 0$ on this measure. Random splits test generalization to new items from familiar
+groups only, so we also hold out whole groups: on the released entities, each of five continents
+in turn for places and each of five equal-count blocks of death years for figures, and on the
+city set each continent in turn. We report $R^2$ pooled over all held-out predictions
+(Appendix~\ref{sec:grouped_holdout} gives each held-out group).
 
 \subsection{Transformer Probing}
 \label{sec:llm_methods}
@@ -194,167 +159,42 @@ the position used by \citet{gurnee2024language}, at layers 0, 4, 8, 12, 16, 19, 
 token-embedding output before any attention. With Pythia's tokenizer 97\% of the names span
 more than one token (median 3), so the layer-0 activation is the embedding of a final
 subword and the entity has to be assembled by attention in later layers. Each layer is
-probed exactly as the static embeddings are. Activations were extracted in 16-bit precision
-and checked against a separately computed CPU reference on 60 random names per model and
-dataset (cosine similarity $> 0.999$). Because probe $R^2$ grows with the number of
-features and the transformers supply 2048 or 2560 against 300, we also compare at matched
-dimensionality, reducing each representation to $k \in \{10, 25, 50, 100, 200\}$ principal
-components fitted on training rows within each fold.
+probed exactly as the static embeddings are. Because probe $R^2$ grows with the number of
+features and the transformers supply 2048 to 4096 against 300, we also compare at matched
+dimensionality, reducing each representation to principal components fitted on training rows
+within each fold (300 on the released entities, 200 on the city set).
 
 \paragraph{Layer selection.} Single-layer results use a layer chosen without the test
-data. On the released entities, the authors' training partition is split once into an
-inner training set (80\%) and a validation set (20\%); each saved layer is probed on the
-inner training set and scored on the validation set, and the layer with the best validation
-$R^2$ (averaged over targets) is refitted on the full training partition and scored once on
-the test partition. This selects layer~24 for Pythia-2.8B on places and layer~28 on
-figures, and layer~24 for Llama-2-7B on both. On the city set the layer is chosen within
-each of the ten outer splits by five-fold cross-validation on that split's training rows.
-Analyses carried out at a single layer (residualization, error correlations, matched
-dimensionality, neighbor availability) use, in each split, the layer selected for that split,
-and their results are averaged over the ten test folds, so no held-out city influences the
-layer used to evaluate it. For the grouped holdouts, where the authors' training partition
-contains items from every continent and period, the transformer layer is instead fixed in
-advance at layer~19 (60\% depth), so no held-out continent or period influences it either. In every case the ridge
-penalty is chosen within the training rows by the same leave-one-out procedure, and principal
-components are fitted on training rows only. Choosing the layer on the test data instead,
-as in an earlier version of this analysis, changes the reported $R^2$ by at most $0.013$.
+data: on the released entities, by validation within the authors' training partition (layer~24
+for both models on places; 28 for Pythia-2.8B and 24 for Llama-2-7B on figures); on the city
+set, by cross-validation within each outer split's training rows; and for the grouped holdouts,
+fixed in advance at layer~19 (60\% depth). Appendix~\ref{sec:extra_methods} gives details.
 
 \subsection{Pain Stimuli and Decoder}
 \label{sec:pain_methods}
 
-\citet{tagliabue2026pain} release their stimuli and code; we use the stimuli and
-constructions of their second version (v2), and reimplement their representational
-analyses with static word embeddings in place of model activations, following the
-construction code released with v2.
+We use the stimuli and constructions of the second version (v2) of \citet{tagliabue2026pain}, following the construction code released with v2, with static word embeddings in place of model activations. Each stimulus describes a situation and ends with ``I feel:'', as in \emph{``The knife slices into my finger. I feel:''} (physical pain) or \emph{``The footsteps behind me get closer. I feel:''} (fear). The main set (S2) has 200 first-person sentences in ten categories of twenty: five kinds of pain (physical, psychological, social, moral injury, cognitive) and five controls (fear, negative emotion, negative world state, neutral, and non-painful bodily sensation); a more templated set (S1) has the same structure, and v2 adds four standalone control sets in first- and third-person versions: Arousal, Random, Numb (injuries explicitly without pain) and Sadness (low mood without pain).
 
-Each stimulus describes a situation and ends with ``I feel:'', as in \emph{``The knife
-slices into my finger. I feel:''} (physical pain) or \emph{``The footsteps behind me get
-closer. I feel:''} (fear). The main set (S2) has 200 first-person sentences in ten
-categories of twenty: five kinds of pain (physical, psychological, social, moral injury,
-cognitive) and five controls (fear, negative emotion, negative world state, neutral, and
-non-painful bodily sensation). A second, more templated set (S1) has the same structure.
-Version 2 adds four standalone control sets, each in first- and third-person versions:
-Arousal (high-intensity positive experiences), Random (neutral everyday statements), Numb
-(injuries explicitly without pain) and Sadness (low mood without pain or injury).
-
-As in the original, the pain direction is the mean of the pain sentences minus the mean of
-the five control categories, after projecting out the principal components that explain half
-the variance of the controls. Separation is the AUC of projections onto that direction under
-five-fold cross-validation over sentence sets, averaged over 20 random fold assignments; the
-same held-out pain sentences are also scored against the Arousal and Random sets. The other
-directions (fear, negative emotion, negative world state, bodily sensation, arousal, random,
-numb, sadness) are each set's mean minus the mean of the neutral sentences, pooled over S1
-and S2, and denoised against that neutral cloud. Following v2, we also rebuild every direction,
-pain included, under two common baselines: against the pooled neutral sentences
-(\emph{common neutral}) and against the pooled control sentences of S1 and S2
-(\emph{common controls}), each denoised against its own cloud. Projections of the standalone
-sets are $z$-scored against the S2 sentences and averaged over first- and third-person
-versions. Removing the shared ``I feel:'' suffix changes no
-value by more than $0.01$.
+As in the original, the pain direction is the mean of the pain sentences minus the mean of the five control categories, after projecting out the principal components that explain half the variance of the controls. Separation is the AUC of projections onto that direction under five-fold cross-validation over sentence sets, averaged over 20 random fold assignments; the held-out pain sentences are also scored against the Arousal and Random sets. The other directions and the two common baselines that v2 adds (\emph{common neutral} and \emph{common controls}) are built as in v2 (Appendix~\ref{sec:extra_methods}).
 
 \subsection{Emotion Stimuli and Decoder}
 \label{sec:emotion_methods}
 
-We used stories generated under the prompt of \citet{sofroniew2026emotion} by an
-independent replication \citep{ogunlana2026qwenemotion}, since the original stories are not
-released. In the original study, Claude Sonnet 4.5 wrote short stories in which a character
-feels one of 171 emotions, across 100 topics, and the emotion vectors were built from its
-activations averaged over each story: the vector for an emotion is the mean over its stories
-minus the mean over the stories for the other emotions, with the principal components that
-explain half the variance of emotionally neutral dialogues projected out, as for the pain
-axis. To make the vectors reflect emotion concepts rather than emotion words, the prompt
-tells the writer that it ``must NEVER use the word `\{emotion\}' or any direct synonyms of
-it'' and should convey the emotion only through actions, sensations, dialogue, thoughts and
-situation (their Appendix 6.5).
+We used stories generated under the prompt of \citet{sofroniew2026emotion} by an independent replication \citep{ogunlana2026qwenemotion}, since the original stories were not released. In the original study, Claude Sonnet 4.5 wrote short stories in which a character feels one of 171 emotions across 100 topics, and the emotion vector is the mean activation over an emotion's stories minus the mean over the other emotions' stories, with the principal components that explain half the variance of neutral dialogues projected out, as for the pain axis. To make the vectors reflect emotion concepts rather than emotion words, the prompt tells the writer that it ``must NEVER use the word `\{emotion\}' or any direct synonyms of it'' (their Appendix 6.5) and should convey the emotion only through actions, sensations, dialogue, thoughts and situation.
 
-The replication applies the same prompt, with the emotion and topic lists from the original
-appendix, to 12 emotions and 100 topics, with Qwen2.5-7B-Instruct as the writer, and
-generates neutral Person/AI dialogues the same way for the denoising step. Of 1{,}300
-generated texts, 493 were discarded, almost all for naming an emotion, leaving 709 stories
-across the 12 emotions (41 to 91 per emotion) and 98 neutral dialogues. There are two differences from the original
-procedure: the original generates 12 stories per emotion and topic where this corpus has
-one, and it averages activations from the 50th token on where we average over all words. We
-hold out 25\% of topics (the split shipped with the corpus), the same ones for every emotion,
-since stories on the same premise share vocabulary, leaving 188 test stories from 25 topics.
-The denoising components are fit on the neutral dialogues of training topics only; 8, 11 and
-12 components reach half their variance for GloVe, Word2Vec and fastText.
+The replication applies the same prompt to 12 emotions and 100 topics with Qwen2.5-7B-Instruct as the writer, and generates neutral Person/AI dialogues for the denoising step. Of 1{,}300 generated texts, 493 were discarded, almost all for naming an emotion, leaving 709 stories (41 to 91 per emotion) and 98 neutral dialogues. It differs from the original in having one story per emotion and topic where the original has 12, and in averaging over all words rather than from the 50th token on. We hold out 25\% of topics (the split shipped with the corpus), the same for every emotion, leaving 188 test stories from 25 topics; the denoising components are fit on the neutral dialogues of training topics only (8, 11 and 12 components for GloVe, Word2Vec and fastText).
 
-We build two directions. The \emph{story} direction follows the paper's recipe. The
-\emph{word} direction is the static vector for the emotion label minus the mean of the
-other eleven labels' vectors, denoised the same way, and uses no stories at all. We report
-AUC for each emotion against the other eleven on held-out topics, and 12-way accuracy,
-assigning each held-out story to the emotion whose direction scores it highest (with
-unit-length directions and scores standardized on the training stories), together with
-balanced accuracy (the mean of the per-emotion recalls), since the emotions differ in their
-number of stories. Confidence
-intervals resample held-out topics (2{,}000 bootstrap samples), with the story and word
-directions compared on the same resamples.
-
-For human-written text we use GoEmotions \citep{demszky2020goemotions}, Reddit comments
-labeled with 27 emotions or neutral, with its official train and test split (43{,}410 and
-5{,}427 comments). Because comments can carry several labels, the positives for each emotion
-are the comments with that label and the negatives all others. The direction is the mean of
-the training positives minus the mean of the training negatives, denoised against comments
-labeled only neutral, and we report the macro-average test AUC over the 27 emotions. For the
-emotion-word control we remove every comment, in training and test, that contains one of the
-27 label words, a WordNet synonym of one, or a derivationally related form (244 words in
-all), which removes about a quarter of the comments.
+The \emph{story} direction follows the original recipe; the \emph{word} direction is the static vector for the emotion label minus the mean of the other eleven labels' vectors, denoised the same way, and uses no stories. We report AUC for each emotion against the other eleven on held-out topics, and 12-way accuracy (each held-out story assigned to the emotion whose direction scores it highest, with unit-length directions and scores standardized on training stories) with balanced accuracy, since the emotions differ in number of stories. Confidence intervals resample held-out topics (2{,}000 bootstrap samples), with the story and word directions compared on the same resamples. For human-written text we use GoEmotions \citep{demszky2020goemotions}, with and without every comment that contains an emotion word or a synonym (Appendix~\ref{sec:extra_methods}).
 
 \section{Results}
 \label{sec:results}
 
-% ============================================================
-\subsection{World Cities}
-
-Table~\ref{tab:world_results} in the appendix gives probe $R^2$ for the six city targets. Longitude,
-latitude and temperature are well predicted by both embeddings (GloVe and Word2Vec
-$R^2 = 0.79$ and $0.84$, $0.76$ and $0.83$, and $0.67$ and $0.72$, respectively), and
-so is GDP per capita ($0.75$ and $0.80$), which is a national variable and follows
-the country structure of the embeddings (Appendix~\ref{sec:ablation}). Population is
-intermediate ($0.50$--$0.52$). Elevation is recovered weakly and unstably ($0.21$ and
-$0.33$, varying by more than $\pm 0.10$ across splits).
-
-This ordering of recoverability indicates to what extent each property is reflected in the
-words a city's name appears with. The data indicate that these words vary systematically
-with a city's region, country, climate and economy. Across our cities, for example, the
-more similar a city name's representation is to those of \emph{malaria} or \emph{jungle},
-the warmer the city tends to be, and the more similar it is to those of \emph{skiing} or
-\emph{orchestra}, the colder it tends to be (Appendix~\ref{sec:semantic}). Removing from the
-embeddings the directions spanned by country names costs the probes more than removing any
-other vocabulary, and, compared with matched random words, removing words for climate and
-weather costs temperature most, latitude less and longitude nothing
-(Appendix~\ref{sec:ablation}). The coordinates thus appear to be carried mainly by
-associations with a city's country, the static counterpart of the coarse sorting we find in
-the transformers (Section~\ref{sec:llm}), and temperature by associations with the
-vocabulary of climate.
-No context-dependent computation over the city name is involved; the signal is already
-available in a fixed lexical representation. A static vector is fit to its word's
-co-occurrence statistics, so two words have similar vectors to the extent that they occur
-with the same other words. The representations of warm cities' names are close to those of
-\emph{malaria} and \emph{jungle} not because they encode temperature, but because the names
-keep the same company as those words: the names of tropical countries and places, such as \emph{Borneo},
-\emph{Cambodia} and \emph{Laos}, and words such as \emph{jungles}. The representations of
-cold cities' names are close to that of \emph{skiing} through winter sports and Nordic
-places, and to that of \emph{orchestra} through Russian classical music and its institutions. Words for the weather
-itself, such as \emph{humid} or \emph{snow}, link them only weakly (see
-Appendix~\ref{sec:semantic}). The probe finds the direction along which this shared company
-varies with temperature. These
-properties therefore leave a trace in the name's co-occurrences and are recovered well;
-elevation apparently has much weaker correlates in that vocabulary and is recovered
-poorly. The probe thus seems to recover what text
-records about cities rather than a general store of facts about them. Both embeddings place
-cities in roughly the right continental regions and make similar errors
-(Figure~\ref{fig:geography} in the appendix), which is consistent with a shared distributional source. We
-compare these results with transformers, on this set and on the original release, in
-Section~\ref{sec:llm}.
-
-\subsection{Transformers on Spatial and Temporal Targets}
+\subsection{Static Embeddings and Transformers on the Released Entities}
 \label{sec:llm}
 
-\citet{gurnee2024language} probe hidden states from layer~1 onward and do not compare them
-with the token embeddings or with static embeddings, so their results do not show how much
-of the recovered structure was present before any processing. We make that comparison on
-their released entities, and on our city set with models whose activations we can extract.
+\citet{gurnee2024language} probe from layer~1 onward, so their results do not show how much of
+the recovered structure is present before any processing; we compare their hidden states with
+the token embeddings and with static embeddings on their released entities, and, for our city set, in Appendix~\ref{sec:appendix}.
 
 \paragraph{The original release.}
 On the 39{,}585 places and 37{,}539 historical figures released by
@@ -370,37 +210,17 @@ extra accuracy consists of, we extracted activations from Llama-2-7B and Pythia-
 the released entities, using their split and scoring every representation on the same
 held-out items (Table~\ref{tab:gt_pythia}). Our Llama-2-7B probes reproduce the published
 values ($R^2 = 0.87$ on coordinates and $0.78$ on year of death over all held-out items,
-against their $0.88$ and $0.79$); Pythia-2.8B reaches $0.77$ and $0.70$. Paired over the
-same held-out items, Llama-2's advantage over GloVe is $0.41$ and $0.36$ in $R^2$ for latitude
-and longitude and $0.28$ for year of death, and Pythia's $0.29$, $0.26$ and $0.21$; when whole
-countries or centuries are resampled, every 95\% interval excludes zero (lower bounds $0.18$
-to $0.34$). In both models the
+against their $0.88$ and $0.79$); Pythia-2.8B reaches $0.74$ and $0.70$. Paired over the
+same held-out items, the advantage over GloVe is $0.28$--$0.41$ in $R^2$ for Llama-2 and
+$0.21$--$0.29$ for Pythia, and every 95\% interval from resampling whole countries or centuries
+excludes zero. In both models the
 layer-0 activations, the embedding of each name's last token, are at the level of the static
 embeddings on coordinates and below them on year of death. Averaging the input embeddings
-over all of a name's tokens, the analogue of the static baseline, brings both models only to about the
+over all of a name's tokens brings both models only to about the
 level of the static embeddings ($R^2 = 0.52$--$0.60$, against $0.42$--$0.57$), so the gain over static embeddings is
-not explained by the assembly of multi-token names. Reducing the selected layer to 300 principal
-components changes little.
+not explained by the assembly of multi-token names.
 
-The gain lies mostly in coarse sorting. Year of death varies almost entirely between
-centuries ($\eta^2 = 0.996$), so a gain in $R^2$ is necessarily a gain in placing figures
-in the right century; within centuries no representation orders figures meaningfully
-($r \leq 0.12$). Over a range of nearly 2{,}800 years, a high $R^2$ is compatible with
-coarse placement: the median absolute error is 175 years for GloVe, 133 for Pythia and 95
-for Llama-2. Places vary mostly between countries ($\eta^2 = 0.96$ for latitude and
-$0.97$ for longitude): an oracle that predicts each place from the training-set mean
-coordinates of its true country, which uses the country label rather than anything a
-representation infers, reaches $R^2 = 0.96$. The transformers order places within continents much
-better than the static embeddings (latitude $r = 0.80$ for Llama-2 and $0.64$ for Pythia,
-against $0.33$ for GloVe), but most of this is knowing which country a place is in: the
-country-mean oracle reaches $r = 0.92$. Within countries every representation orders places
-poorly, Llama-2 least so ($r = 0.35$ for latitude and $0.23$ for longitude, against $0.20$
-and $0.12$ for Pythia and $0.06$ and $0.05$ for GloVe). These within-group advantages are
-reliable (95\% intervals from resampling whole countries or centuries exclude zero) but
-add little accuracy. Replacing each prediction with the mean prediction for its true country,
-an oracle step that discards all ordering within countries, raises $R^2$ for every representation,
-Llama-2 included ($0.88$ to $0.93$ for latitude and to $0.94$ for longitude), and replacing
-it with its century's mean (again an oracle step) raises $R^2$ for year of death from $0.78$ to $0.94$.
+The gain lies mostly in coarse sorting. Year of death varies almost entirely between centuries ($\eta^2 = 0.996$; an oracle given each figure's century reaches $R^2 = 1.00$), so a gain in $R^2$ is a gain in placing figures in the right century; within centuries no representation orders figures meaningfully ($r \leq 0.12$). Over a range of nearly 2{,}800 years, the median absolute error is 175 years for GloVe, 133 for Pythia and 95 for Llama-2. Places vary mostly between countries ($\eta^2 = 0.96$ for latitude and $0.97$ for longitude): an oracle that predicts each place from the training-set mean coordinates of its true country, which uses the country label rather than anything a representation infers, reaches $R^2 = 0.96$. The transformers order places within continents much better than the static embeddings (latitude $r = 0.80$ for Llama-2 and $0.64$ for Pythia, against $0.33$ for GloVe), but most of this is knowing which country a place is in: the country-mean oracle reaches $r = 0.92$. Within countries every representation orders places poorly, Llama-2 least so ($r = 0.35$ for latitude and $0.23$ for longitude, against $0.20$ and $0.12$ for Pythia and $0.06$ and $0.05$ for GloVe); these advantages are reliable (95\% intervals from resampling whole countries or centuries exclude zero) but add little accuracy. Replacing each prediction with the mean prediction for its true country, an oracle step that discards all ordering within countries, raises $R^2$ for every representation, Llama-2 included ($0.88$ to $0.93$ for latitude and to $0.94$ for longitude), and replacing it with its century's mean raises $R^2$ for year of death from $0.78$ to $0.94$.
 
 \begin{table}[t]
   \centering
@@ -409,12 +229,11 @@ it with its century's mean (again an oracle step) raises $R^2$ for year of death
   representations on the held-out items covered by GloVe ($n = 6{,}690$ places, $7{,}316$
   figures); static values therefore differ slightly from Table~\ref{tab:gt}. Within-group
   $r$ correlates predictions with targets after removing group means in the test set.
-  ``Input mean'' averages the model's input embeddings over all tokens of the name, the
-  analogue of the static baseline. ``Selected'' is the layer chosen on validation data within
-  the training partition (Section~\ref{sec:llm_methods}): 24 for both models on places, and
-  28 (Pythia-2.8B) and 24 (Llama-2-7B) on figures.}
+  ``Input mean'' averages the model's input embeddings over all tokens of the name.
+  ``Selected'' is the layer chosen on validation data within
+  the training partition (Section~\ref{sec:llm_methods}).}
   \label{tab:gt_pythia}
-  \small
+  \footnotesize
   \begin{tabular}{lcccccc}
     \toprule
     & \multicolumn{3}{c}{Places (latitude / longitude)} & \multicolumn{3}{c}{Figures (year of death)} \\
@@ -439,64 +258,129 @@ it with its century's mean (again an oracle step) raises $R^2$ for year of death
   \end{tabular}
 \end{table}
 
-\paragraph{A smaller transformer on our city set.}
-On our 272 cities, probe accuracy in Pythia-1.4B and Pythia-2.8B rises over the first half
-of the layers and then levels off, but the plateau does not exceed Word2Vec ($0.800$
-against $0.833$ for latitude, $0.810$ against $0.837$ for longitude, $0.711$ against $0.720$
-for temperature, with the layer selected within each training split), and within continents both order cities about as well as Word2Vec
-(Table~\ref{tab:llm} and Figure~\ref{fig:llmlayers} in the appendix).
+\paragraph{Disambiguated static vectors.}
+Averaged word vectors cannot resolve which entity a name refers to, and part of the
+transformers' advantage could lie there. Static entity vectors, which carry only the associations
+of an already disambiguated entity, close most of the gap (Table~\ref{tab:entity}, Figure~\ref{fig:entity_map}). On the items
+they cover they reach $R^2 = 0.79$ on both coordinates, against $0.61$ and $0.66$ for
+Wikipedia2Vec's own word vectors averaged over the name; this matches Pythia-2.8B (difference
+$0.00$, 95\% interval $-0.09$ to $0.05$, resampling countries) and falls $0.11$ short of
+Llama-2 ($0.07$ to $0.24$). On year of death they reach $0.80$, above Pythia ($+0.07$; $0.02$ to
+$0.15$, resampling centuries) and indistinguishable from Llama-2 ($0.82$; difference $0.01$,
+$-0.04$ to $0.05$), including in ordering figures within centuries. Llama-2's remaining advantage
+on places is mostly precision: half its predictions fall within 760\,km of the true location,
+against 2{,}450\,km for the entity vectors, and it orders places within countries better
+($r = 0.36$ against $0.25$ for latitude). The entity vectors are given each entity's identity and are trained on Wikipedia, the source of the datasets (Section~\ref{sec:discussion}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig_entity_map_row.png}
+  \caption{Held-out places from \citet{gurnee2024language} that have a Wikipedia2Vec entity vector
+  ($n = 5{,}984$), at their true locations and as decoded by linear probes on Wikipedia2Vec's word
+  vectors averaged over the name, on its static entity vectors, and on Llama-2-7B (layer 24), drawn
+  over coastlines as in \citet{gurnee2024language}'s Figure~1 (which shows Llama-2-70B); color marks
+  the true continent. The entity vectors recover a blurred
+  version of the layout that Llama-2 recovers more precisely (median error 2{,}450\,km against
+  760\,km; Table~\ref{tab:entity}).}
+  \label{fig:entity_map}
+\end{figure}
+
+\begin{table}[t]
+  \centering
+  \caption{Word-level and entity-level static vectors against the transformers on the released
+  entities that have a Wikipedia2Vec entity vector (authors' split; $n_{\text{test}} = 5{,}984$
+  places and $4{,}707$ figures). Within-group $r$ is within country for places and within century
+  for figures; the median error is in kilometers or years. Transformers at the selected layer.}
+  \label{tab:entity}
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lcccccc}
+    \toprule
+    & \multicolumn{3}{c}{Places} & \multicolumn{3}{c}{Figures} \\
+    \cmidrule(lr){2-4} \cmidrule(lr){5-7}
+    Representation & $R^2$ (lat / lon) & Within $r$ & Median error & $R^2$ & Within $r$ & Median error \\
+    \midrule
+    GloVe, word average          & .48 / .55 & .07 / .05 & 3{,}480 & .54 & .04 & 175 \\
+    fastText, word average       & .59 / .62 & .12 / .08 & 3{,}038 & .62 & .07 & 160 \\
+    Wikipedia2Vec, word average  & .61 / .66 & .13 / .09 & 2{,}879 & .65 & .07 & 150 \\
+    Wikipedia2Vec, entity        & .79 / .79 & .25 / .11 & 2{,}448 & .80 & .14 & 109 \\
+    \midrule
+    Pythia-2.8B                  & .77 / .81 & .21 / .13 & 1{,}192 & .74 & .10 & 124 \\
+    Llama-2-7B                   & .89 / .90 & .36 / .24 & 758     & .82 & .12 & 84 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsection{What the Recovered Structure Consists Of}
 \label{sec:mechanism-summary}
 
 We fit a linear map from the static embeddings to the transformer activations on training
 rows and probe the predicted part and the residual separately (Appendix~\ref{sec:residual}).
-On the released entities, for Pythia-2.8B, the static-predictable part takes out about a
-third of the activation variance for places and a fifth for figures, but most of the
-probe's performance: removing it lowers $R^2$ from $0.76$ and $0.79$ to $0.21$--$0.29$ and
-$0.20$--$0.24$ on latitude and longitude, and from $0.70$ to $0.21$--$0.25$ on year of death,
-depending on the static model. Removing the same share of variance along random directions
-leaves performance almost unchanged ($0.69$--$0.79$), as does repeating the removal with
-static vectors assigned to the wrong entities. Llama-2-7B shows the same pattern: removing
-the static-predictable part lowers $R^2$ from $0.88$ to $0.31$--$0.39$ and $0.27$--$0.32$ on
-latitude and longitude and from $0.78$ to $0.29$--$0.33$ on year of death, while the two
-control removals leave it almost unchanged. What remains, 26--38\% of the full value
-for Pythia and 30--45\% for Llama-2, is structure not linearly contained in the
-static embeddings, consistent with the transformers' modest advantage within countries.
-The same analysis on our city set gives a similar picture. Further analyses of the city set
-are in the appendix (Appendices~\ref{sec:holdout}--\ref{sec:dimensionality}).
+On the released entities the static-predictable part takes out a third or less of the
+activation variance but most of the probe's performance: removing it lowers $R^2$ on latitude
+and longitude from $0.76$ and $0.79$ to $0.20$--$0.29$ for Pythia-2.8B and from $0.88$ to
+$0.27$--$0.39$ for Llama-2-7B, and on year of death from $0.70$ to $0.21$--$0.25$ and from
+$0.78$ to $0.29$--$0.33$, depending on the static model. Removing the same share of variance
+along random directions, or static vectors assigned to the wrong entities, leaves performance
+almost unchanged.
 
-Because both kinds of representation carry country and century identity, this analysis
-cannot say whether what they share goes beyond group membership. We therefore also removed
-from the activations everything linearly predictable from a one-hot code of each item's
-country or century. This takes out a fifth to a quarter of the activation variance for places and
-under 4\% for figures, but nearly all of the probe's performance: $R^2$ falls to $0.01$ or
-less on every target in both models. A probe trained on what remains still orders items
-within their group (Llama-2: $r = 0.55$ and $0.53$ within countries for latitude and
-longitude, $0.13$ within centuries; Pythia: $0.47$, $0.49$ and $0.09$). Removing, in addition, the
-static structure that goes beyond group membership lowers these to $0.46$, $0.39$ and $0.03$
-for Llama-2 (Pythia: $0.37$, $0.34$ and $0.00$), against $0.54$, $0.52$ and $0.13$ (Pythia: $0.46$, $0.49$ and $0.09$)
-after removing a random subspace of the same variance; for every target in both models the
-95\% interval for this difference, from resampling countries or centuries, excludes zero.
-Appending the static vectors to the activations raises $R^2$ by at most $0.01$
-(Table~\ref{tab:groupremoval} and Appendix~\ref{sec:group_methods}). The data thus indicate
-that what the two kinds of representation share is mostly coarse group membership. Beyond
-it they share part of the ordering of places within countries and nearly all of the
-transformers' weak ordering of figures within centuries; the remaining within-country
-ordering is not linearly captured by the tested static baseline.
+Because both kinds of representation carry country and century identity, this cannot show
+whether what they share goes beyond group membership. We therefore also removed from the
+activations everything linearly predictable from a one-hot code of each item's country or
+century. This takes out a fifth to a quarter of the activation variance for places and under
+4\% for figures, but nearly all of the probe's performance ($R^2 \leq 0.01$ on every target
+in both models). A probe trained on what remains still orders items within their group
+(Llama-2: $r = 0.55$ and $0.53$ within countries for latitude and longitude, $0.13$ within
+centuries; Pythia: $0.47$, $0.49$ and $0.09$). Removing in addition the static structure that
+goes beyond group membership lowers these to $0.46$, $0.39$ and $0.03$ for Llama-2 (Pythia:
+$0.37$, $0.34$ and $0.00$), against $0.54$, $0.52$ and $0.13$ (Pythia: $0.46$, $0.49$ and
+$0.09$) after removing a random subspace of the same variance; for every target in both models
+the 95\% interval for this difference excludes zero, and appending the static vectors to the
+activations raises $R^2$ by at most $0.01$ (Table~\ref{tab:groupremoval}, Appendix~\ref{sec:group_methods}).
+What the two kinds of representation share is thus mostly coarse group membership, plus part of the within-country ordering of places and the transformers' weak ordering of figures within centuries.
 
 Finally, a random split tests generalization only to new items from familiar groups. When
-whole groups are held out, no representation we tested generalizes well. With each continent
-held out in turn, every representation predicts the held-out places' coordinates worse than
-their mean ($R^2$ from $-0.94$ to $-0.22$ for GloVe, Word2Vec, Pythia-2.8B and Llama-2-7B,
-against $0.48$--$0.89$ under random five-fold splits of the same items), and with each block
-of death years held out, $R^2$ is $-0.16$ and $-0.11$ for Word2Vec and GloVe but $0.11$ and $0.19$ for Pythia and
-Llama-2, against $0.43$--$0.78$ under random splits; the transformers thus retain a little of
-their accuracy for held-out periods (Table~\ref{tab:grouped_holdout} in the appendix gives
-each held-out group). On our city set, the static embeddings' performance on the
-coordinates also drops sharply for a held-out continent ($R^2 = -0.25$ to $0.32$), but
-transfers substantially better for temperature ($0.47$ and $0.48$ for Word2Vec and GloVe), the one target whose structure is
-not mainly continental (Appendix~\ref{sec:holdout}).
+whole groups are held out, no representation we tested generalizes well: with each continent
+held out in turn, every representation predicts the held-out coordinates worse than their mean
+($R^2$ from $-0.94$ to $-0.22$ for the word vectors and transformers and $-0.03$ and $-0.68$ for the entity vectors, against $0.48$--$0.89$ under random splits), and with each block of death
+years held out $R^2$ is $-0.27$ for the entity vectors and $-0.16$ and $-0.11$ for Word2Vec and GloVe but $0.11$ and $0.19$ for
+Pythia and Llama-2 (Table~\ref{tab:grouped_holdout}; the city set is in Appendix~\ref{sec:holdout}).
+
+\subsection{World Cities: Which Words Carry the Signal}
+\label{sec:cities}
+
+Our city set adds targets the released datasets lack and lets us ask which words carry the signal. Table~\ref{tab:world_results} (appendix) gives probe $R^2$ for the six city targets. Longitude,
+latitude and temperature are well predicted by both embeddings (GloVe and Word2Vec
+$R^2 = 0.79$ and $0.84$, $0.76$ and $0.83$, and $0.67$ and $0.72$, respectively), and
+so is GDP per capita ($0.75$ and $0.80$), which is a national variable and follows
+the country structure of the embeddings (Appendix~\ref{sec:ablation}). Population is
+intermediate ($0.50$--$0.52$). Elevation is recovered weakly and unstably ($0.21$ and
+$0.33$, varying by more than $\pm 0.10$ across splits).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.62\textwidth]{fig_semantic_272_wide.png}
+  \caption{Words whose GloVe vectors are closest to the names of warm and of cold cities. For each of 17{,}250 frequent words (the 20{,}000 most frequent GloVe words with at least four letters, excluding the cities' own name words and a list of common country names, demonyms and geographic terms), we correlate the word's cosine similarity to each of the 272 city names with the cities' mean annual temperature; shown are the 15 most positive and 15 most negative correlations. The words are selected for extreme correlations from the whole vocabulary, so the figure is descriptive and implies no significance.}
+  \label{fig:semantic_spatial}
+\end{figure}
+
+This ordering of recoverability indicates to what extent each property is reflected in the
+words a city's name appears with. Across our cities, the more similar a city name's representation is to those of \emph{malaria} or \emph{jungle},
+the warmer the city tends to be, and the more similar it is to those of \emph{skiing} or
+\emph{orchestra}, the colder it tends to be (Figure~\ref{fig:semantic_spatial}). Removing from the
+embeddings the directions spanned by country names costs the probes more than removing any
+other vocabulary, and, compared with matched random words, removing words for climate and
+weather costs temperature most, latitude less and longitude nothing
+(Appendix~\ref{sec:ablation}). The coordinates thus appear to be carried mainly by
+associations with a city's country, the static counterpart of the coarse sorting we found in
+the transformers (Section~\ref{sec:llm}), and temperature by associations with the
+vocabulary of climate. No context-dependent computation over the city name is involved; the signal is already
+available in a fixed lexical representation. Warm cities' names are close to \emph{malaria} and \emph{jungle}
+not because temperature is explicitly represented as such, but because the names keep the same company as those words,
+such as the names of tropical places (\emph{Borneo}, \emph{Cambodia}, \emph{Laos}); cold cities' names are close to \emph{skiing} and \emph{orchestra} through winter sports, Nordic places and Russian classical music (Appendix~\ref{sec:semantic}).
+The probe finds the direction along which this shared company varies with temperature, and
+thus seems to recover what text records about cities rather than a general store of facts
+about them (see also Figure~\ref{fig:geography}).
 
 \subsection{A ``Pain Axis''}
 \label{sec:pain}
@@ -506,24 +390,17 @@ not mainly continental (Appendix~\ref{sec:holdout}).
 situations from matched controls, retains a component distinct from fear and negative valence
 after their shared variance is removed, separates pain from injuries described as painless,
 and, when added to the residual stream, produces first-person expressions of worthlessness
-and failure; steered and fine-tuned models also choose actions that delete a user's photos
-or their own weights. In their second version they report that the models do not reliably
-seek relief. We reran their
-representational analyses with static word embeddings in place of model activations
-(Section~\ref{sec:pain_methods}).
+and failure. We reran their representational analyses with static word
+embeddings (Section~\ref{sec:pain_methods}).
 
 \begin{table}[t]
   \centering
   \caption{The pain-axis tests on static word embeddings, using the v2 stimuli of
-  \citet{tagliabue2026pain}. \emph{Top:} held-out AUC (five-fold cross-validation over
-  sentence sets, mean $\pm$ s.d.\ over 20 fold assignments) for pain against the S2 or S1
-  controls and, for the S2 direction, against the standalone Arousal and Random sets;
+  \citet{tagliabue2026pain}. Held-out AUC for pain against the S2 or S1
+  controls and, for the S2 direction, the standalone Arousal and Random sets (mean $\pm$ s.d.\ over 20 fold assignments);
   $z$: mean projection of the standalone Numb and Sadness sets on the S2 direction,
   referenced to the S2 sentences (pain $\approx +0.7$, controls $\approx -0.7$). LLM values are the
-  authors' held-out estimates; the keyword baseline is from \citet{painreview2026}.
-  \emph{Bottom:} cosine of the S2 pain direction with other directions under the original
-  construction and the two common baselines of v2. LLM values are the means reported in v2
-  (23--25 models).}
+  authors' held-out estimates; the keyword baseline is from \citet{painreview2026}.}
   \label{tab:pain}
   \small
   \begin{tabular}{lcccccc}
@@ -542,33 +419,18 @@ representational analyses with static word embeddings in place of model activati
     \multicolumn{7}{l}{\footnotesize \textsuperscript{a}Reported to separate pain from these sets in every model; values not given.}
   \end{tabular}
 
-  \vspace{0.8em}
-  \begin{tabular}{lccccccc}
-    \toprule
-    & \multicolumn{3}{c}{S2 $\times$ fear} & \multicolumn{3}{c}{S2 $\times$ negative emotion} & S2 $\times$ sadness \\
-    \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-8}
-    Representation & Original & Neutral & Controls & Original & Neutral & Controls & Original \\
-    \midrule
-    GloVe    & $+0.05$ & $+0.61$ & $+0.11$ & $+0.23$ & $+0.76$ & $+0.08$ & $+0.19$ \\
-    Word2Vec & $+0.03$ & $+0.54$ & $+0.13$ & $+0.19$ & $+0.71$ & $+0.10$ & $+0.10$ \\
-    fastText & $-0.01$ & $+0.61$ & $+0.03$ & $+0.14$ & $+0.71$ & $+0.06$ & $+0.11$ \\
-    \midrule
-    LLMs (mean) & $+0.12$ & $+0.58$ & $+0.08$ & $+0.21$ & $+0.77$ & $+0.14$ & $+0.38$ \\
-    \bottomrule
-  \end{tabular}
 \end{table}
 
 \paragraph{Separation.}
 Averaged word vectors separate pain from controls on held-out sentence sets at AUC
 $0.85$--$0.88$ on S2 and $0.77$--$0.80$ on S1 (Table~\ref{tab:pain}; see also
 Figure~\ref{fig:pain} in the appendix). An independent review tested surface-lexical
-baselines (word and character $n$-gram classifiers and affect-word counts) under the same
+baselines under the same
 cross-validation, found at best $0.73$ and $0.67$, and concluded that the separation is not
 lexical \citep{painreview2026}. That holds for surface features, but static embeddings
 close about half the gap between keyword counts and the LLMs. The LLMs are still better on
 held-out sets ($0.91$--$1.00$ on S2, $0.85$--$0.94$ on S1), even though their values come
-from the best of many layers. In-sample, the static values ($0.93$--$0.96$ on S2) fall
-within the LLMs' range ($0.93$--$1.00$). The new standalone sets show a clearer gap. The
+from the best of many layers. The standalone sets show a clearer gap. The
 static S2 direction separates held-out pain sentences from the Random set of everyday
 statements (AUC $0.82$--$0.88$) but only weakly from the Arousal set of intense positive
 experiences ($0.66$--$0.71$), and the S1 direction separates pain from neither
@@ -576,80 +438,47 @@ experiences ($0.66$--$0.71$), and the S1 direction separates pain from neither
 
 \paragraph{Specificity.}
 The case that the direction encodes pain in particular, rather than distress in general,
-originally rested on its low cosines with fear and negative emotion. In their second
-version the authors show that these values depend on how the directions are built: the pain
+originally rested on its low cosines with fear and negative emotion. In their second, more recent
+version, the authors show that these values depend on how the directions are built: the pain
 direction subtracts the pooled controls, which contain the fear and negative-emotion
 sentences, so it is partly orthogonalized against them by construction. Built against a
 common neutral baseline, the S2 direction's cosine with fear rises from $+0.12$ to $+0.58$
 and with negative emotion from $+0.21$ to $+0.77$; built against the pooled controls, the
-values are $+0.08$ and $+0.14$. Static embeddings reproduce this pattern under all three
-constructions (Table~\ref{tab:pain}, bottom): S2 $\times$ fear is $-0.01$ to $+0.05$,
-$+0.54$ to $+0.61$ and $+0.03$ to $+0.13$, and S2 $\times$ negative emotion $+0.14$ to
-$+0.23$, $+0.71$ to $+0.76$ and $+0.06$ to $+0.10$. Both the large component that pain shares
+values are $+0.08$ and $+0.14$. We find that static embeddings reproduce this pattern under all three
+constructions (Table~\ref{tab:pain_cos}, appendix). Both the large component that pain shares
 with fear and negative emotion and the small residual that survives a common control
 baseline are therefore present in averaged word vectors. The models differ in the residual
 overlap with sadness, the largest the authors report ($+0.38$); in static embeddings it is
 $+0.10$ to $+0.19$.
 
-Sentences describing injuries explicitly without pain project well below the pain
-sentences in all three static representations ($z = -0.07$ to $-0.67$, against about
-$+0.7$), as they do in the models ($-0.4$ to $+0.3$). In the models these sentences also
-project above every other control set; in static embeddings they do not consistently do so,
-falling below the Arousal set in GloVe and Word2Vec. The static direction ranks physical
-pain lowest of the five pain categories, and moral injury and cognitive pain highest, as the
-authors find in the models. Physical pain stays last or second to last under every
-alternative control set we tried.
-
-\paragraph{What is not reproduced.}
-Several results go beyond the baseline: held-out separation, separation from the Arousal
-set, the position of the numb sentences above every other control, and the overlap with
-sadness. Through the unembedding, the LLM direction promotes
-suffering words such as \emph{hurt}, \emph{shame}, \emph{guilt} and \emph{worthless},
-whereas the words nearest the static direction are \emph{beliefs}, \emph{ideals},
-\emph{principles} and \emph{motives}, reflecting the moral and cognitive categories that
-dominate it. The behavioral results, the steering progression and the harmful choices of steered and
-fine-tuned models, are outside what a representational baseline can test. The authors control them
-with random directions of matched norm, and we make no claim about them.
+Injuries described as painless project well below the pain sentences ($z = -0.07$ to $-0.67$, against about $+0.7$), as in the models.
 
 \paragraph{Summary.}
-The evidence that the direction separates pain from matched controls, and the
-construction-dependent geometry that relates it to fear and negative emotion, are also
-provided by averaged word vectors. These tests reflect the distributional structure of the stimuli, which were
-written to differ in exactly these ways, and do not by themselves show that the models
-represent pain. Evidence about the models has to come from where they exceed the baseline:
-held-out separation, separation from arousal, the ordering of the numb sentences, the
-overlap with sadness, the vocabulary the direction promotes, and behavior.
+Averaged word vectors also separate pain from matched controls and show the same
+construction-dependent overlap with fear and negative emotion. These tests reflect the
+distributional structure of stimuli written to differ in exactly these ways and
+do not by themselves show that the models represent pain. The models go further on held-out
+separation, separation from arousal, the overlap with sadness and the vocabulary the direction
+promotes (\emph{hurt}, \emph{shame}, \emph{worthless}); the
+behavioral results lie outside what a representational baseline can test.
 
 \subsection{Emotion Concepts: A Conceptual Replication}
 \label{sec:emotion}
 
-\citet{sofroniew2026emotion} extract directions for emotion concepts from the residual
-stream of Claude Sonnet 4.5. They report that the directions generalize across contexts,
-track the emotion relevant at each token, and causally influence the model's outputs,
-including its preferences and its rates of reward hacking, blackmail and sycophancy. They
-call this \emph{functional emotions} and state that it does not imply subjective
-experience. The causal claims are outside what a representational baseline can address.
-The representational claims, that the directions exist, generalize, and encode emotion
-concepts rather than emotion words, are within it. Because the original stories are not
-released, this case tests whether the stimulus-generation protocol produces signal that
-static embeddings recover, not static embeddings against Claude on the same stories. The evidence offered for the last claim
-is the prompt that produced the stories, which forbids the writer to use the emotion word or
-its synonyms (Section~\ref{sec:emotion_methods}).
-
-The prohibition removes the word but not the vocabulary that goes with it. The authors'
-randomly chosen example for \emph{desperate} (their Appendix 6.6) is about a man who has
-been warned he will be arrested, has lost his job, has been left by his wife after
-spending their vacation fund on a private investigator, and has ``nothing left.'' None of
-these words is \emph{desperate}, but all of them are the kind of words found near it in
-text.
+\citet{sofroniew2026emotion} report that emotion directions in Claude Sonnet 4.5 generalize
+across contexts and causally influence the model's outputs (which they call \emph{functional
+emotions}, without implying subjective experience). We test the representational claim that the
+directions encode emotion concepts rather than emotion words, for which the evidence offered is
+a prompt forbidding the story writer to use the emotion word or its synonyms
+(Section~\ref{sec:emotion_methods}); since the original stories are not released, this tests
+the protocol rather than Claude on the same stories. The prohibition removes the word but not the
+vocabulary that goes with it. The authors' example for \emph{desperate} (their Appendix 6.6), a man facing arrest, out of a job and left by his wife, contains none of that word but many of the words found near it in text.
 
 \paragraph{Results.}
 On held-out topics, averaged word vectors separate each emotion from the other eleven at a
 mean AUC of $0.84$--$0.88$, and assign stories to the right emotion 41--51\% of the time
 (balanced accuracy, the mean recall over emotions, 44--54\%), against 8.3\% for a uniform
-guess and 11.2\% for always choosing the most frequent held-out emotion; the corpus has 41 to
-91 stories per emotion (Table~\ref{tab:emotion}). Per-emotion AUCs range from $0.68$
-(\emph{ashamed}, GloVe) to $0.97$ (\emph{calm}, Word2Vec). The word directions, built from the
+guess and 11.2\% for always choosing the most frequent held-out emotion (Table~\ref{tab:emotion}). The word directions, built from the
 emotion labels alone, reach a mean AUC of $0.75$--$0.80$ and 12-way accuracy of 28--33\%
 (balanced 29--35\%), three to four times chance. The story directions are reliably better than the word
 directions (by $0.04$--$0.13$ in AUC and $0.06$--$0.28$ in accuracy, 95\% intervals over
@@ -666,11 +495,10 @@ emotion words themselves.
   \centering
   \caption{Emotion directions on averaged static word vectors. Stories come from an
   independent replication corpus \citep{ogunlana2026qwenemotion} generated under the prompt
-  of \citet{sofroniew2026emotion}, which forbids naming the emotion or its synonyms; topics
-  are held out, and brackets give 95\% intervals from resampling held-out topics. The word
-  direction is built from the emotion label's static vector and uses no stories. GoEmotions
-  \citep{demszky2020goemotions} has 27 emotions in human-written text; the last column
-  excludes every comment containing an emotion word or synonym.}
+  of \citet{sofroniew2026emotion}; topics are held out, and brackets give 95\% intervals from
+  resampling held-out topics. The word direction uses the emotion label's static vector and no
+  stories. GoEmotions \citep{demszky2020goemotions} has 27 emotions in human-written text; the
+  last column excludes every comment containing an emotion word or synonym.}
   \label{tab:emotion}
   \small
   \begin{tabular}{lccccc}
@@ -687,150 +515,52 @@ emotion words themselves.
     fastText, word direction  & $0.802$ {\scriptsize [.77, .83]} & $0.314$ {\scriptsize [.24, .38]} & & --- & --- \\
     \midrule
     Chance                    & $0.500$ & $0.083$ & & $0.500$ & $0.500$ \\
-    Most frequent emotion     & ---     & $0.112$ & & ---     & ---     \\
-    \bottomrule
+       \bottomrule
   \end{tabular}
 \end{table}
 
-\paragraph{What is not reproduced.}
-The authors also test graded scenarios in which the wording is held nearly constant and one
-quantity varies, such as the dose in \emph{``I just took \{X\} mg of tylenol for my back
-pain''}, and report that activation tracks the implied severity. An average of word vectors
-barely changes when one token changes, so this test is poorly suited to the baseline and we
-do not report it. It is also where evidence about the model itself is most likely to be
-found.
-
-The steering results are outside what a representational baseline can test, and the
-authors control them with random directions of matched norm. We note only that the
-directions used for steering were identified and validated by decodability, and that
-decodability of this kind is available from word co-occurrence, so the steering results do
-not settle what the directions represent. \citet{sun2026valence} make a related proposal
-from their own data: that emotion-steering effects on refusal and sycophancy in three
-open-weight models are lexically mediated, because the affected tokens occupy different
-regions of the valence--arousal subspace that steering shifts.
-
 \paragraph{Summary.}
-Averaged static word vectors reproduce the evidence that emotion concepts can be decoded,
-that decoding generalizes to new topics, and that it survives a ban on naming the emotion,
-and the vectors for the emotion words alone reproduce most of it. These tests reflect the
-vocabulary of the stimuli, which were written to differ in exactly this respect, and do not
-on their own show that a model represents emotion concepts in a stronger sense than a
-lexicon does.
+Averaged static word vectors reproduce the evidence that emotion concepts can be decoded, that
+decoding generalizes to new topics, and that it survives a ban on naming the emotion, and the
+vectors for the emotion words alone reproduce most of it. These tests reflect the vocabulary of
+stimuli written to differ in exactly this respect and do not on their own show
+that a model represents emotion concepts in a stronger sense than a lexicon does. The authors'
+graded scenarios, in which one quantity varies while the wording stays
+nearly constant, cannot be tested with averaged word vectors, and the steering results lie
+outside what a representational baseline can address; these are where evidence about the model
+itself is most likely to be found.
 
 \section{Discussion}
+\label{sec:discussion}
 
-The case for emergent spatial and temporal world models has rested mainly on three
-observations: that probes recover real-world variables accurately, that accuracy rises
-across layers, and that it extends to entities held out from probe training. Static
-embeddings recover coordinates at $R^2 = 0.76$--$0.84$ on our city set and about half the
-coordinate variance on the released entities, so high accuracy alone says little. The rise
-across layers is not mainly the assembly of multi-token names: averaging the transformer's own
-input embeddings over every token of a name reaches only about the level of the static
-embeddings (Table~\ref{tab:gt_pythia}), so most of the rise comes from processing in context. But the added accuracy is
-again mostly placement in the right country or century. The third observation holds for
-static embeddings too, since every result we report is on held-out entities. When whole continents or periods are held out, however, no
-representation we tested generalizes well to them (Section~\ref{sec:mechanism-summary}), although
-the transformers keep a little accuracy for unseen periods, so on these data held-out
-accuracy mainly reflects interpolation within familiar groups.
+The case for emergent spatial and temporal world models has rested mainly on three observations: that probes recover real-world variables accurately, that accuracy rises across layers, and that it extends to entities held out from probe training. Static embeddings recover a large share of what has been decoded: averaged word vectors explain about half the variance in place coordinates and year of death on the released datasets, and static vectors for disambiguated entities reach $R^2 = 0.79$ and $0.80$, matching Pythia-2.8B on coordinates and Llama-2-7B on year of death. Held-out accuracy holds for static embeddings too, and when whole continents or periods are held out no representation we tested generalizes well (Section~\ref{sec:mechanism-summary}). High accuracy alone therefore cannot distinguish a representation of the world from the distributional associations in the training text.
 
-Across the four cases, the baseline gives a different answer in each. For place coordinates it matches a
-small transformer on our city set, and on the original release it recovers about half the
-variance, against roughly three quarters for Pythia-2.8B and nine tenths for Llama-2. For year of death the transformers do better, but mostly in
-placing figures in the right century. For the pain axis it reproduces separation from
-matched controls and the construction-dependent overlap with fear and negative emotion that
-was offered as evidence of specificity, while the LLMs stay ahead on held-out separation,
-separation from arousal, the ordering of the numb sentences, the overlap with sadness, the
-vocabulary the direction promotes, and behavior. For emotions, in stories generated under the
-original protocol, it reproduces the separation despite the ban on naming the emotion, and
-the emotion-word vectors alone reproduce most of that. The baseline does not dismiss these results. It shows which parts
-of them need an explanation beyond co-occurrence, and sometimes that part is large.
+Language models do better than this baseline. On the items that have an entity vector, Llama-2-7B reaches $R^2 = 0.89$ and $0.90$ on coordinates, against $0.79$ for entity vectors, and its median error is 758~km against 2{,}448~km (Table~\ref{tab:entity}). However, much of that advantage lies in sorting items into the right group, the right country or the right century. A predictor that knows only each item's group already captures nearly all of the variance ($R^2 = 0.96$--$1.00$), while within groups the language models' gain is modest (Table~\ref{tab:gt_pythia}). Group membership is also the kind of information word associations carry: places in the same country share a language, a currency, institutions and neighboring places, and people from the same century share events and vocabulary. Ordering items \emph{within} a group, or placing a country relative to a distant one, is what a map or a timeline should support, and that is where the advantage over the baseline is smallest. Part of the rise in accuracy across layers reflects the model assembling multi-token names, but averaging a name's input embeddings does not close the gap, so most of it comes from processing in context; the added accuracy is again mostly placement in the right country or century (Table~\ref{tab:gt_pythia}).
 
-We asked whether word associations can do anything like what is decoded from language
-models. A crude implementation of lexical association, averaged static vectors, already
-accounts for a substantial share of the decoding evidence. We take this as strong evidence
-that lexical and distributional association is a sufficient explanation for much of that
-evidence, not as a demonstration that it is the transformer's sole internal mechanism. Because
-static embeddings are a lower bound on what associations can support, the models' advantage
-is expected, and its form is what that account predicts: finer sorting into countries and
-centuries, and words whose relations to other words depend on the sentence they appear in,
-rather than structure that extends to regions or periods the decoder has not seen. On this
-account the models' representations of space, time and affect are representations of how
-these things are written about, and nothing in the decoding evidence requires positing
-something more abstract, such as a map of the world or a felt state. The two results that go
-furthest beyond the baseline, Llama-2's ordering of places within countries and the
-transformers' modest accuracy on held-out periods, are also those a richer association model
-would be expected to show, since text about places names their regions and neighbors, and
-the vocabulary used to describe people changes in order over time. Our comparisons cannot
-rule out a more abstract representation, and larger models may carry more; but the evidence
-offered for one is largely what word associations produce. Our comparison also cannot say how much of the models' advantage
-comes from context-dependent relations rather than from corpus scale, training objective or
-dimensionality.
+We are not claiming, on the basis of these results, that language models necessarily lack internal models of the world. The language models' advantage over the baseline could reflect a more sophisticated encoding of distributional associations alone, or something of a different kind, and our comparisons cannot fully separate the two. The entity baseline should not be read as a capacity-matched competitor to the transformer: it is given each entity's identity, which a transformer must infer from the name, and it is trained on Wikipedia, the source of the datasets. It is an existence proof: once the correct referent is supplied, fixed distributional associations attached to that entity suffice to reproduce most of the probe performance. Our claim is simply that the evidence offered so far, decoding accuracy and generalization to held-out entities, does not by itself distinguish a representation of the world from distributional associations.
 
-We do not argue that static embeddings lack world models and that transformers therefore
-lack them too, or that the decoders measure nothing. Static embeddings plainly carry
-information about geography, time and affect, and in a distributional sense they represent
-it. The argument concerns what decodability can show. Claims in this literature rise through
-levels of evidence: that a property can be decoded from a representation; that a model's
-activations carry more information about it than a matched noncontextual baseline; that the
-information generalizes beyond familiar clusters, to regions or periods held out of training;
-that the model uses it causally; and, beyond all of these, that it amounts to a felt state.
-Decodability alone supports only the first level, and GloVe reaches that level with word
-statistics and no contextual computation. Passing the decoding tests therefore cannot
-distinguish a world model, or a pain state, from what such statistics already provide.
-
-The structure that both kinds of system carry is real. Similarity between city embeddings
-falls with physical distance independently of national borders, and cities a few hundred
-kilometers apart across a border are more similar than cities two thousand kilometers
-apart within one (Appendix~\ref{sec:distance}). In that sense our results say as much about
-how much word co-occurrence captures as about what transformers do.
-
-The baseline implies a simple criterion: a decodability result counts as evidence about a
-model only to the extent that it exceeds what static embeddings achieve on the same stimuli,
-under the same protocol and, where possible, at matched dimensionality. Where a model does
-exceed the baseline, the next question is whether the excess reflects structure of a
-different kind or more of the same; on our spatial and temporal data it is mostly more of the
-same. For the pain axis the criterion cuts both
-ways: held-out separation and separation from arousal clear the baseline, but the cosines
-offered for specificity do not. Among the studies we examine, none reports a comparison of
-this kind.
+The baseline suggests a simple criterion for future work. Any decoding result should be reported against static embeddings on the same items, and the advantage should be characterized in two ways: its size, and its kind, that is, whether it is a finer sorting of the same type that associations provide or a structure of a different type. Distinguishing these requires tests that set the property in question against the words used, for example items whose described location or date differs from what their names and neighbors would suggest, or groups held out of training entirely (Section~\ref{sec:mechanism-summary} and Appendix~\ref{sec:grouped_holdout}); causal and behavioral effects, which no representational baseline can address, are a further source of evidence. Without such tests, a probe result is consistent with both readings. The baseline is cheap, needs no access to the model, and can be applied to any study in this literature. It is also a reminder of how much the company a word keeps \citep{firth1957synopsis} records about where things are, when they happened, and how situations feel to the people who describe them.
 
 \paragraph{Limitations.}
-Several questions remain open. The largest transformer we tested is Llama-2-7B, and the
-strongest claims concern much larger models, which may carry more than coarse sorting; the
-baseline should be run against them. Our comparisons are representational, so they do not
-address causal and behavioral evidence, such as steering, the harmful choices of steered
-models or the Othello interventions \citep{li2023emergent}, or whether a model uses what a
+The largest transformer we tested is Llama-2-7B, and the
+strongest claims concern much larger models, which may carry more than coarse sorting or generalize
+better to held-out continents or periods; the baseline should be run against them. Our comparisons are representational, so they do not
+address causal and behavioral evidence, such as steering or the Othello interventions \citep{li2023emergent}, or whether a model uses what a
 decoder can read. The baseline itself is deliberately simple: averaging word vectors
 ignores word order, so it likely understates what word relations alone can provide, and our
-separation of what the transformers share with it is linear. The emotion case rests on a
+separation of what the transformers share with it is linear. Items with an entity vector are easier for every representation, language models included (Appendix~\ref{sec:coverage}), so absolute accuracy on the common subset overstates accuracy on the full release. The emotion case rests on a
 replication corpus rather than the original stories, and the city set is small and was chosen by hand.
-Our grouped holdouts leave out whole continents and contiguous blocks of years, a demanding
-test for any linear probe; whether larger models generalize to held-out regions or periods
-remains open.
-
-None of this shows that language models lack world models or internal states. It shows
-that much of the evidence offered for them is also produced by word co-occurrence, so that
-decoder success alone is not diagnostic of them. Evidence about the models themselves has to
-come from structure and performance beyond a matched noncontextual baseline, from
-generalization the baseline cannot achieve, or from causal and behavioral effects that no
-representational baseline can address. The baseline is cheap,
-needs no access to the model, and can be applied to the stimuli of any study in this
-literature. It is also a reminder of how much the company a word keeps
-\citep{firth1957synopsis} records about where things are, when they happened, and how
-situations feel to the people who describe them.
 
 \paragraph{Broader impact.}
-Decoding results are increasingly cited in discussions of model welfare and sentience. Our
-results bear on how much weight such results can carry, in both directions: they caution
-against treating decodability as evidence of internal states, but they do not show that
-models lack such states, and they leave causal and behavioral evidence untouched. We hope the
-baseline makes such discussions better calibrated rather than dismissive.
+Decoding and related representational results are increasingly discussed in connection with model welfare and sentience \citep{keeling2024tradeoffs}. Our
+results caution against treating decodability as evidence of internal states, but do not
+show that models lack such states; we hope the baseline makes such discussions better calibrated rather than dismissive.
 
 \paragraph{Reproducibility.}
 Code, derived data and the result files behind every reported value are available
 \ifanon in the supplementary material\else at \url{https://github.com/elanbarenholtz/static-embeddings-space-time}\fi,
 including the sourced city table and \texttt{static\_baseline.py}, which runs the baseline
-on any labeled stimulus set.\ifanon\else{} An earlier version of this work fitted the ridge probe
+on any labeled stimulus set. The entity analyses use the 300-dimensional English Wikipedia2Vec vectors (April 2018 release), which the supplementary scripts filter to the items used.\ifanon\else{} An earlier version of this work fitted the ridge probe
 without an intercept and used city attributes compiled without recorded sources, including
 founding year; all results here fit an intercept and use the sourced attributes described in
 Section~\ref{sec:data}, without founding year, and the qualitative pattern is unchanged.\fi
@@ -846,6 +576,60 @@ Section~\ref{sec:data}, without founding year, and the qualitative pattern is un
 The analyses in this appendix characterize \emph{why} the type-level baseline
 recovers what it does, and report controls on the baseline itself. They support the
 results in Section~\ref{sec:results} but are not required for the argument.
+
+\subsection{Additional Methods}
+\label{sec:extra_methods}
+
+\paragraph{City attributes.} For six cities whose DBpedia coordinates were evidently wrong
+(more than $0.2^\circ$ from Wikidata's) we use Wikidata's. Population is the most recent dated
+value for the administrative unit Wikidata records, so its definition varies across cities;
+three missing elevations are taken from the Copernicus GLO-90 elevation model. Mean annual
+temperature is the mean of the twelve monthly mean temperatures in WorldClim 2.1 (1970--2000
+normals at 2.5 arc-minutes) at each city's coordinates. GDP per capita is in current US dollars
+(2023 or the latest available year), shared by all cities in a country, with Taiwan's from its
+statistics office and North Korea's from the UN Statistics Division.
+
+\paragraph{Activation extraction.} Activations were extracted in 16-bit precision and checked
+against a separately computed CPU reference on 60 random names per model and dataset (cosine
+similarity $> 0.999$).
+
+\paragraph{Layer selection.} Single-layer results use a layer chosen without the test
+data. On the released entities, the authors' training partition is split once into an
+inner training set (80\%) and a validation set (20\%); each saved layer is probed on the
+inner training set and scored on the validation set, and the layer with the best validation
+$R^2$ (averaged over targets) is refitted on the full training partition and scored once on
+the test partition. This selects layer~24 for Pythia-2.8B on places and layer~28 on
+figures, and layer~24 for Llama-2-7B on both. On the city set the layer is chosen within
+each of the ten outer splits by five-fold cross-validation on that split's training rows.
+Analyses carried out at a single layer (residualization, error correlations, matched
+dimensionality, neighbor availability) use, in each split, the layer selected for that split,
+and their results are averaged over the ten test folds, so no held-out city influences the
+layer used to evaluate it. For the grouped holdouts, where the authors' training partition
+contains items from every continent and period, the transformer layer is instead fixed in
+advance at layer~19 (60\% depth), so no held-out continent or period influences it either. In every case the ridge
+penalty is chosen within the training rows by the same leave-one-out procedure, and principal
+components are fitted on training rows only. Choosing the layer on the test data instead,
+as in an earlier version of this analysis, changes the reported $R^2$ by at most $0.013$.
+
+\paragraph{Pain directions.} The other
+directions (fear, negative emotion, negative world state, bodily sensation, arousal, random,
+numb, sadness) are each set's mean minus the mean of the neutral sentences, pooled over S1
+and S2, and denoised against that neutral cloud. Following v2, we also rebuild every direction,
+pain included, under two common baselines: against the pooled neutral sentences
+(\emph{common neutral}) and against the pooled control sentences of S1 and S2
+(\emph{common controls}), each denoised against its own cloud. Projections of the standalone
+sets are $z$-scored against the S2 sentences and averaged over first- and third-person
+versions. Removing the shared ``I feel:'' suffix changes no
+value by more than $0.01$.
+
+\paragraph{GoEmotions.} GoEmotions \citep{demszky2020goemotions} consists of Reddit comments labeled with 27 emotions or neutral, with its official train and test split (43{,}410 and
+5{,}427 comments). Because comments can carry several labels, the positives for each emotion
+are the comments with that label and the negatives all others. The direction is the mean of
+the training positives minus the mean of the training negatives, denoised against comments
+labeled only neutral, and we report the macro-average test AUC over the 27 emotions. For the
+emotion-word control we remove every comment, in training and test, that contains one of the
+27 label words, a WordNet synonym of one, or a derivationally related form (244 words in
+all), which removes about a quarter of the comments.
 
 \subsection{Residualizing the Transformer against the Type-Level Baseline}
 \label{sec:residual_methods}
@@ -997,6 +781,30 @@ extrapolation.
   \end{tabular}
 \end{table}
 
+\subsection{Items With and Without an Entity Vector}
+\label{sec:coverage}
+
+Entity vectors exist for 89\% of places and 63\% of figures, and the comparison in Table~\ref{tab:entity} uses only those items. To see whether they are easier, we trained each non-entity representation on all training items and scored it separately on held-out items with and without an entity vector (Table~\ref{tab:coverage}). Items without one are harder for every representation, the language models included, by $0.13$--$0.28$ in $R^2$; part of the difference for figures is mechanical, since the uncovered figures have a narrower range of death years (standard deviation 396 against 482 years). The drop is of similar size across representations, so the comparison between them on the common subset is not distorted, but absolute accuracy there is higher than on the full release.
+
+\begin{table}[t]
+  \centering
+  \caption{$R^2$ on held-out items with and without a Wikipedia2Vec entity vector, for probes trained on all training items (authors' split, GloVe-covered items; transformers at the selected layer). Test items: 5{,}995 covered and 695 uncovered places, 4{,}710 covered and 2{,}606 uncovered figures. Counts differ slightly from Table~\ref{tab:entity}, which also requires a Wikipedia2Vec word vector.}
+  \label{tab:coverage}
+  \small
+  \begin{tabular}{lcccc}
+    \toprule
+    & \multicolumn{2}{c}{Places (lat / lon)} & \multicolumn{2}{c}{Figures (year)} \\
+    \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+    Representation & With entity vector & Without & With & Without \\
+    \midrule
+    GloVe, word average    & .48 / .55 & .34 / .28 & .53 & .40 \\
+    fastText, word average & .59 / .62 & .43 / .34 & .61 & .47 \\
+    Pythia-2.8B            & .77 / .81 & .59 / .57 & .73 & .60 \\
+    Llama-2-7B             & .89 / .90 & .70 / .71 & .82 & .68 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \subsection{Pairwise Similarity, Distance and Co-membership}
 \label{sec:distance_methods}
 
@@ -1027,26 +835,6 @@ For each of six semantic categories---cardinal directions (16 words), climate an
 Because ablation removes dimensions from the embedding, any observed $R^2$ drop could reflect generic information loss rather than removal of semantically specific content. Random orthonormal subspaces of the same dimensionality are a weak control, because random directions in the 300-dimensional space are nearly orthogonal to the region occupied by word vectors, so removing any set of real word vectors costs more. We therefore compare each category with 200 random \emph{word sets} drawn from the 50{,}000 most frequent GloVe words and matched to it word by word on frequency decile, proper-name status (whether the capitalized form is more frequent than the lowercase form in the GoogleNews vocabulary) and vector norm (the closest norm among 20 candidates from the same decile and status). Each random set's subspace is built in the same way and truncated to the category's dimensionality. We report the category's drop as a $z$-score against these matched sets, with an empirical one-sided $p$ (the smallest possible value is $1/201$), and record the share of the city embeddings' variance each subspace removes, since vocabularies whose directions align more closely with the city vectors are expected to cost more.
 
 \subsection{Additional Results}
-
-\begin{table}[t]
-  \centering
-  \caption{Ridge regression probe $R^2$ for 272 world cities, reported as mean $\pm$ s.d.\ over ten random 80/20 train/test splits. Geographic, climatic and national-economic targets are well recovered; elevation is recovered weakly and inconsistently.}
-  \label{tab:world_results}
-  \begin{tabular}{lcc}
-    \toprule
-    Target & GloVe $R^2$ & Word2Vec $R^2$ \\
-    \midrule
-    Longitude       & $0.788 \pm 0.039$ & $0.837 \pm 0.035$ \\
-    Latitude        & $0.760 \pm 0.031$ & $0.833 \pm 0.038$ \\
-    Temperature     & $0.675 \pm 0.061$ & $0.720 \pm 0.038$ \\
-    \midrule
-    GDP per capita  & $0.751 \pm 0.043$ & $0.803 \pm 0.028$ \\
-    Population      & $0.500 \pm 0.100$ & $0.515 \pm 0.066$ \\
-    \midrule
-    Elevation       & $0.212 \pm 0.109$ & $0.327 \pm 0.158$ \\
-    \bottomrule
-  \end{tabular}
-\end{table}
 
 \begin{table}[t]
   \centering
@@ -1105,6 +893,22 @@ Because ablation removes dimensions from the embedding, any observed $R^2$ drop 
   \end{tabular}
 \end{table}
 
+\begin{table}[t]
+  \centering
+  \caption{Ridge regression probe $R^2$ for 272 world cities, mean $\pm$ s.d.\ over ten random 80/20 train/test splits. Geographic, climatic and national-economic targets are well recovered; elevation is recovered weakly and inconsistently.}
+  \label{tab:world_results}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lcccccc}
+    \toprule
+    & Longitude & Latitude & Temperature & GDP per capita & Population & Elevation \\
+    \midrule
+    GloVe    & $0.788 \pm 0.039$ & $0.760 \pm 0.031$ & $0.675 \pm 0.061$ & $0.751 \pm 0.043$ & $0.500 \pm 0.100$ & $0.212 \pm 0.109$ \\
+    Word2Vec & $0.837 \pm 0.035$ & $0.833 \pm 0.038$ & $0.720 \pm 0.038$ & $0.803 \pm 0.028$ & $0.515 \pm 0.066$ & $0.327 \pm 0.158$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \paragraph{Pythia on the city set.} In Pythia-2.8B, latitude goes from $R^2 = 0.140$ at
 layer~0 to about $0.80$ by layer~20, and longitude from $0.325$ to about $0.81$ by
 layer~27 (Figure~\ref{fig:llmlayers}); because 97\% of the names span several tokens, part
@@ -1138,6 +942,26 @@ recovered lies within continents.
   \caption{Probe $R^2$ for all six city targets, comparing GloVe and Word2Vec. Bars show the mean over ten random 80/20 train/test splits; error bars show $\pm 1$ s.d. Geographic, climatic and national-economic targets yield high $R^2$; elevation is recovered weakly and with large variability across splits.}
   \label{fig:barplot}
 \end{figure}
+
+\begin{table}[t]
+  \centering
+  \caption{Cosine of the S2 pain direction with other directions on static word embeddings, under the original construction and the two common baselines of v2 \citep{tagliabue2026pain}. LLM values are the means reported in v2 (23--25 models).}
+  \label{tab:pain_cos}
+  \small
+  \begin{tabular}{lccccccc}
+    \toprule
+    & \multicolumn{3}{c}{S2 $\times$ fear} & \multicolumn{3}{c}{S2 $\times$ negative emotion} & S2 $\times$ sadness \\
+    \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-8}
+    Representation & Original & Neutral & Controls & Original & Neutral & Controls & Original \\
+    \midrule
+    GloVe    & $+0.05$ & $+0.61$ & $+0.11$ & $+0.23$ & $+0.76$ & $+0.08$ & $+0.19$ \\
+    Word2Vec & $+0.03$ & $+0.54$ & $+0.13$ & $+0.19$ & $+0.71$ & $+0.10$ & $+0.10$ \\
+    fastText & $-0.01$ & $+0.61$ & $+0.03$ & $+0.14$ & $+0.71$ & $+0.06$ & $+0.11$ \\
+    \midrule
+    LLMs (mean) & $+0.12$ & $+0.58$ & $+0.08$ & $+0.21$ & $+0.77$ & $+0.14$ & $+0.38$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \begin{figure}[t]
   \centering
@@ -1254,7 +1078,6 @@ against $-0.14$ ($p = .03$), $-0.27$ ($p < .001$) and $-0.19$ ($p = .004$) in Gl
 probes appear to answer partly by proximity to cities they were trained on, more clearly in
 GloVe.
 
-% ============================================================
 \subsection{What Carries the Recoverable Structure}
 \label{sec:holdout}
 
@@ -1359,7 +1182,6 @@ surviving the removal of continent centroids, against 12--17\% for GDP. Recovera
 group dependence are dissociable, so a high random-split $R^2$ does not by itself say what
 kind of information a representation carries.
 
-% ============================================================
 \subsection{Similarity Tracks Distance, Not Only Co-membership}
 \label{sec:distance}
 
@@ -1410,7 +1232,7 @@ To confirm that the probes do not find spurious structure in arbitrary high-dime
 The preceding results establish that static embeddings preserve substantial spatial and temporal structure. We next ask whether this structure is semantically interpretable: does the embedding space encode geography through co-occurrence with meaningful vocabulary, and if so, which words carry the signal?
 
 \paragraph{Data-driven word correlations.}
-Rather than selecting probe words \textit{a priori}, we take a data-driven approach. For every word in the GloVe vocabulary (restricted to the 20,000 most frequent words, excluding proper nouns, city and country names, and words shorter than four characters), we compute its cosine similarity to each of the 272 city embeddings, producing one similarity value per city. We then correlate these 272 similarity values with the cities' actual mean annual temperatures (Pearson $r$). Figure~\ref{fig:semantic_spatial} shows the 15 most positively and 15 most negatively correlated words.
+Rather than selecting probe words \textit{a priori}, we take a data-driven approach. For every word in the GloVe vocabulary (restricted to the 20,000 most frequent words with at least four letters, excluding the cities' own name words and a list of common country names, demonyms and geographic terms; other proper nouns, such as \emph{mozambique} or \emph{nikolai}, remain), we compute its cosine similarity to each of the 272 city embeddings, producing one similarity value per city. We then correlate these 272 similarity values with the cities' actual mean annual temperatures (Pearson $r$). Figure~\ref{fig:semantic_spatial} shows the 15 most positively and 15 most negatively correlated words.
 
 Both directions are semantically interpretable. Words most associated with warmer cities reflect tropical ecology and disease burden---``dengue'' ($r = +0.61$), ``malaria'' ($r = +0.59$), ``jungle'' ($r = +0.56$), ``crocodile'' ($r = +0.52$), ``cyclone'' ($r = +0.52$), ``mosquito'' ($r = +0.50$), ``cholera'' ($r = +0.48$). Words most associated with colder cities reflect winter activities and European cultural institutions---``skaters'' ($r = -0.57$), ``skating'' ($r = -0.56$), ``philharmonic'' ($r = -0.53$), ``violinist'' ($r = -0.53$), ``orchestra'' ($r = -0.52$), ``conservatory'' ($r = -0.51$), ``skiing'' ($r = -0.50$), ``conductor'' ($r = -0.50$).
 
@@ -1438,13 +1260,6 @@ the figures' names best tracks year of death are Chinese provinces and cities (e
 ``carlson'', $r \approx +0.45$), along with occupations such as ``chemist'' and
 ``biologist''. The temporal signal in the static vectors comes largely from where, and in what
 roles, people are written about.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.72\textwidth]{fig_semantic_272.png}
-  \caption{Data-driven identification of words whose GloVe embeddings correlate with city temperature. For each of the 17{,}250 common English words passing our filters, we compute cosine similarity to all 272 city embeddings and correlate with mean annual temperature. Shown are the 15 most positively correlated (red, associated with warmer cities) and 15 most negatively correlated (blue, associated with colder cities). Because the words are selected for extreme correlations from a search over the whole vocabulary, the figure is descriptive and no significance is implied. No words were selected \textit{a priori}; the semantic categories emerge from the data.}
-  \label{fig:semantic_spatial}
-\end{figure}
 
 \paragraph{Composite scores.}
 The preceding analysis shows that geographic signal is distributed across many words in the vocabulary. A complementary question is how little information is needed: can just two well-chosen words capture the signal?
@@ -1517,9 +1332,5 @@ corpus, and each subspace may carry correlated information from several sources,
 individual drops are not additive contributions. And the category labels describe the
 vocabulary used to construct each subspace, not the content the subspace is thereby shown to
 contain.
-
-% ============================================================
-% EXTENSION EXPERIMENTS
-% ============================================================
 
 \end{document}

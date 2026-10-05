@@ -10,3 +10,4 @@ country_converter
 nltk
 torch
 transformers
+pyshp

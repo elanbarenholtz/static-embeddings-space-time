@@ -1,0 +1,202 @@
+{
+ "n_test": {
+  "world_place": {
+   "covered": 5995,
+   "uncovered": 695
+  },
+  "historical_figure": {
+   "covered": 4710,
+   "uncovered": 2606
+  }
+ },
+ "rows": [
+  {
+   "ds": "historical_figure",
+   "rep": "GloVe (avg)",
+   "covered": {
+    "r2": [
+     0.529
+    ],
+    "median_abs": 180.16
+   },
+   "uncovered": {
+    "r2": [
+     0.396
+    ],
+    "median_abs": 167.39
+   },
+   "all": {
+    "r2": [
+     0.496
+    ],
+    "median_abs": 175.21
+   }
+  },
+  {
+   "ds": "historical_figure",
+   "rep": "fastText (avg)",
+   "covered": {
+    "r2": [
+     0.608
+    ],
+    "median_abs": 162.07
+   },
+   "uncovered": {
+    "r2": [
+     0.473
+    ],
+    "median_abs": 159.55
+   },
+   "all": {
+    "r2": [
+     0.574
+    ],
+    "median_abs": 161.0
+   }
+  },
+  {
+   "ds": "historical_figure",
+   "rep": "llama-2-7b L24",
+   "covered": {
+    "r2": [
+     0.816
+    ],
+    "median_abs": 88.27
+   },
+   "uncovered": {
+    "r2": [
+     0.678
+    ],
+    "median_abs": 112.62
+   },
+   "all": {
+    "r2": [
+     0.78
+    ],
+    "median_abs": 95.13
+   }
+  },
+  {
+   "ds": "historical_figure",
+   "rep": "pythia-2.8b L28",
+   "covered": {
+    "r2": [
+     0.735
+    ],
+    "median_abs": 129.27
+   },
+   "uncovered": {
+    "r2": [
+     0.604
+    ],
+    "median_abs": 141.18
+   },
+   "all": {
+    "r2": [
+     0.701
+    ],
+    "median_abs": 132.71
+   }
+  },
+  {
+   "ds": "world_place",
+   "rep": "GloVe (avg)",
+   "covered": {
+    "r2": [
+     0.481,
+     0.549
+    ],
+    "median_abs": 22.28
+   },
+   "uncovered": {
+    "r2": [
+     0.337,
+     0.285
+    ],
+    "median_abs": 25.22
+   },
+   "all": {
+    "r2": [
+     0.469,
+     0.526
+    ],
+    "median_abs": 22.51
+   }
+  },
+  {
+   "ds": "world_place",
+   "rep": "fastText (avg)",
+   "covered": {
+    "r2": [
+     0.587,
+     0.617
+    ],
+    "median_abs": 19.21
+   },
+   "uncovered": {
+    "r2": [
+     0.427,
+     0.337
+    ],
+    "median_abs": 23.02
+   },
+   "all": {
+    "r2": [
+     0.573,
+     0.593
+    ],
+    "median_abs": 19.59
+   }
+  },
+  {
+   "ds": "world_place",
+   "rep": "llama-2-7b L24",
+   "covered": {
+    "r2": [
+     0.891,
+     0.901
+    ],
+    "median_abs": 4.82
+   },
+   "uncovered": {
+    "r2": [
+     0.704,
+     0.706
+    ],
+    "median_abs": 7.43
+   },
+   "all": {
+    "r2": [
+     0.875,
+     0.884
+    ],
+    "median_abs": 5.01
+   }
+  },
+  {
+   "ds": "world_place",
+   "rep": "pythia-2.8b L24",
+   "covered": {
+    "r2": [
+     0.771,
+     0.809
+    ],
+    "median_abs": 7.36
+   },
+   "uncovered": {
+    "r2": [
+     0.588,
+     0.567
+    ],
+    "median_abs": 11.22
+   },
+   "all": {
+    "r2": [
+     0.755,
+     0.788
+    ],
+    "median_abs": 7.65
+   }
+  }
+ ]
+}
