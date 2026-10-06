@@ -197,12 +197,12 @@ The gain lies mostly in coarse sorting. Year of death varies almost entirely bet
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\textwidth]{fig_entity_map_row.png}
+  \includegraphics[width=0.8\textwidth]{fig_entity_map.png}
   \caption{Held-out places from \citet{gurnee2024language} that have a Wikipedia2Vec entity vector
   ($n = 5{,}984$), at their true locations and as decoded by linear probes on Wikipedia2Vec's word
-  vectors averaged over the name, on its static entity vectors, and on Llama-2-7B (layer 24), drawn
-  over coastlines as in \citet{gurnee2024language}'s Figure~1 (which shows Llama-2-70B); color marks
-  the true continent. The entity vectors recover a blurred
+  vectors averaged over the name, on its static entity vectors, and on Llama-2-7B (layer 24), as in
+  \citet{gurnee2024language}'s Figure~1 (which shows Llama-2-70B); color marks
+  the true continent. Panel titles give $R^2$ for latitude / longitude over all places; four places in Antarctica are not drawn. The entity vectors recover a blurred
   version of the layout that Llama-2 recovers more precisely (median error 2{,}450\,km against
   760\,km; Table~\ref{tab:entity}).}
   \label{fig:entity_map}

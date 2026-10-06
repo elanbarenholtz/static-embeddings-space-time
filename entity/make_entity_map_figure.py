@@ -2,12 +2,12 @@
 
 Reads entity_map_preds.csv (written by map_csv.py) and the Natural Earth 110m coastline
 (ne_110m_coastline.zip, https://www.naturalearthdata.com/). Needs: numpy, pandas, matplotlib, pyshp.
-Writes fig_entity_map_row.png. Points are colored by the continent of the item's labeled country.
+Writes fig_entity_map_row.png (one row, with coastlines) and, with `2x2`, fig_entity_map.png (the figure in the paper:
+two rows, no coastlines, R^2 for latitude / longitude in the titles). Points are colored by the continent of the item's labeled country.
 """
 import io, sys, zipfile, tempfile, os
 import numpy as np, pandas as pd, matplotlib
 matplotlib.use('Agg'); import matplotlib.pyplot as plt
-import shapefile  # pyshp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 COLORS = {'North America': '#D55E00', 'Europe': '#0072B2', 'Asia': '#E69F00',
@@ -43,6 +43,7 @@ def continent(country):
 
 
 def coastlines():
+    import shapefile  # pyshp (only needed for the row figure with coastlines)
     z = zipfile.ZipFile(os.path.join(HERE, 'ne_110m_coastline.zip')); d = tempfile.mkdtemp()
     z.extractall(d); shp = [f for f in os.listdir(d) if f.endswith('.shp')][0]
     r = shapefile.Reader(os.path.join(d, shp)); lines = []
@@ -80,5 +81,33 @@ def main(out='fig_entity_map_row.png'):
     fig.tight_layout(rect=(0, 0.07, 1, 1)); fig.savefig(os.path.join(HERE, out), dpi=300); print('wrote', out, len(df), 'places')
 
 
+
+def r2(y, p): return float(1 - ((y - p) ** 2).sum() / ((y - y.mean()) ** 2).sum())
+
+
+def main_2x2(out='fig_entity_map.png'):
+    full = pd.read_csv(os.path.join(HERE, 'entity_map_preds.csv'))        # R^2 is computed on all places
+    df = full.copy(); df['cont'] = df['country'].map(continent); df = df[df['cont'].notna()].reset_index(drop=True)  # Antarctica is not drawn
+    panels = [('True locations', None, None), ('Wikipedia2Vec, word average', 'w2v_words_lat', 'w2v_words_lon'),
+              ('Wikipedia2Vec, entity', 'entity_lat', 'entity_lon'), ('Llama-2-7B, layer 24', 'llama_lat', 'llama_lon')]
+    plt.rcParams.update({'font.family': 'serif', 'font.size': 11, 'axes.spines.top': False, 'axes.spines.right': False})
+    fig, axes = plt.subplots(2, 2, figsize=(10, 6.6), sharex=True, sharey=True)
+    for ax, (title, la, lo) in zip(axes.ravel(), panels):
+        pla, plo = (df['latitude'], df['longitude']) if la is None else (df[la], df[lo])
+        for c, col in COLORS.items():
+            m = df['cont'] == c
+            ax.scatter(plo[m].clip(-180, 180), pla[m].clip(-60, 80), s=3, c=col, alpha=0.55, linewidths=0, zorder=2)
+        if la is not None:
+            title += f':  $R^2$ = {r2(full["latitude"], full[la]):.2f} / {r2(full["longitude"], full[lo]):.2f}'
+        ax.set_xlim(-180, 180); ax.set_ylim(-60, 80); ax.set_title(title, loc='left', fontsize=11)
+        ax.set_xticks([-180, -90, 0, 90, 180]); ax.grid(color='0.95', lw=0.5)
+    for ax in axes[1]: ax.set_xlabel('longitude')
+    for ax in axes[:, 0]: ax.set_ylabel('latitude')
+    handles = [plt.Line2D([], [], marker='o', ls='', color=c, markersize=5, label=n) for n, c in COLORS.items()]
+    fig.legend(handles=handles, loc='lower center', ncol=6, frameon=False, fontsize=10, bbox_to_anchor=(0.5, -0.01))
+    fig.tight_layout(rect=(0, 0.05, 1, 1)); fig.savefig(os.path.join(HERE, out), dpi=300); print('wrote', out, len(df), 'places')
+
+
 if __name__ == '__main__':
-    main(*sys.argv[1:])
+    if sys.argv[1:2] == ['2x2']: main_2x2(*sys.argv[2:])
+    else: main(*sys.argv[1:])
