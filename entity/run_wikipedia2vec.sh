@@ -15,3 +15,9 @@ for DS in historical_figure world_place; do
   $P coverage_check.py $DS GloVe fastText
   $P coverage_check.py --lm $DS pythia llama
 done
+# Which words carry the signal (released places, GloVe): -> word_coords_released.json, fig_word_coords.png
+# needs gt_scale/data/glove.6B.300d.txt and gt_scale/data/world_place.csv; exclusion list in exclusion_words.json
+$P word_coords.py
+$P make_word_figure.py
+# Semantic ablation on the released places (word categories vs matched random word sets): -> semantic_ablation_released.json
+$P semantic_ablation_released.py

@@ -1,0 +1,187 @@
+{
+ "n_places": 33500,
+ "baseline": {
+  "Latitude": 0.4685522071527889,
+  "Longitude": 0.526399814972318
+ },
+ "Cardinal directions": {
+  "n_words": 16,
+  "k": 9,
+  "drop": {
+   "Latitude": 0.013429270354620937,
+   "Longitude": 0.005351051232414861
+  },
+  "var_removed": 0.06845708208143983,
+  "proper_share": 0.5625,
+  "null_var_removed": [
+   0.08121975550431787,
+   0.008238927255575136
+  ],
+  "Latitude": {
+   "null_mean": 0.006518122023410417,
+   "null_sd": 0.005185187973647351,
+   "z_matched": 1.3328636042386517,
+   "p_empirical": 0.08955223880597014,
+   "drop_predicted_from_var": 0.0048344312572352515,
+   "z_beyond_var": 1.6952373990674248
+  },
+  "Longitude": {
+   "null_mean": 0.013480459809582828,
+   "null_sd": 0.008134855834402054,
+   "z_matched": -0.9993303806060028,
+   "p_empirical": 0.845771144278607,
+   "drop_predicted_from_var": 0.00796876180564151,
+   "z_beyond_var": -0.3578324480523905
+  }
+ },
+ "Climate & weather": {
+  "n_words": 27,
+  "k": 19,
+  "drop": {
+   "Latitude": 0.01896671205642453,
+   "Longitude": 0.004098189459248114
+  },
+  "var_removed": 0.11286673124055352,
+  "proper_share": 0.1111111111111111,
+  "null_var_removed": [
+   0.11866262712891112,
+   0.008257367579668417
+  ],
+  "Latitude": {
+   "null_mean": 0.00798699097813264,
+   "null_sd": 0.0036972454060518853,
+   "z_matched": 2.9697030822783863,
+   "p_empirical": 0.024875621890547265,
+   "drop_predicted_from_var": 0.007488152560743562,
+   "z_beyond_var": 3.16362150253752
+  },
+  "Longitude": {
+   "null_mean": 0.008156623769967312,
+   "null_sd": 0.0033523404367930536,
+   "z_matched": -1.2106271386332155,
+   "p_empirical": 0.9203980099502488,
+   "drop_predicted_from_var": 0.00798797075367056,
+   "z_beyond_var": -1.1633100806699892
+  }
+ },
+ "Region & continent": {
+  "n_words": 28,
+  "k": 18,
+  "drop": {
+   "Latitude": 0.05291046046053527,
+   "Longitude": 0.03659233733884426
+  },
+  "var_removed": 0.1453339120822833,
+  "proper_share": 0.7857142857142857,
+  "null_var_removed": [
+   0.15036987822361086,
+   0.010679555666707832
+  ],
+  "Latitude": {
+   "null_mean": 0.022112146301618334,
+   "null_sd": 0.011968688408051268,
+   "z_matched": 2.5732405347104774,
+   "p_empirical": 0.03482587064676617,
+   "drop_predicted_from_var": 0.021614737865482184,
+   "z_beyond_var": 2.625014279024469
+  },
+  "Longitude": {
+   "null_mean": 0.03234766465685497,
+   "null_sd": 0.012881386019493811,
+   "z_matched": 0.3295198727501599,
+   "p_empirical": 0.3582089552238806,
+   "drop_predicted_from_var": 0.03022767625056038,
+   "z_beyond_var": 0.5272522194734539
+  }
+ },
+ "Country names": {
+  "n_words": 68,
+  "k": 20,
+  "drop": {
+   "Latitude": 0.09494780487780585,
+   "Longitude": 0.0908622058392472
+  },
+  "var_removed": 0.17258579271219138,
+  "proper_share": 0.9852941176470589,
+  "null_var_removed": [
+   0.1785759794350829,
+   0.008813331100624027
+  ],
+  "Latitude": {
+   "null_mean": 0.032080154931462414,
+   "null_sd": 0.010580708941816824,
+   "z_matched": 5.941723781653177,
+   "p_empirical": 0.004975124378109453,
+   "drop_predicted_from_var": 0.03128668195951058,
+   "z_beyond_var": 6.053677852432062
+  },
+  "Longitude": {
+   "null_mean": 0.054829609150187066,
+   "null_sd": 0.013880023521620967,
+   "z_matched": 2.5960040076972506,
+   "p_empirical": 0.014925373134328358,
+   "drop_predicted_from_var": 0.05111288727492572,
+   "z_beyond_var": 3.1157807708306655
+  }
+ },
+ "Economic terms": {
+  "n_words": 27,
+  "k": 19,
+  "drop": {
+   "Latitude": 0.007688504234110605,
+   "Longitude": 0.006498573999978885
+  },
+  "var_removed": 0.1111605327292056,
+  "proper_share": 0.037037037037037035,
+  "null_var_removed": [
+   0.1109030769187117,
+   0.010045612753818345
+  ],
+  "Latitude": {
+   "null_mean": 0.00757061933555939,
+   "null_sd": 0.0032743748508966652,
+   "z_matched": 0.036002261170230025,
+   "p_empirical": 0.4228855721393035,
+   "drop_predicted_from_var": 0.007593853400693381,
+   "z_beyond_var": 0.030082510026918877
+  },
+  "Longitude": {
+   "null_mean": 0.008978446383715429,
+   "null_sd": 0.0052563955202106286,
+   "z_matched": -0.47178192246027423,
+   "p_empirical": 0.6218905472636815,
+   "drop_predicted_from_var": 0.00903049820609178,
+   "z_beyond_var": -0.5222434444865144
+  }
+ },
+ "Cultural & language": {
+  "n_words": 31,
+  "k": 20,
+  "drop": {
+   "Latitude": 0.018577065513844526,
+   "Longitude": 0.017118772251146885
+  },
+  "var_removed": 0.15013234533777475,
+  "proper_share": 0.7419354838709677,
+  "null_var_removed": [
+   0.15126498063512803,
+   0.009902292361898478
+  ],
+  "Latitude": {
+   "null_mean": 0.020262654396307943,
+   "null_sd": 0.00859357351030694,
+   "z_matched": -0.1961452800097374,
+   "p_empirical": 0.5323383084577115,
+   "drop_predicted_from_var": 0.019999825052377688,
+   "z_beyond_var": -0.17181702396873744
+  },
+  "Longitude": {
+   "null_mean": 0.028994777696402244,
+   "null_sd": 0.011689563467254593,
+   "z_matched": -1.0159494388753727,
+   "p_empirical": 0.8855721393034826,
+   "drop_predicted_from_var": 0.02829398392679615,
+   "z_beyond_var": -1.1225398188440414
+  }
+ }
+}

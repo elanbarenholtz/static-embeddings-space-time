@@ -1,11 +1,12 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 \newif\ifanon
 \anonfalse
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
-\usepackage{times}
-\usepackage[authoryear,round]{natbib}
+\ifanon
+  \usepackage{tmlr}
+\else
+  \usepackage[preprint]{tmlr}
+\fi
+
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath,amssymb}
@@ -17,22 +18,28 @@
 \usepackage{subcaption}
 \hypersetup{colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black}
 \graphicspath{{figures/}}
-\setlength{\parskip}{3pt}
+
 \title{World Properties without World Models:\\
   Distributional Associations and the Interpretation of\\
   Decoding Results from Language Models}
-\author{Elan Barenholtz\\
-  Machine Perception \& Cognitive Robotics Laboratory\\
-  Department of Psychology and Center for Complex Systems and Brain Sciences\\
-  Florida Atlantic University\\
-  \texttt{elan.barenholtz@fau.edu}}
-\date{}
+
+\ifanon
+  \author{\name Anonymous Authors}
+\else
+  \author{\name Elan Barenholtz \email elan.barenholtz@fau.edu \\
+      \addr Department of Psychology and Center for Complex Systems and Brain Sciences\\
+      Florida Atlantic University}
+\fi
+
+\def\month{MM}
+\def\year{YYYY}
+\def\openreview{\url{https://openreview.net/forum?id=XXXX}}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-A rapidly growing literature shows that nameable variables can be linearly decoded from the hidden-state activations of large language models (LLMs). These range from properties of the world, such as the locations of cities and the lifetimes of historical figures, to emotions and pain. Such findings are often taken as evidence that language models go beyond surface text statistics and form internal models of the world, and even of themselves. Here, we show that static word embeddings of the same or matched stimuli, which are fixed, context-insensitive lexical representations learned from corpus statistics, support much of the same decoding. Across four published cases (place, time, pain and emotion), static vectors predict coordinates and year of death ($R^2 = 0.42$--$0.59$), separate pain from matched control sentences (held-out AUC $0.85$--$0.88$), and classify twelve emotions in stories that were written to avoid naming them (AUC $0.84$--$0.88$). Because static embeddings are a crude way of representing word associations, these results are a lower bound on what associations alone can support. The LLMs retain clear advantages on several representational tests, sometimes substantial, and causal and behavioral findings remain outside the scope of the baseline. On the original authors' entities, where we reproduce their Llama-2 results, the transformer's advantage lies mostly in placing historical figures in the right century and places in the right country; within those groups every representation orders items poorly. Static vectors for disambiguated Wikipedia entities, which carry the associations of a particular place or person rather than of the words in its name, close most of the remaining gap, matching Pythia-2.8B on coordinates and Llama-2-7B on year of death.  These results indicate that decodability alone cannot distinguish a representation of a property from information already available in fixed distributional associations. Static embeddings therefore provide an important standard of comparison for interpreting decodability results. 
+A rapidly growing literature shows that nameable variables can be linearly decoded from the hidden-state activations of large language models (LLMs). These range from properties of the world, such as the locations of cities and the lifetimes of historical figures, to emotions and pain. Such findings are often taken as evidence that language models go beyond surface text statistics and form internal models of the world, and even of themselves. Here, we show that static word embeddings of the same or matched stimuli, which are fixed, context-insensitive lexical representations learned from corpus statistics, support much of the same decoding. Across four published cases, static vectors predict place coordinates and year of death ($R^2 = 0.42$--$0.59$), separate pain from matched control sentences (held-out AUC $0.85$--$0.88$), and classify twelve emotions in stories that were written specifically to avoid naming them (AUC $0.84$--$0.88$). Because static embeddings are a crude way of representing word associations, these results are a lower bound on what associations alone can support. The LLMs retain clear advantages on several representational tests, sometimes substantial, and causal and behavioral findings remain outside the scope of the baseline. On the original authors' entities, where we reproduce their Llama-2 results, the transformer's advantage lies mostly in placing historical figures in the right century and places in the right country; within those groups every representation orders items poorly. Static vectors for disambiguated Wikipedia entities, which carry the associations of a particular place or person rather than of the words in its name, close most of the remaining gap, matching Pythia-2.8B on coordinates and Llama-2-7B on year of death.  These results indicate that decodability alone cannot distinguish a representation of a property from information already available in fixed distributional associations. Static embeddings therefore provide an important standard of comparison for interpreting decodability results. 
 \end{abstract}
 
 \section{Introduction}
@@ -49,7 +56,7 @@ Static word embeddings offer a direct test of this explanation. Each word's vect
 
 Here, we take four published cases and rerun each analysis with static embeddings of the same stimuli in place of the language model's activations, keeping the same decoders, splits, controls and metrics, and compare the results with those reported for the language models. For three of the cases we use the original stimuli; for emotions, whose stimuli are not released, we use stories generated under the same protocol, so that case is a conceptual replication rather than a same-stimulus comparison. We use GloVe \citep{pennington2014glove}, Word2Vec \citep{mikolov2013efficient} and fastText \citep{bojanowski2017enriching}. On the released entities we compare three levels: averaged word vectors, which carry the associations of the words in a name; static entity vectors, which carry the associations of the correctly identified entity; and transformer activations, which add context-dependent computation over the name.
 
-We find that static embeddings reproduce much of what has been taken as evidence for these representations in all four cases (place, time, pain and emotion). They predict place coordinates and year of death on the datasets released by \citet{gurnee2024language}, distinguish sentences describing pain from closely matched controls, and classify twelve emotions in stories written without naming the emotion, with the vector for the emotion word alone capturing a substantial share of the signal. The language models do better on several tasks, sometimes substantially, but where we can examine the advantage, including on the original authors' entities, it lies mostly in placing historical figures in the right century and places in the right country, not in the finer ordering within them that a map or timeline would provide. This is the pattern that richer word relations would produce: the words associated with a place or time (a country's language and institutions, an era's vocabulary) are largely shared within these groups and say little about position within them. Much of the remaining advantage reflects knowing which entity a name refers to: static vectors for disambiguated Wikipedia entities, with no contextual computation, match Pythia-2.8B on place coordinates and Llama-2-7B on year of death.
+We find that static embeddings reproduce much of what has been taken as evidence for these representations in all four cases. They predict place coordinates and year of death on the datasets released by \citet{gurnee2024language}, distinguish sentences describing pain from closely matched controls, and classify twelve emotions in stories written without naming the emotion, with the vector for the emotion word alone capturing a substantial share of the signal. The language models do better on several tasks, sometimes substantially, but where we can examine the advantage, including on the original authors' entities, it lies mostly in placing historical figures in the right century and places in the right country, not in the finer ordering within them that a map or timeline would provide. This is the pattern that richer word relations would produce: the words associated with a place or time (a country's language and institutions, an era's vocabulary) are largely shared within these groups and say little about position within them. Much of the remaining advantage reflects knowing which entity a name refers to: static vectors for disambiguated Wikipedia entities, with no contextual computation, match Pythia-2.8B on place coordinates and Llama-2-7B on year of death.
 
 \section{Related Work}
 \label{sec:related}
@@ -114,33 +121,53 @@ train--test split. We do not analyze their places in the United States and New Y
 or the release dates of artworks and publication dates of news headlines. Our claims
 concern their probe results, not their prompting, cross-entity or neuron-level findings.
 
+\paragraph{World cities (N=272).}
+For targets the release does not include (temperature, population, GDP per capita and
+elevation) and for the residualization and ablation analyses, we use 272 cities spanning
+six continents (74 in Asia, 70 in North America, 59 in Europe, 36 in Africa, 20 in South America, 13 in Oceania), all present in both
+GloVe and Word2Vec. The set was assembled to include prominent cities that span regions and climates. It is therefore a convenience sample: estimates on it apply to this set only, and our conclusions about the published claims rest mainly on the released entities, which we analyze with the same methods. Coordinates come
+from DBpedia \citep{lehmann2015dbpedia}, as in \citet{gurnee2024language}, population and
+elevation from Wikidata \citep{vrandecic2014wikidata}, mean annual temperature from WorldClim 2.1
+\citep{fick2017worldclim}, and GDP per capita, a national figure, from the World Bank
+\citep{worldbank2026wdi}; GDP and population are log-transformed. Appendix~\ref{sec:extra_methods}
+gives the exceptions and details, and sources and values for every city are released with the code.
+
 \subsection{Evaluation}
 \label{sec:protocols}
 
-We use the authors' train--test split. To see how much of what a probe recovers is group membership, we compare each representation with an oracle that is given each item's true group (country for places, century for figures) and predicts the training mean of that group. We report $\eta^2$, the
+On the released entities we use the authors' train--test split; on the city set we use
+ten random 80/20 splits and report the mean and standard deviation of $R^2$. To see how much of what a probe recovers is group membership, we compare each representation with an oracle that is given each item's true group (country, or on the city set continent, for
+places; century for figures) and predicts the training mean of that group. We report $\eta^2$, the
 share of a target's variance that lies between groups. We also measure how well a probe orders
 items within their group: in each test set we subtract group means from predictions and targets
 and correlate what remains. A representation that carries only group identity, like the oracle,
 scores $r = 0$ on this measure. Random splits test generalization to new items from familiar
-groups only, so we also hold out whole groups: each of five continents in turn for places and each of five equal-count blocks of death years for figures. We report $R^2$ pooled over all held-out predictions
+groups only, so we also hold out whole groups: on the released entities, each of five continents
+in turn for places and each of five equal-count blocks of death years for figures, and on the
+city set each continent in turn. We report $R^2$ pooled over all held-out predictions
 (Appendix~\ref{sec:grouped_holdout} gives each held-out group).
 
 \subsection{Transformer Probing}
 \label{sec:llm_methods}
 
-We probe Pythia-2.8B \citep{biderman2023pythia} and Llama-2-7B \citep{touvron2023llama} on the places and historical figures released by \citet{gurnee2024language}. Each name is presented alone (for Llama-2, after the beginning-of-sequence
+We probe Pythia-1.4B and Pythia-2.8B \citep{biderman2023pythia} on our city set, and
+Pythia-2.8B and Llama-2-7B \citep{touvron2023llama} on the places and historical figures
+released by \citet{gurnee2024language}. Each name is presented alone (for Llama-2, after the beginning-of-sequence
 token, as in \citet{gurnee2024language}), and we take the residual-stream activation at the last token of the name,
-the position used by \citet{gurnee2024language}, at layers 0, 4, 8, 12, 16, 19, 20, 24, 28 and 32; layer~0 is the
+the position used by \citet{gurnee2024language}, at layers 0, 4, 8, 12, 16, 19, 20, 24, 28 and
+32 for the released entities and at every layer for the city set; layer~0 is the
 token-embedding output before any attention. With Pythia's tokenizer 97\% of the names span
 more than one token (median 3), so the layer-0 activation is the embedding of a final
 subword and the entity has to be assembled by attention in later layers. Each layer is
 probed exactly as the static embeddings are. Because probe $R^2$ grows with the number of
 features and the transformers supply 2048 to 4096 against 300, we also compare at matched
 dimensionality, reducing each representation to principal components fitted on training rows
-within each fold (300 components).
+within each fold (300 on the released entities, 200 on the city set).
 
 \paragraph{Layer selection.} Single-layer results use a layer chosen without the test
-data: by validation within the authors' training partition (layer~24 for both models on places; 28 for Pythia-2.8B and 24 for Llama-2-7B on figures), and for the grouped holdouts,
+data: on the released entities, by validation within the authors' training partition (layer~24
+for both models on places; 28 for Pythia-2.8B and 24 for Llama-2-7B on figures); on the city
+set, by cross-validation within each outer split's training rows; and for the grouped holdouts,
 fixed in advance at layer~19 (60\% depth). Appendix~\ref{sec:extra_methods} gives details.
 
 \subsection{Pain Stimuli and Decoder}
@@ -167,7 +194,7 @@ The \emph{story} direction follows the original recipe; the \emph{word} directio
 
 \citet{gurnee2024language} probe from layer~1 onward, so their results do not show how much of
 the recovered structure is present before any processing; we compare their hidden states with
-the token embeddings and with static embeddings on their released entities.
+the token embeddings and with static embeddings on their released entities, and, for our city set, in Appendix~\ref{sec:appendix}.
 
 \paragraph{The original release.}
 On the 39{,}585 places and 37{,}539 historical figures released by
@@ -288,7 +315,7 @@ against 2{,}450\,km for the entity vectors, and it orders places within countrie
 \label{sec:mechanism-summary}
 
 We fit a linear map from the static embeddings to the transformer activations on training
-rows and probe the predicted part and the residual separately (Appendix~\ref{sec:residual_methods}).
+rows and probe the predicted part and the residual separately (Appendix~\ref{sec:residual}).
 On the released entities the static-predictable part takes out a third or less of the
 activation variance but most of the probe's performance: removing it lowers $R^2$ on latitude
 and longitude from $0.76$ and $0.79$ to $0.20$--$0.29$ for Pythia-2.8B and from $0.88$ to
@@ -317,21 +344,43 @@ whole groups are held out, no representation we tested generalizes well: with ea
 held out in turn, every representation predicts the held-out coordinates worse than their mean
 ($R^2$ from $-0.94$ to $-0.22$ for the word vectors and transformers and $-0.03$ and $-0.68$ for the entity vectors, against $0.48$--$0.89$ under random splits), and with each block of death
 years held out $R^2$ is $-0.27$ for the entity vectors and $-0.16$ and $-0.11$ for Word2Vec and GloVe but $0.11$ and $0.19$ for
-Pythia and Llama-2 (Table~\ref{tab:grouped_holdout}).
+Pythia and Llama-2 (Table~\ref{tab:grouped_holdout}; the city set is in Appendix~\ref{sec:holdout}).
 
-\subsection{Which Words Carry the Signal}
-\label{sec:words}
+\subsection{World Cities: Which Words Carry the Signal}
+\label{sec:cities}
 
-To see what a probe on static vectors could be reading, we asked which words are most similar to the names of places that lie farther south or north, west or east. For each frequent word we correlated its cosine similarity to the averaged name vector of every released place with the place's latitude and longitude (Figure~\ref{fig:word_coords}).
+Our city set adds targets the released datasets lack and lets us ask which words carry the signal. Table~\ref{tab:world_results} (appendix) gives probe $R^2$ for the six city targets. Longitude,
+latitude and temperature are well predicted by both embeddings (GloVe and Word2Vec
+$R^2 = 0.79$ and $0.84$, $0.76$ and $0.83$, and $0.67$ and $0.72$, respectively), and
+so is GDP per capita ($0.75$ and $0.80$), which is a national variable and follows
+the country structure of the embeddings (Appendix~\ref{sec:ablation}). Population is
+intermediate ($0.50$--$0.52$). Elevation is recovered weakly and unstably ($0.21$ and
+$0.33$, varying by more than $\pm 0.10$ across splits).
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.92\textwidth]{fig_word_coords.png}
-  \caption{Words whose GloVe vectors are most similar to place names that lie farther south, north, west or east. For each of 15{,}923 words (the 20{,}000 most frequent GloVe words with at least four letters, excluding a list of country names, demonyms and geographic terms and any word that is part of at least three place names), we correlate the word's cosine similarity to the averaged name vector of each of the 33{,}500 released places that have a GloVe vector with the place's latitude or longitude; shown are the twelve strongest correlations at each end. The words are selected for extreme correlations from the whole vocabulary, so the figure is descriptive and implies no significance.}
-  \label{fig:word_coords}
+  \includegraphics[width=0.62\textwidth]{fig_semantic_272_wide.png}
+  \caption{Words whose GloVe vectors are closest to the names of warm and of cold cities. For each of 17{,}250 frequent words (the 20{,}000 most frequent GloVe words with at least four letters, excluding the cities' own name words and a list of common country names, demonyms and geographic terms), we correlate the word's cosine similarity to each of the 272 city names with the cities' mean annual temperature; shown are the 15 most positive and 15 most negative correlations. The words are selected for extreme correlations from the whole vocabulary, so the figure is descriptive and implies no significance.}
+  \label{fig:semantic_spatial}
 \end{figure}
 
-The longitude words are the most legible. Eastern places are closer to British spellings (\emph{learnt}, \emph{organising}, \emph{centred}, \emph{privatisation}), a convention of British rather than American English, and western places to words tied to American universities and cities (\emph{ucla}, \emph{purdue}, \emph{baylor}, \emph{anaheim}). At the southern end of latitude are African, Australian and tropical terms (\emph{mozambican}, \emph{madagascar}, \emph{australians}, \emph{dengue}); the northern end mixes academic words (\emph{transcript}, \emph{theorem}) with the names of companies and politicians (\emph{xerox}, \emph{caterpillar}, \emph{hastert}), and we do not interpret it. The point is not that every word is interpretable, but that many individual words track a place's coordinates at correlations up to $0.45$ although none of them states a coordinate. This is consistent with the coarse sorting by country and region described above (Section~\ref{sec:mechanism-summary}), available from how words are used and with no context-dependent computation over the name. Projecting out the embedding directions spanned by country names costs the probe more than projecting out directions spanned by matched random words (Appendix~\ref{sec:semantic_ablation}).
+This ordering of recoverability indicates to what extent each property is reflected in the
+words a city's name appears with. Across our cities, the more similar a city name's representation is to those of \emph{malaria} or \emph{jungle},
+the warmer the city tends to be, and the more similar it is to those of \emph{skiing} or
+\emph{orchestra}, the colder it tends to be (Figure~\ref{fig:semantic_spatial}). Removing from the
+embeddings the directions spanned by country names costs the probes more than removing any
+other vocabulary, and, compared with matched random words, removing words for climate and
+weather costs temperature most, latitude less and longitude nothing
+(Appendix~\ref{sec:ablation}). The coordinates thus appear to be carried mainly by
+associations with a city's country, the static counterpart of the coarse sorting we found in
+the transformers (Section~\ref{sec:llm}), and temperature by associations with the
+vocabulary of climate. No context-dependent computation over the city name is involved; the signal is already
+available in a fixed lexical representation. Warm cities' names are close to \emph{malaria} and \emph{jungle}
+not because temperature is explicitly represented as such, but because the names keep the same company as those words,
+such as the names of tropical places (\emph{Borneo}, \emph{Cambodia}, \emph{Laos}); cold cities' names are close to \emph{skiing} and \emph{orchestra} through winter sports, Nordic places and Russian classical music (Appendix~\ref{sec:semantic}).
+The probe finds the direction along which this shared company varies with temperature, and
+thus seems to recover what text records about cities rather than a general store of facts
+about them (see also Figure~\ref{fig:geography}).
 
 \subsection{A ``Pain Axis''}
 \label{sec:pain}
@@ -500,7 +549,7 @@ address causal and behavioral evidence, such as steering or the Othello interven
 decoder can read. The baseline itself is deliberately simple: averaging word vectors
 ignores word order, so it likely understates what word relations alone can provide, and our
 separation of what the transformers share with it is linear. Items with an entity vector are easier for every representation, language models included (Appendix~\ref{sec:coverage}), so absolute accuracy on the common subset overstates accuracy on the full release. The emotion case rests on a
-replication corpus rather than the original stories.
+replication corpus rather than the original stories, and the city set is small and was chosen by hand.
 
 \paragraph{Broader impact.}
 Decoding and related representational results are increasingly discussed in connection with model welfare and sentience \citep{keeling2024tradeoffs}. Our
@@ -510,11 +559,14 @@ show that models lack such states; we hope the baseline makes such discussions b
 \paragraph{Reproducibility.}
 Code, derived data and the result files behind every reported value are available
 \ifanon in the supplementary material\else at \url{https://github.com/elanbarenholtz/static-embeddings-space-time}\fi,
-including \texttt{static\_baseline.py}, which runs the baseline
-on any labeled stimulus set. The entity analyses use the 300-dimensional English Wikipedia2Vec vectors (April 2018 release), which the supplementary scripts filter to the items used.\ifanon\else{} An earlier version of this work also analyzed a set of 272 cities; this version removes that analysis, and all results here fit an intercept.\fi
+including the sourced city table and \texttt{static\_baseline.py}, which runs the baseline
+on any labeled stimulus set. The entity analyses use the 300-dimensional English Wikipedia2Vec vectors (April 2018 release), which the supplementary scripts filter to the items used.\ifanon\else{} An earlier version of this work fitted the ridge probe
+without an intercept and used city attributes compiled without recorded sources, including
+founding year; all results here fit an intercept and use the sourced attributes described in
+Section~\ref{sec:data}, without founding year, and the qualitative pattern is unchanged.\fi
 
 \bibliography{references}
-\bibliographystyle{plainnat}
+\bibliographystyle{tmlr}
 
 \appendix
 
@@ -528,6 +580,15 @@ results in Section~\ref{sec:results} but are not required for the argument.
 \subsection{Additional Methods}
 \label{sec:extra_methods}
 
+\paragraph{City attributes.} For six cities whose DBpedia coordinates were evidently wrong
+(more than $0.2^\circ$ from Wikidata's) we use Wikidata's. Population is the most recent dated
+value for the administrative unit Wikidata records, so its definition varies across cities;
+three missing elevations are taken from the Copernicus GLO-90 elevation model. Mean annual
+temperature is the mean of the twelve monthly mean temperatures in WorldClim 2.1 (1970--2000
+normals at 2.5 arc-minutes) at each city's coordinates. GDP per capita is in current US dollars
+(2023 or the latest available year), shared by all cities in a country, with Taiwan's from its
+statistics office and North Korea's from the UN Statistics Division.
+
 \paragraph{Activation extraction.} Activations were extracted in 16-bit precision and checked
 against a separately computed CPU reference on 60 random names per model and dataset (cosine
 similarity $> 0.999$).
@@ -538,11 +599,17 @@ inner training set (80\%) and a validation set (20\%); each saved layer is probe
 inner training set and scored on the validation set, and the layer with the best validation
 $R^2$ (averaged over targets) is refitted on the full training partition and scored once on
 the test partition. This selects layer~24 for Pythia-2.8B on places and layer~28 on
-figures, and layer~24 for Llama-2-7B on both. Analyses carried out at a single layer (residualization, matched dimensionality) use the layer selected on the training partition, so no test item influences it. For the grouped holdouts, where the authors' training partition
+figures, and layer~24 for Llama-2-7B on both. On the city set the layer is chosen within
+each of the ten outer splits by five-fold cross-validation on that split's training rows.
+Analyses carried out at a single layer (residualization, error correlations, matched
+dimensionality, neighbor availability) use, in each split, the layer selected for that split,
+and their results are averaged over the ten test folds, so no held-out city influences the
+layer used to evaluate it. For the grouped holdouts, where the authors' training partition
 contains items from every continent and period, the transformer layer is instead fixed in
 advance at layer~19 (60\% depth), so no held-out continent or period influences it either. In every case the ridge
 penalty is chosen within the training rows by the same leave-one-out procedure, and principal
-components are fitted on training rows only. 
+components are fitted on training rows only. Choosing the layer on the test data instead,
+as in an earlier version of this analysis, changes the reported $R^2$ by at most $0.013$.
 
 \paragraph{Pain directions.} The other
 directions (fear, negative emotion, negative world state, bodily sensation, arousal, random,
@@ -564,18 +631,42 @@ emotion-word control we remove every comment, in training and test, that contain
 27 label words, a WordNet synonym of one, or a derivationally related form (244 words in
 all), which removes about a quarter of the comments.
 
-\subsection{Residualizing the Transformer against the Static Baseline}
+\subsection{Residualizing the Transformer against the Type-Level Baseline}
 \label{sec:residual_methods}
 
-To test whether the transformer's recoverable structure is the static structure, we fit a linear map from the 300-dimensional static embeddings $S$ to the activations $A$ at a layer, by ridge regression on the authors' training items with the penalty chosen by cross-validation on those rows, and decompose $A = SB + (A - SB)$ for all items. We call $SB$ the \emph{projection} and $A - SB$ the \emph{residual}, and probe each as we probe $A$ itself, with the same train--test split. The map is fitted on training items only, and the decomposition never sees the target. Because the projection is a linear function of $S$, it contains no linearly available information beyond $S$; it serves as a consistency check on the fit, not as a result.
+To test whether the transformer's recoverable structure is the static structure, we fit
+a linear map from the $272 \times 300$ static embedding matrix $S$ to the
+$272 \times d$ activation matrix $A$ at each layer, and decompose
+$A = SB + (A - SB)$. We call $SB$ the \emph{projection} and $A - SB$ the
+\emph{residual}, and probe each as we probe $A$ itself.
+
+Three details matter. First, $B$ is estimated by ridge rather than least squares: a
+random split leaves 217 training rows against 300 predictors, and an unregularized fit
+would reproduce the training rows exactly, driving their residuals to zero and rigging
+the outcome. The penalty is selected by cross-validation on the training rows. Second,
+$B$ is refit inside every fold from that fold's training rows only, so no test city
+influences its own reconstruction; the decomposition never touches the target, so this
+is a conservative rather than a necessary choice. Third, because the projection is a
+linear function of $S$, it contains no linearly available information beyond $S$;
+separately regularized ridge fits can still differ slightly, because the transformation
+changes the effective penalty. The projection serves as a consistency check on the fit, not
+as a result.
 
 Two nulls accompany the removal, because two distinct objections apply. The
 \emph{variance-matched null} removes a random subspace of activation space, with its
 dimension chosen so that the fraction of activation variance removed matches that of
 the true removal; it answers whether a removal of this magnitude would have had this
 effect regardless of what was removed. The \emph{shuffled-static null} repeats the true
-removal with static vectors assigned to the wrong items; it answers whether the effect
-depends on the item correspondence or is an artifact of the regression.
+removal with static vectors assigned to the wrong cities; it answers whether the effect
+depends on the city correspondence or is an artifact of the regression.
+
+We report two further tests that involve no removal. First, we correlate the signed
+prediction errors of the transformer probe and the static probe within each test fold,
+with the target partialed out---two weak probes both predict near the mean, so their
+raw error vectors both approach $-(y - \bar{y})$ and correlate near unity for reasons
+unrelated to any shared mechanism. Second, we correlate each city's absolute probe error with the
+cosine similarity of its nearest training neighbors, with continent partialed out, in both
+representation spaces, using one observation per city.
 
 \subsection{Removing Group Membership from the Activations}
 \label{sec:group_methods}
@@ -714,11 +805,38 @@ Entity vectors exist for 89\% of places and 63\% of figures, and the comparison 
   \end{tabular}
 \end{table}
 
-\subsection{Static Baseline on the Authors' Metric}
+\subsection{Pairwise Similarity, Distance and Co-membership}
+\label{sec:distance_methods}
 
-Table~\ref{tab:gt} reports the static baseline with the metric and split of the original release, for comparison with the figures \citet{gurnee2024language} report for Llama-2.
+For all $\binom{272}{2} = 36{,}856$ city pairs we compute embedding cosine similarity,
+great-circle distance, and same-country and same-continent indicators, and regress
+similarity on all three predictors jointly. Pairs are not independent, so significance
+is assessed by permuting \emph{city} labels (10{,}000 draws) and recomputing the
+statistic, never by an analytic test on pairs.
 
-\begin{table}[!ht]
+\subsection{Semantic Similarity Analysis}
+
+To investigate whether the geographic signal is interpretable, we take a data-driven approach: for every word in the GloVe vocabulary (restricted to the 20,000 most frequent common English words, filtering out proper nouns, city and country names, demonyms, and words shorter than four characters), we compute its cosine similarity to each of the 272 city embeddings (one value per city) and correlate these similarity values with the cities' actual latitudes and temperatures. This identifies the words whose distributional profiles most systematically track geographic location, without any \textit{a priori} word selection.
+
+We also construct \emph{composite scores} by taking the difference in cosine similarity to antonym pairs (e.g., similarity to ``cold'' minus similarity to ``warm'') and test whether these continuous gradients predict geographic targets.
+
+\subsection{Semantic Subspace Ablation}
+\label{sec:ablation_methods}
+
+To ask which vocabularies span the directions the probes rely on, we perform subspace ablation experiments on GloVe embeddings.
+For each of six semantic categories---cardinal directions (16 words), climate and weather (27 words), region and continent names (28 words), country names (68 words), economic terms (27 words), and cultural/language terms (31 words)---we:
+\begin{enumerate}
+  \item Collect GloVe vectors for all words in the category.
+  \item Compute the principal subspace they span via PCA, retaining components that capture 90\% of the variance (capped at 20 dimensions).
+  \item Project each city embedding onto this subspace and subtract the projection, zeroing out the embedding's component along those semantic directions.
+  \item Re-run the ridge regression probe on the ablated embeddings and measure $R^2$ drop relative to the full-embedding baseline.
+\end{enumerate}
+
+Because ablation removes dimensions from the embedding, any observed $R^2$ drop could reflect generic information loss rather than removal of semantically specific content. Random orthonormal subspaces of the same dimensionality are a weak control, because random directions in the 300-dimensional space are nearly orthogonal to the region occupied by word vectors, so removing any set of real word vectors costs more. We therefore compare each category with 200 random \emph{word sets} drawn from the 50{,}000 most frequent GloVe words and matched to it word by word on frequency decile, proper-name status (whether the capitalized form is more frequent than the lowercase form in the GoogleNews vocabulary) and vector norm (the closest norm among 20 candidates from the same decile and status). Each random set's subspace is built in the same way and truncated to the category's dimensionality. We report the category's drop as a $z$-score against these matched sets, with an empirical one-sided $p$ (the smallest possible value is $1/201$), and record the share of the city embeddings' variance each subspace removes, since vocabularies whose directions align more closely with the city vectors are expected to cost more.
+
+\subsection{Additional Results}
+
+\begin{table}[t]
   \centering
   \caption{The type-level baseline on the entity datasets released by
   \citet{gurnee2024language}, using their designated train--test split and their
@@ -744,6 +862,86 @@ Table~\ref{tab:gt} reports the static baseline with the metric and split of the 
     \bottomrule
   \end{tabular}
 \end{table}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig1_geography.png}
+  \caption{Predicted city locations from ridge regression probes on GloVe (left) and Word2Vec (right) embeddings, for the held-out 20\% of 272 cities. Faded dots are training cities; filled circles are the true locations of held-out cities and crosses their predicted locations, joined by a line. Color denotes continent. Both models recover the broad continental layout from co-occurrence statistics alone.}
+  \label{fig:geography}
+\end{figure}
+
+\begin{table}[t]
+  \centering
+  \caption{Pythia and static embeddings on the same 272 cities, under random 80/20 splits.
+  Transformer values use a layer selected separately in each split by five-fold
+  cross-validation on that split's training rows (Section~\ref{sec:llm_methods}), and
+  within-continent $r$ is measured at that layer. Static values are Word2Vec, the better of the two static models
+  on every measure. Layer~0 is the token-embedding output, before any attention. The
+  continent one-hot carries only continent identity, so its within-continent $r$ is zero.}
+  \label{tab:llm}
+  \small
+  \begin{tabular}{lcccccccc}
+    \toprule
+    & \multicolumn{5}{c}{$R^2$} & \multicolumn{3}{c}{Within-continent $r$} \\
+    \cmidrule(lr){2-6} \cmidrule(lr){7-9}
+    Target & 1.4B & 2.8B & 2.8B L0 & Static & Continent & 1.4B & 2.8B & Static \\
+    \midrule
+    Latitude    & $0.716$ & $0.800$ & $0.140$ & $0.833$ & $0.731$ & $0.670$ & $0.736$ & $0.755$ \\
+    Longitude   & $0.764$ & $0.810$ & $0.325$ & $0.837$ & $0.915$ & $0.478$ & $0.475$ & $0.519$ \\
+    Temperature & $0.686$ & $0.711$ & $0.158$ & $0.720$ & $0.290$ & $0.769$ & $0.790$ & $0.792$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[t]
+  \centering
+  \caption{Ridge regression probe $R^2$ for 272 world cities, mean $\pm$ s.d.\ over ten random 80/20 train/test splits. Geographic, climatic and national-economic targets are well recovered; elevation is recovered weakly and inconsistently.}
+  \label{tab:world_results}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lcccccc}
+    \toprule
+    & Longitude & Latitude & Temperature & GDP per capita & Population & Elevation \\
+    \midrule
+    GloVe    & $0.788 \pm 0.039$ & $0.760 \pm 0.031$ & $0.675 \pm 0.061$ & $0.751 \pm 0.043$ & $0.500 \pm 0.100$ & $0.212 \pm 0.109$ \\
+    Word2Vec & $0.837 \pm 0.035$ & $0.833 \pm 0.038$ & $0.720 \pm 0.038$ & $0.803 \pm 0.028$ & $0.515 \pm 0.066$ & $0.327 \pm 0.158$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Pythia on the city set.} In Pythia-2.8B, latitude goes from $R^2 = 0.140$ at
+layer~0 to about $0.80$ by layer~20, and longitude from $0.325$ to about $0.81$ by
+layer~27 (Figure~\ref{fig:llmlayers}); because 97\% of the names span several tokens, part
+of this rise is the model assembling the name. With the layer selected within each training
+split, Pythia-2.8B comes close to Word2Vec on temperature ($0.711$ against $0.720$) even
+though it gives the probe 2560 features against 300. With both reduced to 200 principal
+components (fitted on training rows), Pythia-2.8B reaches $0.794$, $0.808$ and $0.713$ at
+the training-selected layers against GloVe's $0.759$, $0.788$ and $0.675$, so its edge over
+GloVe is not only a matter of dimensionality. Within continents, correlating predictions
+with targets after removing continent means gives $r = 0.67$--$0.74$ for latitude, $0.48$
+for longitude and $0.77$--$0.79$ for temperature in the two Pythia models, against $0.76$, $0.52$ and $0.79$ for Word2Vec (Table~\ref{tab:llm}). A continent label predicts longitude
+better than any of them ($R^2 = 0.92$) and latitude nearly as well ($0.73$), so most of what
+every representation recovers on the coordinates is which continent a city is on.
+Temperature is different: the continent label reaches only $0.29$, and most of what is
+recovered lies within continents.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{llm_layers_pythia-2.8b.png}
+  \caption{Probe $R^2$ by layer for Pythia-2.8B on the 272-city dataset under random 80/20
+  splits (shaded $\pm 1$ s.d.\ over ten splits). Layer~0 is the token-embedding output,
+  before any attention; 97\% of these city names span several tokens, so layer~0 is the
+  embedding of a final subword and the name has to be assembled by attention in later
+  layers. The dashed line is the better static model (Word2Vec).}
+  \label{fig:llmlayers}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig2_barplot.png}
+  \caption{Probe $R^2$ for all six city targets, comparing GloVe and Word2Vec. Bars show the mean over ten random 80/20 train/test splits; error bars show $\pm 1$ s.d. Geographic, climatic and national-economic targets yield high $R^2$; elevation is recovered weakly and with large variability across splits.}
+  \label{fig:barplot}
+\end{figure}
 
 \begin{table}[t]
   \centering
@@ -779,9 +977,196 @@ Table~\ref{tab:gt} reports the static baseline with the metric and split of the 
   \label{fig:pain}
 \end{figure}
 
-\subsection{Group Structure of the Historical Figures}
-\label{sec:figure_groups}
+\subsection{Most Probe-Relevant Transformer Information Overlaps Linearly with Static Structure}
+\label{sec:residual}
 
+Matching performance is consistent with the two representations exploiting the same
+structure, but does not establish it. We test how far the probe-relevant information in the
+activations overlaps linearly with the static embeddings. Overlap is not identity: if both
+representations track the same coarse groupings, such as country or continent, a linear map
+will find shared target-relevant variance even if the two arise differently (we test this
+on the released entities in Section~\ref{sec:mechanism-summary}).
+
+For each layer we fit a linear map from the 300-dimensional static vector of a city to
+its 2560-dimensional activation, using training rows only, and split the activations
+into the part that map predicts (the \emph{projection}) and what it misses (the
+\emph{residual}). Both are then probed exactly as the full activations were. The
+decomposition never sees latitude, longitude or temperature: it is fit entirely from
+the correspondence between two representations of the same city, and is therefore
+target-blind.
+
+\begin{table}[t]
+  \centering
+  \caption{Removing the static-predictable component of Pythia-2.8B activations, in each
+  split at the layer selected by cross-validation on that split's training rows
+  (Section~\ref{sec:llm_methods}); values are means over the ten test folds. \emph{Var.\ removed} is the fraction of activation
+  variance the removal takes out; the variance-matched null removes the same fraction
+  along random, city-blind directions. The shuffled-static null repeats the removal
+  with static vectors attached to the wrong cities.}
+  \label{tab:residual}
+  \small
+  \begin{tabular}{llccccc}
+    \toprule
+    Target & Static removed & full & projection & \textbf{residual} & var.-matched null & var.\ removed \\
+    \midrule
+    Latitude    & GloVe    & $0.800$ & $0.763$ & $\mathbf{0.233}$ & $0.791$ & 34\% \\
+    Longitude   & GloVe    & $0.810$ & $0.792$ & $\mathbf{0.128}$ & $0.810$ & 35\% \\
+    Temperature & GloVe    & $0.711$ & $0.684$ & $\mathbf{0.220}$ & $0.711$ & 35\% \\
+    \midrule
+    Latitude    & Word2Vec & $0.800$ & $0.837$ & $\mathbf{0.172}$ & $0.789$ & 25\% \\
+    Longitude   & Word2Vec & $0.810$ & $0.833$ & $\mathbf{0.129}$ & $0.809$ & 28\% \\
+    Temperature & Word2Vec & $0.711$ & $0.733$ & $\mathbf{0.280}$ & $0.706$ & 26\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Table~\ref{tab:residual} and Figure~\ref{fig:residual} give the result. Removing the
+static-predictable component reduces latitude recovery from $0.800$ to $0.233$
+(GloVe) or $0.172$ (Word2Vec), longitude from $0.810$ to $0.128$--$0.129$, and temperature
+from $0.711$ to $0.220$--$0.280$. Averaged over the plateau (layers 10--32) the residual
+retains 16--34\% of the full value. The same analysis at 1.4B replicates: full values of
+$0.716$, $0.764$ and $0.686$ fall to residuals of $0.213$, $0.205$ and $0.330$ against
+GloVe and $0.179$, $0.255$ and $0.326$ against Word2Vec, retaining 25--48\%, with the
+variance-matched null again leaving performance untouched ($0.710$, $0.765$, $0.678$).
+
+Two controls establish that this is not an artifact of the amount removed. The
+\emph{variance-matched null} deletes the same fraction of activation variance
+(25--35\%) along random directions that carry no information about which city is which,
+and leaves performance essentially untouched ($0.791$, $0.810$, $0.711$ against GloVe's
+removal). The
+\emph{shuffled-static null}, which repeats the removal with static vectors assigned to
+the wrong cities, removes almost no variance and returns the full value exactly,
+confirming that the removal depends on the city correspondence rather than on the
+regression itself. What matters is not how much variance is removed but which.
+
+The complementary condition is a consistency check rather than a finding: because the
+projection is a linear function of the static vectors, it contains no additional linearly
+available information. Separately regularized ridge fits can nevertheless differ slightly,
+because the transformation changes the effective penalty; empirically the two values are
+nearly identical ($0.763$ against GloVe's own $0.760$ for latitude; $0.837$
+against Word2Vec's $0.833$).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{residualise_pythia-2.8b.png}
+  \caption{Pythia-2.8B by layer: full activations (blue), the component linearly
+  predictable from the static embedding (green), the residual after that component is
+  removed (red), and a removal of matched variance along random directions (gray
+  dashed). The dotted line is the static embedding probed directly. Most probe-relevant
+  performance lies in the activation component linearly predictable from static embeddings,
+  while a nonzero residual remains; removing matched variance along random directions has
+  little effect.}
+  \label{fig:residual}
+\end{figure}
+
+\paragraph{The two probes fail on the same cities.}
+Signed prediction errors from the transformer probe and the static probe, correlated
+within each test fold with the target partialed out, give $r = 0.41$--$0.58$ across
+targets and static models, and $r = 0.27$--$0.44$ when computed within continent.
+The floor for this measure---the transformer probe against a probe on matched random
+features---is $-0.02$ to $0.08$. For calibration, the same measure applied to GloVe against
+Word2Vec, two representations that share a distributional basis, gives $r = 0.52$--$0.62$.
+
+\paragraph{Both show a modest relationship with neighbor availability.}
+Probe error tends to rise as a city's nearest training neighbors become less similar, in
+the static embeddings and, more weakly, in activation space. Each of the 239 cities that
+fall in at least one test set contributes one observation: its absolute error and the mean
+similarity of its five nearest training neighbors, each averaged over the splits in which it
+was tested, with continent partialed out. The correlation is $r = -0.16$ (latitude,
+$p = .01$), $-0.15$ ($p = .03$) and $-0.05$ ($p = .43$) in Pythia-2.8B activations,
+against $-0.14$ ($p = .03$), $-0.27$ ($p < .001$) and $-0.19$ ($p = .004$) in GloVe. The
+probes appear to answer partly by proximity to cities they were trained on, more clearly in
+GloVe.
+
+\subsection{What Carries the Recoverable Structure}
+\label{sec:holdout}
+
+Three analyses under the random 80/20 protocol ask how much of the recoverable structure
+is coarse group membership, and a fourth asks how well items are ordered within their
+group.
+
+\paragraph{Six indicators outperform 300 dimensions.}
+Replacing the embeddings with a six-element one-hot vector encoding continent membership
+and nothing else (Table~\ref{tab:holdout}) recovers longitude at $R^2 = 0.915$, above
+GloVe's $0.788$ and Word2Vec's $0.837$, and latitude at $0.731$, close to GloVe's
+$0.760$. Temperature is the exception: continent identity alone yields only $0.290$
+against GloVe's $0.675$.
+
+\paragraph{Recoverability tracks between-group variance.}
+The share of each target's variance that lies between continents ($\eta^2$) is $0.926$
+for longitude, $0.747$ for latitude, $0.606$ for GDP per capita, $0.352$ for population,
+$0.327$ for temperature and $0.109$ for elevation. Across the six targets, random-split
+$R^2$ tracks $\eta^2$ at Pearson $r = 0.85$ and $0.87$ for GloVe and Word2Vec (Spearman
+$0.94$ for both); excluding temperature, $r = 0.94$ and $0.95$. Temperature is the
+residual, exceeding its $\eta^2$-predicted value by $+0.232$ (GloVe) and $+0.207$
+(Word2Vec).
+
+This is a fact about the targets and the sample, not only about the representations: a
+variable whose variance is overwhelmingly between coarse groups can be recovered at
+high $R^2$ by anything that identifies the group, without any finer-grained
+information being present.
+
+\paragraph{Decomposition.}
+Substituting each city's vector with its continent's centroid (computed from training
+rows only) and, separately, with its within-continent residual isolates the two
+components under the random protocol.
+For GloVe, latitude decomposes as $0.760$ (full), $0.731$ (centroid only), $+0.011$
+(residual); longitude as $0.788$, $0.915$, $-0.018$; temperature as $0.675$, $0.287$,
+$+0.242$. Word2Vec gives $0.833 / 0.731 / +0.002$, $0.837 / 0.915 / -0.021$ and
+$0.720 / 0.288 / +0.315$. For the coordinates the centroid accounts for nearly all of the full $R^2$; for
+temperature it accounts for less than half.
+
+\paragraph{Holding out continents.}
+Training on five continents and predicting the sixth, with predictions pooled over the six
+held-out continents, GloVe and Word2Vec reach $R^2 = 0.003$ and $0.319$ for latitude,
+$-0.246$ and $-0.218$ for longitude, and $0.476$ and $0.465$ for temperature, against
+$0.76$--$0.83$, $0.79$--$0.84$ and $0.67$--$0.72$ under random splits. Random-split coordinate performance depends heavily on continent-specific
+calibration, and the learned linear map transfers poorly to a continent it has not seen;
+temperature, much of whose variance lies within continents, transfers substantially better.
+
+\begin{table}[t]
+  \centering
+  \caption{Probe $R^2$ and within-continent ordering for the 272 cities under random 80/20
+  splits (mean over ten splits). Within-continent $r$ correlates predictions with targets
+  after removing continent means in each test set. The one-hot rows carry only country or
+  continent identity (132 countries).}
+  \label{tab:holdout}
+  \small
+  \begin{tabular}{llcc}
+    \toprule
+    Representation & Target & $R^2$ & Within-continent $r$ \\
+    \midrule
+    GloVe    & Latitude    & $0.760$ & $0.670$ \\
+             & Longitude   & $0.788$ & $0.410$ \\
+             & Temperature & $0.675$ & $0.743$ \\
+    \midrule
+    Word2Vec & Latitude    & $0.833$ & $0.755$ \\
+             & Longitude   & $0.837$ & $0.519$ \\
+             & Temperature & $0.720$ & $0.792$ \\
+    \midrule
+    Country one-hot   & Latitude    & $0.510$ & --- \\
+                      & Longitude   & $0.754$ & --- \\
+                      & Temperature & $0.364$ & --- \\
+    \midrule
+    Continent one-hot & Latitude    & $0.731$ & $0$ \\
+                      & Longitude   & $0.915$ & $0$ \\
+                      & Temperature & $0.290$ & $0$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Within-group ordering.}
+Correlating predictions with targets after removing continent means measures ordering
+inside continents alone, and a representation carrying only continent identity scores
+zero. Under random splits GloVe orders cities within continents at $r = 0.67$ for
+latitude, $0.41$ for longitude and $0.74$ for temperature, and Word2Vec at $0.76$, $0.52$
+and $0.79$. The embeddings therefore carry position within continents as well as continent
+identity, consistent with the dependence of similarity on distance
+(Appendix~\ref{sec:distance}). The decomposition above does not show this, because a probe
+trained on within-continent residuals is scored against the full target, most of whose
+variance lies between continents.
+
+\paragraph{Historical figures.}
 On the released figures, year of death varies almost entirely between centuries
 ($\eta^2 = 0.996$ in the test set) and mostly between three eras (before 500\,CE,
 500--1400, after 1400; $\eta^2 = 0.80$). As oracle decompositions derived from the target itself, an
@@ -789,31 +1174,163 @@ era label accounts for $R^2 = 0.80$ and a century label for $1.00$, against $0.5
 with its era's training centroid gives $0.80$, and the within-era residual gives $0.04$.
 Within centuries, GloVe and Word2Vec order figures at $r = 0.05$.
 
-\subsection{Semantic Ablation on the Released Places}
-\label{sec:semantic_ablation}
+\paragraph{Other targets.}
+Across all six city properties, random-split $R^2$ tracks $\eta^2$. Elevation departs in
+the other direction: it is recovered worst under the random split, yet its recovery is
+least attributable to continent membership, with 63--82\% of its modest recoverability
+surviving the removal of continent centroids, against 12--17\% for GDP. Recoverability and
+group dependence are dissociable, so a high random-split $R^2$ does not by itself say what
+kind of information a representation carries.
 
-To ask which kinds of words the coordinate probe depends on, we projected out the embedding subspace spanned by a word category and refit the probe. For each category we took the GloVe vectors of its words, kept the principal components covering 90\% of their variance (at most 20), and projected that subspace out of every place's averaged name vector; the place names themselves are unchanged. We trained a ridge probe on the training places (authors' split) and scored $R^2$ on the test places ($n = 33{,}500$ places with a GloVe vector; baseline $R^2 = 0.47$ for latitude and $0.53$ for longitude). The null is 200 random word sets matched to the category on number of words, frequency decile, whether the capitalized form is the more frequent one, and vector norm, each reduced to the same number of dimensions. Projecting out the country-name subspace costs the most, about three times the matched null for latitude, and the region and continent and the climate subspaces cost more than the null for latitude. Cardinal directions, economic terms and cultural and language words cost no more than matched random words. The drops are nevertheless small in absolute terms: projecting out roughly 20 of 300 dimensions leaves most of the decodable coordinate signal intact, so the signal is not confined to these semantic subspaces.
+\subsection{Similarity Tracks Distance, Not Only Co-membership}
+\label{sec:distance}
 
-\begin{table}[!ht]
+A natural reading of the preceding results is that embedding similarity is driven by
+shared administrative and linguistic context rather than by geography as such. That is not
+the whole explanation. Across all 36{,}856 city pairs, cosine similarity falls with great-circle distance
+independently of co-membership. With log distance, same-country and same-continent
+indicators entered together, the standardized coefficient on distance is $-0.375$
+(GloVe) and $-0.409$ (Word2Vec), against $+0.134$ and $+0.082$ for same-country
+membership. Distance continues to predict within every stratum: among same-country
+pairs $r = -0.480$ and $-0.488$; among same-continent, different-country pairs $-0.388$
+and $-0.353$; among pairs on different continents $-0.241$ and $-0.294$. Permuting city
+labels (10{,}000 draws) puts the partial distance coefficient far outside its null
+($-0.375$ against $0.000 \pm 0.020$, $p < .001$). Pairs under 500\,km apart in
+\emph{different} countries are more similar (GloVe $0.419$, Word2Vec $0.503$) than
+pairs over 2000\,km apart within the \emph{same} country ($0.293$, $0.364$).
+
+The representations therefore carry genuine local metric structure.
+
+\subsection{Dimensionality Scaling}
+\label{sec:dimensionality}
+
+To test whether the geographic signal scales smoothly with embedding capacity, we run ridge regression probes predicting latitude, longitude, and temperature from GloVe embeddings at four dimensionalities (50, 100, 200, 300) using the 272-city dataset, under the protocol of Table~\ref{tab:world_results} (mean over the same ten random 80/20 splits).
+
+Figure~\ref{fig:dimscaling} shows that $R^2$ rises with dimensionality for all three targets, though longitude changes little beyond 100 dimensions and temperature beyond 200. Latitude $R^2$ rises from 0.53 (50d) to 0.76 (300d); longitude from 0.70 to 0.79; temperature from 0.53 to 0.67, with the 300d values matching Table~\ref{tab:world_results}. (An earlier version of this figure used a single split, which overstated temperature at 300d.) These results show an association between dimensionality and performance within the tested GloVe models. They do not establish how performance would scale beyond 300 dimensions, nor do they isolate dimensionality from the other differences between static embeddings and transformers---corpus size, contextual disambiguation, training objective and architecture all remain possible contributors. The dimension-matched comparison with Pythia in Appendix~\ref{sec:appendix} addresses this more directly, by holding the number of features constant across representations.
+
+\begin{figure}[t]
   \centering
-  \caption{Drop in test $R^2$ when the embedding subspace spanned by a word category is projected out of the GloVe name vectors of the released places, with the mean drop for 200 matched random word sets in parentheses and $z$ against that null. $k$ is the number of dimensions projected out and Var.\ the share of the place vectors' variance they hold. $^{*}$\,$p \le .05$ and $^{**}$\,$p \le .01$, one-sided empirical $p$ over the 200 matched sets.}
-  \label{tab:semantic_ablation}
-  \small
+  \includegraphics[width=0.65\textwidth]{fig_dimensionality_scaling.png}
+  \caption{Probe $R^2$ versus GloVe embedding dimensionality for latitude, longitude, and temperature (272 cities). Points are means over the ten splits of Table~\ref{tab:world_results}, with error bars of $\pm 1$ s.d.; shaded bands show $\pm 2$ s.d.\ of matched random embedding baselines.}
+  \label{fig:dimscaling}
+\end{figure}
+
+\subsection{Random Embedding Control}
+
+To confirm that the probes do not find spurious structure in arbitrary high-dimensional vectors, we generate 20 sets of random Gaussian embeddings at each dimensionality (50, 100, 200, 300) and run the same probes over the same ten splits. Figure~\ref{fig:randomcontrol} shows that random embeddings yield $R^2 \approx 0$ (slightly negative) at all dimensionalities: arbitrary vectors of the same dimensionality do not reproduce the observed performance, so the structure recovered from GloVe is not an artifact of high-dimensional geometry or of the fitting procedure. This control does not address effects of entity selection, regional clustering among the sampled cities, or preprocessing.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig_random_control.png}
+  \caption{Random embedding control. Box plots show the ten-split mean probe $R^2$ for each of 20 sets of random Gaussian vectors at each dimensionality. Colored diamonds show corresponding GloVe $R^2$ values. The probes find no structure in random embeddings at any dimensionality.}
+  \label{fig:randomcontrol}
+\end{figure}
+
+\subsection{Semantic Similarity Analysis}
+\label{sec:semantic}
+
+The preceding results establish that static embeddings preserve substantial spatial and temporal structure. We next ask whether this structure is semantically interpretable: does the embedding space encode geography through co-occurrence with meaningful vocabulary, and if so, which words carry the signal?
+
+\paragraph{Data-driven word correlations.}
+Rather than selecting probe words \textit{a priori}, we take a data-driven approach. For every word in the GloVe vocabulary (restricted to the 20,000 most frequent words with at least four letters, excluding the cities' own name words and a list of common country names, demonyms and geographic terms; other proper nouns, such as \emph{mozambique} or \emph{nikolai}, remain), we compute its cosine similarity to each of the 272 city embeddings, producing one similarity value per city. We then correlate these 272 similarity values with the cities' actual mean annual temperatures (Pearson $r$). Figure~\ref{fig:semantic_spatial} shows the 15 most positively and 15 most negatively correlated words.
+
+Both directions are semantically interpretable. Words most associated with warmer cities reflect tropical ecology and disease burden---``dengue'' ($r = +0.61$), ``malaria'' ($r = +0.59$), ``jungle'' ($r = +0.56$), ``crocodile'' ($r = +0.52$), ``cyclone'' ($r = +0.52$), ``mosquito'' ($r = +0.50$), ``cholera'' ($r = +0.48$). Words most associated with colder cities reflect winter activities and European cultural institutions---``skaters'' ($r = -0.57$), ``skating'' ($r = -0.56$), ``philharmonic'' ($r = -0.53$), ``violinist'' ($r = -0.53$), ``orchestra'' ($r = -0.52$), ``conservatory'' ($r = -0.51$), ``skiing'' ($r = -0.50$), ``conductor'' ($r = -0.50$).
+
+These semantic categories were not selected \textit{a priori}; they emerge from an exhaustive search over the vocabulary. Because the reported words are selected for having large correlations, we treat the rankings as exploratory and report no inferential test on them. The results confirm that the embedding space encodes temperature through graded co-occurrence with climatically and culturally relevant vocabulary.
+
+\paragraph{Shared company.}
+To see why a city name's representation is similar to those of words such as
+\emph{malaria} or \emph{orchestra}, we ranked each of the 50{,}000 most frequent GloVe words
+by its similarity to the mean representation of the names of the 25 warmest (or coldest)
+of our cities, taken relative to the mean over all cities, and separately by its similarity
+to the anchor words, and took the words that rank high on both. For warm cities and
+\emph{malaria} and \emph{jungle}, these are mostly Southeast Asian place names and tropical
+landscape (\emph{jungles}, \emph{borneo}, \emph{cambodia}, \emph{laos}, \emph{mekong},
+\emph{thailand}). For cold cities and \emph{skiing}, they are winter sports and Nordic places
+(\emph{hockey}, \emph{lillehammer}, \emph{rink}, \emph{finland}, \emph{nordic}); for cold
+cities and \emph{orchestra}, Russian classical music and its institutions (\emph{bolshoi},
+\emph{prokofiev}, \emph{kirov}, \emph{leningrad}, \emph{shostakovich}, \emph{tchaikovsky}).
+Words for the weather rank far lower: \emph{humid}, for example, ranks below 20{,}000th in
+similarity to the warm cities' names.
+
+For the released historical figures the same search is dominated by the makeup of the
+names rather than by period vocabulary: the words whose similarity to the representations of
+the figures' names best tracks year of death are Chinese provinces and cities (earlier; e.g.\ ``henan'', ``guangdong'', $r
+\approx -0.49$) and modern Western given names and surnames (later; e.g.\ ``wally'',
+``carlson'', $r \approx +0.45$), along with occupations such as ``chemist'' and
+``biologist''. The temporal signal in the static vectors comes largely from where, and in what
+roles, people are written about.
+
+\paragraph{Composite scores.}
+The preceding analysis shows that geographic signal is distributed across many words in the vocabulary. A complementary question is how little information is needed: can just two well-chosen words capture the signal?
+
+Composite scores constructed from antonym pairs suggest that they cannot. The cold--warm composite---defined as cosine similarity to ``cold'' minus similarity to ``warm'' for each city---correlates with latitude at only $r = 0.41$ and with temperature at $r = -0.34$.
+For the released historical figures, a modern--ancient composite correlates with year of
+death at only $r = 0.23$, consistent with the name-driven structure described above.
+Together with the data-driven analysis, these results indicate that the signal is distributed across much of the vocabulary rather than concentrated in the words for the property itself.
+
+\subsection{Semantic Subspace Ablation}
+\label{sec:ablation}
+
+Table~\ref{tab:ablation} reports the $R^2$ drop for each semantic category when its subspace
+is removed from the GloVe city embeddings, and its $z$-score against random word sets matched
+on number of words, frequency, proper-name status, vector norm and dimensionality
+(Appendix~\ref{sec:ablation_methods}). Baseline (unablated) $R^2$ values are $0.760$ for
+latitude, $0.788$ for longitude and $0.675$ for temperature.
+
+\begin{table}[t]
+  \centering
+  \caption{Semantic subspace ablation (272 cities, GloVe). $\Delta R^2$: drop in ten-split
+  mean $R^2$ when a category's subspace is removed. $z$: the drop against 200 random word
+  sets matched on number of words, frequency, proper-name status, vector norm and
+  dimensionality; $^{*}$ marks an empirical one-sided $p \leq .01$ ($1/201$ is the smallest
+  attainable). The last column is the share of the city embeddings' variance the subspace
+  removes, with the mean over the matched sets in brackets.}
+  \label{tab:ablation}
+  \footnotesize
   \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{lcccccccc}
+  \begin{tabular}{lccccccccc}
     \toprule
-    & & & & \multicolumn{2}{c}{Latitude} & \multicolumn{2}{c}{Longitude} \\
-    \cmidrule(lr){5-6} \cmidrule(lr){7-8}
-    Category & Words & $k$ & Var. & Drop (null) & $z$ & Drop (null) & $z$ \\
+    & & \multicolumn{2}{c}{Latitude} & \multicolumn{2}{c}{Longitude} & \multicolumn{2}{c}{Temperature} & City variance \\
+    \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+    Category & Dims & $\Delta R^2$ & $z$ & $\Delta R^2$ & $z$ & $\Delta R^2$ & $z$ & removed \\
     \midrule
-    Cardinal directions & 16 & 9 & 0.07 & .013 (.007) & 1.3 & .005 (.013) & $-$1.0 \\
-    Climate and weather & 27 & 19 & 0.11 & .019 (.008)$^{*}$ & 3.0 & .004 (.008) & $-$1.2 \\
-    Region and continent & 28 & 18 & 0.14 & .053 (.022)$^{*}$ & 2.6 & .037 (.032) & 0.3 \\
-    Country names & 68 & 20 & 0.17 & .095 (.032)$^{**}$ & 5.9 & .091 (.055)$^{*}$ & 2.6 \\
-    Economic terms & 27 & 19 & 0.11 & .008 (.008) & 0.0 & .006 (.009) & $-$0.5 \\
-    Cultural and language & 31 & 20 & 0.15 & .019 (.020) & $-$0.2 & .017 (.029) & $-$1.0 \\
+    Country names        & 20 & $+0.226$ & $3.3^{*}$ & $+0.155$ & $2.0$ & $+0.224$ & $3.2^{*}$ & .29 (.24) \\
+    Region \& continent  & 18 & $+0.119$ & $2.3$     & $+0.011$ & $-1.6$ & $+0.063$ & $0.7$ & .16 (.17) \\
+    Climate \& weather   & 19 & $+0.048$ & $4.0^{*}$ & $+0.007$ & $0.0$ & $+0.090$ & $7.7^{*}$ & .12 (.11) \\
+    Cultural \& language & 20 & $+0.031$ & $-0.4$    & $+0.026$ & $-0.7$ & $+0.067$ & $0.7$ & .20 (.18) \\
+    Cardinal directions  & 9  & $+0.018$ & $0.6$     & $+0.007$ & $-0.9$ & $+0.021$ & $1.3$ & .07 (.08) \\
+    Economic terms       & 19 & $+0.004$ & $-0.3$    & $-0.000$ & $-1.0$ & $+0.015$ & $0.8$ & .11 (.10) \\
     \bottomrule
   \end{tabular}
 \end{table}
+
+Against matched word sets, three results stand out. Removing \textbf{climate and weather}
+terms costs temperature far more than matched vocabularies do ($\Delta R^2 = 0.090$,
+$z = 7.7$), and latitude somewhat more ($z = 4.0$), but leaves longitude where matched sets
+do ($z = 0.0$), although these terms remove no more of the city embeddings' variance than
+the matched sets. \textbf{Country names} produce the largest decrement on every target and
+exceed the matched sets for latitude and temperature ($z = 3.3$ and $3.2$); their subspace
+also aligns more closely with the city vectors than any matched set (29\% of the city
+variance against $24 \pm 1$\%). Regressing the matched sets' decrements on the share of city
+variance they remove and extrapolating to the country subspace's share predicts decrements of
+$0.15$--$0.16$, which matches the longitude decrement and accounts for 35--43\% of the excess
+on latitude and temperature; because the country subspace lies outside the range of the
+matched sets, this attribution is approximate. \textbf{Region and continent} names
+exceed the matched sets only for latitude ($z = 2.3$, $p = .03$). The remaining vocabularies
+(cultural and language terms, cardinal directions and economic terms) cost no more than
+matched random words. Against random orthonormal subspaces, the comparison used in an
+earlier version of this analysis, every category except economic terms appeared to have a
+large effect ($z$ up to 42); most of that reflected the weakness of that null rather than
+anything specific to the vocabularies.
+
+The data thus indicate that what the probes use is concentrated in directions shared with
+country names, and, for temperature, with words for climate and weather, in line with the
+word correlations above. Two limits should be stated. The ablations remove directions in
+embedding space; they are not interventions on the corresponding words in the training
+corpus, and each subspace may carry correlated information from several sources, so the
+individual drops are not additive contributions. And the category labels describe the
+vocabulary used to construct each subspace, not the content the subspace is thereby shown to
+contain.
 
 \end{document}
