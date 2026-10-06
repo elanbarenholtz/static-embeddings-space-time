@@ -195,6 +195,19 @@ not explained by the assembly of multi-token names.
 
 The gain lies mostly in coarse sorting. Year of death varies almost entirely between centuries ($\eta^2 = 0.996$; an oracle given each figure's century reaches $R^2 = 1.00$), so a gain in $R^2$ is a gain in placing figures in the right century; within centuries no representation orders figures meaningfully ($r \leq 0.12$). Over a range of nearly 2{,}800 years, the median absolute error is 175 years for GloVe, 133 for Pythia and 95 for Llama-2. Places vary mostly between countries ($\eta^2 = 0.96$ for latitude and $0.97$ for longitude): an oracle that predicts each place from the training-set mean coordinates of its true country, which uses the country label rather than anything a representation infers, reaches $R^2 = 0.96$. The transformers order places within continents much better than the static embeddings (latitude $r = 0.80$ for Llama-2 and $0.64$ for Pythia, against $0.33$ for GloVe), but most of this is knowing which country a place is in: the country-mean oracle reaches $r = 0.92$. Within countries every representation orders places poorly, Llama-2 least so ($r = 0.35$ for latitude and $0.23$ for longitude, against $0.20$ and $0.12$ for Pythia and $0.06$ and $0.05$ for GloVe); these advantages are reliable (95\% intervals from resampling whole countries or centuries exclude zero) but add little accuracy. Replacing each prediction with the mean prediction for its true country, an oracle step that discards all ordering within countries, raises $R^2$ for every representation, Llama-2 included ($0.88$ to $0.93$ for latitude and to $0.94$ for longitude), and replacing it with its century's mean raises $R^2$ for year of death from $0.78$ to $0.94$.
 
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig_entity_map_row.png}
+  \caption{Held-out places from \citet{gurnee2024language} that have a Wikipedia2Vec entity vector
+  ($n = 5{,}984$), at their true locations and as decoded by linear probes on Wikipedia2Vec's word
+  vectors averaged over the name, on its static entity vectors, and on Llama-2-7B (layer 24), drawn
+  over coastlines as in \citet{gurnee2024language}'s Figure~1 (which shows Llama-2-70B); color marks
+  the true continent. The entity vectors recover a blurred
+  version of the layout that Llama-2 recovers more precisely (median error 2{,}450\,km against
+  760\,km; Table~\ref{tab:entity}).}
+  \label{fig:entity_map}
+\end{figure}
+
 \begin{table}[t]
   \centering
   \caption{Transformers and static embeddings on the entities released by
@@ -244,19 +257,6 @@ $-0.04$ to $0.05$), including in ordering figures within centuries. Llama-2's re
 on places is mostly precision: half its predictions fall within 760\,km of the true location,
 against 2{,}450\,km for the entity vectors, and it orders places within countries better
 ($r = 0.36$ against $0.25$ for latitude). The entity vectors are given each entity's identity and are trained on Wikipedia, the source of the datasets (Section~\ref{sec:discussion}).
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\textwidth]{fig_entity_map_row.png}
-  \caption{Held-out places from \citet{gurnee2024language} that have a Wikipedia2Vec entity vector
-  ($n = 5{,}984$), at their true locations and as decoded by linear probes on Wikipedia2Vec's word
-  vectors averaged over the name, on its static entity vectors, and on Llama-2-7B (layer 24), drawn
-  over coastlines as in \citet{gurnee2024language}'s Figure~1 (which shows Llama-2-70B); color marks
-  the true continent. The entity vectors recover a blurred
-  version of the layout that Llama-2 recovers more precisely (median error 2{,}450\,km against
-  760\,km; Table~\ref{tab:entity}).}
-  \label{fig:entity_map}
-\end{figure}
 
 \begin{table}[t]
   \centering
